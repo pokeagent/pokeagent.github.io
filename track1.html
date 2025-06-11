@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track 1: Competitive Battling - PokéAgent Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">PokéAgent Challenge</a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track1.html">Track 1</a></li>
+        <li><a href="track2.html">Track 2</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Track 1 Section -->
+  <section class="hero" style="height: auto; padding: 4rem 0; background: var(--light-color); color: var(--dark-color); text-align: left;">
+    <div class="container">
+        <img
+        src="media/figures/track1.png"
+        alt="Track 1 Logo"
+        style="
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: block;
+        "
+        >
+      <h1>Track 1: Competitive Battling</h1>
+      <p>Pokémon battles represent one of the most complex zero-sum, partially observable games in existence, with an astronomical state space derived from over 1,000 Pokémon species, each with unique stats, abilities, typings, and items.</p>
+      <p>This track tests an agent's ability to operate under uncertainty, model opponents, and plan within time constraints, making it a prime benchmark for modern reinforcement learning and AI planning systems.</p>
+    </div>
+  </section>
+
+  <!-- Track 1 Challenges -->
+  <section>
+    <div class="container">
+      <h2>Core Challenges</h2>
+      <ul>
+        <li>Opponent modeling under partial observability</li>
+        <li>Stochastic decision-making with limited information</li>
+        <li>Strategic adaptation to novel teams and tactics</li>
+        <li>Strict per-turn action deadline (15 seconds)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Submission Guidelines -->
+  <section style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2>Submission Guidelines</h2>
+      <div class="card">
+        <h3>How to Submit for Track 1</h3>
+        <p>Track 1 follows a two-phase evaluation process to ensure both robustness and competitiveness:</p>
+        <ul>
+          <li><strong>Phase 1:</strong> Open ladder using Pokémon Showdown’s matchmaking system to evaluate general strength</li>
+          <li><strong>Phase 2:</strong> Bracket-style tournament between top teams for final placements</li>
+        </ul>
+        <p>Your agent must interact with the Pokémon Showdown API and make decisions within a strict 15-second turn limit. Submission includes your agent's code, configuration, and logs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+    <section id="timeline">
+        <div class="container">
+            <h2 class="text-center mb-2">Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 31, 2025</span>
+                        <h3>Competition Website Launch</h3>
+                        <p>Official competition website goes live with preliminary documentation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">June 1 - July 15, 2025</span>
+                        <h3>Beta Testing Phase</h3>
+                        <p>Invited participants test the platforms, starter kits released, baseline implementations available.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">July 15, 2025</span>
+                        <h3>Official Competition Launch</h3>
+                        <p>Competition officially begins, registration opens for all participants.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">July 30, 2025</span>
+                        <h3>First Leaderboard Update</h3>
+                        <p>Initial rankings published for both tracks.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">August 15, 2025</span>
+                        <h3>Second Leaderboard Update</h3>
+                        <p>Updated rankings and performance metrics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">September 15, 2025</span>
+                        <h3>Final Submission Deadline</h3>
+                        <p>Last day to submit final versions of your agents.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">October 15, 2025</span>
+                        <h3>Results Announcement</h3>
+                        <p>Final results announced, winners notified.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">December 2025</span>
+                        <h3>NeurIPS 2025 Presentation</h3>
+                        <p>Winners present their solutions at NeurIPS 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>PokéAgent Challenge</h3>
+          <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
+          <div class="social-links mt-1">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Starter Code</a></li>
+            <li><a href="#">Datasets</a></li>
+            <li><a href="#">Baseline Agents</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>For questions or support, please contact:</p>
+          <p>Email: pokeagent-challenge@princeton.edu</p>
+          <p>Join our Discord community for direct assistance and discussions.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

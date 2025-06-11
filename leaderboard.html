@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leaderboard - PokéAgent Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">PokéAgent Challenge</a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track1.html">Track 1</a></li>
+        <li><a href="track2.html">Track 2</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Leaderboard Section -->
+  <section id="leaderboard" style="background-color: #f5f5f5; margin-top: 70px;">
+    <div class="container">
+      <h2 class="text-center mb-2">Leaderboard</h2>
+      <p class="text-center mb-2">Current rankings for both competition tracks. Leaderboards are updated regularly throughout the competition.</p>
+
+      <h3>Track 1: Competitive Battling</h3>
+      <div class="card mb-2">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+              <th style="padding: 12px;">Rank</th>
+              <th style="padding: 12px;">Team</th>
+              <th style="padding: 12px;">Rating</th>
+              <th style="padding: 12px;">Win Rate</th>
+              <th style="padding: 12px;">Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #ddd;">
+              <td style="padding: 12px;">1</td>
+              <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
+              <td style="padding: 12px;">-</td>
+              <td style="padding: 12px;">-</td>
+              <td style="padding: 12px;">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Track 2: RPG Speedrunning</h3>
+      <div class="card">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+              <th style="padding: 12px;">Rank</th>
+              <th style="padding: 12px;">Team</th>
+              <th style="padding: 12px;">Completion %</th>
+              <th style="padding: 12px;">Time (min)</th>
+              <th style="padding: 12px;">Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #ddd;">
+              <td style="padding: 12px;">1</td>
+              <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
+              <td style="padding: 12px;">-</td>
+              <td style="padding: 12px;">-</td>
+              <td style="padding: 12px;">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>PokéAgent Challenge</h3>
+          <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
+          <div class="social-links mt-1">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Starter Code</a></li>
+            <li><a href="#">Datasets</a></li>
+            <li><a href="#">Baseline Agents</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>For questions or support, please contact:</p>
+          <p>Email: pokeagent-challenge@princeton.edu</p>
+          <p>Join our Discord community for direct assistance and discussions.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
