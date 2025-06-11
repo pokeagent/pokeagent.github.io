@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="container header-container">
@@ -26,7 +27,7 @@
   </header>
 
   <!-- Track 1 Section -->
-  <section class="hero" style="height: auto; padding: 4rem 0; background: var(--light-color); color: var(--dark-color); text-align: left;">
+  <section class="hero" style="height: auto; padding: 4rem 0; background: var(--light-color); color: var(--dark-color); text-align: left; mask: none; -webkit-mask: none;">
     <div class="container">
         <img
         src="media/figures/track1.png"
@@ -39,37 +40,48 @@
             display: block;
         "
         >
-      <h1>Track 1: Competitive Battling</h1>
-      <p>Pokémon battles represent one of the most complex zero-sum, partially observable games in existence, with an astronomical state space derived from over 1,000 Pokémon species, each with unique stats, abilities, typings, and items.</p>
-      <p>This track tests an agent's ability to operate under uncertainty, model opponents, and plan within time constraints, making it a prime benchmark for modern reinforcement learning and AI planning systems.</p>
-    </div>
-  </section>
+        <p>
+          Pokémon Showdown is an open-source simulator that brings Pokémon's turn-based 
+          combat to a competitive online community with thousands of daily players.
+          Competitive Pokémon battles are two-player, stochastic, imperfect-information 
+          games. Players build teams of Pokémon and compete head-to-head. 
+          Turn outcomes are uncertain and governed by complex mechanics with endless 
+          special cases. Success depends on more than just handling randomness: players 
+          must model opponents and make decisions under uncertainty. Key details about 
+          the opponent's team remain hidden until they directly affect the battle, 
+          forcing players to infer information and predict moves from past interactions. 
+          Expert human players excel by anticipating their 
+          opponent's strategies. This combination of randomness, partial observability, 
+          and team diversity presents a daunting challenge for AI agents that stresses the ability
+          to plan and generalize.
+        </p>
 
-  <!-- Track 1 Challenges -->
-  <section>
-    <div class="container">
-      <h2>Core Challenges</h2>
-      <ul>
-        <li>Opponent modeling under partial observability</li>
-        <li>Stochastic decision-making with limited information</li>
-        <li>Strategic adaptation to novel teams and tactics</li>
-        <li>Strict per-turn action deadline (15 seconds)</li>
-      </ul>
-    </div>
-  </section>
+        <br>
+
+        <p>
+          While Pokémon Showdown "battle bots" have a long history, powerful language models,
+          large-scale reinforcement learning datasets, and open-source resources have driven 
+          a fresh surge in interest from the ML research community. Recent methods have 
+          achieved human-level performance in popular singles rulesets. How much further can we push the 
+          boundaries of Competitive Pokémon AI? Join Track 1 of the PokéAgent Challenge 
+          to help find out!
+        </p>
+
+        <br>
+
+        <p>
 
   <!-- Submission Guidelines -->
   <section style="background-color: #f5f5f5;">
     <div class="container">
-      <h2>Submission Guidelines</h2>
+      <h2>Rules and Submission Guidelines</h2>
       <div class="card">
-        <h3>How to Submit for Track 1</h3>
-        <p>Track 1 follows a two-phase evaluation process to ensure both robustness and competitiveness:</p>
-        <ul>
-          <li><strong>Phase 1:</strong> Open ladder using Pokémon Showdown’s matchmaking system to evaluate general strength</li>
-          <li><strong>Phase 2:</strong> Bracket-style tournament between top teams for final placements</li>
-        </ul>
-        <p>Your agent must interact with the Pokémon Showdown API and make decisions within a strict 15-second turn limit. Submission includes your agent's code, configuration, and logs.</p>
+        <p>To avoid disrupting human players, PokéAgent participants will compete on an AI-only Showdown server. Participants will battle against organizer baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.</p>
+
+        <br
+
+        <p>Formal rules and timelines for the ladder and tournament stages will be announced by June 25th, 2025, and the Showdown server will launch on July 7th, 2025.
+        Until then, participants are free to experiment on a self-hosted server against baselines provided by the starter kit!</p>
       </div>
     </div>
   </section>
@@ -81,44 +93,23 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">May 31, 2025</span>
+                        <span class="timeline-date">June 11th, 2025</span>
                         <h3>Competition Website Launch</h3>
                         <p>Official competition website goes live with preliminary documentation.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">June 1 - July 15, 2025</span>
-                        <h3>Beta Testing Phase</h3>
-                        <p>Invited participants test the platforms, starter kits released, baseline implementations available.</p>
+                        <span class="timeline-date">June 25th, 2025</span>
+                        <h3>Formal Competition Announcement</h3>
+                        <p>Full rules and track timeline announced. Showdown server launches for beta testers.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">July 15, 2025</span>
-                        <h3>Official Competition Launch</h3>
-                        <p>Competition officially begins, registration opens for all participants.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 30, 2025</span>
-                        <h3>First Leaderboard Update</h3>
-                        <p>Initial rankings published for both tracks.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">August 15, 2025</span>
-                        <h3>Second Leaderboard Update</h3>
-                        <p>Updated rankings and performance metrics.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">September 15, 2025</span>
-                        <h3>Final Submission Deadline</h3>
-                        <p>Last day to submit final versions of your agents.</p>
+                        <span class="timeline-date">July 7th, 2025</span>
+                        <h3>Competition Begins</h3>
+                        <p>Track 1 Competition Begins. Battle against baselines (and other partipants!) on PokéAgent's Showdown server.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
