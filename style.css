@@ -200,8 +200,7 @@ header {
 /* Hero Section */
 .hero {
     min-height: 60vh;
-    background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(220, 237, 255, 0.8));
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     color: var(--dark-color);
     display: flex;
     align-items: center;
@@ -221,15 +220,12 @@ header {
 
 .hero-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 650px;
     height: auto;
     margin: 0 auto 2rem;
     display: block;
-    border-radius: 20px;
-    box-shadow: 0 0 30px 10px rgba(220, 237, 255, 0.6);
-    filter: drop-shadow(0 0 8px rgba(220, 237, 255, 0.8));
-    background: linear-gradient(135deg, rgba(200, 220, 240, 0.9), rgba(180, 210, 235, 0.8));
-    padding: 5px;
+    mask: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .hero-description {
