@@ -200,7 +200,7 @@ header {
 /* Hero Section */
 .hero {
     min-height: 60vh;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    background: radial-gradient(ellipse 150% 100% at 50% 30%, #f3f9ff, #90caf9);
     color: var(--dark-color);
     display: flex;
     align-items: center;
@@ -208,6 +208,8 @@ header {
     margin-top: 70px;
     padding: 2rem 0;
     position: relative;
+    mask: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .hero-title {
@@ -270,7 +272,6 @@ header {
     color: #666;
     max-width: 600px;
     margin: 0 auto 2rem;
-    font-style: italic;
 }
 
 .track-links {
