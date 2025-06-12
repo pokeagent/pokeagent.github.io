@@ -535,9 +535,11 @@ footer {
         transition: transform 0.3s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 999;
+        display: none;
     }
 
     .nav-menu.active {
+        display: flex;
         transform: translateY(0);
     }
 
@@ -545,6 +547,18 @@ footer {
         margin: 0;
         padding: 1rem;
         border-bottom: 1px solid #eee;
+        width: 100%;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        color: var(--dark-color);
+        font-weight: 500;
     }
 
     .hero-title {
@@ -562,8 +576,8 @@ footer {
     }
     
     .track-links .track-image {
-        width: 200px;
-        height: 140px;
+        width: 280px;
+        height: 200px;
     }
 
     .grid-2 {
