@@ -42,7 +42,7 @@
         "
         >
         <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
-          This track challenges agents to complete a full Pokémon role-playing game as quickly and efficiently as possible, navigating a massive, partially observable world with hundreds of NPCs and thousands of possible actions.
+          This track challenges agents to complete a full Pokémon role-playing game (Pokémon Emerald) as quickly and efficiently as possible, navigating a massive, partially observable world with hundreds of NPCs and thousands of possible actions.
           <br><br>
           Long-horizon planning, efficient exploration, and strategic resource management are critical to succeeding in this track. Agents must learn to balance immediate objectives with long-term strategic goals, making decisions that span thousands of timesteps while adapting to the unpredictable nature of RPG gameplay.
           <br><br>
@@ -55,7 +55,7 @@
   </section>
 
   <!-- Track 2 Challenges -->
-  <section>
+  <!-- <section>
     <div class="container">
       <h2>Core Challenges</h2>
       <ul>
@@ -65,11 +65,11 @@
         <li>Navigation through complex environments</li>
       </ul>
     </div>
-  </section>
+  </section> -->
 
 
     <!-- Resources Section -->
-    <section id="resources" style="background-color: #f5f5f5;">
+    <!-- <section id="resources" style="background-color: #f5f5f5;">
         <div class="container">
             <h2 class="text-center mb-2">Resources</h2>
             <div class="grid">
@@ -111,7 +111,23 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+  <!-- Starter Kits Section -->
+  <section id="starter-kits">
+    <div class="container">
+      <h2 class="text-center mb-2">Starter Kits</h2>
+      <p class="track-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+        Our starter kit provides a real-time agent loop with modular components for perception (game frame recognition), planning & memory (long term vs. short term goals, knowledge storage), and control (gameboy emulator action execution).
+      </p>
+      <br>
+      <div class="track-links">
+        <a href="https://github.com/sethkarten" class="track-link" target="_blank">
+          <img src="media/figures/loop.png" alt="Agent Starter Kit" class="track-image">
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Submission Guidelines -->
   <section style="background-color: #f5f5f5;">
@@ -119,7 +135,7 @@
       <h2>Submission Guidelines</h2>
       <div class="card">
         <h3>How to Submit for Track 2</h3>
-        <p>Submissions for this track focus on achieving maximum game completion under time constraints. Agents are evaluated based on milestone coverage and success consistency.</p>
+        <p>Submissions for this track focus on achieving maximum game completion under time constraints.</p>
         <ul>
           <li>Python code implementing your agent</li>
           <li>Configuration file specifying dependencies</li>
@@ -127,76 +143,55 @@
           <li>Logs of inputs and outputs for verification</li>
         </ul>
         <p>Your agent must interact exclusively through our custom Pokémon Emerald emulator API. Use any method, as long as the final action comes from a neural network.</p>
+        <p>We will provide a baseline agent (scaffolding and VLM setup) and emulator API for beta testers.</p>
       </div>
     </div>
   </section>
 
 
   <!-- Timeline Section -->
-    <section id="timeline">
-        <div class="container">
-            <h2 class="text-center mb-2">Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 31, 2025</span>
-                        <h3>Competition Website Launch</h3>
-                        <p>Official competition website goes live with preliminary documentation.</p>
-                    </div>
+  <section id="timeline">
+    <div class="container">
+        <h2 class="text-center mb-2">Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">June 11th, 2025</span>
+                    <h3>Competition Website Launch</h3>
+                    <p>Official competition website goes live with preliminary documentation.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">June 1 - July 15, 2025</span>
-                        <h3>Beta Testing Phase</h3>
-                        <p>Invited participants test the platforms, starter kits released, baseline implementations available.</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">June 25th, 2025</span>
+                    <h3>Formal Competition Announcement</h3>
+                    <p>Full rules and track timeline announced. Starter code with a baseline RPG agent (scaffolding and VLM setup) and emulator API available for beta testers.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 15, 2025</span>
-                        <h3>Official Competition Launch</h3>
-                        <p>Competition officially begins, registration opens for all participants.</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">July 7th, 2025</span>
+                    <h3>Competition Begins</h3>
+                    <p>Track 1 Competition Begins. Submit runs of your Pokémon Emerald agent to the leaderboard.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 30, 2025</span>
-                        <h3>First Leaderboard Update</h3>
-                        <p>Initial rankings published for both tracks.</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">October 15, 2025</span>
+                    <h3>Results Announcement</h3>
+                    <p>Final results announced, winners notified.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">August 15, 2025</span>
-                        <h3>Second Leaderboard Update</h3>
-                        <p>Updated rankings and performance metrics.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">September 15, 2025</span>
-                        <h3>Final Submission Deadline</h3>
-                        <p>Last day to submit final versions of your agents.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">October 15, 2025</span>
-                        <h3>Results Announcement</h3>
-                        <p>Final results announced, winners notified.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">December 2025</span>
-                        <h3>NeurIPS 2025 Presentation</h3>
-                        <p>Winners present their solutions at NeurIPS 2025.</p>
-                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">December 2025</span>
+                    <h3>NeurIPS 2025 Presentation</h3>
+                    <p>Winners present their solutions at NeurIPS 2025.</p>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
   <!-- Footer -->
   <footer>
     <div class="container">
