@@ -283,15 +283,13 @@ header {
 
 .track-link {
     display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .track-link:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .track-links .track-image {
