@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - PokéAgent Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">PokéAgent Challenge</a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track1.html">Track 1</a></li>
+        <li><a href="track2.html">Track 2</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- FAQ Section -->
+  <section id="faq" style="margin-top: 70px;">
+    <div class="container">
+      <h2 class="text-center mb-2">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the PokéAgent Challenge?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>The PokéAgent Challenge is a NeurIPS 2025 competition designed to establish Pokémon battling and gameplay as benchmarks for general decision-making in AI. It features two tracks: Competitive Battling and RPG Speedrunning, which together unify reinforcement learning and large language model research.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Who can participate in the competition?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>The competition is open to all individuals and teams, with no restrictions on team size or affiliation. Participants may enter either or both tracks (Battles, Speedrunning).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What resources will be provided to participants?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Participants will have access to:</p>
+          <ul>
+            <li>A dataset of over 3.5 million Pokémon battles</li>
+            <li>Starter code and baseline implementations</li>
+            <li>A comprehensive knowledge base compiled from Bulbapedia</li>
+            <li>Detailed documentation and tutorials</li>
+            <li>A dedicated Discord server for support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I use external resources like LLMs in my solution?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, Track 1 permits external LLM usage with full documentation and supports training on our 3.5M-battle dataset or self-play. Track 2 mandates interaction exclusively through our Pokémon Emerald emulator API while allowing any methodological approach which uses a neural network to produce the action.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How will submissions be evaluated?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>For Track 1 (Pokémon Battles), we will use established player rating schemes, win rates against baselines, and metrics for efficiency and reliability.</p>
+          <p>For Track 2 (Speedrunning), the primary metric is Completion Percentage, measuring progress through a standardized list of critical game milestones, with a secondary metric of Success Rate.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Are there prizes for winning teams?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, incentives include monetary prizes (subject to sponsorship), research collaboration opportunities, presentation slots at NeurIPS 2025, computational resources, and opportunity to co-author a subsequent NeurIPS 2026 submission for top solutions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do I need prior experience with Pokémon to participate?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No, prior experience with Pokémon is not required. We provide comprehensive documentation, tutorials, and resources to help participants understand the game mechanics and develop effective agents regardless of their familiarity with Pokémon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>PokéAgent Challenge</h3>
+          <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
+          <div class="social-links mt-1">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Starter Code</a></li>
+            <li><a href="#">Datasets</a></li>
+            <li><a href="#">Baseline Agents</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>For questions or support, please contact:</p>
+          <p>Email: pokeagent-challenge@princeton.edu</p>
+          <p>Join our Discord community for direct assistance and discussions.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

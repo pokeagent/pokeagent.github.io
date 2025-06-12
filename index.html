@@ -5,474 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokéAgent Challenge - NeurIPS 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Variables */
-        :root {
-            --primary-color: #ff5757; /* Pokéball red */
-            --secondary-color: #3b5998; /* Deep blue */
-            --accent-color: #ffc107; /* Pokemon yellow */
-            --dark-color: #212529;
-            --light-color: #f8f9fa;
-            --font-primary: 'Roboto', sans-serif;
-            --font-heading: 'Montserrat', sans-serif;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #324b80;
-            color: white;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-menu li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-menu a {
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-
-        .mobile-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1613771404784-3a9941e2cc86');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: 70px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -12px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -12px;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .timeline-date {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* Tracks */
-        .track-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .track-card h3 {
-            color: var(--primary-color);
-        }
-
-        .track-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        /* Team */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            background-color: #f0f0f0;
-        }
-
-        /* Resources */
-        .resource-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .resource-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            cursor: pointer;
-            padding: 1rem;
-            background-color: #f0f0f0;
-            border-radius: var(--border-radius);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-question:hover {
-            background-color: #e0e0e0;
-        }
-
-        .faq-answer {
-            padding: 1rem;
-            display: none;
-        }
-
-        .faq-question.active + .faq-answer {
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 3rem 0;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .footer-column h3 {
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: white;
-        }
-
-        .footer-column a:hover {
-            color: var(--accent-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                background-color: white;
-                width: 100%;
-                flex-direction: column;
-                text-align: center;
-                transform: translateY(-100%);
-                transition: transform 0.3s ease;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-            }
-
-            .nav-menu li {
-                margin: 0;
-                padding: 1rem;
-                border-bottom: 1px solid #eee;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after {
-                left: 18px;
-            }
-
-            .timeline-item:nth-child(odd)::after {
-                right: auto;
-                left: 18px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
@@ -482,29 +15,54 @@
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#tracks">Tracks</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#registration">Registration</a></li>
-                <li><a href="#leaderboard">Leaderboard</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="track1.html">Track 1</a></li>
+                    <li><a href="track2.html">Track 2</a></li>
+                    <li><a href="leaderboard.html">Leaderboards</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+    <div class="container text-center">
+        <img
+        src="media/figures/logo_no_bg.png"
+        alt="PokéAgent Logo"
+        class="hero-image"
+        />
+        <p class="hero-description">
+        A NeurIPS 2025 competition advancing AI decision-making through Pokémon.
+        Featuring competitive battling and RPG speedrunning tracks to unify
+        research in reinforcement learning and large language models.
+        </p>
+        <div class="scroll-indicator" onclick="document.getElementById('tracks').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+    </section>
+
+    <!-- Competition Tracks Section -->
+    <section id="tracks">
         <div class="container">
-            <h1>The PokéAgent Challenge</h1>
-            <p>A NeurIPS 2025 competition advancing AI decision-making through Pokémon. Featuring competitive battling and RPG speedrunning tracks to unify reinforcement learning and large language model research.</p>
-            <div>
-                <a href="#registration" class="btn btn-primary">Register Now</a>
-                <a href="#tracks" class="btn btn-secondary">Learn More</a>
+            <h2 class="text-center mb-2">Competition Tracks</h2>
+            <p class="track-subtitle text-center">
+                Click to explore detailed information, submission guidelines, starter code, and datasets for each track.
+            </p>
+            <div class="track-links">
+                <a href="track1.html" class="track-link">
+                    <img src="media/figures/track1.png" alt="Track 1 - Competitive Battling" class="track-image">
+                </a>
+                <a href="track2.html" class="track-link">
+                    <img src="media/figures/track2.png" alt="Track 2 - RPG Speedrunning" class="track-image">
+                </a>
             </div>
         </div>
     </section>
+
+
 
     <!-- About Section -->
     <section id="about">
@@ -526,46 +84,65 @@
                     </ul>
                 </div>
             </div>
-            
-            <h3 class="text-center mt-2 mb-2">Organizing Team</h3>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" style="background-color: #f8f9fa;">
+        <div class="container text-center">
+            <h2 class="mb-2">Ready to Get Started?</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
+                Join the PokéAgent Challenge Discord server to register and connect with other participants!
+            </p>
+            <a href="https://discord.gg/rRZjA5SQVT" class="btn btn-discord" target="_blank">
+                <i class="fab fa-discord"></i>
+                Join Our Discord Server
+            </a>
+        </div>
+    </section>
+
+    <!-- Organizing Team Section -->
+    <section id="team" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-2">Organizing Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img alt="Seth Karten">
+                    <img src="media/headshots/sk.jpg" alt="Seth Karten">
                     <h4>Seth Karten</h4>
                     <p>Princeton University</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Jake Grigsby">
+                    <img src="media/headshots/jg.jpg" alt="Jake Grigsby">
                     <h4>Jake Grigsby</h4>
                     <p>UT Austin</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Stephanie Milani">
+                    <img src="media/headshots/sm.png" alt="Stephanie Milani">
                     <h4>Stephanie Milani</h4>
                     <p>Carnegie Mellon University</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Kiran Vodrahalli">
+                    <img src="media/headshots/kv.png" alt="Kiran Vodrahalli">
                     <h4>Kiran Vodrahalli</h4>
                     <p>Google DeepMind</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Amy Zhang">
+                    <img src="media/headshots/az.png" alt="Amy Zhang">
                     <h4>Amy Zhang</h4>
                     <p>UT Austin</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Fei Fang">
+                    <img src="media/headshots/ff.png" alt="Fei Fang">
                     <h4>Fei Fang</h4>
                     <p>Carnegie Mellon University</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Yuke Zhu">
+                    <img src="media/headshots/yz.jpg" alt="Yuke Zhu">
                     <h4>Yuke Zhu</h4>
                     <p>UT Austin</p>
                 </div>
                 <div class="team-member">
-                    <img alt="Chi Jin">
+                    <img src="media/headshots/cj.jpg" alt="Chi Jin">
                     <h4>Chi Jin</h4>
                     <p>Princeton University</p>
                 </div>
@@ -573,158 +150,9 @@
         </div>
     </section>
 
-    <!-- Tracks Section -->
-    <section id="tracks" style="background-color: #f5f5f5;">
-        <div class="container">
-            <h2 class="text-center mb-2">Competition Tracks</h2>
-            <div class="grid-2">
-                <div class="card track-card">
-                    <img src="https://images.unsplash.com/photo-1613771404784-3a9941e2cc86" alt="Competitive Battling" class="track-image">
-                    <div style="padding: 1.5rem;">
-                        <h3>Track 1: Competitive Battling</h3>
-                        <p>Pokémon battles represent one of the most complex zero-sum partially observable games available, with a state space complexity that dwarfs most competitive benchmarks.</p>
-                        <p>For the first turn alone, we estimate approximately 10^354 possible states, derived from over 1,000 Pokémon species, each with unique abilities, moves, typing, stats, and items.</p>
-                        <h4>Challenges</h4>
-                        <ul>
-                            <li>Opponent modeling under partial observability</li>
-                            <li>Stochastic decision-making with limited information</li>
-                            <li>Strategic adaptation to novel scenarios</li>
-                            <li>Operating within strict time constraints (15 seconds per turn)</li>
-                        </ul>
-                        <a href="#track1-details" class="btn btn-primary mt-2">View Details</a>
-                    </div>
-                </div>
-                <div class="card track-card">
-                    <img src="https://images.unsplash.com/photo-1542779283-429940ce8336" alt="RPG Speedrunning" class="track-image">
-                    <div style="padding: 1.5rem;">
-                        <h3>Track 2: RPG Speedrunning</h3>
-                        <p>The original Pokémon role-playing games present an expanded challenge highlighting long-horizon reasoning and exploration.</p>
-                        <p>In this track, agents must navigate through a vast, partially observable world, which requires interacting with hundreds of non-player characters, managing resources, building an effective team, and making thousands of sequential decisions.</p>
-                        <h4>Challenges</h4>
-                        <ul>
-                            <li>Long-horizon planning across different game segments</li>
-                            <li>Balancing exploration and exploitation</li>
-                            <li>Resource management and team building</li>
-                            <li>Navigation through complex environments</li>
-                        </ul>
-                        <a href="#track2-details" class="btn btn-primary mt-2">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline">
-        <div class="container">
-            <h2 class="text-center mb-2">Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 31, 2025</span>
-                        <h3>Competition Website Launch</h3>
-                        <p>Official competition website goes live with preliminary documentation.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">June 1 - July 15, 2025</span>
-                        <h3>Beta Testing Phase</h3>
-                        <p>Invited participants test the platforms, starter kits released, baseline implementations available.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 15, 2025</span>
-                        <h3>Official Competition Launch</h3>
-                        <p>Competition officially begins, registration opens for all participants.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 30, 2025</span>
-                        <h3>First Leaderboard Update</h3>
-                        <p>Initial rankings published for both tracks.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">August 15, 2025</span>
-                        <h3>Second Leaderboard Update</h3>
-                        <p>Updated rankings and performance metrics.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">September 15, 2025</span>
-                        <h3>Final Submission Deadline</h3>
-                        <p>Last day to submit final versions of your agents.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">October 15, 2025</span>
-                        <h3>Results Announcement</h3>
-                        <p>Final results announced, winners notified.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">December 2025</span>
-                        <h3>NeurIPS 2025 Presentation</h3>
-                        <p>Winners present their solutions at NeurIPS 2025.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" style="background-color: #f5f5f5;">
-        <div class="container">
-            <h2 class="text-center mb-2">Resources</h2>
-            <div class="grid">
-                <div class="card resource-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Starter Code</h3>
-                    <p>Access GitHub repositories with baseline implementations, environment integration tools, and documentation to jumpstart your development.</p>
-                    <a href="#" class="btn btn-secondary mt-1">GitHub Repository</a>
-                </div>
-                <div class="card resource-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Datasets</h3>
-                    <p>Download our dataset of over 3.5 million Pokémon battles, including team compositions, movesets, and match results.</p>
-                    <a href="#" class="btn btn-secondary mt-1">Access Dataset</a>
-                </div>
-                <div class="card resource-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Baseline Agents</h3>
-                    <p>Evaluate your models against our suite of baseline agents including PokéLLMon, PokéChamp, and Metamon implementations.</p>
-                    <a href="#" class="btn btn-secondary mt-1">Baseline Documentation</a>
-                </div>
-                <div class="card resource-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Knowledge Base</h3>
-                    <p>Access our comprehensive knowledge base compiled from Bulbapedia, featuring over 3,000 articles on game mechanics.</p>
-                    <a href="#" class="btn btn-secondary mt-1">Browse Knowledge Base</a>
-                </div>
-                <div class="card resource-card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Tutorials</h3>
-                    <p>Learn how to get started with our step-by-step tutorials for both competition tracks.</p>
-                    <a href="#" class="btn btn-secondary mt-1">View Tutorials</a>
-                </div>
-                <div class="card resource-card">
-                    <i class="fas fa-comments"></i>
-                    <h3>Community</h3>
-                    <p>Join our Discord server to connect with other participants, ask questions, and get support from the organizers.</p>
-                    <a href="#" class="btn btn-secondary mt-1">Join Discord</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Section -->
+  
+<!-- 
+    Registration Section
     <section id="registration">
         <div class="container">
             <h2 class="text-center mb-2">Registration</h2>
@@ -741,172 +169,8 @@
                     <a href="#" class="btn btn-primary">Register Your Team</a>
                 </div>
             </div>
-            
-            <div class="grid-2 mt-2">
-                <div class="card">
-                    <h3>Track 1 Submission Guidelines</h3>
-                    <p>For the Pokémon Battles track, submissions follow a two-phase process:</p>
-                    <ul>
-                        <li><strong>Phase 1:</strong> Open ladder using Pokémon Showdown's matchmaking system</li>
-                        <li><strong>Phase 2:</strong> Top performers advance to a bracket-style tournament</li>
-                    </ul>
-                    <p>Your agent must make decisions within 15 seconds per turn and interact with the Pokémon Showdown API.</p>
-                </div>
-                <div class="card">
-                    <h3>Track 2 Submission Guidelines</h3>
-                    <p>For the RPG Speedrunning track, submissions will consist of:</p>
-                    <ul>
-                        <li>Python code implementing your agent</li>
-                        <li>Configuration file specifying dependencies</li>
-                        <li>Video recording of your agent's best run</li>
-                        <li>Logs of inputs and outputs for verification</li>
-                    </ul>
-                    <p>Your agent must interact exclusively through our Pokémon Emerald emulator API.</p>
-                </div>
-            </div>
         </div>
-    </section>
-
-    <!-- Leaderboard Section -->
-    <section id="leaderboard" style="background-color: #f5f5f5;">
-        <div class="container">
-            <h2 class="text-center mb-2">Leaderboard</h2>
-            <p class="text-center mb-2">Current rankings for both competition tracks. Leaderboards are updated regularly throughout the competition.</p>
-            
-            <h3>Track 1: Competitive Battling</h3>
-            <div class="card mb-2">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                            <th style="padding: 12px;">Rank</th>
-                            <th style="padding: 12px;">Team</th>
-                            <th style="padding: 12px;">Rating</th>
-                            <th style="padding: 12px;">Win Rate</th>
-                            <th style="padding: 12px;">Last Updated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 12px;">1</td>
-                            <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
-                            <td style="padding: 12px;">-</td>
-                            <td style="padding: 12px;">-</td>
-                            <td style="padding: 12px;">-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <h3>Track 2: RPG Speedrunning</h3>
-            <div class="card">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                            <th style="padding: 12px;">Rank</th>
-                            <th style="padding: 12px;">Team</th>
-                            <th style="padding: 12px;">Completion %</th>
-                            <th style="padding: 12px;">Time (min)</th>
-                            <th style="padding: 12px;">Last Updated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 12px;">1</td>
-                            <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
-                            <td style="padding: 12px;">-</td>
-                            <td style="padding: 12px;">-</td>
-                            <td style="padding: 12px;">-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <h2 class="text-center mb-2">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What is the PokéAgent Challenge?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>The PokéAgent Challenge is a NeurIPS 2025 competition designed to establish Pokémon battling and gameplay as benchmarks for general decision-making in AI. It features two tracks: Competitive Battling and RPG Speedrunning, which together unify reinforcement learning and large language model research.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Who can participate in the competition?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>The competition is open to all individuals and teams, with no restrictions on team size or affiliation. Participants may enter either or both tracks (Battles, Speedrunning).</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What resources will be provided to participants?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Participants will have access to:</p>
-                    <ul>
-                        <li>A dataset of over 3.5 million Pokémon battles</li>
-                        <li>Starter code and baseline implementations</li>
-                        <li>A comprehensive knowledge base compiled from Bulbapedia</li>
-                        <li>Detailed documentation and tutorials</li>
-                        <li>A dedicated Discord server for support</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can I use external resources like LLMs in my solution?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, Track 1 permits external LLM usage with full documentation and supports training on our 3.5M-battle dataset or self-play. Track 2 mandates interaction exclusively through our Pokémon Emerald emulator API while allowing any methodological approach which uses a neural network to produce the action.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How will submissions be evaluated?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>For Track 1 (Pokémon Battles), we will use established player rating schemes, win rates against baselines, and metrics for efficiency and reliability.</p>
-                    <p>For Track 2 (Speedrunning), the primary metric is Completion Percentage, measuring progress through a standardized list of critical game milestones, with a secondary metric of Success Rate.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are there prizes for winning teams?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, incentives include monetary prizes (subject to sponsorship), research collaboration opportunities, presentation slots at NeurIPS 2025, computational resources, and opportunity to co-author a subsequent NeurIPS 2026 submission for top solutions.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do I need prior experience with Pokémon to participate?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>No, prior experience with Pokémon is not required. We provide comprehensive documentation, tutorials, and resources to help participants understand the game mechanics and develop effective agents regardless of their familiarity with Pokémon.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer>
@@ -925,23 +189,11 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#tracks">Competition Tracks</a></li>
-                        <li><a href="#timeline">Timeline</a></li>
-                        <li><a href="#resources">Resources</a></li>
-                        <li><a href="#registration">Registration</a></li>
-                        <li><a href="#leaderboard">Leaderboard</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Starter Code</a></li>
-                        <li><a href="#">Datasets</a></li>
-                        <li><a href="#">Baseline Agents</a></li>
-                        <li><a href="#">Knowledge Base</a></li>
-                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="track1.html">Track 1</a></li>
+                        <li><a href="track2.html">Track 2</a></li>
+                        <li><a href="leaderboard.html"><Leaderboards:w></Leaderboards:w></a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
