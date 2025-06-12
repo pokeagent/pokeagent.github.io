@@ -26,22 +26,31 @@
   </header>
 
   <!-- Track 2 Hero -->
-  <section class="hero" style="height: auto; padding: 4rem 0; background: var(--light-color); color: var(--dark-color); text-align: left;">
+  <section class="hero" style="height: auto; padding: 4rem 0; background: radial-gradient(ellipse 150% 100% at 50% 30%, #f0fff0, #66c266); color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); position: relative;">
     <div class="container">
         <img
-        src="media/figures/track2.png"
+        src="media/figures/track2_no_bg.png"
         alt="Track 2 Logo"
         style="
             width: 100%;
-            max-width: 500px;
+            max-width: 650px;
             height: auto;
             margin: 0 auto 2rem;
             display: block;
+            mask: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
         "
         >
-      <h1>Track 2: RPG Speedrunning</h1>
-      <p>This track challenges agents to complete a full Pokémon role-playing game as quickly and efficiently as possible, navigating a massive, partially observable world with hundreds of NPCs and thousands of possible actions.</p>
-      <p>Long-horizon planning, efficient exploration, and strategic resource management are critical to succeeding in this track.</p>
+        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+          This track challenges agents to complete a full Pokémon role-playing game as quickly and efficiently as possible, navigating a massive, partially observable world with hundreds of NPCs and thousands of possible actions.
+          <br><br>
+          Long-horizon planning, efficient exploration, and strategic resource management are critical to succeeding in this track. Agents must learn to balance immediate objectives with long-term strategic goals, making decisions that span thousands of timesteps while adapting to the unpredictable nature of RPG gameplay.
+          <br><br>
+          The speedrunning challenge pushes AI systems to their limits in sequential decision-making, requiring sophisticated planning algorithms and efficient resource management to achieve optimal completion times in complex, open-world environments.
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('resources').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </div>
   </section>
 

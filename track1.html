@@ -27,22 +27,24 @@
   </header>
 
   <!-- Track 1 Section -->
-  <section class="hero" style="height: auto; padding: 4rem 0; background: var(--light-color); color: var(--dark-color); text-align: left; mask: none; -webkit-mask: none;">
+  <section class="hero" style="height: auto; padding: 4rem 0; background: radial-gradient(ellipse 150% 100% at 50% 30%, #fff4e6, #ffb366); color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); position: relative;">
     <div class="container">
         <img
-        src="media/figures/track1.png"
+        src="media/figures/track1_no_bg.png"
         alt="Track 1 Logo"
         style="
             width: 100%;
-            max-width: 500px;
+            max-width: 650px;
             height: auto;
             margin: 0 auto 2rem;
             display: block;
+            mask: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
         "
         >
-        <p>
+        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
           Pokémon Showdown is an open-source simulator that brings Pokémon's turn-based 
-          combat to a competitive online community with thousands of daily players.
+          combat to a competitive community with thousands of daily players.
           Competitive Pokémon battles are two-player, stochastic, imperfect-information 
           games. Players build teams of Pokémon and compete head-to-head. 
           Turn outcomes are uncertain and governed by complex mechanics with endless 
@@ -54,22 +56,38 @@
           opponent's strategies. This combination of randomness, partial observability, 
           and team diversity presents a daunting challenge for AI agents that stresses the ability
           to plan and generalize.
-        </p>
-
-        <br>
-
-        <p>
+          <br><br>
           While Pokémon Showdown "battle bots" have a long history, powerful language models,
           large-scale reinforcement learning datasets, and open-source resources have driven 
           a fresh surge in interest from the ML research community. Recent methods have 
           achieved human-level performance in popular singles rulesets. How much further can we push the 
           boundaries of Competitive Pokémon AI? Join Track 1 of the PokéAgent Challenge 
           to help find out!
-        </p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('starter-kits').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+  </section>
 
-        <br>
-
-        <p>
+  <!-- Starter Kits Section -->
+  <section id="starter-kits">
+    <div class="container">
+      <h2 class="text-center mb-2">Starter Kits</h2>
+      <p class="track-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+        Choose your starting agent and jump into the world of Competitive Pokémon AI!
+      </p>
+      <br>
+      <div class="track-links">
+        <a href="https://github.com/UT-Austin-RPL/metamon" class="track-link" target="_blank">
+          <img src="media/figures/metamon.png" alt="Metamon Starter Kit" class="track-image">
+        </a>
+        <a href="https://github.com/sethkarten/pokechamp" class="track-link" target="_blank">
+          <img src="media/figures/pokechamp.png" alt="PokéChamp Starter Kit" class="track-image">
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Submission Guidelines -->
   <section style="background-color: #f5f5f5;">
