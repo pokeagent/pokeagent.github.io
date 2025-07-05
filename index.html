@@ -150,6 +150,30 @@
         </div>
     </section>
 
+    <!-- Citation Section -->
+    <section id="citation" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-2">Cite This Work</h2>
+            <p class="text-center mb-2" style="font-size: 1.1rem; color: #666;">
+                If you use this competition in your research, please cite our paper:
+            </p>
+            <div class="citation-box">
+                <pre><code>@inproceedings{karten2025pokeagent,
+  title        = {The PokeAgent Challenge: Competitive and Long-Context Learning at Scale},
+  author       = {Karten, Seth and Grigsby, Jake and Milani, Stephanie and Vodrahalli, Kiran
+                  and Zhang, Amy and Fang, Fei and Zhu, Yuke and Jin, Chi},
+  booktitle    = {NeurIPS Competition Track},
+  year         = {2025},
+  month        = apr,
+}</code></pre>
+                <button class="btn btn-copy" onclick="copyCitation()">
+                    <i class="fas fa-copy"></i>
+                    Copy Citation
+                </button>
+            </div>
+        </div>
+    </section>
+
   
 <!-- 
     Registration Section
@@ -253,6 +277,33 @@
                 }
             });
         });
+
+        // Copy citation function
+        function copyCitation() {
+            const citationText = `@inproceedings{karten2025pokeagent,
+  title        = {The PokeAgent Challenge: Competitive and Long-Context Learning at Scale},
+  author       = {Karten, Seth and Grigsby, Jake and Milani, Stephanie and Vodrahalli, Kiran
+                  and Zhang, Amy and Fang, Fei and Zhu, Yuke and Jin, Chi},
+  booktitle    = {NeurIPS Competition Track},
+  year         = {2025},
+  month        = apr,
+}`;
+            
+            navigator.clipboard.writeText(citationText).then(() => {
+                const button = document.querySelector('.btn-copy');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.backgroundColor = '#28a745';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.backgroundColor = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy citation: ', err);
+                alert('Failed to copy citation. Please select and copy the text manually.');
+            });
+        }
     </script>
 </body>
 </html>
