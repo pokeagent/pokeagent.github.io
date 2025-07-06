@@ -6,6 +6,11 @@
     <title>PokéAgent Challenge - NeurIPS 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload DeepMind logo -->
+    <link rel="preload"
+          href="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind-text.svg"
+          as="image">
 </head>
 <body>
     <!-- Header -->
@@ -20,6 +25,7 @@
                     <li><a href="track1.html">Track 1</a></li>
                     <li><a href="track2.html">Track 2</a></li>
                     <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
         </div>
@@ -98,6 +104,47 @@
                 <i class="fab fa-discord"></i>
                 Join Our Discord Server
             </a>
+        </div>
+    </section>
+
+    <!-- Sponsorship Section -->
+    <section id="sponsors">
+        <div class="container">
+            <h2 class="text-center mb-2">Our Sponsors</h2>
+            <div class="sponsors-container">
+                <div class="current-sponsors">
+                    <h3 class="text-center mb-2">Current Sponsors</h3>
+                    <div class="sponsor-logos">
+                        <div class="sponsor-item">
+                            <div class="deepmind-logo-combined">
+                                <img src="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind.svg"
+                                     alt="DeepMind icon"
+                                     width="72" height="72"
+                                     loading="lazy"
+                                     class="deepmind-icon">
+                                <img src="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind-text.svg"
+                                     alt="DeepMind text"
+                                     width="360" height="72"
+                                     loading="lazy"
+                                     class="deepmind-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sponsor-cta">
+                    <h3 class="text-center mb-2">Become a Sponsor</h3>
+                    <p class="text-center mb-2" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        We're actively seeking additional sponsors to support this groundbreaking AI competition. 
+                        Sponsorship opportunities include prize pool contributions, infrastructure support, and more.
+                    </p>
+                    <div class="text-center" style="margin-top: 1.5rem;">
+                        <a href="mailto:pokeagentchallenge@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us About Sponsorship
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
