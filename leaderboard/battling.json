@@ -4,134 +4,2699 @@
     "rank": 1,
     "username": "Sample Player 1",
     "elo": 1510,
-    "gxe": 89.48485466264555,
+    "gxe": 89.49007672164672,
     "glicko": "1620 ? 25",
-    "timestamp": "2025-07-07T23:10:10.416Z"
+    "timestamp": "2025-07-07T23:10:52.365Z"
   },
   {
     "format": "gen1ou",
     "rank": 2,
     "username": "Sample Player 2",
     "elo": 1520,
-    "gxe": 93.67900337949416,
+    "gxe": 86.27678615588344,
     "glicko": "1640 ? 30",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen1ou",
     "rank": 3,
     "username": "Sample Player 3",
     "elo": 1530,
-    "gxe": 90.05315205892252,
+    "gxe": 91.6206681501488,
     "glicko": "1660 ? 35",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen1ou",
     "rank": 4,
     "username": "Sample Player 4",
     "elo": 1540,
-    "gxe": 87.42147729993422,
+    "gxe": 89.3033777548481,
     "glicko": "1680 ? 40",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen1ou",
     "rank": 5,
     "username": "Sample Player 5",
     "elo": 1550,
-    "gxe": 94.25897397870247,
+    "gxe": 91.57457403418302,
     "glicko": "1700 ? 45",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 6,
+    "username": "Sample Player 6",
+    "elo": 1560,
+    "gxe": 93.95266787770953,
+    "glicko": "1720 ? 50",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 7,
+    "username": "Sample Player 7",
+    "elo": 1570,
+    "gxe": 87.65360958207566,
+    "glicko": "1740 ? 55",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 8,
+    "username": "Sample Player 8",
+    "elo": 1580,
+    "gxe": 91.88482295079133,
+    "glicko": "1760 ? 60",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 9,
+    "username": "Sample Player 9",
+    "elo": 1590,
+    "gxe": 94.78609089347712,
+    "glicko": "1780 ? 65",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 10,
+    "username": "Sample Player 10",
+    "elo": 1600,
+    "gxe": 93.02296105606973,
+    "glicko": "1800 ? 70",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 11,
+    "username": "Sample Player 11",
+    "elo": 1610,
+    "gxe": 89.24030942566264,
+    "glicko": "1820 ? 75",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 12,
+    "username": "Sample Player 12",
+    "elo": 1620,
+    "gxe": 85.68343483174716,
+    "glicko": "1840 ? 80",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 13,
+    "username": "Sample Player 13",
+    "elo": 1630,
+    "gxe": 93.60741332948311,
+    "glicko": "1860 ? 85",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 14,
+    "username": "Sample Player 14",
+    "elo": 1640,
+    "gxe": 92.86364199783198,
+    "glicko": "1880 ? 90",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 15,
+    "username": "Sample Player 15",
+    "elo": 1650,
+    "gxe": 89.33842358191903,
+    "glicko": "1900 ? 95",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 16,
+    "username": "Sample Player 16",
+    "elo": 1660,
+    "gxe": 87.2286386756361,
+    "glicko": "1920 ? 100",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 17,
+    "username": "Sample Player 17",
+    "elo": 1670,
+    "gxe": 87.28449991158925,
+    "glicko": "1940 ? 105",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 18,
+    "username": "Sample Player 18",
+    "elo": 1680,
+    "gxe": 85.3546774870894,
+    "glicko": "1960 ? 110",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 19,
+    "username": "Sample Player 19",
+    "elo": 1690,
+    "gxe": 86.94303037049575,
+    "glicko": "1980 ? 115",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 20,
+    "username": "Sample Player 20",
+    "elo": 1700,
+    "gxe": 87.28822470754852,
+    "glicko": "2000 ? 120",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 21,
+    "username": "Sample Player 21",
+    "elo": 1710,
+    "gxe": 94.26354396179352,
+    "glicko": "2020 ? 125",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 22,
+    "username": "Sample Player 22",
+    "elo": 1720,
+    "gxe": 87.86533310506961,
+    "glicko": "2040 ? 130",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 23,
+    "username": "Sample Player 23",
+    "elo": 1730,
+    "gxe": 85.79240523378714,
+    "glicko": "2060 ? 135",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 24,
+    "username": "Sample Player 24",
+    "elo": 1740,
+    "gxe": 94.49876985614833,
+    "glicko": "2080 ? 140",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 25,
+    "username": "Sample Player 25",
+    "elo": 1750,
+    "gxe": 86.74409126754371,
+    "glicko": "2100 ? 145",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 26,
+    "username": "Sample Player 26",
+    "elo": 1760,
+    "gxe": 89.98133495466293,
+    "glicko": "2120 ? 150",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 27,
+    "username": "Sample Player 27",
+    "elo": 1770,
+    "gxe": 86.77789627865491,
+    "glicko": "2140 ? 155",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 28,
+    "username": "Sample Player 28",
+    "elo": 1780,
+    "gxe": 91.93531023129519,
+    "glicko": "2160 ? 160",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 29,
+    "username": "Sample Player 29",
+    "elo": 1790,
+    "gxe": 92.96262782007146,
+    "glicko": "2180 ? 165",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 30,
+    "username": "Sample Player 30",
+    "elo": 1800,
+    "gxe": 91.61348918021388,
+    "glicko": "2200 ? 170",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 31,
+    "username": "Sample Player 31",
+    "elo": 1810,
+    "gxe": 86.17632089424394,
+    "glicko": "2220 ? 175",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 32,
+    "username": "Sample Player 32",
+    "elo": 1820,
+    "gxe": 88.83733371940319,
+    "glicko": "2240 ? 180",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 33,
+    "username": "Sample Player 33",
+    "elo": 1830,
+    "gxe": 93.23277197259912,
+    "glicko": "2260 ? 185",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 34,
+    "username": "Sample Player 34",
+    "elo": 1840,
+    "gxe": 88.912989892167,
+    "glicko": "2280 ? 190",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 35,
+    "username": "Sample Player 35",
+    "elo": 1850,
+    "gxe": 85.24535619031305,
+    "glicko": "2300 ? 195",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 36,
+    "username": "Sample Player 36",
+    "elo": 1860,
+    "gxe": 90.59486499669988,
+    "glicko": "2320 ? 200",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 37,
+    "username": "Sample Player 37",
+    "elo": 1870,
+    "gxe": 87.41463387701012,
+    "glicko": "2340 ? 205",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 38,
+    "username": "Sample Player 38",
+    "elo": 1880,
+    "gxe": 88.78050186754467,
+    "glicko": "2360 ? 210",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 39,
+    "username": "Sample Player 39",
+    "elo": 1890,
+    "gxe": 89.18493534534976,
+    "glicko": "2380 ? 215",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 40,
+    "username": "Sample Player 40",
+    "elo": 1900,
+    "gxe": 89.60099398239598,
+    "glicko": "2400 ? 220",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 41,
+    "username": "Sample Player 41",
+    "elo": 1910,
+    "gxe": 91.47080866293312,
+    "glicko": "2420 ? 225",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 42,
+    "username": "Sample Player 42",
+    "elo": 1920,
+    "gxe": 93.4211075677558,
+    "glicko": "2440 ? 230",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 43,
+    "username": "Sample Player 43",
+    "elo": 1930,
+    "gxe": 88.44320912886971,
+    "glicko": "2460 ? 235",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 44,
+    "username": "Sample Player 44",
+    "elo": 1940,
+    "gxe": 90.49379230981924,
+    "glicko": "2480 ? 240",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 45,
+    "username": "Sample Player 45",
+    "elo": 1950,
+    "gxe": 93.16450479214781,
+    "glicko": "2500 ? 245",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 46,
+    "username": "Sample Player 46",
+    "elo": 1960,
+    "gxe": 93.60285342491807,
+    "glicko": "2520 ? 250",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 47,
+    "username": "Sample Player 47",
+    "elo": 1970,
+    "gxe": 93.43423110818279,
+    "glicko": "2540 ? 255",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 48,
+    "username": "Sample Player 48",
+    "elo": 1980,
+    "gxe": 85.23354656142469,
+    "glicko": "2560 ? 260",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 49,
+    "username": "Sample Player 49",
+    "elo": 1990,
+    "gxe": 85.15695910007345,
+    "glicko": "2580 ? 265",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 50,
+    "username": "Sample Player 50",
+    "elo": 2000,
+    "gxe": 85.51163679409281,
+    "glicko": "2600 ? 270",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 51,
+    "username": "Sample Player 51",
+    "elo": 2010,
+    "gxe": 92.1094843703945,
+    "glicko": "2620 ? 275",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 52,
+    "username": "Sample Player 52",
+    "elo": 2020,
+    "gxe": 94.625852468635,
+    "glicko": "2640 ? 280",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 53,
+    "username": "Sample Player 53",
+    "elo": 2030,
+    "gxe": 94.24006423390472,
+    "glicko": "2660 ? 285",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 54,
+    "username": "Sample Player 54",
+    "elo": 2040,
+    "gxe": 93.54550093477123,
+    "glicko": "2680 ? 290",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 55,
+    "username": "Sample Player 55",
+    "elo": 2050,
+    "gxe": 93.2937084236228,
+    "glicko": "2700 ? 295",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 56,
+    "username": "Sample Player 56",
+    "elo": 2060,
+    "gxe": 87.80710016055235,
+    "glicko": "2720 ? 300",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 57,
+    "username": "Sample Player 57",
+    "elo": 2070,
+    "gxe": 94.55244827563749,
+    "glicko": "2740 ? 305",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 58,
+    "username": "Sample Player 58",
+    "elo": 2080,
+    "gxe": 87.3789877430095,
+    "glicko": "2760 ? 310",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 59,
+    "username": "Sample Player 59",
+    "elo": 2090,
+    "gxe": 90.4740682444888,
+    "glicko": "2780 ? 315",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 60,
+    "username": "Sample Player 60",
+    "elo": 2100,
+    "gxe": 94.44945842558052,
+    "glicko": "2800 ? 320",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 61,
+    "username": "Sample Player 61",
+    "elo": 2110,
+    "gxe": 85.0172799718736,
+    "glicko": "2820 ? 325",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 62,
+    "username": "Sample Player 62",
+    "elo": 2120,
+    "gxe": 92.16690215718218,
+    "glicko": "2840 ? 330",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 63,
+    "username": "Sample Player 63",
+    "elo": 2130,
+    "gxe": 90.75468914746193,
+    "glicko": "2860 ? 335",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 64,
+    "username": "Sample Player 64",
+    "elo": 2140,
+    "gxe": 93.37895148740621,
+    "glicko": "2880 ? 340",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 65,
+    "username": "Sample Player 65",
+    "elo": 2150,
+    "gxe": 94.10096883753627,
+    "glicko": "2900 ? 345",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 66,
+    "username": "Sample Player 66",
+    "elo": 2160,
+    "gxe": 93.9758521823805,
+    "glicko": "2920 ? 350",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 67,
+    "username": "Sample Player 67",
+    "elo": 2170,
+    "gxe": 89.48906600416555,
+    "glicko": "2940 ? 355",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 68,
+    "username": "Sample Player 68",
+    "elo": 2180,
+    "gxe": 91.46899366156205,
+    "glicko": "2960 ? 360",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 69,
+    "username": "Sample Player 69",
+    "elo": 2190,
+    "gxe": 88.38505924607489,
+    "glicko": "2980 ? 365",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 70,
+    "username": "Sample Player 70",
+    "elo": 2200,
+    "gxe": 94.35607804307259,
+    "glicko": "3000 ? 370",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 71,
+    "username": "Sample Player 71",
+    "elo": 2210,
+    "gxe": 88.91560419038315,
+    "glicko": "3020 ? 375",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 72,
+    "username": "Sample Player 72",
+    "elo": 2220,
+    "gxe": 91.68603197015514,
+    "glicko": "3040 ? 380",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 73,
+    "username": "Sample Player 73",
+    "elo": 2230,
+    "gxe": 92.55527741506698,
+    "glicko": "3060 ? 385",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 74,
+    "username": "Sample Player 74",
+    "elo": 2240,
+    "gxe": 86.38426218727572,
+    "glicko": "3080 ? 390",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 75,
+    "username": "Sample Player 75",
+    "elo": 2250,
+    "gxe": 85.90678686835221,
+    "glicko": "3100 ? 395",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 76,
+    "username": "Sample Player 76",
+    "elo": 2260,
+    "gxe": 85.65981762828223,
+    "glicko": "3120 ? 400",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 77,
+    "username": "Sample Player 77",
+    "elo": 2270,
+    "gxe": 91.95713843118648,
+    "glicko": "3140 ? 405",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 78,
+    "username": "Sample Player 78",
+    "elo": 2280,
+    "gxe": 89.86546858418306,
+    "glicko": "3160 ? 410",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 79,
+    "username": "Sample Player 79",
+    "elo": 2290,
+    "gxe": 89.29636316099013,
+    "glicko": "3180 ? 415",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 80,
+    "username": "Sample Player 80",
+    "elo": 2300,
+    "gxe": 94.21345231442953,
+    "glicko": "3200 ? 420",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 81,
+    "username": "Sample Player 81",
+    "elo": 2310,
+    "gxe": 92.04632424872074,
+    "glicko": "3220 ? 425",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 82,
+    "username": "Sample Player 82",
+    "elo": 2320,
+    "gxe": 90.09215815873786,
+    "glicko": "3240 ? 430",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 83,
+    "username": "Sample Player 83",
+    "elo": 2330,
+    "gxe": 87.79874735331703,
+    "glicko": "3260 ? 435",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 84,
+    "username": "Sample Player 84",
+    "elo": 2340,
+    "gxe": 93.56333746936767,
+    "glicko": "3280 ? 440",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 85,
+    "username": "Sample Player 85",
+    "elo": 2350,
+    "gxe": 93.30549035228587,
+    "glicko": "3300 ? 445",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 86,
+    "username": "Sample Player 86",
+    "elo": 2360,
+    "gxe": 93.0773004953709,
+    "glicko": "3320 ? 450",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 87,
+    "username": "Sample Player 87",
+    "elo": 2370,
+    "gxe": 90.5758912344684,
+    "glicko": "3340 ? 455",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 88,
+    "username": "Sample Player 88",
+    "elo": 2380,
+    "gxe": 94.87985102732607,
+    "glicko": "3360 ? 460",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 89,
+    "username": "Sample Player 89",
+    "elo": 2390,
+    "gxe": 85.06475621825115,
+    "glicko": "3380 ? 465",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 90,
+    "username": "Sample Player 90",
+    "elo": 2400,
+    "gxe": 93.95982157489222,
+    "glicko": "3400 ? 470",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 91,
+    "username": "Sample Player 91",
+    "elo": 2410,
+    "gxe": 87.24231346307073,
+    "glicko": "3420 ? 475",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 92,
+    "username": "Sample Player 92",
+    "elo": 2420,
+    "gxe": 92.17008760063686,
+    "glicko": "3440 ? 480",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 93,
+    "username": "Sample Player 93",
+    "elo": 2430,
+    "gxe": 85.82976413816915,
+    "glicko": "3460 ? 485",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 94,
+    "username": "Sample Player 94",
+    "elo": 2440,
+    "gxe": 89.87523897780413,
+    "glicko": "3480 ? 490",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 95,
+    "username": "Sample Player 95",
+    "elo": 2450,
+    "gxe": 86.88689869709171,
+    "glicko": "3500 ? 495",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 96,
+    "username": "Sample Player 96",
+    "elo": 2460,
+    "gxe": 93.87608729175227,
+    "glicko": "3520 ? 500",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 97,
+    "username": "Sample Player 97",
+    "elo": 2470,
+    "gxe": 88.31312242733712,
+    "glicko": "3540 ? 505",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 98,
+    "username": "Sample Player 98",
+    "elo": 2480,
+    "gxe": 93.05296596978246,
+    "glicko": "3560 ? 510",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 99,
+    "username": "Sample Player 99",
+    "elo": 2490,
+    "gxe": 93.81491956938036,
+    "glicko": "3580 ? 515",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 100,
+    "username": "Sample Player 100",
+    "elo": 2500,
+    "gxe": 88.60041195361427,
+    "glicko": "3600 ? 520",
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9ou",
     "rank": 1,
     "username": "Sample Player 1",
     "elo": 1510,
-    "gxe": 85.17684081795562,
+    "gxe": 85.31693781550698,
     "glicko": "1620 ? 25",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9ou",
     "rank": 2,
     "username": "Sample Player 2",
     "elo": 1520,
-    "gxe": 91.25681196189798,
+    "gxe": 87.17863487056898,
     "glicko": "1640 ? 30",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9ou",
     "rank": 3,
     "username": "Sample Player 3",
     "elo": 1530,
-    "gxe": 94.50624387693281,
+    "gxe": 91.32650687442104,
     "glicko": "1660 ? 35",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9ou",
     "rank": 4,
     "username": "Sample Player 4",
     "elo": 1540,
-    "gxe": 87.21357038176005,
+    "gxe": 92.70811954227884,
     "glicko": "1680 ? 40",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9ou",
     "rank": 5,
     "username": "Sample Player 5",
     "elo": 1550,
-    "gxe": 87.78008049756242,
+    "gxe": 94.30066411729833,
     "glicko": "1700 ? 45",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 6,
+    "username": "Sample Player 6",
+    "elo": 1560,
+    "gxe": 91.01477944614737,
+    "glicko": "1720 ? 50",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 7,
+    "username": "Sample Player 7",
+    "elo": 1570,
+    "gxe": 92.69871437436115,
+    "glicko": "1740 ? 55",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 8,
+    "username": "Sample Player 8",
+    "elo": 1580,
+    "gxe": 94.55135543102777,
+    "glicko": "1760 ? 60",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 9,
+    "username": "Sample Player 9",
+    "elo": 1590,
+    "gxe": 93.31224190708859,
+    "glicko": "1780 ? 65",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 10,
+    "username": "Sample Player 10",
+    "elo": 1600,
+    "gxe": 91.88508100827403,
+    "glicko": "1800 ? 70",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 11,
+    "username": "Sample Player 11",
+    "elo": 1610,
+    "gxe": 86.35609182642725,
+    "glicko": "1820 ? 75",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 12,
+    "username": "Sample Player 12",
+    "elo": 1620,
+    "gxe": 89.30510042586258,
+    "glicko": "1840 ? 80",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 13,
+    "username": "Sample Player 13",
+    "elo": 1630,
+    "gxe": 93.39206290585366,
+    "glicko": "1860 ? 85",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 14,
+    "username": "Sample Player 14",
+    "elo": 1640,
+    "gxe": 93.54124114973064,
+    "glicko": "1880 ? 90",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 15,
+    "username": "Sample Player 15",
+    "elo": 1650,
+    "gxe": 85.97081074803226,
+    "glicko": "1900 ? 95",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 16,
+    "username": "Sample Player 16",
+    "elo": 1660,
+    "gxe": 91.51580857440075,
+    "glicko": "1920 ? 100",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 17,
+    "username": "Sample Player 17",
+    "elo": 1670,
+    "gxe": 87.79556271396233,
+    "glicko": "1940 ? 105",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 18,
+    "username": "Sample Player 18",
+    "elo": 1680,
+    "gxe": 93.27309632011973,
+    "glicko": "1960 ? 110",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 19,
+    "username": "Sample Player 19",
+    "elo": 1690,
+    "gxe": 87.71173813004681,
+    "glicko": "1980 ? 115",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 20,
+    "username": "Sample Player 20",
+    "elo": 1700,
+    "gxe": 92.34881659271727,
+    "glicko": "2000 ? 120",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 21,
+    "username": "Sample Player 21",
+    "elo": 1710,
+    "gxe": 93.68146795525172,
+    "glicko": "2020 ? 125",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 22,
+    "username": "Sample Player 22",
+    "elo": 1720,
+    "gxe": 90.86962813680506,
+    "glicko": "2040 ? 130",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 23,
+    "username": "Sample Player 23",
+    "elo": 1730,
+    "gxe": 93.14744662927869,
+    "glicko": "2060 ? 135",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 24,
+    "username": "Sample Player 24",
+    "elo": 1740,
+    "gxe": 92.34450457073709,
+    "glicko": "2080 ? 140",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 25,
+    "username": "Sample Player 25",
+    "elo": 1750,
+    "gxe": 88.08303968273086,
+    "glicko": "2100 ? 145",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 26,
+    "username": "Sample Player 26",
+    "elo": 1760,
+    "gxe": 87.02067942044233,
+    "glicko": "2120 ? 150",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 27,
+    "username": "Sample Player 27",
+    "elo": 1770,
+    "gxe": 91.3403175729106,
+    "glicko": "2140 ? 155",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 28,
+    "username": "Sample Player 28",
+    "elo": 1780,
+    "gxe": 90.36880504580202,
+    "glicko": "2160 ? 160",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 29,
+    "username": "Sample Player 29",
+    "elo": 1790,
+    "gxe": 93.30646488736673,
+    "glicko": "2180 ? 165",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 30,
+    "username": "Sample Player 30",
+    "elo": 1800,
+    "gxe": 86.52686600219498,
+    "glicko": "2200 ? 170",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 31,
+    "username": "Sample Player 31",
+    "elo": 1810,
+    "gxe": 85.23669714915809,
+    "glicko": "2220 ? 175",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 32,
+    "username": "Sample Player 32",
+    "elo": 1820,
+    "gxe": 90.68902694028594,
+    "glicko": "2240 ? 180",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 33,
+    "username": "Sample Player 33",
+    "elo": 1830,
+    "gxe": 87.76333310206843,
+    "glicko": "2260 ? 185",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 34,
+    "username": "Sample Player 34",
+    "elo": 1840,
+    "gxe": 93.4412742360754,
+    "glicko": "2280 ? 190",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 35,
+    "username": "Sample Player 35",
+    "elo": 1850,
+    "gxe": 94.12410672387595,
+    "glicko": "2300 ? 195",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 36,
+    "username": "Sample Player 36",
+    "elo": 1860,
+    "gxe": 90.744084876632,
+    "glicko": "2320 ? 200",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 37,
+    "username": "Sample Player 37",
+    "elo": 1870,
+    "gxe": 88.51935282596077,
+    "glicko": "2340 ? 205",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 38,
+    "username": "Sample Player 38",
+    "elo": 1880,
+    "gxe": 85.70655447900408,
+    "glicko": "2360 ? 210",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 39,
+    "username": "Sample Player 39",
+    "elo": 1890,
+    "gxe": 94.22769503763766,
+    "glicko": "2380 ? 215",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 40,
+    "username": "Sample Player 40",
+    "elo": 1900,
+    "gxe": 93.12497042969594,
+    "glicko": "2400 ? 220",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 41,
+    "username": "Sample Player 41",
+    "elo": 1910,
+    "gxe": 89.2388895865358,
+    "glicko": "2420 ? 225",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 42,
+    "username": "Sample Player 42",
+    "elo": 1920,
+    "gxe": 86.70213763105964,
+    "glicko": "2440 ? 230",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 43,
+    "username": "Sample Player 43",
+    "elo": 1930,
+    "gxe": 94.963974617478,
+    "glicko": "2460 ? 235",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 44,
+    "username": "Sample Player 44",
+    "elo": 1940,
+    "gxe": 94.99890109277432,
+    "glicko": "2480 ? 240",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 45,
+    "username": "Sample Player 45",
+    "elo": 1950,
+    "gxe": 89.79950961753698,
+    "glicko": "2500 ? 245",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 46,
+    "username": "Sample Player 46",
+    "elo": 1960,
+    "gxe": 91.00392116506228,
+    "glicko": "2520 ? 250",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 47,
+    "username": "Sample Player 47",
+    "elo": 1970,
+    "gxe": 94.9232448516312,
+    "glicko": "2540 ? 255",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 48,
+    "username": "Sample Player 48",
+    "elo": 1980,
+    "gxe": 92.1977470813842,
+    "glicko": "2560 ? 260",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 49,
+    "username": "Sample Player 49",
+    "elo": 1990,
+    "gxe": 87.37824258703671,
+    "glicko": "2580 ? 265",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 50,
+    "username": "Sample Player 50",
+    "elo": 2000,
+    "gxe": 89.6236788620596,
+    "glicko": "2600 ? 270",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 51,
+    "username": "Sample Player 51",
+    "elo": 2010,
+    "gxe": 91.51642909472724,
+    "glicko": "2620 ? 275",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 52,
+    "username": "Sample Player 52",
+    "elo": 2020,
+    "gxe": 87.1588157480397,
+    "glicko": "2640 ? 280",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 53,
+    "username": "Sample Player 53",
+    "elo": 2030,
+    "gxe": 94.71880723422984,
+    "glicko": "2660 ? 285",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 54,
+    "username": "Sample Player 54",
+    "elo": 2040,
+    "gxe": 87.82236400893325,
+    "glicko": "2680 ? 290",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 55,
+    "username": "Sample Player 55",
+    "elo": 2050,
+    "gxe": 94.16759294569468,
+    "glicko": "2700 ? 295",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 56,
+    "username": "Sample Player 56",
+    "elo": 2060,
+    "gxe": 88.27825658540242,
+    "glicko": "2720 ? 300",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 57,
+    "username": "Sample Player 57",
+    "elo": 2070,
+    "gxe": 93.64508794644189,
+    "glicko": "2740 ? 305",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 58,
+    "username": "Sample Player 58",
+    "elo": 2080,
+    "gxe": 94.67770632828467,
+    "glicko": "2760 ? 310",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 59,
+    "username": "Sample Player 59",
+    "elo": 2090,
+    "gxe": 88.21577485995147,
+    "glicko": "2780 ? 315",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 60,
+    "username": "Sample Player 60",
+    "elo": 2100,
+    "gxe": 85.36122640977182,
+    "glicko": "2800 ? 320",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 61,
+    "username": "Sample Player 61",
+    "elo": 2110,
+    "gxe": 90.92957711141122,
+    "glicko": "2820 ? 325",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 62,
+    "username": "Sample Player 62",
+    "elo": 2120,
+    "gxe": 93.97584018870656,
+    "glicko": "2840 ? 330",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 63,
+    "username": "Sample Player 63",
+    "elo": 2130,
+    "gxe": 91.71683889797832,
+    "glicko": "2860 ? 335",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 64,
+    "username": "Sample Player 64",
+    "elo": 2140,
+    "gxe": 94.4786688527558,
+    "glicko": "2880 ? 340",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 65,
+    "username": "Sample Player 65",
+    "elo": 2150,
+    "gxe": 94.76915554731144,
+    "glicko": "2900 ? 345",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 66,
+    "username": "Sample Player 66",
+    "elo": 2160,
+    "gxe": 87.33074808075871,
+    "glicko": "2920 ? 350",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 67,
+    "username": "Sample Player 67",
+    "elo": 2170,
+    "gxe": 86.20494350509476,
+    "glicko": "2940 ? 355",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 68,
+    "username": "Sample Player 68",
+    "elo": 2180,
+    "gxe": 86.0454681501502,
+    "glicko": "2960 ? 360",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 69,
+    "username": "Sample Player 69",
+    "elo": 2190,
+    "gxe": 88.60315602342818,
+    "glicko": "2980 ? 365",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 70,
+    "username": "Sample Player 70",
+    "elo": 2200,
+    "gxe": 85.41182553608246,
+    "glicko": "3000 ? 370",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 71,
+    "username": "Sample Player 71",
+    "elo": 2210,
+    "gxe": 94.46756082081068,
+    "glicko": "3020 ? 375",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 72,
+    "username": "Sample Player 72",
+    "elo": 2220,
+    "gxe": 94.70743298688302,
+    "glicko": "3040 ? 380",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 73,
+    "username": "Sample Player 73",
+    "elo": 2230,
+    "gxe": 93.19438917144933,
+    "glicko": "3060 ? 385",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 74,
+    "username": "Sample Player 74",
+    "elo": 2240,
+    "gxe": 87.95969055268257,
+    "glicko": "3080 ? 390",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 75,
+    "username": "Sample Player 75",
+    "elo": 2250,
+    "gxe": 91.20627643953685,
+    "glicko": "3100 ? 395",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 76,
+    "username": "Sample Player 76",
+    "elo": 2260,
+    "gxe": 88.55545110128783,
+    "glicko": "3120 ? 400",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 77,
+    "username": "Sample Player 77",
+    "elo": 2270,
+    "gxe": 90.12971076514116,
+    "glicko": "3140 ? 405",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 78,
+    "username": "Sample Player 78",
+    "elo": 2280,
+    "gxe": 89.74691466344885,
+    "glicko": "3160 ? 410",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 79,
+    "username": "Sample Player 79",
+    "elo": 2290,
+    "gxe": 85.17056941307325,
+    "glicko": "3180 ? 415",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 80,
+    "username": "Sample Player 80",
+    "elo": 2300,
+    "gxe": 90.94942199805996,
+    "glicko": "3200 ? 420",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 81,
+    "username": "Sample Player 81",
+    "elo": 2310,
+    "gxe": 93.66398484387805,
+    "glicko": "3220 ? 425",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 82,
+    "username": "Sample Player 82",
+    "elo": 2320,
+    "gxe": 89.18822548682768,
+    "glicko": "3240 ? 430",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 83,
+    "username": "Sample Player 83",
+    "elo": 2330,
+    "gxe": 91.81094777144378,
+    "glicko": "3260 ? 435",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 84,
+    "username": "Sample Player 84",
+    "elo": 2340,
+    "gxe": 89.00374726896825,
+    "glicko": "3280 ? 440",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 85,
+    "username": "Sample Player 85",
+    "elo": 2350,
+    "gxe": 92.81309843123888,
+    "glicko": "3300 ? 445",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 86,
+    "username": "Sample Player 86",
+    "elo": 2360,
+    "gxe": 89.65633374316795,
+    "glicko": "3320 ? 450",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 87,
+    "username": "Sample Player 87",
+    "elo": 2370,
+    "gxe": 94.96089965948704,
+    "glicko": "3340 ? 455",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 88,
+    "username": "Sample Player 88",
+    "elo": 2380,
+    "gxe": 92.80365264993175,
+    "glicko": "3360 ? 460",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 89,
+    "username": "Sample Player 89",
+    "elo": 2390,
+    "gxe": 91.07105688342244,
+    "glicko": "3380 ? 465",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 90,
+    "username": "Sample Player 90",
+    "elo": 2400,
+    "gxe": 91.49941441981144,
+    "glicko": "3400 ? 470",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 91,
+    "username": "Sample Player 91",
+    "elo": 2410,
+    "gxe": 90.66020808152496,
+    "glicko": "3420 ? 475",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 92,
+    "username": "Sample Player 92",
+    "elo": 2420,
+    "gxe": 90.30979477528352,
+    "glicko": "3440 ? 480",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 93,
+    "username": "Sample Player 93",
+    "elo": 2430,
+    "gxe": 94.71297652718829,
+    "glicko": "3460 ? 485",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 94,
+    "username": "Sample Player 94",
+    "elo": 2440,
+    "gxe": 92.57692669625999,
+    "glicko": "3480 ? 490",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 95,
+    "username": "Sample Player 95",
+    "elo": 2450,
+    "gxe": 90.91948471423399,
+    "glicko": "3500 ? 495",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 96,
+    "username": "Sample Player 96",
+    "elo": 2460,
+    "gxe": 90.92426271106649,
+    "glicko": "3520 ? 500",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 97,
+    "username": "Sample Player 97",
+    "elo": 2470,
+    "gxe": 92.35312668660552,
+    "glicko": "3540 ? 505",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 98,
+    "username": "Sample Player 98",
+    "elo": 2480,
+    "gxe": 91.40755481837601,
+    "glicko": "3560 ? 510",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 99,
+    "username": "Sample Player 99",
+    "elo": 2490,
+    "gxe": 92.09430775446343,
+    "glicko": "3580 ? 515",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 100,
+    "username": "Sample Player 100",
+    "elo": 2500,
+    "gxe": 91.85362070286202,
+    "glicko": "3600 ? 520",
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9vgc2025regi",
     "rank": 1,
     "username": "Sample Player 1",
     "elo": 1510,
-    "gxe": 94.46853346143307,
+    "gxe": 92.27300241995111,
     "glicko": "1620 ? 25",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9vgc2025regi",
     "rank": 2,
     "username": "Sample Player 2",
     "elo": 1520,
-    "gxe": 91.86964881875203,
+    "gxe": 88.0740396489584,
     "glicko": "1640 ? 30",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9vgc2025regi",
     "rank": 3,
     "username": "Sample Player 3",
     "elo": 1530,
-    "gxe": 91.51710627336301,
+    "gxe": 93.05184153204506,
     "glicko": "1660 ? 35",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9vgc2025regi",
     "rank": 4,
     "username": "Sample Player 4",
     "elo": 1540,
-    "gxe": 85.5968261058518,
+    "gxe": 94.69645198740865,
     "glicko": "1680 ? 40",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
   },
   {
     "format": "gen9vgc2025regi",
     "rank": 5,
     "username": "Sample Player 5",
     "elo": 1550,
-    "gxe": 89.90820149061467,
+    "gxe": 89.31374352637597,
     "glicko": "1700 ? 45",
-    "timestamp": "2025-07-07T23:10:10.417Z"
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 6,
+    "username": "Sample Player 6",
+    "elo": 1560,
+    "gxe": 87.5287161344088,
+    "glicko": "1720 ? 50",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 7,
+    "username": "Sample Player 7",
+    "elo": 1570,
+    "gxe": 88.87795961265873,
+    "glicko": "1740 ? 55",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 8,
+    "username": "Sample Player 8",
+    "elo": 1580,
+    "gxe": 92.34484747047716,
+    "glicko": "1760 ? 60",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 9,
+    "username": "Sample Player 9",
+    "elo": 1590,
+    "gxe": 87.14379419398654,
+    "glicko": "1780 ? 65",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 10,
+    "username": "Sample Player 10",
+    "elo": 1600,
+    "gxe": 86.04368992297229,
+    "glicko": "1800 ? 70",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 11,
+    "username": "Sample Player 11",
+    "elo": 1610,
+    "gxe": 94.82257823989737,
+    "glicko": "1820 ? 75",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 12,
+    "username": "Sample Player 12",
+    "elo": 1620,
+    "gxe": 94.99981655849172,
+    "glicko": "1840 ? 80",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 13,
+    "username": "Sample Player 13",
+    "elo": 1630,
+    "gxe": 92.29990571001228,
+    "glicko": "1860 ? 85",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 14,
+    "username": "Sample Player 14",
+    "elo": 1640,
+    "gxe": 89.68763141482864,
+    "glicko": "1880 ? 90",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 15,
+    "username": "Sample Player 15",
+    "elo": 1650,
+    "gxe": 91.67725969135083,
+    "glicko": "1900 ? 95",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 16,
+    "username": "Sample Player 16",
+    "elo": 1660,
+    "gxe": 92.98691167742886,
+    "glicko": "1920 ? 100",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 17,
+    "username": "Sample Player 17",
+    "elo": 1670,
+    "gxe": 92.55634505284212,
+    "glicko": "1940 ? 105",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 18,
+    "username": "Sample Player 18",
+    "elo": 1680,
+    "gxe": 88.79529884169848,
+    "glicko": "1960 ? 110",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 19,
+    "username": "Sample Player 19",
+    "elo": 1690,
+    "gxe": 86.02405754119096,
+    "glicko": "1980 ? 115",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 20,
+    "username": "Sample Player 20",
+    "elo": 1700,
+    "gxe": 85.07836517467146,
+    "glicko": "2000 ? 120",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 21,
+    "username": "Sample Player 21",
+    "elo": 1710,
+    "gxe": 88.455879987717,
+    "glicko": "2020 ? 125",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 22,
+    "username": "Sample Player 22",
+    "elo": 1720,
+    "gxe": 88.1329393866647,
+    "glicko": "2040 ? 130",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 23,
+    "username": "Sample Player 23",
+    "elo": 1730,
+    "gxe": 87.04215673749806,
+    "glicko": "2060 ? 135",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 24,
+    "username": "Sample Player 24",
+    "elo": 1740,
+    "gxe": 86.29188093067972,
+    "glicko": "2080 ? 140",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 25,
+    "username": "Sample Player 25",
+    "elo": 1750,
+    "gxe": 91.91481189951227,
+    "glicko": "2100 ? 145",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 26,
+    "username": "Sample Player 26",
+    "elo": 1760,
+    "gxe": 92.28777189986414,
+    "glicko": "2120 ? 150",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 27,
+    "username": "Sample Player 27",
+    "elo": 1770,
+    "gxe": 88.58532823791438,
+    "glicko": "2140 ? 155",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 28,
+    "username": "Sample Player 28",
+    "elo": 1780,
+    "gxe": 86.61162111952662,
+    "glicko": "2160 ? 160",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 29,
+    "username": "Sample Player 29",
+    "elo": 1790,
+    "gxe": 94.89304132661498,
+    "glicko": "2180 ? 165",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 30,
+    "username": "Sample Player 30",
+    "elo": 1800,
+    "gxe": 89.53443601768257,
+    "glicko": "2200 ? 170",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 31,
+    "username": "Sample Player 31",
+    "elo": 1810,
+    "gxe": 90.49685838602463,
+    "glicko": "2220 ? 175",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 32,
+    "username": "Sample Player 32",
+    "elo": 1820,
+    "gxe": 88.74264795048435,
+    "glicko": "2240 ? 180",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 33,
+    "username": "Sample Player 33",
+    "elo": 1830,
+    "gxe": 93.74396210856283,
+    "glicko": "2260 ? 185",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 34,
+    "username": "Sample Player 34",
+    "elo": 1840,
+    "gxe": 93.99523901900108,
+    "glicko": "2280 ? 190",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 35,
+    "username": "Sample Player 35",
+    "elo": 1850,
+    "gxe": 93.39409105241003,
+    "glicko": "2300 ? 195",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 36,
+    "username": "Sample Player 36",
+    "elo": 1860,
+    "gxe": 86.72276152645077,
+    "glicko": "2320 ? 200",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 37,
+    "username": "Sample Player 37",
+    "elo": 1870,
+    "gxe": 87.6047858239154,
+    "glicko": "2340 ? 205",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 38,
+    "username": "Sample Player 38",
+    "elo": 1880,
+    "gxe": 93.02291707991068,
+    "glicko": "2360 ? 210",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 39,
+    "username": "Sample Player 39",
+    "elo": 1890,
+    "gxe": 92.02633885702792,
+    "glicko": "2380 ? 215",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 40,
+    "username": "Sample Player 40",
+    "elo": 1900,
+    "gxe": 90.5469238047456,
+    "glicko": "2400 ? 220",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 41,
+    "username": "Sample Player 41",
+    "elo": 1910,
+    "gxe": 86.89133650486036,
+    "glicko": "2420 ? 225",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 42,
+    "username": "Sample Player 42",
+    "elo": 1920,
+    "gxe": 93.73580978150343,
+    "glicko": "2440 ? 230",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 43,
+    "username": "Sample Player 43",
+    "elo": 1930,
+    "gxe": 91.44933020147076,
+    "glicko": "2460 ? 235",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 44,
+    "username": "Sample Player 44",
+    "elo": 1940,
+    "gxe": 85.84042004882008,
+    "glicko": "2480 ? 240",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 45,
+    "username": "Sample Player 45",
+    "elo": 1950,
+    "gxe": 91.53677832245451,
+    "glicko": "2500 ? 245",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 46,
+    "username": "Sample Player 46",
+    "elo": 1960,
+    "gxe": 86.62360859693838,
+    "glicko": "2520 ? 250",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 47,
+    "username": "Sample Player 47",
+    "elo": 1970,
+    "gxe": 87.90755244280703,
+    "glicko": "2540 ? 255",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 48,
+    "username": "Sample Player 48",
+    "elo": 1980,
+    "gxe": 93.07351789117533,
+    "glicko": "2560 ? 260",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 49,
+    "username": "Sample Player 49",
+    "elo": 1990,
+    "gxe": 90.0651967777856,
+    "glicko": "2580 ? 265",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 50,
+    "username": "Sample Player 50",
+    "elo": 2000,
+    "gxe": 87.96594622036274,
+    "glicko": "2600 ? 270",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 51,
+    "username": "Sample Player 51",
+    "elo": 2010,
+    "gxe": 87.37351532337149,
+    "glicko": "2620 ? 275",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 52,
+    "username": "Sample Player 52",
+    "elo": 2020,
+    "gxe": 93.13102680742227,
+    "glicko": "2640 ? 280",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 53,
+    "username": "Sample Player 53",
+    "elo": 2030,
+    "gxe": 87.48579600489288,
+    "glicko": "2660 ? 285",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 54,
+    "username": "Sample Player 54",
+    "elo": 2040,
+    "gxe": 89.35496390319373,
+    "glicko": "2680 ? 290",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 55,
+    "username": "Sample Player 55",
+    "elo": 2050,
+    "gxe": 94.14057937046462,
+    "glicko": "2700 ? 295",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 56,
+    "username": "Sample Player 56",
+    "elo": 2060,
+    "gxe": 94.78731570789762,
+    "glicko": "2720 ? 300",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 57,
+    "username": "Sample Player 57",
+    "elo": 2070,
+    "gxe": 86.99202431426639,
+    "glicko": "2740 ? 305",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 58,
+    "username": "Sample Player 58",
+    "elo": 2080,
+    "gxe": 94.99026508873106,
+    "glicko": "2760 ? 310",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 59,
+    "username": "Sample Player 59",
+    "elo": 2090,
+    "gxe": 85.23279760402279,
+    "glicko": "2780 ? 315",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 60,
+    "username": "Sample Player 60",
+    "elo": 2100,
+    "gxe": 88.18500241142576,
+    "glicko": "2800 ? 320",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 61,
+    "username": "Sample Player 61",
+    "elo": 2110,
+    "gxe": 89.03738641718196,
+    "glicko": "2820 ? 325",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 62,
+    "username": "Sample Player 62",
+    "elo": 2120,
+    "gxe": 93.77658467034877,
+    "glicko": "2840 ? 330",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 63,
+    "username": "Sample Player 63",
+    "elo": 2130,
+    "gxe": 91.58087990969565,
+    "glicko": "2860 ? 335",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 64,
+    "username": "Sample Player 64",
+    "elo": 2140,
+    "gxe": 88.13588869090762,
+    "glicko": "2880 ? 340",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 65,
+    "username": "Sample Player 65",
+    "elo": 2150,
+    "gxe": 88.27979525451406,
+    "glicko": "2900 ? 345",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 66,
+    "username": "Sample Player 66",
+    "elo": 2160,
+    "gxe": 86.26054303699128,
+    "glicko": "2920 ? 350",
+    "timestamp": "2025-07-07T23:10:52.367Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 67,
+    "username": "Sample Player 67",
+    "elo": 2170,
+    "gxe": 87.52892756395813,
+    "glicko": "2940 ? 355",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 68,
+    "username": "Sample Player 68",
+    "elo": 2180,
+    "gxe": 90.84868306878559,
+    "glicko": "2960 ? 360",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 69,
+    "username": "Sample Player 69",
+    "elo": 2190,
+    "gxe": 88.79466498330005,
+    "glicko": "2980 ? 365",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 70,
+    "username": "Sample Player 70",
+    "elo": 2200,
+    "gxe": 90.98117283318217,
+    "glicko": "3000 ? 370",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 71,
+    "username": "Sample Player 71",
+    "elo": 2210,
+    "gxe": 89.69278991266653,
+    "glicko": "3020 ? 375",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 72,
+    "username": "Sample Player 72",
+    "elo": 2220,
+    "gxe": 93.36462881005923,
+    "glicko": "3040 ? 380",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 73,
+    "username": "Sample Player 73",
+    "elo": 2230,
+    "gxe": 92.58230021274005,
+    "glicko": "3060 ? 385",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 74,
+    "username": "Sample Player 74",
+    "elo": 2240,
+    "gxe": 85.5452681789075,
+    "glicko": "3080 ? 390",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 75,
+    "username": "Sample Player 75",
+    "elo": 2250,
+    "gxe": 86.57930720365405,
+    "glicko": "3100 ? 395",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 76,
+    "username": "Sample Player 76",
+    "elo": 2260,
+    "gxe": 92.3754329668904,
+    "glicko": "3120 ? 400",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 77,
+    "username": "Sample Player 77",
+    "elo": 2270,
+    "gxe": 92.71939434686134,
+    "glicko": "3140 ? 405",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 78,
+    "username": "Sample Player 78",
+    "elo": 2280,
+    "gxe": 93.20248086313842,
+    "glicko": "3160 ? 410",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 79,
+    "username": "Sample Player 79",
+    "elo": 2290,
+    "gxe": 86.75682928703407,
+    "glicko": "3180 ? 415",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 80,
+    "username": "Sample Player 80",
+    "elo": 2300,
+    "gxe": 89.07565544046523,
+    "glicko": "3200 ? 420",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 81,
+    "username": "Sample Player 81",
+    "elo": 2310,
+    "gxe": 94.61002909890925,
+    "glicko": "3220 ? 425",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 82,
+    "username": "Sample Player 82",
+    "elo": 2320,
+    "gxe": 91.89632199169047,
+    "glicko": "3240 ? 430",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 83,
+    "username": "Sample Player 83",
+    "elo": 2330,
+    "gxe": 89.59162378226183,
+    "glicko": "3260 ? 435",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 84,
+    "username": "Sample Player 84",
+    "elo": 2340,
+    "gxe": 89.59020219980046,
+    "glicko": "3280 ? 440",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 85,
+    "username": "Sample Player 85",
+    "elo": 2350,
+    "gxe": 86.97348498995079,
+    "glicko": "3300 ? 445",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 86,
+    "username": "Sample Player 86",
+    "elo": 2360,
+    "gxe": 93.60224438454223,
+    "glicko": "3320 ? 450",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 87,
+    "username": "Sample Player 87",
+    "elo": 2370,
+    "gxe": 90.22356679218495,
+    "glicko": "3340 ? 455",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 88,
+    "username": "Sample Player 88",
+    "elo": 2380,
+    "gxe": 85.82735931792766,
+    "glicko": "3360 ? 460",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 89,
+    "username": "Sample Player 89",
+    "elo": 2390,
+    "gxe": 94.5585744275808,
+    "glicko": "3380 ? 465",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 90,
+    "username": "Sample Player 90",
+    "elo": 2400,
+    "gxe": 89.03379145483254,
+    "glicko": "3400 ? 470",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 91,
+    "username": "Sample Player 91",
+    "elo": 2410,
+    "gxe": 85.5788774654726,
+    "glicko": "3420 ? 475",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 92,
+    "username": "Sample Player 92",
+    "elo": 2420,
+    "gxe": 88.13040760202317,
+    "glicko": "3440 ? 480",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 93,
+    "username": "Sample Player 93",
+    "elo": 2430,
+    "gxe": 85.33777038725877,
+    "glicko": "3460 ? 485",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 94,
+    "username": "Sample Player 94",
+    "elo": 2440,
+    "gxe": 85.57728330723934,
+    "glicko": "3480 ? 490",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 95,
+    "username": "Sample Player 95",
+    "elo": 2450,
+    "gxe": 85.87356694158792,
+    "glicko": "3500 ? 495",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 96,
+    "username": "Sample Player 96",
+    "elo": 2460,
+    "gxe": 87.57530850110558,
+    "glicko": "3520 ? 500",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 97,
+    "username": "Sample Player 97",
+    "elo": 2470,
+    "gxe": 92.05247746423528,
+    "glicko": "3540 ? 505",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 98,
+    "username": "Sample Player 98",
+    "elo": 2480,
+    "gxe": 94.40555932783666,
+    "glicko": "3560 ? 510",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 99,
+    "username": "Sample Player 99",
+    "elo": 2490,
+    "gxe": 89.00643364911798,
+    "glicko": "3580 ? 515",
+    "timestamp": "2025-07-07T23:10:52.368Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 100,
+    "username": "Sample Player 100",
+    "elo": 2500,
+    "gxe": 89.67774615434897,
+    "glicko": "3600 ? 520",
+    "timestamp": "2025-07-07T23:10:52.368Z"
   }
 ]
