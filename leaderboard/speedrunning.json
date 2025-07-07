@@ -1,0 +1,37 @@
+[
+  {
+    "team": "Sneasler Time",
+    "runtime": "00:43.210",
+    "completion_percent": 100,
+    "video": "https://youtu.be/abc123def456",
+    "timestamp": "2025-07-07T17:13:25.000Z"
+  },
+  {
+    "team": "Ceruledge Runners",
+    "runtime": "00:46.312",
+    "completion_percent": 100,
+    "video": "https://youtu.be/flame999abc",
+    "timestamp": "2025-07-07T17:45:10.000Z"
+  },
+  {
+    "team": "Girafarig Drift",
+    "runtime": "00:51.433",
+    "completion_percent": 100,
+    "video": "https://youtu.be/yt987abc123",
+    "timestamp": "2025-07-07T17:22:44.000Z"
+  },
+  {
+    "team": "BroSpeed",
+    "runtime": "00:59.800",
+    "completion_percent": 96.5,
+    "video": "https://youtu.be/xyz987uvw654",
+    "timestamp": "2025-07-07T17:18:11.000Z"
+  },
+  {
+    "team": "Brute Force Bonnet",
+    "runtime": "01:02.700",
+    "completion_percent": 92,
+    "video": "https://youtu.be/qwerty321zxc",
+    "timestamp": "2025-07-07T17:30:00.000Z"
+  }
+]
