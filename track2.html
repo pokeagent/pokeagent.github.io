@@ -20,6 +20,7 @@
         <li><a href="track1.html">Track 1</a></li>
         <li><a href="track2.html">Track 2</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="rules.html">Rules</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
@@ -122,9 +123,23 @@
       </p>
       <br>
       <div class="track-links">
-        <a href="https://github.com/sethkarten" class="track-link" target="_blank">
+        <a href="https://github.com/sethkarten/pokeagent-speedrun" class="track-link" target="_blank">
           <img src="media/figures/loop.png" alt="Agent Starter Kit" class="track-image">
         </a>
+      </div>
+      <div class="text-center mt-2">
+        <a href="https://github.com/sethkarten/pokeagent-speedrun" class="btn btn-primary" target="_blank">
+          <i class="fab fa-github"></i> View Starter Kit Repository
+        </a>
+      </div>
+      <div class="card mt-2" style="max-width: 800px; margin: 0 auto;">
+        <h3>What's Included</h3>
+        <ul>
+          <li><strong>Agent Scaffolding:</strong> Modular framework for building Pokémon Emerald speedrunning agents</li>
+          <li><strong>Pokémon Emerald Wrapper:</strong> Custom emulator API for real-time game interaction</li>
+          <li><strong>Baseline Implementation:</strong> Reference agent with VLM setup and basic planning</li>
+          <li><strong>Evaluation Tools:</strong> Automated testing and performance measurement</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -135,15 +150,33 @@
       <h2>Submission Guidelines</h2>
       <div class="card">
         <h3>How to Submit for Track 2</h3>
-        <p>Submissions for this track focus on achieving maximum game completion under time constraints.</p>
-        <ul>
-          <li>Python code implementing your agent</li>
-          <li>Configuration file specifying dependencies</li>
-          <li>Video recording of your agent's best run</li>
-          <li>Logs of inputs and outputs for verification</li>
-        </ul>
-        <p>Your agent must interact exclusively through our custom Pokémon Emerald emulator API. Use any method, as long as the final action comes from a neural network.</p>
-        <p>We will provide a baseline agent (scaffolding and VLM setup) and emulator API for beta testers.</p>
+        <p>Submissions for this track focus on achieving maximum game completion under time constraints. Your agent must interact exclusively through our custom Pokémon Emerald emulator API. Use any method, as long as the final action comes from a neural network.</p>
+        
+        <p><strong>Important:</strong> All submissions will undergo anti-cheat verification to ensure fair competition. This includes validation of agent behavior, action logs, and verification that submissions follow the competition rules.</p>
+        
+        <div class="text-center mt-3">
+          <a href="https://forms.gle/nFciH9DrT4RKC1vt9" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-paper-plane"></i> Submit Your Entry
+          </a>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Submission Requirements</h4>
+          <ul>
+            <li><strong>Code Archive:</strong> Your agent implementation as a ZIP or TAR.GZ file including all dependencies and README</li>
+            <li><strong>Action & State Logs:</strong> Detailed logs created by the starter kit repository during your agent's run</li>
+            <li><strong>Video Evidence:</strong> YouTube link to a screen recording showing the complete speedrun</li>
+          </ul>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Evaluation Criteria</h4>
+          <ul>
+            <li><strong>Milestone Completion:</strong> Percentage of game milestones accomplished</li>
+            <li><strong>Completion Time:</strong> Time taken to complete achieved milestones</li>
+            <li><strong>Reproducibility:</strong> Clear documentation and reproducible results</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -177,7 +210,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date">October 15, 2025</span>
+                    <span class="timeline-date">October 31st, 2025</span>
                     <h3>Results Announcement</h3>
                     <p>Final results announced, winners notified.</p>
                 </div>
@@ -213,19 +246,11 @@
             <li><a href="track1.html">Track 1</a></li>
             <li><a href="track2.html">Track 2</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="rules.html">Rules</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
-        <div class="footer-column">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">Starter Code</a></li>
-            <li><a href="#">Datasets</a></li>
-            <li><a href="#">Baseline Agents</a></li>
-            <li><a href="#">Knowledge Base</a></li>
-            <li><a href="#">Tutorials</a></li>
-          </ul>
-        </div>
+
         <div class="footer-column">
           <h3>Contact</h3>
           <p>For questions or support, please contact:</p>
