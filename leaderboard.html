@@ -20,6 +20,7 @@
         <li><a href="track1.html">Track 1</a></li>
         <li><a href="track2.html">Track 2</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="rules.html">Rules</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
@@ -31,53 +32,89 @@
       <h2 class="text-center mb-2">Leaderboard</h2>
       <p class="text-center mb-2">Current rankings for both competition tracks. Leaderboards are updated regularly throughout the competition.</p>
 
-      <h3>Track 1: Competitive Battling</h3>
-      <div class="card mb-2">
-        <table style="width: 100%; border-collapse: collapse;">
-          <thead>
-            <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-              <th style="padding: 12px;">Rank</th>
-              <th style="padding: 12px;">Team</th>
-              <th style="padding: 12px;">Rating</th>
-              <th style="padding: 12px;">Win Rate</th>
-              <th style="padding: 12px;">Last Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #ddd;">
-              <td style="padding: 12px;">1</td>
-              <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
-              <td style="padding: 12px;">-</td>
-              <td style="padding: 12px;">-</td>
-              <td style="padding: 12px;">-</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Tab Navigation -->
+      <!-- <div class="tab-container mb-2">
+        <button class="tab-button active" onclick="switchTab('speedrunning')">Track 2: RPG Speedrunning</button>
+        <button class="tab-button" onclick="switchTab('battling')">Track 1: Competitive Battling</button>
+      </div> -->
+
+      <!-- Battling Tab -->
+      <div id="battling-tab" class="tab-content">
+        <h3>Track 1: Competitive Battling</h3>
+        
+        <!-- Format Selector -->
+        <div class="format-selector mb-2">
+          <label for="format-select">Select Format:</label>
+          <select id="format-select" onchange="filterBattlingLeaderboard()">
+            <option value="all">All Formats</option>
+            <option value="gen1ou">Gen 1 OU</option>
+            <option value="gen9ou">Gen 9 OU</option>
+            <option value="gen9vgc2025regi">Gen 9 VGC 2025 Regulation</option>
+          </select>
+        </div>
+
+        <div class="card">
+          <div style="max-height: 300px; overflow-y: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+                  <th style="padding: 12px;">Rank</th>
+                  <th style="padding: 12px;">Format</th>
+                  <th style="padding: 12px;">Player</th>
+                  <th style="padding: 12px;">Elo</th>
+                  <th style="padding: 12px;">GXE</th>
+                  <th style="padding: 12px;">Glicko</th>
+                  <th style="padding: 12px;">Last Updated</th>
+                </tr>
+              </thead>
+              <tbody id="battling-leaderboard">
+                <tr style="border-bottom: 1px solid #ddd;">
+                  <td style="padding: 12px;">1</td>
+                  <td style="padding: 12px;">Loading leaderboard data...</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
-      <h3>Track 2: RPG Speedrunning</h3>
+      <!-- Speedrunning Tab -->
+      <div id="speedrunning-tab" class="tab-content active">
+        <h3>Track 2: RPG Speedrunning</h3>
       <div class="card">
-        <table style="width: 100%; border-collapse: collapse;">
-          <thead>
-            <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-              <th style="padding: 12px;">Rank</th>
-              <th style="padding: 12px;">Team</th>
-              <th style="padding: 12px;">Completion %</th>
-              <th style="padding: 12px;">Time (min)</th>
-              <th style="padding: 12px;">Last Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #ddd;">
-              <td style="padding: 12px;">1</td>
-              <td style="padding: 12px;">Leaderboard will be available after competition launch</td>
-              <td style="padding: 12px;">-</td>
-              <td style="padding: 12px;">-</td>
-              <td style="padding: 12px;">-</td>
-            </tr>
-          </tbody>
-        </table>
+        <div style="max-height: 300px; overflow-y: auto;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+              <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+                <th style="padding: 12px;">Rank</th>
+                <th style="padding: 12px;">Team</th>
+                <th style="padding: 12px;">Completion %</th>
+                <th style="padding: 12px;">Time (min)</th>
+                <th style="padding: 12px;">Video</th>
+                <th style="padding: 12px;">Last Updated</th>
+              </tr>
+            </thead>
+            <tbody id="speedrunning-leaderboard">
+              <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">1</td>
+                <td style="padding: 12px;">Loading leaderboard data...</td>
+                <td style="padding: 12px;">-</td>
+                <td style="padding: 12px;">-</td>
+                <td style="padding: 12px;">-</td>
+                <td style="padding: 12px;">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+    </div>
+
+      
     </div>
   </section>
 
@@ -102,19 +139,11 @@
             <li><a href="track1.html">Track 1</a></li>
             <li><a href="track2.html">Track 2</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="rules.html">Rules</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
-        <div class="footer-column">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">Starter Code</a></li>
-            <li><a href="#">Datasets</a></li>
-            <li><a href="#">Baseline Agents</a></li>
-            <li><a href="#">Knowledge Base</a></li>
-            <li><a href="#">Tutorials</a></li>
-          </ul>
-        </div>
+
         <div class="footer-column">
           <h3>Contact</h3>
           <p>For questions or support, please contact:</p>
@@ -143,6 +172,149 @@
         navMenu.classList.remove('active');
       });
     });
+
+    // Global variables for leaderboard data
+    let speedrunningData = [];
+    let battlingData = [];
+
+    // Tab switching function
+    // function switchTab(tabName) {
+    //   // Update tab buttons
+    //   document.querySelectorAll('.tab-button').forEach(button => {
+    //     button.classList.remove('active');
+    //   });
+    //   document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+      
+    //   // Update tab content
+    //   document.querySelectorAll('.tab-content').forEach(content => {
+    //     content.classList.remove('active');
+    //   });
+    //   document.getElementById(`${tabName}-tab`).classList.add('active');
+    // }
+
+    // Filter battling leaderboard by format
+    function filterBattlingLeaderboard() {
+      const formatSelect = document.getElementById('format-select');
+      const selectedFormat = formatSelect.value;
+      
+      const tableBody = document.getElementById("battling-leaderboard");
+      tableBody.innerHTML = '';
+      
+      let filteredData = battlingData;
+      if (selectedFormat !== 'all') {
+        filteredData = battlingData.filter(entry => entry.format === selectedFormat);
+        // Limit to top 100 for individual format
+        filteredData = filteredData.slice(0, 100);
+      } else {
+        // For "all formats", show top 100 from each format
+        const top100PerFormat = {};
+        battlingData.forEach(entry => {
+          if (!top100PerFormat[entry.format]) {
+            top100PerFormat[entry.format] = [];
+          }
+          if (top100PerFormat[entry.format].length < 100) {
+            top100PerFormat[entry.format].push(entry);
+          }
+        });
+        
+        // Combine all formats and sort
+        filteredData = [];
+        Object.values(top100PerFormat).forEach(formatData => {
+          filteredData.push(...formatData);
+        });
+      }
+      
+      // Sort by format, then by Elo (decreasing), then by name
+    //   filteredData.sort((a, b) => {
+    //     if (a.format !== b.format) {
+    //       return a.format.localeCompare(b.format);
+    //     }
+    //     // Sort by Elo (decreasing)
+    //     if (a.elo !== b.elo) {
+    //       return b.elo - a.elo;
+    //     }
+    //     // If Elo is the same, sort by name (decreasing)
+    //     return b.username.localeCompare(a.username);
+    //   });
+      
+      filteredData.forEach((entry, index) => {
+        const timestamp = new Date(entry.timestamp).toLocaleDateString();
+        const row = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">${entry.rank}</td>
+          <td style="padding: 12px;">${entry.format}</td>
+          <td style="padding: 12px;">${entry.username}</td>
+          <td style="padding: 12px;">${entry.elo}</td>
+          <td style="padding: 12px;">${entry.gxe}%</td>
+          <td style="padding: 12px;">${entry.glicko}</td>
+          <td style="padding: 12px;">${timestamp}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+
+    // Load speedrunning leaderboard data
+    fetch("leaderboard/speedrunning.json")
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load speedrunning leaderboard");
+        return res.json();
+      })
+      .then(data => {
+        speedrunningData = data;
+        const tableBody = document.getElementById("speedrunning-leaderboard");
+        tableBody.innerHTML = ''; // Clear loading message
+        
+        // Show all entries (up to 256) but display in scrollable area
+        const allEntries = data.slice(0, 100);
+        
+        allEntries.forEach((entry, index) => {
+          const timestamp = new Date(entry.timestamp).toLocaleDateString();
+          const row = `<tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 12px;">${index + 1}</td>
+            <td style="padding: 12px;">${entry.team}</td>
+            <td style="padding: 12px;">${entry.completion_percent.toFixed(1)}%</td>
+            <td style="padding: 12px;">${entry.runtime}</td>
+            <td style="padding: 12px;"><a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a></td>
+            <td style="padding: 12px;">${timestamp}</td>
+          </tr>`;
+          tableBody.innerHTML += row;
+        });
+      })
+      .catch(err => {
+        console.error("Error loading speedrunning leaderboard:", err);
+        const tableBody = document.getElementById("speedrunning-leaderboard");
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">Error loading speedrunning leaderboard data</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+        </tr>`;
+      });
+
+    // Load battling leaderboard data
+    fetch("leaderboard/battling.json")
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load battling leaderboard");
+        return res.json();
+      })
+      .then(data => {
+        battlingData = data;
+        filterBattlingLeaderboard(); // Initial load
+      })
+      .catch(err => {
+        console.error("Error loading battling leaderboard:", err);
+        const tableBody = document.getElementById("battling-leaderboard");
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">Error loading battling leaderboard data</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+        </tr>`;
+      });
   </script>
 </body>
 </html>
