@@ -6,6 +6,11 @@
     <title>PokéAgent Challenge - NeurIPS 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload DeepMind logo -->
+    <link rel="preload"
+          href="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind-text.svg"
+          as="image">
 </head>
 <body>
     <!-- Header -->
@@ -15,11 +20,12 @@
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-                <ul class="nav-menu">
+              <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="track1.html">Track 1</a></li>
                     <li><a href="track2.html">Track 2</a></li>
-                    <li><a href="leaderboard.html">Leaderboards</a></li>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
         </div>
@@ -94,10 +100,51 @@
             <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
                 Join the PokéAgent Challenge Discord server to register and connect with other participants!
             </p>
-            <a href="https://discord.gg/rRZjA5SQVT" class="btn btn-discord" target="_blank">
+            <a href="https://discord.gg/aPHdq8hTNM" class="btn btn-discord" target="_blank">
                 <i class="fab fa-discord"></i>
                 Join Our Discord Server
             </a>
+        </div>
+    </section>
+
+    <!-- Sponsorship Section -->
+    <section id="sponsors">
+        <div class="container">
+            <h2 class="text-center mb-2">Our Sponsors</h2>
+            <div class="sponsors-container">
+                <div class="current-sponsors">
+                    <h3 class="text-center mb-2">Current Sponsors</h3>
+                    <div class="sponsor-logos">
+                        <div class="sponsor-item">
+                            <div class="deepmind-logo-combined">
+                                <img src="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind.svg"
+                                     alt="DeepMind icon"
+                                     width="72" height="72"
+                                     loading="lazy"
+                                     class="deepmind-icon">
+                                <img src="https://unpkg.com/@lobehub/icons-static-svg@1.52.0/icons/deepmind-text.svg"
+                                     alt="DeepMind text"
+                                     width="360" height="72"
+                                     loading="lazy"
+                                     class="deepmind-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sponsor-cta">
+                    <h3 class="text-center mb-2">Become a Sponsor</h3>
+                    <p class="text-center mb-2" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        We're actively seeking additional sponsors to support this groundbreaking AI competition. 
+                        Sponsorship opportunities include prize pool contributions, infrastructure support, and more.
+                    </p>
+                    <div class="text-center" style="margin-top: 1.5rem;">
+                        <a href="mailto:pokeagentchallenge@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us About Sponsorship
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -150,6 +197,30 @@
         </div>
     </section>
 
+    <!-- Citation Section -->
+    <section id="citation" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-2">Cite This Work</h2>
+            <p class="text-center mb-2" style="font-size: 1.1rem; color: #666;">
+                If you use this competition in your research, please cite our paper:
+            </p>
+            <div class="citation-box">
+                <pre><code>@inproceedings{karten2025pokeagent,
+  title        = {The PokeAgent Challenge: Competitive and Long-Context Learning at Scale},
+  author       = {Karten, Seth and Grigsby, Jake and Milani, Stephanie and Vodrahalli, Kiran
+                  and Zhang, Amy and Fang, Fei and Zhu, Yuke and Jin, Chi},
+  booktitle    = {NeurIPS Competition Track},
+  year         = {2025},
+  month        = apr,
+}</code></pre>
+                <button class="btn btn-copy" onclick="copyCitation()">
+                    <i class="fas fa-copy"></i>
+                    Copy Citation
+                </button>
+            </div>
+        </div>
+    </section>
+
   
 <!-- 
     Registration Section
@@ -182,7 +253,7 @@
                     <div class="social-links mt-1">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/aPHdq8hTNM"><i class="fab fa-discord"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -192,14 +263,14 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="track1.html">Track 1</a></li>
                         <li><a href="track2.html">Track 2</a></li>
-                        <li><a href="leaderboard.html"><Leaderboards:w></Leaderboards:w></a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <p>For questions or support, please contact:</p>
-                    <p>Email: pokeagent-challenge@princeton.edu</p>
+                    <p>Email: pokeagentchallenge@gmail.com</p>
                     <p>Join our Discord community for direct assistance and discussions.</p>
                 </div>
             </div>
@@ -253,6 +324,33 @@
                 }
             });
         });
+
+        // Copy citation function
+        function copyCitation() {
+            const citationText = `@inproceedings{karten2025pokeagent,
+  title        = {The PokeAgent Challenge: Competitive and Long-Context Learning at Scale},
+  author       = {Karten, Seth and Grigsby, Jake and Milani, Stephanie and Vodrahalli, Kiran
+                  and Zhang, Amy and Fang, Fei and Zhu, Yuke and Jin, Chi},
+  booktitle    = {NeurIPS Competition Track},
+  year         = {2025},
+  month        = apr,
+}`;
+            
+            navigator.clipboard.writeText(citationText).then(() => {
+                const button = document.querySelector('.btn-copy');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.style.backgroundColor = '#28a745';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.backgroundColor = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy citation: ', err);
+                alert('Failed to copy citation. Please select and copy the text manually.');
+            });
+        }
     </script>
 </body>
 </html>
