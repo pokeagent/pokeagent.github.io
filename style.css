@@ -128,6 +128,40 @@ section {
     margin-bottom: 2rem;
 }
 
+.prize-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.prize-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.prize-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.prize-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.prize-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 /* Content List Styling */
 .card ul, .card ol {
     margin-left: 1.5rem;
@@ -167,6 +201,12 @@ section {
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -636,6 +676,18 @@ footer {
 
     .grid-2 {
         grid-template-columns: 1fr;
+    }
+    
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .prize-card {
+        padding: 1.5rem;
+    }
+    
+    .prize-icon {
+        font-size: 2.5rem;
     }
 
     .timeline::after {
