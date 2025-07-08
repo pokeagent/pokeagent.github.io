@@ -101,7 +101,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           For those familiar, this structure follows the general format of a Showdown "ladder tournament" --- but for bots!
         </p>
         <p>
-          Because this is the first time a competition like this has been run, a few of the specifics are flexible and will be finalized during the Research Stage in conversation with the community (via discord):
+          Because this is the first time a competition like this has been run, a few of the specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
         </p>
         <p>
           <strong>Showdown Rulesets:</strong> Competitive Pokémon is divided into a wide variety of rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>).
@@ -126,7 +126,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           based on the number of active entrants and announced well in advance of the Qualifying Stage. The purpose of the Qualifying Stage is to filter 
           the player pool to a smaller group of dedicated teams in order to streamline the organization of the tournament. It is not intended to put undue 
           focus on the matchmaking gamesmanship of climbing ELO points, or on the ability to maintain constant uptime in order to defend your ranking. 
-          We reserve the right to extend an alternative qualification criterion ("Last Chance Qualifier").  This would require exceeding a specified win rate over a large sample of battles against 
+          We reserve the right to extend an alternative qualification criterion ("Last Chance Qualifier") that would require exceeding a specified win rate over a large sample of battles against 
           the strongest organizer baselines.
         </p>
 
@@ -180,8 +180,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         
         <h4>Showdown Replay Logs</h4>
         <p>
-          Showdown makes battle <a href="https://replay.pokemonshowdown.com" target="_blank">replays</a> accessible via a public API, 
-          but the competition organizers maintain curated datasets for convenience and (a little) extra privacy, and host them on huggingface to spare Showdown download requests from this competition. 
+          Showdown makes battle <a href="https://replay.pokemonshowdown.com" target="_blank">replays</a> accessible via a public API. The competition organizers maintain curated datasets for convenience and (a little) extra privacy, and host them on Hugging Face to spare Showdown download requests from this competition. 
           We'd encourage you to use them unless you have a good reason not to. 
           Collectively, they cover the entire range of supported rulesets for the competition:
         </p>
@@ -229,7 +228,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
 
         <p>
           <code>metamon</code> converts its replay dataset into a flexible format that allows customization of observations, actions, and rewards. 
-          More than 3.5M full battle trajectories are stored on huggingface at 
+          More than 3.5M full battle trajectories are stored on HuggingFace at 
           <a href="https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays" target="_blank"><code>metamon-parsed-replays</code></a> 
           and can be accessed through the metamon repo. Utilities in <code>pokechamp</code> can recreate its LLM-Agent prompts and decisions from replays in a similar fashion. 
           <code>vgc-bench</code> covers the Gen 9 VGC ruleset and does not have to resort to predicting unobserved information 
@@ -278,7 +277,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
 
         <h3>Support and Additional Showdown AI Resources</h3>
         <p>
-          Competition staff will be active on the community discord and are committed to answering questions (and fixing any issues that may arise) 
+          Competition staff will be active on the community Discord and are committed to answering questions (and fixing any issues that may arise) 
           related to the starter datasets, baselines, competition logistics, and Showdown/Pokémon more broadly. 
           However, due to limited bandwidth, we caution that the technical details involved in improving upon provided methods may be deemed out-of-scope (e.g., RL training details beyond the provided documentation). Still, you are welcome to ask, and we will help in any way we can.
         </p>
@@ -292,8 +291,8 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           The Python RL interface to Showdown used by most recent academic works.</li>
           <li><a href="https://github.com/pkmn" target="_blank"><code>pkmn</code></a>: 
           A suite of TypeScript tools that interface much more directly with Showdown's native infra.</li>
-          <li>pkmn is also building a very helpful <a href="https://pkmn.ai/projects/" target="_blank">list of existing open-source Pokémon AI projects</a>. 
-          Some of these are probably competing against you :) and <strong>their developers are welcome to share more info in the discord 
+          <li>pkmn is also building a very helpful <a href="https://pkmn.ai/projects/" target="_blank">list of existing Pokémon AI projects</a>. 
+          Some of these are probably competing against you :) and <strong>their developers are welcome to share more info in the Discord 
           if they want to point more people to their projects.</strong></li>
         </ul>
 
@@ -319,7 +318,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           <div class="timeline-content">
             <span class="timeline-date">July 11th, 2025</span>
             <h3>Practice Window Begins</h3>
-            <p>PokéAgent's Showdown server launches for free-play AI battles.</p>
+            <p>The PokéAgent Showdown server launches for free-play AI battles.</p>
           </div>
         </div>
         
