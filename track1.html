@@ -49,14 +49,12 @@ color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, b
 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
           <p>
             <a href="https://play.pokemonshowdown.com">Pokémon Showdown</a> is an open-source simulator that transforms Pokémon's turn-based battles into a
-            competitive strategy game enjoyed by thousands of daily players. Competitive Pokémon battles are two-player 
-            stochastic games with imperfect information. Players construct teams of Pokémon and guide them through 
-            complex battles where stochastic outcomes are driven by nuanced gameplay mechanics. 
-            Success requires more than managing randomness; players must effectively model their opponents and make decisions 
-            amid uncertainty. Essential details of the opponent’s team remain concealed until they impact the battle, 
-            encouraging players to infer hidden information and predict future moves based on past interactions. 
-            Expert human players distinguish themselves by accurately anticipating their opponent's strategies. 
-            The stochasticity, partial observability, and diverse team options of Pokémon battles challenge AI's ability to plan and generalize.
+            competitive strategy game enjoyed by thousands of players every day. Competitive Pokémon battles are two-player
+            stochastic games with imperfect information. Players build teams of Pokémon and navigate complex battles by mastering nuanced gameplay mechanics and making decisions under uncertainty.
+            Key details about the opponent’s team remain hidden until revealed during the match,
+            prompting players to infer missing information and anticipate future moves.
+            Top human players excel by accurately predicting their opponent's strategies and leveraging their own team's strengths.
+            The randomness, partial observability, and vast team diversity in Pokémon battles challenge AI's ability to plan and generalize.
           </p>
           <br>
           <p>
@@ -84,49 +82,52 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           Participants will battle against organizer baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.
         </p>
         <p>
-          The competition will be split into three stages:
+          The competition will be divided into three stages:
         </p>
         <ul>
           <li>
-            <strong>1. Research Stage (July 11th - September 29th)</strong> The first stage of the competition will be a "free play" period. The PokéAgent server will be open to all participants, with player pools inflated by organizer baselines across a wide range of skill levels. Get started, develop new ideas, and get a sense of how your method stacks up against the competition!
+            <strong>1. Research Stage (July 11th - September 29th):</strong> The first stage is a "free play" period. The PokéAgent server will be open to all participants, with player pools supplemented by organizer baselines across a wide range of skill levels. Get started, develop new ideas, and see how your method compares to the competition!
           </li>
           <li>
-            <strong>2. Qualifying Stage (September 28th - October 12th)</strong> On September 29th, the competition formally begins. Each team must register one official username with the organizers. Other usernames will be locked and multi-accounting will be considered cheating. All ratings and leaderboards will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top ranked usernames (excluding organizer baselines) will qualify for the next stage.
+            <strong>2. Qualifying Stage (September 28th - October 12th):</strong> On September 29th, the competition formally begins. 
+            Each team must register one official username with the organizers. 
+            Other usernames will be locked, and multi-accounting will be considered cheating. 
+            All ratings will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top-ranked usernames (excluding organizer baselines) will qualify for the next stage.
           </li>
           <li>
-            <strong>3. Tournament Stage (October 15th - October 31st)</strong> Qualifying participants will battle in a single-elimination tournament of best-of-k-battle matches.
+            <strong>3. Tournament Stage (October 15th - October 31st):</strong> Qualifying participants will compete in a single-elimination tournament featuring best-of-k-battle matches.
           </li>
         </ul>
         <p>
-          For those familiar, this structure follows the general format of a Showdown "ladder tournament" --- but for bots!
+          For those familiar, this structure follows the general format of a Showdown "ladder tournament"—but for bots!
         </p>
         <p>
-          Because this is the first time a competition like this has been run, a few of the specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
+          Because this is the first time a competition like this has been run, some specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
         </p>
         <p>
           <strong>Showdown Rulesets:</strong> Competitive Pokémon is divided into a wide variety of rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>).
-          From the beginning, PokéAgent Showdown will restrict this list to the following formats where ML datasets and baselines are available:
+          Our competition will filter this list to the following formats, where ML datasets and baselines are available:
         </p>
         <ul>
           <li><strong>Gen 1 OverUsed (OU)</strong> with the current official rules.</li>
           <li><strong>Gen 2 OU</strong> with the current official rules.</li>
           <li><strong>Gen 3 OU</strong> with the current official rules.</li>
           <li><strong>Gen 4 OU</strong> with the current official rules.</li>
-          <li><strong>Gen 9 OU</strong> with the current rules plus the AI-friendly exceptions that Zoroark and the move Revival Blessing are banned.</li>
-          <li><strong>Gen 9 VGC</strong> with the official Regulation I rules plus the AI-friendly exceptions that Zoroark and Dondozo are banned.</li>
-          (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>)
+          <li><strong>Gen 9 OU</strong> with the current rules, plus the AI-friendly exceptions that Zoroark and the move Revival Blessing are banned.</li>
+          <li><strong>Gen 9 VGC</strong> with the official Regulation I rules, plus the AI-friendly exceptions that Zoroark and Dondozo are banned.</li>
+          (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>.)
         </ul>
         <p>
           All of these formats will be available throughout the Research Stage. However, <em>the formal Tournament Stage will limit competition to a subset of this list</em>. Currently, <strong>Gen 1 OU and Gen 9 OU</strong> are guaranteed to have brackets, with additional options to be determined based on the number of participants, ladder activity, community feedback, and available prizes.
         </p>
         <p>
-          <strong>Bracket Size and Match Length:</strong> Pokémon has high variance. Human tournaments often adopt a best two-out-of-three battle structure. 
-          We would prefer to go (significantly) higher, but will work with the qualifying participants to gauge whether this creates a financial burden
-          and whether credits provided by our sponsors can assist. The total bracket size (e.g., 8, 16, 32 teams) will be determined 
+          <strong>Bracket Size and Match Length:</strong> Pokémon has high variance. Human tournaments often use a best two-out-of-three battle structure. 
+          We would prefer to go (significantly) higher, but will work with qualifying participants to determine whether this creates a financial burden
+          and whether credits provided by our sponsors can help. The total bracket size (e.g., 8, 16, 32 teams) will be determined 
           based on the number of active entrants and announced well in advance of the Qualifying Stage. The purpose of the Qualifying Stage is to filter 
-          the player pool to a smaller group of dedicated teams in order to streamline the organization of the tournament. It is not intended to put undue 
-          focus on the matchmaking gamesmanship of climbing ELO points, or on the ability to maintain constant uptime in order to defend your ranking. 
-          We reserve the right to extend an alternative qualification criterion ("Last Chance Qualifier") that would require exceeding a specified win rate over a large sample of battles against 
+          the player pool to a smaller group of dedicated teams to streamline tournament organization. It is not intended to put undue 
+          focus on the matchmaking gamesmanship of climbing ELO points, or on the ability to maintain constant uptime to defend your ranking. 
+          We reserve the right to offer an alternative qualification criterion ("Last Chance Qualifier") that would require exceeding a specified win rate over a large sample of battles against 
           the strongest organizer baselines.
         </p>
 
@@ -141,14 +142,14 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
       <div class="card showdown-content">
 
         <p>Competitive Pokémon is extremely complex and creates an interesting game-playing benchmark all by itself. 
-          However, it is arguably <em>Pokémon's popularity</em> and <em>Showdown's data availability</em> that really sets this domain apart in the current AI research landscape:</p>
+          However, we'd add that <em>Pokémon's popularity</em> and <em>Showdown's replay dataset</em> are key features that give this domain a unique place in current AI research:</p>
 
         <ul>
-          <li>Pokémon's widespread internet presence gives LLMs extensive knowledge of its mechanics and strategies.</li>
+          <li>Pokémon's widespread internet presence equips LLMs with extensive knowledge of its mechanics and strategies.</li>
           <li>Pokémon Showdown makes millions of competitive battles publicly available, enabling the creation of large, high-quality datasets.</li>
         </ul>
         <p>
-          Taken together, Pokémon is an exciting opportunity for areas like LLMs and RL to compete and collaborate. In that spirit, the PokéAgent Challenge was organized
+          Taken together, Pokémon creates a fun opportunity for areas like LLM-Agents and RL to compete and collaborate on a level playing field. In that spirit, the PokéAgent Challenge was organized
           by the teams behind <a href="https://sites.google.com/view/pokechamp-llm?pli=1" target="_blank">PokéChamp</a> 
           and <a href="https://metamon.tech" target="_blank">Metamon</a>, which are recent papers that demonstrate strong human-level play 
           in singles formats. Both projects are open-source and have recently been updated to create a more helpful starting point for this competition.
@@ -189,7 +190,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           <table>
             <thead>
               <tr>
-                <th>HuggingFace</th>
+                <th></th>
                 <th>Formats</th>
                 <th>Time Period</th>
                 <th>Battles</th>
@@ -228,7 +229,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
 
         <p>
           <code>metamon</code> converts its replay dataset into a flexible format that allows customization of observations, actions, and rewards. 
-          More than 3.5M full battle trajectories are stored on HuggingFace at 
+          More than 3.5M full battle trajectories are stored on Hugging Face at 
           <a href="https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays" target="_blank"><code>metamon-parsed-replays</code></a> 
           and can be accessed through the metamon repo. Utilities in <code>pokechamp</code> can recreate its LLM-Agent prompts and decisions from replays in a similar fashion. 
           <code>vgc-bench</code> covers the Gen 9 VGC ruleset and does not have to resort to predicting unobserved information 
@@ -240,7 +241,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           <a href="https://huggingface.co/datasets/jakegrigsby/metamon-teams" target="_blank"><code>teams</code></a>: 
           All of the Showdown rulesets in the competition require players to pick their own teams. This dataset provides sets of teams gathered from forums, 
           predicted from replays, and/or procedurally generated from Showdown trends. This creates a starting point for anyone less familiar with Competitive Pokémon, 
-          and it is primarily intended to establish diverse team sets for self-play.
+          and establishes diverse team sets for self-play.
         </p>
 
         <p>
