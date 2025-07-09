@@ -128,6 +128,226 @@ section {
     margin-bottom: 2rem;
 }
 
+.prize-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.prize-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.prize-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.prize-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.prize-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Content List Styling */
+.card ul, .card ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+.card ul {
+    list-style-type: disc;
+}
+
+.card ol {
+    list-style-type: decimal;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.card ul ul, .card ol ul, .card ul ol, .card ol ol {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* PokéAgent Showdown Content Styling */
+.showdown-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+}
+
+.showdown-content p {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.showdown-content ul {
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.showdown-content li {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    list-style: none;
+}
+
+.showdown-content li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.showdown-content li strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.showdown-content a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.showdown-content a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.showdown-content em {
+    color: #666;
+    font-style: italic;
+}
+
+.showdown-content p:first-of-type {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.showdown-content h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.showdown-content h3 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.showdown-content h4 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.showdown-content ol {
+    margin-bottom: 2rem;
+    padding-left: 0;
+    counter-reset: item;
+}
+
+.showdown-content ol li {
+    padding-left: 2rem;
+    position: relative;
+    counter-increment: item;
+}
+
+.showdown-content ol li::before {
+    content: counter(item) ".";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+.showdown-content code {
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid #e9ecef;
+}
+
+.dataset-table {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.dataset-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+}
+
+.dataset-table th,
+.dataset-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.dataset-table th {
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.dataset-table td:first-child {
+    font-weight: 500;
+}
+
+.showdown-content .track-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.showdown-content .track-links .track-image {
+    width: 320px;
+    height: 224px;
+    object-fit: cover;
+}
+
 .text-center {
     text-align: center;
 }
@@ -141,6 +361,12 @@ section {
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -420,6 +646,20 @@ header {
     color: #666;
 }
 
+.team-member a {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.team-member a:hover {
+    transform: scale(1.05);
+}
+
+.team-member a:hover img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Resources */
 .resource-card {
     display: flex;
@@ -471,8 +711,11 @@ footer {
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .footer-column h3 {
@@ -485,7 +728,17 @@ footer {
 }
 
 .footer-column ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-column p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 0;
 }
 
 .footer-column a {
@@ -498,7 +751,8 @@ footer {
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
 }
 
 .social-links a {
@@ -571,8 +825,13 @@ footer {
         max-width: 95%;
     }
     
+    /* Enhanced track links mobile styling */
     .track-links {
         gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 0.5rem;
     }
     
     .track-links .track-image {
@@ -580,8 +839,49 @@ footer {
         height: 200px;
     }
 
+    /* Better spacing for track link divs */
+    .track-links div {
+        margin: 0 !important;
+        width: calc(100% - 2rem);
+        max-width: 300px;
+        padding: 0 1rem;
+    }
+
+    /* Mobile-specific section padding */
+    section {
+        padding: 2rem 0;
+    }
+
+    /* Improved hero section for mobile */
+    .hero {
+        padding: 2rem 0 !important;
+        margin-top: 60px;
+    }
+
+    /* Better container padding on mobile */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    /* Card padding adjustment */
+    .card {
+        padding: 1rem;
+    }
+
     .grid-2 {
         grid-template-columns: 1fr;
+    }
+    
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .prize-card {
+        padding: 1.5rem;
+    }
+    
+    .prize-icon {
+        font-size: 2.5rem;
     }
 
     .timeline::after {
@@ -609,6 +909,21 @@ footer {
 
     .footer-container {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .footer-column h3 {
+        margin-bottom: 1rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
     }
     
     .citation-box {
@@ -619,6 +934,146 @@ footer {
     .citation-box pre {
         padding: 1rem;
         font-size: 0.8rem;
+    }
+
+    /* Enhanced mobile styling for showdown content */
+    .showdown-content {
+        font-size: 1.05rem;
+        padding: 1.2rem;
+        line-height: 1.7;
+    }
+
+    .showdown-content p:first-of-type {
+        font-size: 1.1rem;
+    }
+
+    .showdown-content li {
+        margin-bottom: 1.2rem;
+        padding-left: 1.2rem;
+    }
+
+    .showdown-content h3 {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+
+    .showdown-content h4 {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+
+    .showdown-content ol li {
+        padding-left: 1.5rem;
+    }
+
+    /* Better table responsiveness */
+    .dataset-table {
+        margin: 1.5rem 0;
+        font-size: 0.85rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .dataset-table th,
+    .dataset-table td {
+        padding: 0.6rem 0.4rem;
+        white-space: nowrap;
+        min-width: 80px;
+    }
+
+    .dataset-table th {
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .dataset-table td:first-child {
+        min-width: 120px;
+    }
+
+    .showdown-content code {
+        font-size: 0.8em;
+        padding: 0.1rem 0.3rem;
+        word-break: break-all;
+    }
+
+    /* Improved track links mobile layout */
+    .showdown-content .track-links {
+        gap: 1rem;
+        margin: 1.5rem 0;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .showdown-content .track-links .track-image {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* Better mobile typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    /* Improved button sizing on mobile */
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Better timeline spacing */
+    .timeline-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .timeline-date {
+        font-size: 0.9rem;
+    }
+
+    /* Improved list spacing */
+    .showdown-content ul li {
+        margin-bottom: 1rem;
+    }
+
+    .showdown-content ol li {
+        margin-bottom: 1rem;
+    }
+
+    /* Better hero image sizing */
+    .hero img {
+        max-width: 90% !important;
+        height: auto !important;
+    }
+
+    /* Improved caption sizing */
+    .showdown-content .track-links p {
+        font-size: 1rem !important;
+        margin-top: 0.75rem !important;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Ensure no horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Additional safety for track link containers */
+    .track-links div {
+        box-sizing: border-box;
+        overflow: hidden;
     }
 }
 
@@ -848,4 +1303,101 @@ footer {
         padding: 0.875rem 1.25rem;
         font-size: 0.95rem;
     }
+}
+
+/* Tab Styles */
+.tab-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    color: var(--primary-color);
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.format-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.format-selector label {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.format-selector select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.format-selector select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Mobile responsiveness for tabs */
+@media screen and (max-width: 768px) {
+    .tab-container {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .tab-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+    
+    .format-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .format-selector select {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+p, .showdown-content p {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }

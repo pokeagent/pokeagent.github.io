@@ -21,13 +21,16 @@
         <li><a href="track1.html">Track 1</a></li>
         <li><a href="track2.html">Track 2</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="rules.html">Rules</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
   </header>
 
   <!-- Track 1 Section -->
-  <section class="hero" style="height: auto; padding: 4rem 0; background: radial-gradient(ellipse 150% 100% at 50% 30%, #fff4e6, #ffb366); color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); position: relative;">
+  <section class="hero" style="height: auto; padding: 4rem 0; background: radial-gradient(ellipse 150% 100% at 50% 30%, #fff4e6, #ffb366); 
+color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, black 85%, transparent 100%); 
+-webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); position: relative;">
     <div class="container">
         <img
         src="media/figures/track1_no_bg.png"
@@ -42,24 +45,23 @@
             -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
         "
         >
-        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; 
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
           <p>
-          <a href="https://play.pokemonshowdown.com">Pokémon Showdown</a> is an open-source simulator that transforms Pokémon's turn-based battles into a
-          competitive strategy game enjoyed by thousands of daily players. Competitive Pokémon battles are two-player 
-          stochastic games with imperfect information. Players construct teams of Pokémon and guide them through 
-          complex battles where stochastic outcomes are driven by nuanced gameplay mechanics. 
-          Success requires more than managing randomness; players must effectively model their opponents and make decisions 
-          amid uncertainty. Essential details of the opponent’s team remain concealed until they impact the battle, 
-          encouraging players to infer hidden information and predict future moves based on past interactions. 
-          Expert human players distinguish themselves by accurately anticipating their opponent's strategies. 
-          The stochasticity, partial observability, and diverse team options of Pokémon battles challenge AI's ability to plan and generalize.
+            Pokémon Showdown is an open-source simulator that transforms Pokémon's turn-based battles into a
+            competitive strategy game enjoyed by thousands of daily players. Competitive Pokémon battles are two-player
+            stochastic games with imperfect information. Players build teams of Pokémon and navigate complex battles by mastering nuanced gameplay mechanics and making decisions under uncertainty.
+            Key details about the opponent’s team remain hidden until they impact the battle,
+            prompting players to infer missing information and anticipate future moves.
+            Top human players excel by accurately predicting their opponent's strategies and leveraging their own team's strengths.
+            The randomness, partial observability, and vast team diversity in Pokémon battles challenge AI's ability to plan and generalize.
           </p>
           <br>
           <p>
-          Though Pokémon Showdown battle bots have existed for many years, advances in language models, large-scale reinforcement learning datasets, 
-          and accessible open-source tools have sparked renewed interest within the machine learning research community. Recent methods have achieved human-level
-          gameplay in popular singles rulesets, prompting an exciting question: How much further can we push the capabilities of Competitive Pokémon AI? 
-          Join Track 1 of the PokéAgent Challenge and help us find out!
+            Though Pokémon Showdown battle bots have existed for many years, advances in language models, large-scale reinforcement learning datasets, 
+            and accessible open-source tools have sparked renewed interest within the machine learning research community. Recent methods have achieved human-level
+            gameplay in popular singles rulesets, prompting an exciting question: How much further can we push the capabilities of Competitive Pokémon AI? 
+            Join Track 1 of the PokéAgent Challenge and help us find out!
           </p>
           <br>
         </div>
@@ -69,21 +71,114 @@
     </div>
   </section>
 
-  <!-- Starter Kits Section -->
+  <!-- Submission Guidelines -->
+  <section style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">PokéAgent Showdown</h2>
+      <div class="card showdown-content">
+       
+        <p>
+          To avoid disrupting human players, <strong>PokéAgent participants will compete on an AI-focused Showdown server hosted by the competition</strong>. 
+          Participants will battle against organizer baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.
+        </p>
+        <p>
+          The competition will be divided into three stages:
+        </p>
+        <ul>
+          <li>
+            <strong>1. Research Stage (July 11th - September 29th):</strong> The first stage is a "free play" period. The PokéAgent server will be open to all participants, with player pools supplemented by organizer baselines across a wide range of skill levels. Get started, develop new ideas, and see how your method compares to the competition!
+          </li>
+          <li>
+            <strong>2. Qualifying Stage (September 28th - October 12th):</strong> On September 29th, the competition formally begins. 
+            Each team must register one official username with the organizers. 
+            Other usernames will be locked, and multi-accounting will be considered cheating. 
+            All ratings will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top-ranked usernames (excluding organizer baselines) will qualify for the next stage.
+          </li>
+          <li>
+            <strong>3. Tournament Stage (October 15th - October 31st):</strong> Qualifying participants will compete in a single-elimination tournament featuring best-of-k-battle matches.
+          </li>
+        </ul>
+        <p>
+          For those familiar, this structure follows the general format of a Showdown "ladder tournament"—but for bots!
+        </p>
+        <p>
+          Because this is the first time a competition like this has been run, some specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
+        </p>
+        <p>
+          <strong>Showdown Rulesets:</strong> Competitive Pokémon is divided into a wide variety of rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>).
+          Our competition will filter this list to the following formats, where ML datasets and baselines are available:
+        </p>
+        <ul>
+          <li><strong>Gen 1 OverUsed (OU)</strong> with the current official rules.</li>
+          <li><strong>Gen 2 OU</strong> with the current official rules.</li>
+          <li><strong>Gen 3 OU</strong> with the current official rules.</li>
+          <li><strong>Gen 4 OU</strong> with the current official rules.</li>
+          <li><strong>Gen 9 OU</strong> with the current rules, plus the AI-friendly exceptions that Zoroark and the move Revival Blessing are banned.</li>
+          <li><strong>Gen 9 VGC</strong> with the official Regulation I rules, plus the AI-friendly exceptions that Zoroark and Dondozo are banned.</li>
+          (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>.)
+        </ul>
+        <p>
+          All of these formats will be available throughout the Research Stage. However, <em>the formal Tournament Stage will limit competition to a subset of this list</em>. Currently, <strong>Gen 1 OU and Gen 9 OU</strong> are guaranteed to have brackets, with additional options to be determined based on the number of participants, ladder activity, community feedback, and available prizes.
+        </p>
+        <p>
+          <strong>Bracket Size and Match Length:</strong> Pokémon has high variance. Human tournaments often use a best two-out-of-three battle structure. 
+          We would prefer to go (significantly) higher, but will work with qualifying participants to determine whether this creates a financial burden
+          and whether credits provided by our sponsors can help. The total bracket size (e.g., 8, 16, 32 teams) will be determined 
+          based on the number of active entrants and announced well in advance of the Qualifying Stage. The purpose of the Qualifying Stage is to filter 
+          the player pool to a smaller group of dedicated teams to streamline tournament organization. It is not intended to put undue 
+          focus on the matchmaking gamesmanship of climbing ELO points, or on the ability to maintain constant uptime to defend your ranking. 
+          We reserve the right to offer an alternative qualification criterion ("Last Chance Qualifier") that would require exceeding a specified win rate over a large sample of battles against 
+          the strongest organizer baselines.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Starting Resources Section -->
   <section id="starter-kits">
     <div class="container">
-      <h2 class="text-center mb-2">Starter Kits</h2>
-      <p class="track-subtitle text-center" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
-        Choose your starting agent and jump into the world of Competitive Pokémon AI!
-      </p>
-      <br>
-      <div class="track-links">
-        <a href="https://github.com/UT-Austin-RPL/metamon" class="track-link" target="_blank">
-          <img src="media/figures/metamon.png" alt="Metamon Starter Kit" class="track-image">
-        </a>
-        <a href="https://github.com/sethkarten/pokechamp" class="track-link" target="_blank">
-          <img src="media/figures/pokechamp.png" alt="PokéChamp Starter Kit" class="track-image">
-        </a>
+      <h2 class="text-center mb-2">Starting Resources</h2>
+      <div class="card showdown-content">
+
+        <p>Competitive Pokémon is extremely complex and creates an interesting game-playing benchmark all by itself. 
+          However, we'd add that <em>Pokémon's popularity</em> and <em>Showdown's replay dataset</em> are key features that give this domain a unique place in current AI research:</p>
+
+        <ul>
+          <li>Pokémon's widespread internet presence equips LLMs with extensive knowledge of its mechanics and strategies.</li>
+          <li>Pokémon Showdown makes millions of competitive battles publicly available, enabling the creation of large, high-quality datasets.</li>
+        </ul>
+        <p>
+          Taken together, Pokémon creates a fun opportunity for areas like LLM-Agents and RL to compete and collaborate on a level playing field. In that spirit, the PokéAgent Challenge was organized
+          by the teams behind <a href="https://sites.google.com/view/pokechamp-llm?pli=1" target="_blank">PokéChamp</a> 
+          and <a href="https://metamon.tech" target="_blank">Metamon</a>, which are recent papers that demonstrate strong human-level play 
+          in singles formats. Both projects are open-source and have recently been updated to create a more helpful starting point for this competition.
+          We have also been joined by <a href="https://arxiv.org/abs/2506.10326" target="_blank">VGC-Bench</a> to extend support to VGC (doubles)!
+        </p>
+
+        <div class="track-links" style="margin: 2rem 0;">
+          <div style="text-align: center; margin-right: 1rem;">
+            <a href="https://github.com/UT-Austin-RPL/metamon" class="track-link" target="_blank">
+              <img src="media/figures/metamon.png" alt="Metamon Starter Kit" class="track-image">
+            </a>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: #666; font-style: italic;">RL on Human Replays</p>
+          </div>
+          <div style="text-align: center; margin-left: 1rem;">
+            <a href="https://github.com/sethkarten/pokechamp" class="track-link" target="_blank">
+              <img src="media/figures/pokechamp.png" alt="PokéChamp Starter Kit" class="track-image">
+            </a>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: #666; font-style: italic;">LLM-Agents + Search</p>
+          </div>
+        </div>
+
+        <p>
+          These projects have their own repositories and publications where you can find more detailed information. 
+          This page highlights specific resources from these efforts (and the wider Showdown AI community) that would be broadly useful in the development of new methods, 
+          and clarifies where those resources overlap and could be merged.
+        </p>
+
+
+
       </div>
     </div>
   </section>
@@ -91,61 +186,237 @@
   <!-- Submission Guidelines -->
   <section style="background-color: #f5f5f5;">
     <div class="container">
-      <h2>Rules and Submission Guidelines</h2>
+      <h2 class="text-center mb-2">Submission Guidelines</h2>
       <div class="card">
-        <p>To avoid disrupting human players, PokéAgent participants will compete on an AI-only Showdown server. Participants will battle against organizer baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.</p>
-
-        <br
-
-        <p>Formal rules and timelines for the ladder and tournament stages will be announced by June 25th, 2025, and the Showdown server will launch on July 7th, 2025.
-        Until then, participants are free to experiment on a self-hosted server against baselines provided by the starter kit!</p>
+        <h3>How to Submit for Track 1</h3>
+        <p>Submissions for this track focus on competitive battling performance on the PokéAgent Showdown ladder. Your agent must compete exclusively through our hosted Showdown server and achieve high rankings through strategic gameplay and team building.</p>
+        
+        <p><strong>Important:</strong> All submissions will undergo validation to ensure fair competition. This includes verification of agent behavior, battle logs, and confirmation that submissions follow the competition rules.</p>
+        
+        <div class="text-center mt-3">
+          <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-paper-plane"></i> Submit Your Entry
+          </a>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Competition Platform</h4>
+          <p>All Track 1 battles take place on our dedicated PokéAgent Showdown server:</p>
+          <div class="text-center mt-2">
+            <a href="" class="btn btn-secondary" target="_blank">
+              <i class="fas fa-gamepad"></i> PokéAgent Showdown Ladder
+            </a>
+            <p class="mt-1" style="font-size: 0.9rem; color: #666; font-style: italic;">
+              <i class="fas fa-info-circle"></i> Note: The ladder is not yet live. Check back on July 11th, 2025 for the official launch.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Submission Requirements</h4>
+          <ul>
+            <li><strong>Agent Code:</strong> Your battle agent implementation as a ZIP or TAR.GZ file including all dependencies and README</li>
+          </ul>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Evaluation Criteria</h4>
+          <ul>
+            <li><strong>Ladder Performance:</strong> Final ranking achieved on the PokéAgent Showdown ladder</li>
+            <li><strong>Team Innovation:</strong> Creativity and effectiveness of team composition</li>
+            <li><strong>Reproducibility:</strong> Clear documentation and reproducible results</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Timeline Section -->
-    <section id="timeline">
-        <div class="container">
-            <h2 class="text-center mb-2">Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">June 11th, 2025</span>
-                        <h3>Competition Website Launch</h3>
-                        <p>Official competition website goes live with preliminary documentation.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">June 25th, 2025</span>
-                        <h3>Formal Competition Announcement</h3>
-                        <p>Full rules and track timeline announced. Showdown server launches for beta testers.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 7th, 2025</span>
-                        <h3>Competition Begins</h3>
-                        <p>Track 1 Competition Begins. Battle against baselines (and other partipants!) on PokéAgent's Showdown server.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">October 15, 2025</span>
-                        <h3>Results Announcement</h3>
-                        <p>Final results announced, winners notified.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">December 2025</span>
-                        <h3>NeurIPS 2025 Presentation</h3>
-                        <p>Winners present their solutions at NeurIPS 2025.</p>
-                    </div>
-                </div>
-            </div>
+  <section id="timeline">
+    <div class="container">
+      <h2 class="text-center mb-2">Track 1 Timeline</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 8th, 2025</span>
+            <h3>Competition Launch</h3>
+            <p>Track 1 Rules announced and starter kits updated.</p>
+          </div>
         </div>
-    </section>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 11th, 2025</span>
+            <h3>Practice Window Begins</h3>
+            <p>The PokéAgent Showdown server launches for free-play AI battles.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">September 29th, 2025</span>
+            <h3>Qualification Window Begins</h3>
+            <p>Ladder ratings are reset and participants battle for leaderboard positions.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 12th, 2025</span>
+            <h3>Qualification Window Ends</h3>
+            <p>Ladder ratings are finalized and top-ranked participants qualify for the tournament.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 15th, 2025</span>
+            <h3>Bracket Tournament Begins</h3>
+            <p>Qualifying participants battle in a best-of-k single-elimination tournament.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 31st, 2025</span>
+            <h3>Bracket Tournament Ends</h3>
+            <p>Tournament concludes and final results are announced.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Resources and Support</h2>
+      <div class="card showdown-content">
+
+        <h3>Datasets</h3>
+        
+        <h4>Showdown Replay Logs</h4>
+        <p>
+          Showdown makes battle <a href="https://replay.pokemonshowdown.com" target="_blank">replays</a> accessible via a public API. The competition organizers maintain curated datasets for convenience and (a little) extra privacy, and host them on Hugging Face to spare Showdown download requests from this competition. 
+          We'd encourage you to use them unless you have a good reason not to. 
+          Collectively, they cover the entire range of supported rulesets for the competition:
+        </p>
+
+        <div class="dataset-table">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Formats</th>
+                <th>Time Period</th>
+                <th>Battles</th>
+              </tr>
+            </thead>
+            <tbody>
+             <tr>
+                <td><a href="https://huggingface.co/datasets/milkkarten/pokechamp" target="_blank"><code>pokechamp</code></a></td>
+                <td>Many (39+)</td>
+                <td>2024-2025</td>
+                <td>2M</td>
+              </tr>
+            <tr>
+                <td><a href="https://huggingface.co/datasets/jakegrigsby/metamon-raw-replays" target="_blank"><code>metamon-raw-replays</code></a></td>
+                <td>All PokéAgent Except VGC</td>
+                <td>2014-2025</td>
+                <td>1.8M</td>
+              </tr>
+
+              <tr>
+                <td><a href="https://huggingface.co/datasets/cameronangliss/vgc-battle-logs" target="_blank"><code>vgc-battle-logs</code></a></td>
+                <td>Gen 9 VGC (OTS)</td>
+                <td>2023-2025</td>
+                <td>330k</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Replays as Agent Training Data</h4>
+        <p>
+          Showdown replays are saved from the point of view of a spectator rather than the point of view of a player, 
+          which can make it difficult to use them directly in an imperfect information game like Pokémon. 
+          We need to reconstruct (and often <em>predict</em>) the perspective of each player to create a more typical offline RL or imitation learning dataset.
+        </p>
+
+        <p>
+          <code>metamon</code> converts its replay dataset into a flexible format that allows customization of observations, actions, and rewards. 
+          More than 3.5M full battle trajectories are stored on Hugging Face at 
+          <a href="https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays" target="_blank"><code>metamon-parsed-replays</code></a> 
+          and can be accessed through the metamon repo. Utilities in <code>pokechamp</code> can recreate its LLM-Agent prompts and decisions from replays in a similar fashion. 
+          <code>vgc-bench</code> covers the Gen 9 VGC ruleset and does not have to resort to predicting unobserved information 
+          (because VGC replays can have "Open Team Sheets" where ground-truth team info is public).
+        </p>
+
+        <h4>Miscellaneous</h4>
+        <p>
+          <a href="https://huggingface.co/datasets/jakegrigsby/metamon-teams" target="_blank"><code>teams</code></a>: 
+          All of the Showdown rulesets in the competition require players to pick their own teams. This dataset provides sets of teams gathered from forums, 
+          predicted from replays, and/or procedurally generated from Showdown trends. This creates a starting point for anyone less familiar with Competitive Pokémon, 
+          and establishes diverse team sets for self-play.
+        </p>
+
+        <p>
+          <a href="https://huggingface.co/datasets/jakegrigsby/metamon-usage-stats" target="_blank"><code>usage-stats</code></a>: 
+          A convenient way to access the <a href="https://www.smogon.com/stats/" target="_blank">Showdown team usage stats</a> 
+          for the formats covered by the competition and the timeframe covered by the replay datasets. 
+          <a href="https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays" target="_blank">This dataset</a> 
+          also includes a log of all the partially revealed teams in replays. Team prediction is an interesting subproblem that your method may want to address!
+        </p>
+
+        <h3>Baselines</h3>
+        <p>
+          Organizers will inflate the player pool on the PokéAgent ladder with a rotating cast of existing baselines covering a wide range of skill levels and team choices.
+          At launch, these will include:
+        </p>
+
+        <ol>
+          <li><strong>Simple Heuristics</strong> to simulate the low-ELO ladder and let new methods get started. These are mainly sourced from <code>metamon</code>'s basic evaluation opponents.</li>
+          <li><strong>The best <code>metamon</code> and <code>pokechamp</code> agents</strong> playing with competitive team choices. 
+          These baselines have already demonstrated performance comparable to strong human players. If all goes well, they will be at the bottom of the leaderboard by the end of the competition!</li>
+          <li><strong>Mixed <code>metamon</code> and <code>pokechamp</code> agents</strong> aimed at increasing variety and forcing participants to battle teams that resemble the real Showdown ladder. 
+          For example, varied LLM backends with several prompting and search strategies. Hundreds of checkpoints from metamon policies 
+          at various stages of training, sampling from thousands of unique teams.</li>
+        </ol>
+
+        <p>
+          Launch baselines are already open-source, so you are free to skip the ladder queue by hosting them on your local server with help from their home repo. 
+          Any additional (stronger) agents in development by the organizers will be added to the ladder rotation as the competition progresses.
+        </p>
+
+        <p>
+          We hope the ladder will also be full of participants trying new ideas; your agents' competition will always be improving!
+        </p>
+
+        <h3>Support and Additional Showdown AI Resources</h3>
+        <p>
+          Competition staff will be active on the community Discord and are committed to answering questions (and fixing any issues that may arise) 
+          related to the starter datasets, baselines, competition logistics, and Showdown/Pokémon more broadly. 
+          However, due to limited bandwidth, we caution that the technical details involved in improving upon provided methods may be deemed out-of-scope
+           (e.g., RL training details beyond the provided documentation). This is mainly because, given the datasets and baselines, you would have many other viable options
+          that are maintaned by larger teams and better suited to a broad audience. Still, please feel free to reach out, and we will help in any way we can.
+        </p>
+
+        <p>
+          Participants looking for more of a blank slate to get started with are encouraged to check out:
+        </p>
+
+        <ul>
+          <li><a href="https://github.com/hsahovic/poke-env" target="_blank"><code>poke-env</code></a>: 
+          The Python RL interface to Showdown used by most recent academic works.</li>
+          <li><a href="https://github.com/pkmn" target="_blank"><code>pkmn</code></a>: 
+          A suite of TypeScript tools that interface much more directly with Showdown's native infra.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -167,19 +438,11 @@
             <li><a href="track1.html">Track 1</a></li>
             <li><a href="track2.html">Track 2</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="rules.html">Rules</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
-        <div class="footer-column">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">Starter Code</a></li>
-            <li><a href="#">Datasets</a></li>
-            <li><a href="#">Baseline Agents</a></li>
-            <li><a href="#">Knowledge Base</a></li>
-            <li><a href="#">Tutorials</a></li>
-          </ul>
-        </div>
+
         <div class="footer-column">
           <h3>Contact</h3>
           <p>For questions or support, please contact:</p>
