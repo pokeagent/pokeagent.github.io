@@ -48,7 +48,7 @@ color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, b
         <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; 
 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
           <p>
-            <a href="https://play.pokemonshowdown.com">Pokémon Showdown</a> is an open-source simulator that transforms Pokémon's turn-based battles into a
+            Pokémon Showdown is an open-source simulator that transforms Pokémon's turn-based battles into a
             competitive strategy game enjoyed by thousands of daily players. Competitive Pokémon battles are two-player
             stochastic games with imperfect information. Players build teams of Pokémon and navigate complex battles by mastering nuanced gameplay mechanics and making decisions under uncertainty.
             Key details about the opponent’s team remain hidden until they impact the battle,
@@ -177,6 +177,124 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           and clarifies where those resources overlap and could be merged.
         </p>
 
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission Guidelines -->
+  <section style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">Submission Guidelines</h2>
+      <div class="card">
+        <h3>How to Submit for Track 1</h3>
+        <p>Submissions for this track focus on competitive battling performance on the PokéAgent Showdown ladder. Your agent must compete exclusively through our hosted Showdown server and achieve high rankings through strategic gameplay and team building.</p>
+        
+        <p><strong>Important:</strong> All submissions will undergo validation to ensure fair competition. This includes verification of agent behavior, battle logs, and confirmation that submissions follow the competition rules.</p>
+        
+        <div class="text-center mt-3">
+          <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-paper-plane"></i> Submit Your Entry
+          </a>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Competition Platform</h4>
+          <p>All Track 1 battles take place on our dedicated PokéAgent Showdown server:</p>
+          <div class="text-center mt-2">
+            <a href="http://pokeagentshowdown.com.psim.us/" class="btn btn-secondary" target="_blank">
+              <i class="fas fa-gamepad"></i> PokéAgent Showdown Ladder
+            </a>
+            <p class="mt-1" style="font-size: 0.9rem; color: #666; font-style: italic;">
+              <i class="fas fa-info-circle"></i> Note: The ladder is not yet live. Check back on July 11th, 2025 for the official launch.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Submission Requirements</h4>
+          <ul>
+            <li><strong>Agent Code:</strong> Your battle agent implementation as a ZIP or TAR.GZ file including all dependencies and README</li>
+          </ul>
+        </div>
+        
+        <div class="mt-3">
+          <h4>Evaluation Criteria</h4>
+          <ul>
+            <li><strong>Ladder Performance:</strong> Final ranking achieved on the PokéAgent Showdown ladder</li>
+            <li><strong>Team Innovation:</strong> Creativity and effectiveness of team composition</li>
+            <li><strong>Reproducibility:</strong> Clear documentation and reproducible results</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline">
+    <div class="container">
+      <h2 class="text-center mb-2">Track 1 Timeline</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 8th, 2025</span>
+            <h3>Competition Launch</h3>
+            <p>Track 1 Rules announced and starter kits updated.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 11th, 2025</span>
+            <h3>Practice Window Begins</h3>
+            <p>The PokéAgent Showdown server launches for free-play AI battles.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">September 29th, 2025</span>
+            <h3>Qualification Window Begins</h3>
+            <p>Ladder ratings are reset and participants battle for leaderboard positions.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 12th, 2025</span>
+            <h3>Qualification Window Ends</h3>
+            <p>Ladder ratings are finalized and top-ranked participants qualify for the tournament.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 15th, 2025</span>
+            <h3>Bracket Tournament Begins</h3>
+            <p>Qualifying participants battle in a best-of-k single-elimination tournament.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 31st, 2025</span>
+            <h3>Bracket Tournament Ends</h3>
+            <p>Tournament concludes and final results are announced.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Resources and Support</h2>
+      <div class="card showdown-content">
+
         <h3>Datasets</h3>
         
         <h4>Showdown Replay Logs</h4>
@@ -286,7 +404,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         </p>
 
         <p>
-          Participants looking for more of a blank slate to get started with are encouraged to check out:</strong>
+          Participants looking for more of a blank slate to get started with are encouraged to check out:
         </p>
 
         <ul>
@@ -294,69 +412,8 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           The Python RL interface to Showdown used by most recent academic works.</li>
           <li><a href="https://github.com/pkmn" target="_blank"><code>pkmn</code></a>: 
           A suite of TypeScript tools that interface much more directly with Showdown's native infra.</li>
-          <li>pkmn is also building a very helpful <a href="https://pkmn.ai/projects/" target="_blank">list of existing Pokémon AI projects</a>. 
-          Some of these are probably competing against you :) but <strong>their developers are absolutely welcome to share more info in the Discord 
-          if they want to point more people to their projects.</strong></li>
         </ul>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline Section -->
-  <section id="timeline">
-    <div class="container">
-      <h2 class="text-center mb-2">Track 1 Timeline</h2>
-      <div class="timeline">
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">July 8th, 2025</span>
-            <h3>Competition Launch</h3>
-            <p>Track 1 Rules announced and starter kits updated.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">July 11th, 2025</span>
-            <h3>Practice Window Begins</h3>
-            <p>The PokéAgent Showdown server launches for free-play AI battles.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">September 29th, 2025</span>
-            <h3>Qualification Window Begins</h3>
-            <p>Ladder ratings are reset and participants battle for leaderboard positions.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 12th, 2025</span>
-            <h3>Qualification Window Ends</h3>
-            <p>Ladder ratings are finalized and top-ranked participants qualify for the tournament.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 15th, 2025</span>
-            <h3>Bracket Tournament Begins</h3>
-            <p>Qualifying participants battle in a best-of-k single-elimination tournament.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 31st, 2025</span>
-            <h3>Bracket Tournament Ends</h3>
-            <p>Tournament concludes and final results are announced.</p>
-          </div>
-        </div>
-        
       </div>
     </div>
   </section>
