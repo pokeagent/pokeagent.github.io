@@ -302,9 +302,23 @@ section {
     border: 1px solid #e9ecef;
 }
 
+.showdown-content a code {
+    color: var(--secondary-color);
+    background-color: #e8f4f8;
+    border: 1px solid #b8daff;
+    transition: all 0.3s ease;
+}
+
+.showdown-content a:hover code {
+    color: var(--primary-color);
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+}
+
 .dataset-table {
-    margin: 2rem 0;
+    margin: 2rem auto;
     overflow-x: auto;
+    max-width: 800px;
 }
 
 .dataset-table table {
@@ -313,13 +327,16 @@ section {
     background: white;
     border: 1px solid #e9ecef;
     border-radius: var(--border-radius);
+    table-layout: fixed;
 }
 
 .dataset-table th,
 .dataset-table td {
-    padding: 0.75rem;
+    padding: 1rem 1rem;
     text-align: left;
     border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+    line-height: 1.5;
 }
 
 .dataset-table th {
@@ -332,6 +349,34 @@ section {
 
 .dataset-table td:first-child {
     font-weight: 500;
+    width: 25%;
+    word-wrap: break-word;
+}
+
+.dataset-table td:nth-child(2) {
+    width: 75%;
+    word-wrap: break-word;
+}
+
+.dataset-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.dataset-table tr:hover {
+    background-color: #f0f8ff;
+}
+
+.dataset-table a code {
+    color: var(--secondary-color);
+    background-color: #e8f4f8;
+    border: 1px solid #b8daff;
+    transition: all 0.3s ease;
+}
+
+.dataset-table a:hover code {
+    color: var(--primary-color);
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
 }
 
 .showdown-content .track-links {

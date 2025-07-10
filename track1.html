@@ -79,7 +79,52 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
        
         <p>
           To avoid disrupting human players, <strong>PokéAgent participants will compete on an AI-focused Showdown server hosted by the competition</strong>. 
-          Participants will battle against organizer baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.
+          Participants will battle against organizer-hosted baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.
+
+          The PokéAgent Showdown server will restrict matchmaking to the following rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>) where ML baselines and datasets are readily available:
+
+          <div class="dataset-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Format</th>
+                  <th>Rules</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Gen 1 OverUsed (OU)</strong></td>
+                  <td>Current official rules.</td>
+                </tr>
+                <tr>
+                  <td><strong>Gen 2 OU</strong></td>
+                  <td>Current official rules.</td>
+                </tr>
+                <tr>
+                  <td><strong>Gen 3 OU</strong></td>
+                  <td>Current official rules.</td>
+                </tr>
+                <tr>
+                  <td><strong>Gen 4 OU</strong></td>
+                  <td>Current official rules.</td>
+                </tr>
+                <tr>
+                  <td><strong>Gen 9 OU</strong></td>
+                  <td>Current rules, plus the AI-friendly exceptions that:<br>
+                  • Zoroark is banned<br>
+                  • Revival Blessing is banned</td>
+                </tr>
+                <tr>
+                  <td><strong>Gen 9 VGC</strong></td>
+                  <td>Official Regulation I rules, plus the AI-friendly exceptions that:<br>
+                  • Zoroark is banned<br>
+                  • Dondozo is banned</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+            (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>.)
         </p>
         <p>
           The competition will be divided into three stages:
@@ -89,13 +134,10 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
             <strong>1. Research Stage (July 11th - September 29th):</strong> The first stage is a "free play" period. The PokéAgent server will be open to all participants, with player pools supplemented by organizer baselines across a wide range of skill levels. Get started, develop new ideas, and see how your method compares to the competition!
           </li>
           <li>
-            <strong>2. Qualifying Stage (September 28th - October 12th):</strong> On September 29th, the competition formally begins. 
-            Each team must register one official username with the organizers. 
-            Other usernames will be locked, and multi-accounting will be considered cheating. 
-            All ratings will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top-ranked usernames (excluding organizer baselines) will qualify for the next stage.
+            <strong>2. Qualifying Stage (September 28th - October 12th):</strong> On September 29th, the competition formally begins. All ratings will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top-ranked usernames (excluding organizer baselines) will qualify for the next stage.
           </li>
           <li>
-            <strong>3. Tournament Stage (October 15th - October 31st):</strong> Qualifying participants will compete in a single-elimination tournament featuring best-of-k-battle matches.
+            <strong>3. Tournament Stage (October 15th - October 31st):</strong> Qualifying participants will compete in a bracket tournament featuring best-of-k-battle matches.
           </li>
         </ul>
         <p>
@@ -105,30 +147,13 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           Because this is the first time a competition like this has been run, some specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
         </p>
         <p>
-          <strong>Showdown Rulesets:</strong> Competitive Pokémon is divided into a wide variety of rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>).
-          Our competition will filter this list to the following formats, where ML datasets and baselines are available:
-        </p>
-        <ul>
-          <li><strong>Gen 1 OverUsed (OU)</strong> with the current official rules.</li>
-          <li><strong>Gen 2 OU</strong> with the current official rules.</li>
-          <li><strong>Gen 3 OU</strong> with the current official rules.</li>
-          <li><strong>Gen 4 OU</strong> with the current official rules.</li>
-          <li><strong>Gen 9 OU</strong> with the current rules, plus the AI-friendly exceptions that Zoroark and the move Revival Blessing are banned.</li>
-          <li><strong>Gen 9 VGC</strong> with the official Regulation I rules, plus the AI-friendly exceptions that Zoroark and Dondozo are banned.</li>
-          (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>.)
-        </ul>
-        <p>
-          All of these formats will be available throughout the Research Stage. However, <em>the formal Tournament Stage will limit competition to a subset of this list</em>. Currently, <strong>Gen 1 OU and Gen 9 OU</strong> are guaranteed to have brackets, with additional options to be determined based on the number of participants, ladder activity, community feedback, and available prizes.
+          <strong>Showdown Rulesets:</strong> All of the formats listed above will be available throughout the Research Stage. However, <em>the formal Tournament Stage will limit competition to a subset of this list</em>. Currently, <strong>Gen 1 OU and Gen 9 OU</strong> are guaranteed to have brackets, with additional options to be determined based on the number of participants, ladder activity, community feedback, and available prizes.
         </p>
         <p>
           <strong>Bracket Size and Match Length:</strong> Pokémon has high variance. Human tournaments often use a best two-out-of-three battle structure. 
           We would prefer to go (significantly) higher, but will work with qualifying participants to determine whether this creates a financial burden
           and whether credits provided by our sponsors can help. The total bracket size (e.g., 8, 16, 32 teams) will be determined 
-          based on the number of active entrants and announced well in advance of the Qualifying Stage. The purpose of the Qualifying Stage is to filter 
-          the player pool to a smaller group of dedicated teams to streamline tournament organization. It is not intended to put undue 
-          focus on the matchmaking gamesmanship of climbing ELO points, or on the ability to maintain constant uptime to defend your ranking. 
-          We reserve the right to offer an alternative qualification criterion ("Last Chance Qualifier") that would require exceeding a specified win rate over a large sample of battles against 
-          the strongest organizer baselines.
+          based on the number of active entrants and announced well in advance of the Qualifying Stage. 
         </p>
 
       </div>
@@ -153,7 +178,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           by the teams behind <a href="https://sites.google.com/view/pokechamp-llm?pli=1" target="_blank">PokéChamp</a> 
           and <a href="https://metamon.tech" target="_blank">Metamon</a>, which are recent papers that demonstrate strong human-level play 
           in singles formats. Both projects are open-source and have recently been updated to create a more helpful starting point for this competition.
-          We have also been joined by <a href="https://arxiv.org/abs/2506.10326" target="_blank">VGC-Bench</a> to extend support to VGC (doubles)!
+          We have also been joined by <a href="https://github.com/cameronangliss/VGC-Bench" target="_blank">VGC-Bench</a> to extend support to VGC (doubles)!
         </p>
 
         <div class="track-links" style="margin: 2rem 0;">
@@ -189,19 +214,9 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
       <h2 class="text-center mb-2">Submission Guidelines</h2>
       <div class="card">
         <h3>How to Submit for Track 1</h3>
-        <p>Submissions for this track focus on competitive battling performance on the PokéAgent Showdown ladder. Your agent must compete exclusively through our hosted Showdown server and achieve high rankings through strategic gameplay and team building.</p>
-        
-        <p><strong>Important:</strong> There is no need to register at this time. Registration will open as we get closer to the Qualifying Stage. You will have to declare your team members, provide a contact email, and designate one Showdown username for your agent. By registering, you will have agreed to make your method's code available to the organizers for validation.</p>
-        
-        <!-- <div class="text-center mt-3">
-          <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
-            <i class="fas fa-paper-plane"></i> Submit Your Entry
-          </a>
-        </div> -->
-        
-        <div class="mt-3">
-          <h4>Competition Platform</h4>
-          <p>All Track 1 battles take place on our dedicated PokéAgent Showdown server:</p>
+
+        Evaluation for Track 1 will take place on the PokéAgent Showdown server. Test your method by searching for battles on the ladder!
+                <div class="mt-3">
           <div class="text-center mt-2">
             <a href="" class="btn btn-secondary" target="_blank">
               <i class="fas fa-gamepad"></i> PokéAgent Showdown Ladder
@@ -212,22 +227,17 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           </div>
         </div>
         
-        <div class="mt-3">
-          <h4>Submission Requirements</h4>
-          <ul>
-            <li><strong>Agent Code:</strong> Your battle agent implementation as a ZIP or TAR.GZ file including all dependencies and README</li>
-          </ul>
-        </div>
+        <p>
+        There is no need to formally submit anything at this time. As we get closer to the Qualification Stage, we will ask you to declare your team members, 
+        provide a contact email, and designate one Showdown username for your team. By registering, you will have to agree to provide the organizers with 
+        source code and written technical details of your method upon request. </p>
         
-        <div class="mt-3">
-          <h4>Evaluation Criteria</h4>
-          <ul>
-            <li><strong>Ladder Performance:</strong> Final ranking achieved on the PokéAgent Showdown ladder</li>
-            <li><strong>Team Innovation:</strong> Creativity and effectiveness of team composition</li>
-            <li><strong>Reproducibility:</strong> Clear documentation and reproducible results</li>
-          </ul>
-        </div>
-      </div>
+        <!-- <div class="text-center mt-3">
+          <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-paper-plane"></i> Submit Your Entry
+          </a>
+        </div> -->
+        
     </div>
   </section>
 
@@ -236,14 +246,6 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
     <div class="container">
       <h2 class="text-center mb-2">Track 1 Timeline</h2>
       <div class="timeline">
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">July 8th, 2025</span>
-            <h3>Competition Launch</h3>
-            <p>Track 1 Rules announced and starter kits updated.</p>
-          </div>
-        </div>
         
         <div class="timeline-item">
           <div class="timeline-content">
