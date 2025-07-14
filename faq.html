@@ -217,6 +217,30 @@
         question.classList.toggle('active');
       });
     });
+
+    // Auto-expand FAQ section if linked directly
+    function expandFAQFromHash() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement && targetElement.classList.contains('faq-item')) {
+          const question = targetElement.querySelector('.faq-question');
+          if (question) {
+            question.classList.add('active');
+            // Smooth scroll to the element
+            setTimeout(() => {
+              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
+        }
+      }
+    }
+
+    // Expand on page load
+    expandFAQFromHash();
+
+    // Expand when hash changes (for navigation within page)
+    window.addEventListener('hashchange', expandFAQFromHash);
   </script>
 </body>
 </html>
