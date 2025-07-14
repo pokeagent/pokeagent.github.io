@@ -216,17 +216,42 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         <h3>How to Submit for Track 1</h3>
 
         Evaluation for Track 1 will take place on the PokéAgent Showdown server. Test your method by searching for battles on the ladder!
+
+
+        
                 <div class="mt-3">
           <div class="text-center mt-2">
-            <a href="" class="btn btn-secondary" target="_blank">
-              <i class="fas fa-gamepad"></i> PokéAgent Showdown Ladder
+            <a href="http://pokeagentshowdown.com.psim.us" class="btn btn-secondary" target="_blank">
+              <i class="fas fa-gamepad"></i> Open PokéAgent's Showdown Server
             </a>
             <p class="mt-1" style="font-size: 0.9rem; color: #666; font-style: italic;">
-              <i class="fas fa-info-circle"></i> Note: The ladder is not yet live. Check back on July 11th, 2025 for the official launch.
             </p>
           </div>
         </div>
-        
+
+        <p>
+          <strong>1. Register:</strong> Create a Showdown username and password by clicking the gear icon in the top right corner. Bot usernames should begin with "PAC" (PokéAgent Challenge).
+        </p>
+
+        <p>
+          <strong>2. Deploy:</strong> Starter kits have specific instructions and quick-setups to deploy agents on the server. For more general cases, the poke-env server config details would be:
+        </p>
+
+        <p>
+          <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+            <pre style="background: #f8f8f8; border-radius: 8px; padding: 1.2em 2em; font-size: 1.05em; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: inline-block;">
+PokeAgentServerConfiguration = ServerConfiguration(
+    "wss://pokeagentshowdown.com/showdown/websocket",
+    "https://play.pokemonshowdown.com/action.php?",
+)
+            </pre>
+          </div>
+        </p>
+
+        <p>
+          <strong>3. Battle!:</strong> Watch live battles and climb to the top of the ranked ladder! You'll be matched against other participants and a set of <a href="https://pokeagent.github.io/faq.html#ladder-baselines" target="_blank">organizer-hosted baselines</a> that keep the ladder active.
+        </p>
+
         <p>
         There is no need to formally submit anything at this time. As we get closer to the Qualification Stage, we will ask you to declare your team members, 
         provide a contact email, and designate one Showdown username for your team. By registering, you will have to agree to provide the organizers with 
