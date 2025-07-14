@@ -31,7 +31,7 @@
     <div class="container">
       <h2 class="text-center mb-2">Frequently Asked Questions</h2>
       
-      <div class="faq-item">
+      <div class="faq-item" id="what-is-pokeagent-challenge">
         <div class="faq-question">
           <span>What is the PokéAgent Challenge?</span>
           <i class="fas fa-chevron-down"></i>
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="who-can-participate">
         <div class="faq-question">
           <span>Who can participate in the competition?</span>
           <i class="fas fa-chevron-down"></i>
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="what-resources-provided">
         <div class="faq-question">
           <span>What resources will be provided to participants?</span>
           <i class="fas fa-chevron-down"></i>
@@ -68,18 +68,18 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="can-use-external-resources">
         <div class="faq-question">
           <span>Can I use external resources like LLMs in my solution?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
           <p>Yes, Track 1 permits external LLM usage with full documentation and supports training on our 3.5M-battle dataset or self-play. 
-            Track 2 allows most methodological approaches which uses a neural network to produce the action. However, we do not allow the use of heavy heuristics as we want to encourage a generalizable solution. We reserve the right to disqualify submissions that we deem to be in violation of the rules.</p>
+            Track 2 allows most methodological approaches which use a neural network to produce the action. However, we do not allow the use of heavy heuristics as we want to encourage a generalizable solution. We reserve the right to disqualify submissions that we deem to be in violation of the rules.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="how-submissions-evaluated">
         <div class="faq-question">
           <span>How will submissions be evaluated?</span>
           <i class="fas fa-chevron-down"></i>
@@ -90,23 +90,68 @@
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="are-there-prizes">
         <div class="faq-question">
           <span>Are there prizes for winning teams?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Yes, incentives include monetary prizes (subject to sponsorship), research collaboration opportunities, presentation slots at NeurIPS 2025, computational resources, and opportunity to co-author a subsequent NeurIPS 2026 submission for top solutions.</p>
+          <p>Yes, incentives include monetary prizes (subject to sponsorship), research collaboration opportunities, presentation slots at NeurIPS 2025, computational resources, and the opportunity to co-author a subsequent NeurIPS 2026 submission for top solutions.</p>
         </div>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item" id="ladder-baselines">
         <div class="faq-question">
-          <span>Do I need prior experience with Pokémon to participate?</span>
+          <span>What are the organizer-hosted baselines on the Track 1 ladder?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>No, prior experience with Pokémon is not required. We provide comprehensive documentation, tutorials, and resources to help participants understand the game mechanics and develop effective agents regardless of their familiarity with Pokémon.</p>
+          <p>
+            <strong>"PAC-BH-<em>X</em>"</strong> usernames are basic heuristics meant to fill in the bottom of the ladder. 
+            X is a shorthand version of their name in Metamon (<code>metamon/baselines</code>). 
+            For reference, the relative strength of these heuristics (averaged over Gen 1-4 OU):
+          </p>
+
+          <div style="text-align: center; margin: 1.5em 0;">
+            <img src="media/figures/heuristic_heatmap.png" alt="Heuristic Baseline Strength Heatmap" style="max-width: 400px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          </div>
+
+          <p>
+            <strong>"PAC-PC-<em>Method-Model</em>"</strong> usernames are PokéChamp LLM agents. 
+            "Method" denotes the prompt scheme (io/minimax), while "Model" is the LLM backend (Llama, Gemini, etc.). 
+            Currently, these agents are only active on the Gen 9 OU ladder.
+          </p>
+
+          <p>
+            <strong>"PAC-MM-<em>X</em>"</strong> usernames are the Metamon sequence model policies. 
+            X is a shortened version of their name in Metamon (<code>metamon/rl</code>). 
+            These policies were evaluated on the real Showdown ladder and provide a point of reference against human players. 
+            Their rankings were:
+          </p>
+
+          <div style="text-align: center; margin: 1.5em 0;">
+            <img src="media/figures/human_ratings.png" alt="Metamon RL Policy Human Ratings" style="max-width: 800px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          </div>
+
+          <p>
+            For those less familiar with Showdown ratings, the figure below reframes in terms of an approximate percentile among active usernames:
+          </p>
+
+          <div style="text-align: center; margin: 1.5em 0;">
+            <img src="media/figures/metamon_percentiles.png" alt="Showdown Rating Percentile Translation" style="max-width: 800px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          </div>
+
+          <p>
+            However, on the PokéAgent ladder, the PAC-MM usernames are sampling from a new set of ~10k team files per format, which adds variety but decreases performance.
+          </p>
+
+          <p>
+            Metamon is under active development and more policies may be added to the ladder over time. 
+            Currently, there is only one unreleased model; it plays under the username "PAC-MM-SmallRLG9" 
+            and is roughly equivalent to the original "SmallRL" policy, but adds Gen 9 OU replays. 
+            On the Gen 9 OU ladder, "PAC-MM-SmallRLG9" plays with a small set of human sample teams, 
+            while "PAC-MM-SmallRLG9Var" serves the same model but picks from ~20k teams.
+          </p>
         </div>
       </div>
     </div>
