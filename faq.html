@@ -119,13 +119,13 @@
           <p>
             <strong>"PAC-PC-<em>Method-Model</em>"</strong> usernames are PokéChamp LLM agents. 
             "Method" denotes the prompt scheme (io/minimax), while "Model" is the LLM backend (Llama, Gemini, etc.). 
-            Currently, these agents are only active on the Gen 9 OU ladder.
+            Currently, these agents are only active on the Gen 9 OU ladder. The minimax GPT-4o version was evaluated on the Gen 9 OU ladder with an ELO of 1300-1500.
           </p>
 
           <p>
             <strong>"PAC-MM-<em>X</em>"</strong> usernames are the Metamon sequence model policies. 
             X is a shortened version of their name in Metamon (<code>metamon/rl</code>). 
-            These policies were evaluated on the real Showdown ladder and provide a point of reference against human players. 
+            These policies were evaluated on the main Showdown ladder and provide a point of reference against human players. 
             Their rankings were:
           </p>
 
@@ -146,8 +146,7 @@
           </p>
 
           <p>
-            Metamon is under active development and more policies may be added to the ladder over time. 
-            Currently, there is only one unreleased model; it plays under the username "PAC-MM-SmallRLG9" 
+            More policies will be added to the ladder over time. Currently, there is only one unreleased model; it plays under the username "PAC-MM-SmallRLG9" 
             and is roughly equivalent to the original "SmallRL" policy, but adds Gen 9 OU replays. 
             On the Gen 9 OU ladder, "PAC-MM-SmallRLG9" plays with a small set of human sample teams, 
             while "PAC-MM-SmallRLG9Var" serves the same model but picks from ~20k teams.
