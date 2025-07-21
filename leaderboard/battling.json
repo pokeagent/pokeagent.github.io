@@ -4,98 +4,98 @@
     "rank": 1,
     "username": "victators",
     "elo": 1749,
-    "gxe": 1749,
-    "glicko": 1749,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 2,
     "username": "Sir Slaking",
     "elo": 1299,
-    "gxe": 1299,
-    "glicko": 1299,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 3,
     "username": "ChiJin",
     "elo": 1234,
-    "gxe": 1234,
-    "glicko": 1234,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 4,
     "username": "krtester",
     "elo": 1084,
-    "gxe": 1084,
-    "glicko": 1084,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen1ou",
     "rank": 1,
     "username": "Daniel10720",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:07.987Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:48.251Z"
   },
   {
     "format": "gen1ou",
     "rank": 2,
     "username": "AntDic",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:07.988Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:48.252Z"
   },
   {
     "format": "gen1ou",
     "rank": 3,
     "username": "jakegrigsby",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:07.988Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:48.252Z"
   },
   {
     "format": "gen9ou",
     "rank": 5,
     "username": "cyrux21",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 6,
     "username": "ok8ko",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 7,
     "username": "teskasjx",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   },
   {
     "format": "gen9ou",
     "rank": 8,
     "username": "Guest 1050",
     "elo": 1000,
-    "gxe": 1000,
-    "glicko": 1000,
-    "timestamp": "2025-07-21T04:33:09.119Z"
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-07-21T04:34:49.487Z"
   }
 ]
