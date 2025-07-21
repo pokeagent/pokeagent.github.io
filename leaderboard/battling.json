@@ -1,1 +1,387 @@
-[]
+[
+  {
+    "format": "gen1ou",
+    "rank": null,
+    "username": "Username",
+    "elo": null,
+    "gxe": null,
+    "glicko": "T",
+    "timestamp": "2025-07-21T04:02:05.899Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 2285,
+    "username": "PAC-MM-SynRLV2",
+    "elo": 10784,
+    "gxe": 1791,
+    "glicko": "19",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 2134,
+    "username": "PAC-MM-SynRLV1-SP",
+    "elo": 9324,
+    "gxe": 3215,
+    "glicko": "56",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 2054,
+    "username": "PAC-MM-SynRLV0",
+    "elo": 8648,
+    "gxe": 3937,
+    "glicko": "52",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 2018,
+    "username": "PAC-MM-SynRLV1",
+    "elo": 8577,
+    "gxe": 4000,
+    "glicko": "55",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1870,
+    "username": "PAC-MM-SmallRLG9",
+    "elo": 6607,
+    "gxe": 5885,
+    "glicko": "21",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1849,
+    "username": "PAC-MM-LargeRL",
+    "elo": 6564,
+    "gxe": 5983,
+    "glicko": "66",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1825,
+    "username": "PAC-MM-SmallILFA",
+    "elo": 5968,
+    "gxe": 6627,
+    "glicko": "49",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1784,
+    "username": "PAC-MM-SmallIL",
+    "elo": 4868,
+    "gxe": 7704,
+    "glicko": "65",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1706,
+    "username": "PAC-MM-BaseRNN",
+    "elo": 2873,
+    "gxe": 3516,
+    "glicko": "42",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1731,
+    "username": "PAC-BH-SmogSwitch",
+    "elo": 2742,
+    "gxe": 5731,
+    "glicko": "179",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1689,
+    "username": "PAC-BH-Kaizo",
+    "elo": 2628,
+    "gxe": 4797,
+    "glicko": "106",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1685,
+    "username": "PAC-BH-Grunt",
+    "elo": 2241,
+    "gxe": 5458,
+    "glicko": "129",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1730,
+    "username": "PAC-BH-PokeEnv",
+    "elo": 2237,
+    "gxe": 5655,
+    "glicko": "254",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1630,
+    "username": "PAC-BH-GymLeader",
+    "elo": 2046,
+    "gxe": 5773,
+    "glicko": "278",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1322,
+    "username": "PAC-BH-G1Boss",
+    "elo": 802,
+    "gxe": 6789,
+    "glicko": "80",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1254,
+    "username": "PAC-KH-KimiK2-Test",
+    "elo": 5,
+    "gxe": 32,
+    "glicko": "1",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1130,
+    "username": "PAC-KH-PokeEnv",
+    "elo": 2,
+    "gxe": 15,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1088,
+    "username": "PAC-KH-meta1",
+    "elo": 1,
+    "gxe": 6,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1000,
+    "username": "Daniel10720",
+    "elo": 0,
+    "gxe": 1,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1000,
+    "username": "AntDic",
+    "elo": 0,
+    "gxe": 1,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 1000,
+    "username": "jakegrigsby",
+    "elo": 0,
+    "gxe": 1,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:05.902Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": null,
+    "username": "Username",
+    "elo": null,
+    "gxe": null,
+    "glicko": "T",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1940,
+    "username": "PAC-MM-SmallRLG9-9",
+    "elo": 12703,
+    "gxe": 4643,
+    "glicko": "1",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1740,
+    "username": "PAC-MM-SmallG9Var",
+    "elo": 10524,
+    "gxe": 6934,
+    "glicko": "1",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 2031,
+    "username": "PAC-MM-SmallG9v2-9",
+    "elo": 4354,
+    "gxe": 1388,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1558,
+    "username": "PAC-BH-Grunt-9",
+    "elo": 2611,
+    "gxe": 4015,
+    "glicko": "5",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1442,
+    "username": "PAC-BH-SSwitch-9",
+    "elo": 2567,
+    "gxe": 4085,
+    "glicko": "4",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1558,
+    "username": "PAC-BH-PokeEnv-9",
+    "elo": 2560,
+    "gxe": 4070,
+    "glicko": "3",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1490,
+    "username": "PAC-BH-Kaizo-9",
+    "elo": 2190,
+    "gxe": 4156,
+    "glicko": "3",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1483,
+    "username": "PAC-BH-GymLeader-9",
+    "elo": 2102,
+    "gxe": 4791,
+    "glicko": "2",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1369,
+    "username": "PAC-BH-G1Boss-9",
+    "elo": 840,
+    "gxe": 5362,
+    "glicko": "5",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1234,
+    "username": "ChiJin",
+    "elo": 174,
+    "gxe": 1194,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1749,
+    "username": "victators",
+    "elo": 35,
+    "gxe": 5,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1304,
+    "username": "PAC-Dracovish",
+    "elo": 7,
+    "gxe": 2,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1299,
+    "username": "Sir Slaking",
+    "elo": 6,
+    "gxe": 2,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1084,
+    "username": "krtester",
+    "elo": 1,
+    "gxe": 0,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1000,
+    "username": "cyrux21",
+    "elo": 0,
+    "gxe": 6,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1000,
+    "username": "ok8ko",
+    "elo": 0,
+    "gxe": 3,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1000,
+    "username": "teskasjx",
+    "elo": 0,
+    "gxe": 1,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1000,
+    "username": "PAC_arnesh",
+    "elo": 0,
+    "gxe": 2,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 1000,
+    "username": "Guest 1050",
+    "elo": 0,
+    "gxe": 15,
+    "glicko": "0",
+    "timestamp": "2025-07-21T04:02:07.054Z"
+  },
+  {
+    "format": "gen9vgc2025regi",
+    "rank": 404,
+    "elo": null,
+    "gxe": null,
+    "timestamp": "2025-07-21T04:02:08.176Z"
+  }
+]
