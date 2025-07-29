@@ -6,7 +6,7 @@
     "elo": 1749,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -15,7 +15,7 @@
     "elo": 1299,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -24,7 +24,7 @@
     "elo": 1234,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -33,7 +33,7 @@
     "elo": 1084,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen1ou",
@@ -42,7 +42,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:25:59.952Z"
+    "timestamp": "2025-07-29T07:25:59.844Z"
   },
   {
     "format": "gen1ou",
@@ -51,7 +51,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:25:59.952Z"
+    "timestamp": "2025-07-29T07:25:59.845Z"
   },
   {
     "format": "gen1ou",
@@ -60,7 +60,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:25:59.952Z"
+    "timestamp": "2025-07-29T07:25:59.845Z"
   },
   {
     "format": "gen9ou",
@@ -69,7 +69,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -78,7 +78,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -87,7 +87,7 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   },
   {
     "format": "gen9ou",
@@ -96,6 +96,6 @@
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-07-28T07:26:01.394Z"
+    "timestamp": "2025-07-29T07:26:01.062Z"
   }
 ]
