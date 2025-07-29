@@ -46,10 +46,8 @@
         <div class="format-selector mb-2">
           <label for="format-select">Select Format:</label>
           <select id="format-select" onchange="filterBattlingLeaderboard()">
-            <option value="all">All Formats</option>
+            <option value="gen9ou" selected>Gen 9 OU</option>
             <option value="gen1ou">Gen 1 OU</option>
-            <option value="gen9ou">Gen 9 OU</option>
-            <option value="gen9vgc2025regi">Gen 9 VGC 2025 Regulation</option>
           </select>
         </div>
 
@@ -200,29 +198,10 @@
       const tableBody = document.getElementById("battling-leaderboard");
       tableBody.innerHTML = '';
       
-      let filteredData = battlingData;
-      if (selectedFormat !== 'all') {
-        filteredData = battlingData.filter(entry => entry.format === selectedFormat);
-        // Limit to top 100 for individual format
-        filteredData = filteredData.slice(0, 100);
-      } else {
-        // For "all formats", show top 100 from each format
-        const top100PerFormat = {};
-        battlingData.forEach(entry => {
-          if (!top100PerFormat[entry.format]) {
-            top100PerFormat[entry.format] = [];
-          }
-          if (top100PerFormat[entry.format].length < 100) {
-            top100PerFormat[entry.format].push(entry);
-          }
-        });
-        
-        // Combine all formats and sort
-        filteredData = [];
-        Object.values(top100PerFormat).forEach(formatData => {
-          filteredData.push(...formatData);
-        });
-      }
+      // Filter data by selected format
+      let filteredData = battlingData.filter(entry => entry.format === selectedFormat);
+      // Limit to top 100 for individual format
+      filteredData = filteredData.slice(0, 100);
       
       // Sort by format, then by Elo (decreasing), then by name
     //   filteredData.sort((a, b) => {
