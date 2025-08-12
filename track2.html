@@ -114,6 +114,34 @@
         </div>
     </section> -->
 
+  <!-- Countdown Timer -->
+  <section>
+    <div class="container">
+      <div class="countdown-container">
+        <h3 class="countdown-title">⏰ Competition Ends In</h3>
+        <div class="countdown-timer" id="countdown">
+          <div class="countdown-segment">
+            <span class="countdown-value" id="days">--</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="hours">--</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="minutes">--</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="seconds">--</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <p class="countdown-message">Track 2 Submissions end October 31st, 2025</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Starter Kits Section -->
   <section id="starter-kits">
     <div class="container">
@@ -279,6 +307,32 @@
         navMenu.classList.remove('active');
       });
     });
+
+    // Countdown Timer
+    function updateCountdown() {
+      const endDate = new Date('October 31, 2025 23:59:59 PST').getTime();
+      const now = new Date().getTime();
+      const timeLeft = endDate - now;
+
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      } else {
+        document.querySelector('.countdown-timer').innerHTML = '<div style="color: white; font-size: 1.5rem;">Competition Ended</div>';
+        document.querySelector('.countdown-message').style.display = 'none';
+      }
+    }
+
+    // Update countdown every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
