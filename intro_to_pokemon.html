@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intro to Pokémon AI - PokéAgent Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">PokéAgent Challenge</a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track1.html">Track 1</a></li>
+        <li><a href="track2.html">Track 2</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" style="
+    height: auto; 
+    padding: 4rem 0; 
+    background: radial-gradient(ellipse 150% 100% at 50% 30%, #e6f4ff, #66b3ff); 
+    color: var(--dark-color); 
+    text-align: center; 
+    mask: linear-gradient(to bottom, black 85%, transparent 100%); 
+    -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); 
+    position: relative;">
+    <div class="container">
+      <h1 class="mb-1" style="margin-bottom: 1rem;">
+        An Intro to Pokémon AI for Researchers
+      </h1>
+      <div class="hero-description" style="
+        text-align: left; 
+        background: rgba(255, 255, 255, 0.95); 
+        padding: 2rem; 
+        border-radius: 12px; 
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+        backdrop-filter: blur(10px); 
+        border: 1px solid rgba(255, 255, 255, 0.2);">
+        <p>
+          This is an introduction to Track 1 of the PokéAgent Challenge intended for readers who are <strong>interested in machine learning but new to Pokémon Showdown</strong>.
+          We'll run through the main vocabulary you'll need to know and give some (slightly opinionated) thoughts on what matters 
+          and where new research might take us.
+        </p>
+      </div>
+      <div class="scroll-indicator" onclick="document.getElementById('ai-problem').scrollIntoView({behavior: 'smooth'})">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pokémon Battling as an AI Problem -->
+  <section id="ai-problem" style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">Pokémon Battling as an AI Problem</h2>
+      <div class="card showdown-content">
+        <p>
+          Competitive Pokémon turns the Pokémon franchise's turn-based combat
+          mechanic into a standalone two-player strategy game. Players design teams
+          of Pokémon and battle against an opponent. On each turn, they can choose
+          to use a move from the Pokémon already on the field or switch to another
+          member of their team. Moves can deal damage to the opponent, eventually
+          causing it to faint, until the last player with active Pokémon wins.
+        </p>
+
+        <p class="text-center">
+          <img src="media/intro_to_pokemon/pokemon_battle_diagram.png"
+               alt="Pokémon Battle Diagram"
+               style="max-width: 280px; width: 100%; height: auto;"/>
+        </p>
+
+        <p>
+          As an AI benchmark, Pokémon is most defined by:
+        </p>
+        <ol>
+          <li>
+            <strong>Team Design:</strong> Teams are created by choosing six species from the
+            hundred(s) that are available. Each Pokémon then needs four moves, an item, an
+            ability, and custom statistics. Players design teams to counter common trends and
+            then design new teams to counter those counters, and so on. The process of
+            selecting a team and then battling with it is a challenging two-stage optimization
+            problem, and the game is always evolving.
+          </li>
+          <li>
+            <strong>Generalization:</strong> Diverse team combinations create an incredibly wide
+            range of initial states, and each matchup its own strategic puzzle. Agents have to
+            learn to adapt their strategy by weighing the strengths and weaknesses of their own
+            team against the threats and opportunities presented by their opponent.
+          </li>
+          <li>
+            <strong>Stochasticity:</strong> Turn outcomes are random; there are a lot of things
+            that could happen after each move, and a single turn can make or break a battle.
+            The better player does not always win. In fact, the very best players are (only)
+            75–90% favorites against a randomly sampled player, depending on the ruleset.
+          </li>
+          <li>
+            <strong>Imperfect Information and Opponent Prediction:</strong> Battles revolve
+            around team information that has or has not been revealed to the opponent.
+            Inferring unrevealed Pokémon/items/moves can be a major advantage but requires
+            detailed understanding of current team design trends. Pokémon is a
+            simultaneous‑move game and the value of each action is highly dependent on the
+            opponent's decision. Listen to any good player discussing their thought process
+            during a battle and the main thing you'll notice is how much time they spend on
+            team inference and move prediction. Here's one example (no need to watch more than
+            a minute to get the idea):
+            <a href="https://www.youtube.com/watch?v=lPh5_T4KiSY" target="_blank">example commentary</a>.
+          </li>
+          <li>
+            <strong>Datasets:</strong> Between its battle replays, team design stats, forums,
+            and wikis, Pokémon is a goldmine of naturally occuring training data.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try a Battle -->
+  <section id="try-it">
+    <div class="container">
+      <h2 class="text-center mb-2">Let's Play</h2>
+      <div class="card showdown-content">
+        <p>
+          The best way to get a feel for the problem is to play a battle yourself! It takes under a minute to get into a match 
+          against bots on the PokéAgent Ladder. It's a fun way to play low-stakes battles against opponents who won't keep you 
+          waiting or talk trash when you lose :)
+        </p>
+
+        <h3>1) Copy a Sample Team</h3>
+        <details>
+          <summary>Click to view a sample Gen 1 OU team to copy‑paste</summary>
+          <div class="code-block-container mt-1">
+            <pre><code>Alakazam
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+IVs: 2 Atk
+- Thunder Wave
+- Seismic Toss
+- Psychic
+- Recover
+
+Chansey
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+IVs: 2 Atk
+- Thunder Wave
+- Ice Beam
+- Thunderbolt
+- Soft-Boiled
+
+Gengar
+- Hypnosis
+- Thunderbolt
+- Seismic Toss
+- Explosion
+
+Snorlax
+- Body Slam
+- Earthquake
+- Hyper Beam
+- Self-Destruct
+
+Tauros
+- Body Slam
+- Earthquake
+- Hyper Beam
+- Blizzard
+
+Starmie
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+IVs: 2 Atk
+- Thunder Wave
+- Blizzard
+- Psychic
+- Recover</code></pre>
+          </div>
+        </details>
+
+        <h3 class="mt-2">2) Open the PokéAgent Ladder</h3>
+        <div class="text-center mt-2">
+          <a href="http://pokeagentshowdown.com.insecure.psim.us" 
+             class="btn btn-secondary" 
+             target="_blank">
+            <i class="fas fa-gamepad"></i> Open PokéAgent Ladder
+          </a>
+        </div>
+
+        <h3 class="mt-2">3) Follow This Short Video</h3>
+        <p class="text-center">
+          <video width="480" 
+                 controls 
+                 preload="metadata" 
+                 poster="media/intro_to_pokemon/video_thumbnail.png" 
+                 style="max-width: 100%; border-radius: 8px;">
+            <source src="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mp4" 
+                    type="video/mp4">
+            <source src="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mov" 
+                    type="video/quicktime">
+            Your browser does not support the video tag. 
+            <a href="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mov" 
+               target="_blank">Download the video</a> to watch it.
+          </video>
+          <br/>
+          <em>How to start a battle on the PokéAgent ladder</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showdown Glossary -->
+  <section id="showdown-glossary" style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">All You Need to Know About Pokémon Showdown</h2>
+      <div class="card showdown-content">
+        <p>
+          Competitive Pokémon might be the most vocabulary-intensive game ever made. There are a lot of Named Things™ to know about 
+          (there are more than 1,000 Pokémon, just for starters). The terminology can be a bit overwhelming, but remember that you don't 
+          need to learn to play... you just need to learn enough to build a bot that can learn to play for you. The starter resources 
+          use few (if any) Pokémon-specific heuristics and are aimed at an ML audience. However, there are a few vocabulary terms 
+          you'll need to know to follow their instructions and conversations on
+          <a href="https://discord.com/invite/E2DuX5FWF7" target="_blank">Discord</a>:
+        </p>
+        <ul>
+          <li>
+            <strong>Pokémon Showdown</strong> (or just "Showdown"/"PS") is a popular online Pokémon battle simulator (<a href="https://play.pokemonshowdown.com" target="_blank">play.pokemonshowdown.com</a>). 
+            It is an open-source platform, and we use it to host the Track 1 evaluations!
+          </li>
+          <li>
+            <strong>Generations</strong> (or "gen") refer to major releases of the Pokémon video game franchise. 
+            There are currently nine generations ("Gen 1", ... , "Gen 9"). Each generation adds new Pokémon and changes the gameplay mechanics 
+            ("what exactly happens when I pick this move?"). Showdown simulates battles for each generation.
+          </li>
+          <li>
+            <strong>Tiers</strong> are how Showdown excludes Pokémon that are overpowered so that gameplay stays balanced and varied. 
+            <a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">Showdown has a good article about the tiering system</a>. 
+            The PokéAgent Challenge only features the flagship tier <strong>"OverUsed"</strong> (or "OU"). All you need to know is that 
+            a list of < 60 Pokémon are powerful enough to <em>only</em> be allowed in OU, and these are the most common choices you'll run into. 
+            However, Pokémon from lower tiers ("UnderUsed", "NeverUsed", etc.) are allowed and have niche roles.
+          </li>
+          <li>
+            <strong>Battle Format</strong> (or just "Format") refers to a combination of the generation a battle takes place, the tier of 
+            Pokémon that are allowed, and any additional rules. Because we are only considering OU, you'll mainly be seeing terms like 
+            "Gen1OU", "Gen2OU", ... "Gen9OU". Think of each battle format as a distinct game with some high-level similarities.
+          </li>
+          <li>
+            <strong>VGC</strong> refers to the "doubles" battle format officially endorsed and regulated by Pokémon (design 6 Pokémon, pick 4, play 2 vs. 2). 
+            Why is the official championship of a video game franchise modeled after a type of battle that rarely occurs in their games? 
+            Probably because it makes for a better (shorter) live event. Despite shorter battle lengths, VGC is widely considered to be more 
+            complicated than singles because there are far more potential actions per turn. However, Singles is a legitimately competitive 
+            format with prize money tournaments, World Cups, and so on.
+          </li>
+          <li>
+            <strong>ELO, GXE, and Glicko-1</strong> are player skill metrics. 
+            <a href="https://en.wikipedia.org/wiki/Elo_rating_system" target="_blank">ELO</a> and 
+            <a href="https://en.wikipedia.org/wiki/Glicko_rating_system" target="_blank">Glicko-1</a> are not unique to Pokémon. 
+            Showdown's matchmaking tends to pair people with similar ELO ratings. GXE corrects for matchmaking bias and approximates your 
+            % chance of defeating a randomly sampled opponent. 
+            <a href="https://pokemonshowdown.com/pages/ladderhelp" target="_blank">Here is a Showdown article with more information about player metrics</a>. 
+            GXE and Glicko-1 are the best way to measure player strength against human players. It is usually unfair to compare player metrics across different battle formats.
+          </li>
+          <li>
+            <strong>Ladders</strong> are the ranked battle system on Showdown. You request a battle, match against an unknown player, 
+            and play a single game. Showdown maintains a global leaderboard and updates both players' ratings after the battle. There are separate ladders for each battle format.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formats and AI -->
+  <section id="formats-ai">
+    <div class="container">
+      <h2 class="text-center mb-2">What Do the Different Battle Formats Mean for AI?</h2>
+      <div class="card showdown-content">
+        <p class="text-center">
+          <img src="media/intro_to_pokemon/merged_metamon_ps_sumary_fig_large_font.png" 
+               alt="Battle Formats Summary" 
+               style="max-width: 620px; width: 100%; height: auto;"/>
+        </p>
+        <p class="mt-1">
+          The PokéAgent Challenge has leaderboards for Gen1OU and Gen9OU, which covers both ends of a few important trends:
+        </p>
+
+        <h4>Team Design Space</h4>
+        <p>
+          <strong>Trend:</strong> Every generation adds Pokémon, moves, and other team design choices. Therefore, the number of available team 
+          compositions dramatically increases over the generations. The number of teams that are considered <em>competitively viable</em> generally increases too...
+          but the tiering system keeps this more manageable.
+        </p>
+        <p>
+          <strong>AI Takeaways:</strong> Agents must generalize over more diverse team choices in later generations. Expect later 
+          generations to require more data and stronger representations to reach the same performance.
+        </p>
+
+        <h4>Data Availability</h4>
+        <p>
+          <strong>Trend:</strong> The latest generation (currently: Gen 9) is by far the most popular. There are more Gen 9 battles played 
+          per day than every other generation combined.
+        </p>
+        <p>
+          <strong>AI Takeaways:</strong> Available replay data conveniently increases alongside the previously mentioned demand for more data.
+        </p>
+
+        <h4>Planning Horizon</h4>
+        <p>
+          <strong>Trend:</strong> Offensive power has increased over time. There are more Pokémon that deal more damage to mismatches in team design. The average length of a battle drops sharply over the early generations, 
+          then mostly levels out.
+        </p>
+        <p>
+          <strong>AI Takeaways:</strong> Planning horizons decrease over generations, but it becomes harder to recover from mistakes (or bad luck). Search may be more useful in later gens.
+        </p>
+
+        <h4>Imperfect Information</h4>
+        <p>
+          <strong>Trend:</strong> Before Gen 5, you begin with zero information about your opponent's team. From Gen 5 onward, Showdown 
+          reveals the opponent's Pokémon before the battle begins ("Team Preview").
+        </p>
+        <p>
+          <strong>AI Takeaways:</strong> Gen 1–4 emphasize opponent team prediction. Team Preview weakens the otherwise obvious trend 
+          that more team combinations leads to more imperfect information.
+        </p>
+
+        <h4>Non‑Stationarity</h4>
+        <p>
+          <strong>Trend:</strong> Pokémon is a role‑playing game first and foremost. Turning it into a balanced competitive strategy 
+          game is hard and requires frequent rule changes, especially in the first few months after a new generation is released.
+        </p>
+        <p>
+          <strong>AI Takeaways:</strong> Manual rule changes and evolving strategies create non‑stationary datasets. In other words, if you are imitating
+          a replay from 2015, you are imitating the decisions of a player who thought they were up against a different set of teams and strategies than you'd see on the ladder today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opinions / Open Problems -->
+  <section id="open-problems" style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">Suggestions for Getting Started</h2>
+      <div class="card showdown-content">
+
+        <h4>Create an Account and Deploy an Existing Method on the Practice Ladder</h4>
+        <p>
+          Both starter kits have one-liner commands to deploy strong agents on the practice ladder. Try it out and watch some live battles!
+        </p>
+
+        <h4>Team Selection</h4>
+        <p>
+          Most research in Pokémon overlooks team design by requiring both agents to sample from an arbitrary set of teams. While this isolates 
+          decision‑making, it does not capture the full game as played by humans. A straightforward improvement would be to tune team choices using results 
+          from the practice ladder or self‑play evaluations. We've released a large set of candidate teams to try, and many more are 
+          available on <a href="https://www.smogon.com/forums/" target="_blank">forums</a>. Just make sure your team remains legal! A more sophisticated 
+          approach could treat team design and battling as a hierarchical control problem, searching for an equilibrium in team selection or co-training a team design 
+          agent alongside a battle agent that plays with the assigned team. Methods that actively generate teams (rather than selecting from a set of candidates) 
+          would be especially interesting.
+        </p>
+
+        <h4>Reinforcement Learning</h4>
+        <p>
+          <a href="https://github.com/UT-Austin-RPL/metamon" target="_blank">Metamon</a> (the RL starter kit) achieves strong performance 
+          in Gens 1–4 while sampling from generic forum teams, skipping search, and relying on iterative offline 
+          RL without a dedicated online self‑play process. There's significant room for growth in those areas alone, not to mention the rest 
+          of modern RL. The starter kits replicate the training setup of the paper, but you are encouraged to try alternative methods.
+        </p>
+
+        <h4>LLM‑Agents</h4>
+        <p>
+          LLMs are general‑purpose solutions and might benefit from more nuanced knowledge of competitive gameplay. Prior work hasn't fully explored fine‑tuning LLMs 
+          on replay data, and this would be an exciting direction for those with the compute to try it. A more affordable alternative is to improve prompts by integrating 
+          information from <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Pokémon encyclopedias</a> and
+          <a href="https://www.smogon.com/dex/rb/formats/ou/" target="_blank">competitive strategy guides</a> based on the current battle state.
+        </p>
+
+        <h4>Adaptation / Exploitation</h4>
+        <p>
+          At the top of the ladder, and especially in tournaments, you play the same opponents repeatedly. Players scout their opponent for major tournaments and adapt to their
+          tendencies over repeat matchups. Your agents could do the same! Few-shot adaptation like this is a key strength of LLMs and may have promising
+          applications in Pokémon. The Metamon RL paper is also written from this perspective and builds on an RL method intended for multi-episodic adaptation.
+        </p>
+
+        <h4>Search and Heuristics</h4>
+        <p>
+          There are a lot of very technical people who are also great Pokémon players. If you're new to Pokémon, trying to out‑heuristic them in a few months is probably not 
+          the best plan. However, there's real opportunity at the intersection of fast search and ML. While the tournament has no explicit 
+          rule against domain‑knowledge‑heavy methods, remember this competition is part of an ML research conference: methods with a clear 
+          research contribution are more likely to stand out for things like Judges' Choice prizes, travel, presentations, or co‑authorship at NeurIPS.
+        </p>
+
+        <h4>Learning More About Pokémon</h4>
+        <ul>
+          <li>
+            <a href="https://www.smogon.com" target="_blank">Smogon</a> and its <a href="https://www.smogon.com/forums/" target="_blank">forums</a> have introductory articles and question/answer threads. There are detailed strategy guides for OverUsed battles across every generation! For example, see <a href="https://www.smogon.com/dex/rb/formats/ou/" target="_blank">Gen1OU</a> and <a href="https://www.smogon.com/dex/sv/formats/ou/" target="_blank">Gen9OU</a>.
+          </li>
+          <li>
+            Pokémon Showdown has a great YouTube scene with more educational content than you could ever hope to watch.
+          </li>
+          <li>
+            Stumble across a Pokémon vocabulary word you don't recognize? Want to know what a move or item does? Search it on <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Bulbapedia</a>.
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>PokéAgent Challenge</h3>
+          <p>
+            A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.
+          </p>
+          <div class="social-links mt-1">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>For questions or support, please contact:</p>
+          <p>Email: pokeagentchallenge@gmail.com</p>
+          <p>Join our Discord community for direct assistance and discussions.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
