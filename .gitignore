@@ -118,3 +118,6 @@ config.local.json
 # Test files
 test-results/
 coverage/ 
+
+# claude code
+CLAUDE.md

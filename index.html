@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokéAgent Challenge - NeurIPS 2025</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <!-- Preload DeepMind logo -->
@@ -49,6 +49,34 @@
             <i class="fas fa-chevron-down"></i>
         </div>
     </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+            <div class="countdown-container">
+                <h3 class="countdown-title">⏰ Competition Ends In</h3>
+                <div class="countdown-timer" id="countdown">
+                    <div class="countdown-segment">
+                        <span class="countdown-value" id="days">--</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span class="countdown-value" id="hours">--</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span class="countdown-value" id="minutes">--</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span class="countdown-value" id="seconds">--</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                <p class="countdown-message">Final submissions close October 31st, 2025</p>
+            </div>
+        </div>
     </section>
 
     <!-- Competition Tracks Section -->
@@ -101,10 +129,19 @@
             <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
                 Join the PokéAgent Challenge Discord server to register and connect with other participants!
             </p>
-            <a href="https://discord.gg/E2DuX5FWF7" class="btn btn-discord" target="_blank">
-                <i class="fab fa-discord"></i>
-                Join Our Discord Server
-            </a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://discord.gg/E2DuX5FWF7" class="btn btn-discord" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    Join Our Discord Server
+                </a>
+                <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-cloud"></i>
+                    <span>Apply for Compute Credits</span>
+                </a>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <strong>Compute Credit Application (Recommended for Students):</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (pending submissions). Applications will be reviewed and distributed on a rolling basis until funds are depleted.
+            </p>
         </div>
     </section>
 
@@ -112,27 +149,36 @@
     <section id="prizes">
         <div class="container">
             <h2 class="text-center mb-2">Prizes & Recognition</h2>
+            <p class="text-center mb-2" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: #666;">
+                Multiple prize categories ensure diverse contributions are recognized and rewarded
+            </p>
             <div class="grid-3">
                 <div class="prize-card">
                     <div class="prize-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>NeurIPS 2025 Workshop</h3>
-                    <p>Top 3 teams will present their work at the NeurIPS 2025 Workshop, gaining visibility in the AI research community.</p>
+                    <h3>Highest Ranking Teams</h3>
+                    <p><strong>Performance-based prizes</strong> for teams placing high on the leaderboard in each track. Top performers in Track 1 tournament brackets and Track 2 speedrun rankings will receive prizes and recognition.</p>
                 </div>
                 <div class="prize-card">
                     <div class="prize-icon">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Co-authorship Opportunity</h3>
-                    <p>Winning teams will be invited to contribute as co-authors on the official competition report.</p>
+                    <h3>Research Impact Awards</h3>
+                    <p><strong>Method-specific prizes</strong> recognizing innovative approaches across all AI paradigms. Categories may include: Best LLM-based method, Best RL method, or other breakthrough techniques.</p>
                 </div>
                 <div class="prize-card">
                     <div class="prize-icon">
-                        <i class="fas fa-dollar-sign"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Cash Prizes</h3>
-                    <p>$10,000+ in prizes available. Compete for substantial rewards while advancing AI research.</p>
+                    <h3>NeurIPS 2025 Presentation</h3>
+                    <p><strong>Workshop invitations</strong> for winning teams to present at NeurIPS 2025. Selected teams will also be invited as co-authors on the official competition report publication.</p>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <div style="background: linear-gradient(135deg, #e8f4f8 0%, #d6e9f0 100%); color: #324b80; padding: 1.5rem; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border: 1px solid rgba(50, 75, 128, 0.1);">
+                    <h3 style="margin-bottom: 0.5rem; color: #324b80;">$10,000+ Total Prize Pool</h3>
+                    <p style="margin: 0; color: #5a6c7d;">Distributed across multiple categories to reward both excellence and innovation</p>
                 </div>
             </div>
         </div>
@@ -250,6 +296,12 @@
             <p class="text-center mb-2" style="font-size: 1.1rem; color: #666;">
                 If you use this competition in your research, please cite our paper:
             </p>
+            <div class="text-center mb-2">
+                <a href="https://sethkarten.ai/data/NeurIPS_2025_PokeAgent_Challenge.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    Read the Full Proposal
+                </a>
+            </div>
             <div class="citation-box">
                 <pre><code>@inproceedings{karten2025pokeagent,
   title        = {The PokeAgent Challenge: Competitive and Long-Context Learning at Scale},
@@ -297,7 +349,7 @@
                     <h3>PokéAgent Challenge</h3>
                     <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
                     <div class="social-links mt-1">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://x.com/intent/post?text=Excited%20to%20join%20the%20%23PokeAgent%20Challenge%20at%20%23NeurIPS2025!%20%F0%9F%8E%AE%E2%9A%A1%20Advancing%20AI%20decision-making%20through%20Pok%C3%A9mon%20battles%20and%20speedruns.%20Learn%20more%3A%20https%3A%2F%2Fpokeagent.github.io" target="_blank"><i class="fab fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
@@ -371,6 +423,32 @@
                 }
             });
         });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date('October 31, 2025 23:59:59 PST').getTime();
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                document.querySelector('.countdown-timer').innerHTML = '<div style="color: white; font-size: 1.5rem;">Competition Ended</div>';
+                document.querySelector('.countdown-message').style.display = 'none';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
         // Copy citation function
         function copyCitation() {

@@ -6,96 +6,141 @@
     "elo": 1749,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:57.539Z"
   },
   {
     "format": "gen9ou",
     "rank": 2,
+    "username": "PAC-Dracovish",
+    "elo": 1304,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:57.552Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 3,
     "username": "Sir Slaking",
     "elo": 1299,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
-  },
-  {
-    "format": "gen9ou",
-    "rank": 3,
-    "username": "ChiJin",
-    "elo": 1234,
-    "gxe": null,
-    "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
-  },
-  {
-    "format": "gen9ou",
-    "rank": 4,
-    "username": "krtester",
-    "elo": 1084,
-    "gxe": null,
-    "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:57.554Z"
   },
   {
     "format": "gen1ou",
     "rank": 1,
-    "username": "Daniel10720",
-    "elo": 1000,
+    "username": "PAC-KH-KimiK2-Test",
+    "elo": 1254,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:25:59.420Z"
+    "timestamp": "2025-08-12T07:25:56.390Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 4,
+    "username": "ChiJin",
+    "elo": 1234,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:57.557Z"
   },
   {
     "format": "gen1ou",
     "rank": 2,
-    "username": "AntDic",
-    "elo": 1000,
+    "username": "PAC-KH-PokeEnv",
+    "elo": 1130,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:25:59.420Z"
+    "timestamp": "2025-08-12T07:25:56.401Z"
   },
   {
     "format": "gen1ou",
     "rank": 3,
-    "username": "jakegrigsby",
-    "elo": 1000,
+    "username": "PAC-KH-meta1",
+    "elo": 1088,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:25:59.420Z"
+    "timestamp": "2025-08-12T07:25:56.402Z"
   },
   {
     "format": "gen9ou",
     "rank": 5,
-    "username": "cyrux21",
+    "username": "krtester",
+    "elo": 1084,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:57.559Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 4,
+    "username": "Daniel10720",
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:56.403Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 5,
+    "username": "AntDic",
+    "elo": 1000,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:56.404Z"
+  },
+  {
+    "format": "gen1ou",
+    "rank": 6,
+    "username": "jakegrigsby",
+    "elo": 1000,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:56.406Z"
   },
   {
     "format": "gen9ou",
     "rank": 6,
-    "username": "ok8ko",
+    "username": "cyrux21",
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:57.561Z"
   },
   {
     "format": "gen9ou",
     "rank": 7,
-    "username": "teskasjx",
+    "username": "ok8ko",
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:57.566Z"
   },
   {
     "format": "gen9ou",
     "rank": 8,
+    "username": "teskasjx",
+    "elo": 1000,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:57.568Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 9,
+    "username": "PAC_arnesh",
+    "elo": 1000,
+    "gxe": null,
+    "glicko": null,
+    "timestamp": "2025-08-12T07:25:57.569Z"
+  },
+  {
+    "format": "gen9ou",
+    "rank": 10,
     "username": "Guest 1050",
     "elo": 1000,
     "gxe": null,
     "glicko": null,
-    "timestamp": "2025-08-01T07:26:00.534Z"
+    "timestamp": "2025-08-12T07:25:57.570Z"
   }
 ]

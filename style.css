@@ -980,6 +980,28 @@ footer {
         padding: 1rem;
         font-size: 0.8rem;
     }
+    
+    /* Countdown timer styling for mobile */
+    .countdown-container {
+        padding: 1rem;
+    }
+    
+    .countdown-timer {
+        gap: 0.5rem;
+    }
+    
+    .countdown-segment {
+        min-width: 60px;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .countdown-value {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
 
     /* Enhanced mobile styling for showdown content */
     .showdown-content {
@@ -1380,6 +1402,131 @@ pre {
     display: block;
     mask: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Countdown Timer */
+.countdown-container {
+    background: linear-gradient(135deg, #ffe4e4 0%, #ffd6d6 100%);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 87, 87, 0.1);
+}
+
+.countdown-title {
+    color: #cc3333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.countdown-segment {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    min-width: 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.countdown-segment:hover {
+    transform: translateY(-3px);
+}
+
+.countdown-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff5757;
+    margin-bottom: 0.25rem;
+    font-family: 'Courier New', monospace;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-message {
+    color: #666;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Phase Indicators */
+.phase-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.phase-indicator.active {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-indicator.completed {
+    opacity: 0.7;
+}
+
+.phase-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    transition: all 0.3s ease;
+}
+
+.phase-indicator.active .phase-dot {
+    background: #4ade80;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.phase-indicator.completed .phase-dot {
+    background: #fbbf24;
+}
+
+.phase-name {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px #4ade80;
+    }
+    50% {
+        box-shadow: 0 0 20px #4ade80;
+    }
+    100% {
+        box-shadow: 0 0 5px #4ade80;
+    }
 }
 
 /* Citation Section */
