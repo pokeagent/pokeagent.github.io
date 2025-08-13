@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Track 1: Competitive Battling - PokéAgent Challenge</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -68,6 +68,48 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         <div class="scroll-indicator" onclick="document.getElementById('starter-kits').scrollIntoView({behavior: 'smooth'})">
             <i class="fas fa-chevron-down"></i>
         </div>
+    </div>
+  </section>
+
+  <!-- Countdown Timer -->
+  <section>
+    <div class="container">
+      <div class="countdown-container">
+        <h3 class="countdown-title" id="phase-title">⏰ Loading...</h3>
+        <div class="countdown-timer" id="countdown">
+          <div class="countdown-segment">
+            <span class="countdown-value" id="days">--</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="hours">--</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="minutes">--</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-segment">
+            <span class="countdown-value" id="seconds">--</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <p class="countdown-message" id="phase-message">Loading phase information...</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <div class="phase-indicator" id="phase-freeplay">
+            <span class="phase-dot"></span>
+            <span class="phase-name">Free-play</span>
+          </div>
+          <div class="phase-indicator" id="phase-qualification">
+            <span class="phase-dot"></span>
+            <span class="phase-name">Qualification</span>
+          </div>
+          <div class="phase-indicator" id="phase-tournament">
+            <span class="phase-dot"></span>
+            <span class="phase-name">Tournament</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -200,6 +242,21 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           These projects have their own repositories and publications where you can find more detailed information. 
           The "Resources" section below highlights datasets and baselines from these efforts that may be more broadly useful in the development of new methods. Participants looking for more of a blank slate to get started with are encouraged to check out <a href="https://github.com/hsahovic/poke-env" target="_blank"><code>poke-env</code></a> --- the python interface to Showdown used by most recent academic work.
         </p>
+
+        <div style="background-color: #e8f4f8; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+          <h4 style="color: #3b5998; margin-bottom: 0.75rem;">
+            <i class="fas fa-cloud"></i> Compute Credits Available
+          </h4>
+          <p style="margin-bottom: 1rem;">
+            <strong>Recommended for students:</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (pending submissions).
+          </p>
+          <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank" style="display: inline-block; color: white !important; text-decoration: none;">
+            Apply for Compute Credits
+          </a>
+          <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #666;">
+            Applications will be reviewed and distributed on a rolling basis until funds are depleted.
+          </p>
+        </div>
   
 
 
@@ -249,15 +306,16 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         </p>
 
         <p>
-        There is no need to formally submit anything at this time. As we get closer to the Qualification Stage, we will ask you to declare your team members, 
+        <strong>4. Verify:</strong>
+        In order to verify entries and have your entry count towards the official ladder. Please declare your team members, 
         provide a contact email, and designate one Showdown username for your team. By registering, you will have to agree to provide the organizers with 
         source code and written technical details of your method upon request. </p>
         
-        <!-- <div class="text-center mt-3">
+        <div class="text-center mt-3">
           <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
-            <i class="fas fa-paper-plane"></i> Submit Your Entry
+            <i class="fas fa-paper-plane"></i> Verify Your Entry
           </a>
-        </div> -->
+        </div>
         
     </div>
   </section>
@@ -437,7 +495,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           <h3>PokéAgent Challenge</h3>
           <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
           <div class="social-links mt-1">
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/intent/post?text=Excited%20to%20join%20the%20%23PokeAgent%20Challenge%20at%20%23NeurIPS2025!%20%F0%9F%8E%AE%E2%9A%A1%20Advancing%20AI%20decision-making%20through%20Pok%C3%A9mon%20battles%20and%20speedruns.%20Learn%20more%3A%20https%3A%2F%2Fpokeagent.github.io" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
                                     <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
@@ -483,6 +541,114 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         navMenu.classList.remove('active');
       });
     });
+
+    // Multi-phase Countdown Timer for Track 1
+    function updateTrack1Countdown() {
+      const phases = [
+        {
+          name: "Free-play Window Opens",
+          date: new Date('July 11, 2025 00:00:00 PST').getTime(),
+          endName: "Free-play Window",
+          endDate: new Date('September 29, 2025 00:00:00 PST').getTime(),
+          phase: 'freeplay'
+        },
+        {
+          name: "Qualification Window Opens",
+          date: new Date('September 29, 2025 00:00:00 PST').getTime(),
+          endName: "Qualification Window",
+          endDate: new Date('October 12, 2025 23:59:59 PST').getTime(),
+          phase: 'qualification'
+        },
+        {
+          name: "Tournament Begins",
+          date: new Date('October 15, 2025 00:00:00 PST').getTime(),
+          endName: "Tournament",
+          endDate: new Date('October 31, 2025 23:59:59 PST').getTime(),
+          phase: 'tournament'
+        }
+      ];
+
+      const now = new Date().getTime();
+      let currentPhase = null;
+      let targetDate = null;
+      let phaseTitle = "";
+      let phaseMessage = "";
+
+      // Reset all phase indicators
+      document.querySelectorAll('.phase-indicator').forEach(el => {
+        el.classList.remove('active', 'completed');
+      });
+
+      // Determine current phase and target
+      if (now < phases[0].date) {
+        // Before free-play window
+        targetDate = phases[0].date;
+        phaseTitle = "🚀 " + phases[0].name + " In";
+        phaseMessage = "Competition begins July 11th, 2025";
+      } else if (now >= phases[0].date && now < phases[0].endDate) {
+        // During free-play window - count down to when it ENDS
+        currentPhase = 'freeplay';
+        targetDate = phases[0].endDate;
+        phaseTitle = "🎮 Free-play Ends In";
+        phaseMessage = "Currently in Free-play Window - Ends September 29th when Qualification begins";
+        document.getElementById('phase-freeplay').classList.add('active');
+      } else if (now >= phases[1].date && now < phases[1].endDate) {
+        // During qualification window
+        currentPhase = 'qualification';
+        targetDate = phases[1].endDate;
+        phaseTitle = "⏰ Qualification Ends In";
+        phaseMessage = "Qualification Window closes October 12th - Battle for your tournament spot!";
+        document.getElementById('phase-freeplay').classList.add('completed');
+        document.getElementById('phase-qualification').classList.add('active');
+      } else if (now >= phases[1].endDate && now < phases[2].date) {
+        // Between qualification and tournament
+        targetDate = phases[2].date;
+        phaseTitle = "🏆 " + phases[2].name + " In";
+        phaseMessage = "Qualification ended - Tournament begins October 15th";
+        document.getElementById('phase-freeplay').classList.add('completed');
+        document.getElementById('phase-qualification').classList.add('completed');
+      } else if (now >= phases[2].date && now < phases[2].endDate) {
+        // During tournament
+        currentPhase = 'tournament';
+        targetDate = phases[2].endDate;
+        phaseTitle = "🏁 Tournament Ends In";
+        phaseMessage = "Tournament in progress - Finals end October 31st";
+        document.getElementById('phase-freeplay').classList.add('completed');
+        document.getElementById('phase-qualification').classList.add('completed');
+        document.getElementById('phase-tournament').classList.add('active');
+      } else {
+        // Competition ended
+        document.getElementById('phase-title').textContent = "🎉 Competition Complete";
+        document.querySelector('.countdown-timer').innerHTML = '<div style="color: white; font-size: 1.5rem;">Thank you for participating!</div>';
+        document.getElementById('phase-message').textContent = "See you at NeurIPS 2025!";
+        document.querySelectorAll('.phase-indicator').forEach(el => {
+          el.classList.add('completed');
+        });
+        return;
+      }
+
+      // Update phase title and message
+      document.getElementById('phase-title').textContent = phaseTitle;
+      document.getElementById('phase-message').textContent = phaseMessage;
+
+      // Calculate and display countdown
+      const timeLeft = targetDate - now;
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    // Update countdown every second
+    updateTrack1Countdown();
+    setInterval(updateTrack1Countdown, 1000);
   </script>
 </body>
 </html>
