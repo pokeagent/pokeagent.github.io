@@ -199,11 +199,12 @@ IVs: 2 Atk
           <video width="480" 
                  controls 
                  preload="metadata" 
+                 poster="media/intro_to_pokemon/video_thumbnail.png" 
                  style="max-width: 100%; border-radius: 8px;">
-            <source src="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mov" 
-                    type="video/quicktime">
             <source src="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mp4" 
                     type="video/mp4">
+            <source src="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mov" 
+                    type="video/quicktime">
             Your browser does not support the video tag. 
             <a href="media/intro_to_pokemon/start_a_battle_on_pokeagent_ladder720p.mov" 
                target="_blank">Download the video</a> to watch it.
@@ -235,7 +236,7 @@ IVs: 2 Atk
           </li>
           <li>
             <strong>Generations</strong> (or "gen") refer to major releases of the Pokémon video game franchise. 
-            There are currently 9 generations ("Gen 1", ... , "Gen 9"). Each generation adds new Pokémon and changes the gameplay mechanics 
+            There are currently nine generations ("Gen 1", ... , "Gen 9"). Each generation adds new Pokémon and changes the gameplay mechanics 
             ("what exactly happens when I pick this move?"). Showdown simulates battles for each generation.
           </li>
           <li>
@@ -286,14 +287,14 @@ IVs: 2 Atk
                style="max-width: 620px; width: 100%; height: auto;"/>
         </p>
         <p class="mt-1">
-          The PokéAgent Challenge has leaderboards for Gen1OU and Gen9OU, which highlight both extremes of several trends:
+          The PokéAgent Challenge has leaderboards for Gen1OU and Gen9OU, which covers both ends of a few important trends:
         </p>
 
         <h4>Team Design Space</h4>
         <p>
           <strong>Trend:</strong> Every generation adds Pokémon, moves, and other team design choices. Therefore, the number of available team 
           compositions dramatically increases over the generations. The number of teams that are considered <em>competitively viable</em> generally increases too...
-          but the trend is kept somewhat under control by the tiering system.
+          but the tiering system keeps this more manageable.
         </p>
         <p>
           <strong>AI Takeaways:</strong> Agents must generalize over more diverse team choices in later generations. Expect later 
@@ -303,10 +304,10 @@ IVs: 2 Atk
         <h4>Data Availability</h4>
         <p>
           <strong>Trend:</strong> The latest generation (currently: Gen 9) is by far the most popular. There are more Gen 9 battles played 
-          daily than every other generation combined.
+          per day than every other generation combined.
         </p>
         <p>
-          <strong>AI Takeaways:</strong> Available replay data conveniently increases alongside the previously mentioned demand for more data in later generations.
+          <strong>AI Takeaways:</strong> Available replay data conveniently increases alongside the previously mentioned demand for more data.
         </p>
 
         <h4>Planning Horizon</h4>
@@ -349,7 +350,7 @@ IVs: 2 Atk
 
         <h4>Create an Account and Deploy an Existing Method on the Practice Ladder</h4>
         <p>
-          Both starter kits have one-liner commands to deploy strong agents on the practice ladder. The best way to get started is to walk 
+          Both starter kits have one-liner commands to deploy strong agents on the practice ladder. Try it out and watch some live battles!
         </p>
 
         <h4>Team Selection</h4>
@@ -381,8 +382,8 @@ IVs: 2 Atk
 
         <h4>Adaptation / Exploitation</h4>
         <p>
-          At the top of the ladder and in tournaments, you often play the same opponents repeatedly. Players often scout their opponent for major tournaments; 
-          your agent can learn from opponent team choices and actions across matches. Few-shot adaptation like this is a key strength of LLMs and may have promising
+          At the top of the ladder, and especially in tournaments, you play the same opponents repeatedly. Players scout their opponent for major tournaments and adapt to their
+          tendencies over repeat matchups. Your agents could do the same! Few-shot adaptation like this is a key strength of LLMs and may have promising
           applications in Pokémon. The Metamon RL paper is also written from this perspective and builds on an RL method intended for multi-episodic adaptation.
         </p>
 
@@ -393,6 +394,19 @@ IVs: 2 Atk
           rule against domain‑knowledge‑heavy methods, remember this competition is part of an ML research conference: methods with a clear 
           research contribution are more likely to stand out for things like Judges' Choice prizes, travel, presentations, or co‑authorship at NeurIPS.
         </p>
+
+        <h4>Learning More About Pokémon</h4>
+        <ul>
+          <li>
+            <a href="https://www.smogon.com" target="_blank">Smogon</a> and its <a href="https://www.smogon.com/forums/" target="_blank">forums</a> have introductory articles and question/answer threads. There are detailed strategy guides for OverUsed battles across every generation! For example, see <a href="https://www.smogon.com/dex/rb/formats/ou/" target="_blank">Gen1OU</a> and <a href="https://www.smogon.com/dex/sv/formats/ou/" target="_blank">Gen9OU</a>.
+          </li>
+          <li>
+            Pokémon Showdown has a great YouTube scene with more educational content than you could ever hope to watch.
+          </li>
+          <li>
+            Stumble across a Pokémon vocabulary word you don't recognize? Want to know what a move or item does? Search it on <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Bulbapedia</a>.
+          </li>
+        </ul>
 
       </div>
     </div>
