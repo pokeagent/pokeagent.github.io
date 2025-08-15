@@ -41,20 +41,87 @@
       <!-- Battling Tab -->
       <div id="battling-tab" class="tab-content active">
         <h3>Track 1: Competitive Battling</h3>
+        
+        <!-- Format Selector -->
+        <div class="format-selector">
+          <label for="format-select">Format:</label>
+          <select id="format-select" onchange="switchFormat()">
+            <option value="gen1ou">Gen 1 OU</option>
+            <option value="gen2ou">Gen 2 OU</option>
+            <option value="gen3ou">Gen 3 OU</option>
+            <option value="gen4ou">Gen 4 OU</option>
+            <option value="gen9ou">Gen 9 OU</option>
+          </select>
+          
+          <label for="sort-select" style="margin-left: 2rem;">Sort by:</label>
+          <select id="sort-select" onchange="sortLeaderboard()">
+            <option value="elo" selected>ELO</option>
+            <option value="gxe">GXE</option>
+            <option value="glicko">Glicko-1</option>
+            <option value="wins">Wins</option>
+            <option value="losses">Losses</option>
+          </select>
+        </div>
+        
+        <!-- Leaderboard Table -->
         <div class="card">
-          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center; text-align: center; padding: 1rem 0;">
+          <div style="max-height: 600px; overflow-y: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+                  <th style="padding: 12px;">Rank</th>
+                  <th style="padding: 12px;">Username</th>
+                  <th style="padding: 12px;">ELO</th>
+                  <th style="padding: 12px;">GXE</th>
+                  <th style="padding: 12px;">Glicko-1</th>
+                  <th style="padding: 12px;">Wins</th>
+                  <th style="padding: 12px;">Losses</th>
+                </tr>
+              </thead>
+              <tbody id="battling-leaderboard">
+                <tr style="border-bottom: 1px solid #ddd;">
+                  <td style="padding: 12px;">1</td>
+                  <td style="padding: 12px;">Loading leaderboard data...</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                  <td style="padding: 12px;">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Last Updated and Live Ladder Link -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <div style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+            <span id="last-updated">Last updated: Loading...</span>
+            <br>
+            <em>Leaderboard is updated daily. Live leaderboard is available on the PokéAgent ladder.</em>
+            <br>
+            <small style="color: #888; margin-top: 0.5rem; display: block;">
+              Only players with Glicko-1 Deviation ≤ 70 are shown. 
+              <em style="font-style: italic; color: #999;">Italicized names</em> are organizer baselines (Metamon, Heuristic, PokéChamp agents).
+            </small>
+          </div>
+          
+          <!-- Live Ladder Button -->
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.8); border-radius: 8px; border: 1px solid #e0e0e0; margin: 1rem 0;">
             <i class="fas fa-trophy" style="font-size: 1.5rem; color: #ff9800;"></i>
-            <p style="margin: 0; font-size: 1.1rem;">
-              The live Leaderboard for Track 1 is available on the 
-              <a href="http://pokeagentshowdown.com.insecure.psim.us/ladder" target="_blank" style="font-weight: 600; text-decoration: none; color: #007bff;">PokéAgent Challenge Ladder</a>.
+            <p style="margin: 0; font-size: 1rem; color: #333;">
+              For real-time updates, visit the 
+              <strong>live PokéAgent Challenge Ladder</strong>
             </p>
-            <div style="flex-basis: 100%; height: 0;"></div>
             <a href="http://pokeagentshowdown.com.insecure.psim.us/ladder" target="_blank" class="btn btn-primary">
-              View Ladder
+              <i class="fas fa-external-link-alt"></i> View Live Ladder
             </a>
           </div>
         </div>
       </div>
+
+      <!-- Spacer between Track 1 and Track 2 -->
+      <div style="height: 3rem; margin: 2rem 0;"></div>
 
       <!-- Speedrunning Tab -->
       <div id="speedrunning-tab" class="tab-content active">
@@ -146,8 +213,11 @@
       });
     });
 
-    // Global variables for leaderboard data (Track 2 only)
+    // Global variables for leaderboard data
     let speedrunningData = [];
+    let track1Data = {};
+    let currentFormat = 'gen1ou';
+    let currentSortBy = 'elo';
 
     // Tab switching function
     // function switchTab(tabName) {
@@ -164,7 +234,131 @@
     //   document.getElementById(`${tabName}-tab`).classList.add('active');
     // }
 
-    // Removed Track 1 table + data; live leaderboard is hosted on external ladder
+    // Format switching function for Track 1
+    function switchFormat() {
+      const select = document.getElementById('format-select');
+      currentFormat = select.value;
+      displayTrack1Leaderboard(currentFormat);
+    }
+
+    // Sorting function for Track 1 leaderboard
+    function sortLeaderboard() {
+      const select = document.getElementById('sort-select');
+      currentSortBy = select.value;
+      displayTrack1Leaderboard(currentFormat);
+    }
+
+    // Helper function to get numeric value for sorting
+    function getNumericValue(value) {
+      if (!value || value === '-') return 0;
+      // Remove % sign and convert to number
+      const numStr = value.toString().replace('%', '');
+      const num = parseFloat(numStr);
+      return isNaN(num) ? 0 : num;
+    }
+
+    // Display Track 1 leaderboard for a specific format
+    function displayTrack1Leaderboard(format) {
+      const tableBody = document.getElementById('battling-leaderboard');
+      
+      if (!track1Data.formats || !track1Data.formats[format]) {
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">No data available for ${format.toUpperCase()}</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+        </tr>`;
+        return;
+      }
+
+      let players = [...track1Data.formats[format]]; // Create a copy for sorting
+      
+      // Sort players based on current sort criteria
+      players.sort((a, b) => {
+        let aVal, bVal;
+        
+        switch(currentSortBy) {
+          case 'gxe':
+            aVal = getNumericValue(a.gxe);
+            bVal = getNumericValue(b.gxe);
+            return bVal - aVal; // Descending order
+          case 'glicko':
+            aVal = getNumericValue(a.glicko);
+            bVal = getNumericValue(b.glicko);
+            return bVal - aVal; // Descending order
+          case 'wins':
+            aVal = getNumericValue(a.wins);
+            bVal = getNumericValue(b.wins);
+            return bVal - aVal; // Descending order
+          case 'losses':
+            aVal = getNumericValue(a.losses);
+            bVal = getNumericValue(b.losses);
+            return aVal - bVal; // Ascending order (fewer losses is better)
+          case 'elo':
+          default:
+            aVal = getNumericValue(a.elo);
+            bVal = getNumericValue(b.elo);
+            return bVal - aVal; // Descending order
+        }
+      });
+
+      tableBody.innerHTML = '';
+
+      players.forEach((player, index) => {
+        const username = player.username;
+        const usernameStyle = username.is_starter_kit ? 
+          'font-style: italic; color: #999; font-weight: 300;' : 
+          'font-weight: 500;';
+        
+        // Use position based on current sort
+        const displayRank = index + 1;
+        
+        const row = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">${displayRank}</td>
+          <td style="padding: 12px; ${usernameStyle}">${username.display}</td>
+          <td style="padding: 12px;">${player.elo || '-'}</td>
+          <td style="padding: 12px;">${player.gxe || '-'}</td>
+          <td style="padding: 12px;">${player.glicko || '-'}</td>
+          <td style="padding: 12px;">${player.wins || '-'}</td>
+          <td style="padding: 12px;">${player.losses || '-'}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+
+      // Update last updated timestamp
+      if (track1Data.last_updated) {
+        const lastUpdated = new Date(track1Data.last_updated).toLocaleString();
+        document.getElementById('last-updated').textContent = `Last updated: ${lastUpdated}`;
+      }
+    }
+
+    // Load Track 1 leaderboard data
+    console.log("Attempting to load Track 1 leaderboard data...");
+    fetch("leaderboard/track1.json")
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load Track 1 leaderboard");
+        return res.json();
+      })
+      .then(data => {
+        track1Data = data;
+        displayTrack1Leaderboard(currentFormat);
+      })
+      .catch(err => {
+        console.error("Error loading Track 1 leaderboard:", err);
+        const tableBody = document.getElementById("battling-leaderboard");
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">Error loading Track 1 leaderboard data</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+          <td style="padding: 12px;">-</td>
+        </tr>`;
+      });
 
     // Load speedrunning leaderboard data
     fetch("leaderboard/speedrunning.json")
