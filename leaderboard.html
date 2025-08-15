@@ -61,10 +61,15 @@
             <option value="wins">Wins</option>
             <option value="losses">Losses</option>
           </select>
+          
+          <label for="hide-baselines" style="margin-left: 2rem;">
+            <input type="checkbox" id="hide-baselines" onchange="toggleBaselines()" style="margin-right: 0.5rem;">
+            Hide organizer baselines
+          </label>
         </div>
         
         <!-- Baseline Explanation -->
-        <div style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.9); border-radius: 8px; border-left: 4px solid #ff9800;">
+        <div id="baseline-explanation" style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.9); border-radius: 8px; border-left: 4px solid #ff9800;">
           <p style="margin: 0; font-size: 1.1rem; color: #555; line-height: 1.4;">
             <span style="color: #999; font-style: italic;">Gray/italicized names</span> are <strong>organizer-hosted baseline opponents</strong>. 
             They are not eligible for prizes but are listed here as a point of reference; 
@@ -226,6 +231,7 @@
     let track1Data = {};
     let currentFormat = 'gen1ou';
     let currentSortBy = 'elo';
+    let hideBaselines = false;
 
     // Tab switching function
     // function switchTab(tabName) {
@@ -256,6 +262,18 @@
       displayTrack1Leaderboard(currentFormat);
     }
 
+    // Toggle baselines visibility
+    function toggleBaselines() {
+      const checkbox = document.getElementById('hide-baselines');
+      const explanationDiv = document.getElementById('baseline-explanation');
+      hideBaselines = checkbox.checked;
+      
+      // Hide/show the baseline explanation
+      explanationDiv.style.display = hideBaselines ? 'none' : 'block';
+      
+      displayTrack1Leaderboard(currentFormat);
+    }
+
     // Helper function to get numeric value for sorting
     function getNumericValue(value) {
       if (!value || value === '-') return 0;
@@ -283,6 +301,11 @@
       }
 
       let players = [...track1Data.formats[format]]; // Create a copy for sorting
+      
+      // Filter out baselines if hideBaselines is true
+      if (hideBaselines) {
+        players = players.filter(player => !player.username.is_starter_kit);
+      }
       
       // Sort players based on current sort criteria
       players.sort((a, b) => {
@@ -324,11 +347,16 @@
         // Use position based on current sort
         const displayRank = index + 1;
         
+        // Format GXE to 1 decimal place
+        const formattedGxe = player.gxe && player.gxe !== '-' ? 
+          parseFloat(player.gxe.toString().replace('%', '')).toFixed(1) + '%' : 
+          '-';
+        
         const row = `<tr style="border-bottom: 1px solid #ddd;">
           <td style="padding: 12px;">${displayRank}</td>
           <td style="padding: 12px; ${usernameStyle}">${username.display}</td>
           <td style="padding: 12px;">${player.elo || '-'}</td>
-          <td style="padding: 12px;">${player.gxe || '-'}</td>
+          <td style="padding: 12px;">${formattedGxe}</td>
           <td style="padding: 12px;">${player.glicko || '-'}</td>
           <td style="padding: 12px;">${player.wins || '-'}</td>
           <td style="padding: 12px;">${player.losses || '-'}</td>
