@@ -45,7 +45,7 @@ color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, b
             -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%);
         "
         >
-        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 12px; 
+        <div class="hero-description" style="text-align: left; background: rgba(255, 255, 255, 0.95); padding: 1.5rem; border-radius: 12px; 
 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
           <p>
             Pokémon Showdown is an open-source simulator that transforms Pokémon's turn-based battles into a
@@ -113,91 +113,266 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
     </div>
   </section>
 
-  <!-- Submission Guidelines -->
+  <!-- Competition Overview -->
   <section style="background-color: #f5f5f5;">
     <div class="container">
-      <h2 class="text-center mb-2">PokéAgent Showdown</h2>
+      <h2 class="text-center mb-2">Overview</h2>
       <div class="card showdown-content">
        
         <p>
-          To avoid disrupting human players, <strong>PokéAgent participants will compete on an AI-focused Showdown server hosted by the competition</strong>. 
-          Participants will battle against organizer-hosted baselines (and each other!) on a ranked ladder to qualify for a tournament held at the end of the competition window.
-
-          The PokéAgent Showdown server will restrict matchmaking to the following rulesets (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>) where ML baselines and datasets are readily available:
-
-          <div class="dataset-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Format</th>
-                  <th>Rules</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Gen 1 OverUsed (OU)</strong></td>
-                  <td>Current official rules.</td>
-                </tr>
-                <tr>
-                  <td><strong>Gen 2 OU</strong></td>
-                  <td>Current official rules.</td>
-                </tr>
-                <tr>
-                  <td><strong>Gen 3 OU</strong></td>
-                  <td>Current official rules.</td>
-                </tr>
-                <tr>
-                  <td><strong>Gen 4 OU</strong></td>
-                  <td>Current official rules.</td>
-                </tr>
-                <tr>
-                  <td><strong>Gen 9 OU</strong></td>
-                  <td>Current rules, plus the AI-friendly exceptions that:<br>
-                  • Zoroark is banned<br>
-                  • Revival Blessing is banned</td>
-                </tr>
-                <tr>
-                  <td><strong>Gen 9 VGC</strong></td>
-                  <td>Official Regulation I rules, plus the AI-friendly exceptions that:<br>
-                  • Zoroark is banned<br>
-                  • Dondozo is banned</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-            (Note that all battles will be played with Showdown's standard time controls <em>enabled</em>.)
+          To avoid disrupting human players, <strong>PokéAgent participants will compete 
+          on a custom AI-focused Showdown server hosted by the competition</strong>. 
+          Participants will battle against organizer-hosted baselines and each other 
+          on ranked ladders to qualify for tournament brackets.
         </p>
+
         <p>
-          The competition will be divided into three stages:
+          Track 1 currently has a prize pool of <strong>$5,000</strong> plus 
+          <strong>$3,000 worth of Google Cloud Platform (GCP) credits</strong>. We are still 
+          <a href="index.html#sponsors">accepting new sponsors</a>, so these totals are subject to change.
         </p>
+
+        <p>
+          The competition is divided into three phases:
+        </p>
+
         <ul>
           <li>
-            <strong>1. Research Stage (July 11th - September 28th):</strong> The first stage is a "free play" period. The PokéAgent server will be open to all participants, with player pools supplemented by organizer baselines across a wide range of skill levels. Get started, develop new ideas, and see how your method compares to the competition!
+            <strong>Free Play Period (July 11th - September 28th):</strong> 
+            Open practice period with ladder exhibitions, tutorial events, and 
+            practice tournaments. All participants can test methods and climb 
+            practice ladders.
           </li>
           <li>
-            <strong>2. Qualifying Stage (September 29th - October 12th):</strong> On September 29th, the competition formally begins. All ratings will be reset, and teams will climb the leaderboards by competing on the ranked ladder. At the end of this stage, the top-ranked usernames (excluding organizer baselines) will qualify for the next stage.
+            <strong>Qualifying Window (September 29th - October 12th):</strong> 
+            Formal qualification period where registered teams compete for tournament 
+            spots. Ratings are reset and only registered usernames can participate.
           </li>
           <li>
-            <strong>3. Tournament Stage (October 15th - October 31st):</strong> Qualifying participants will compete in a bracket tournament featuring best-of-k-battle matches.
+            <strong>Tournament Stage (October 15th onwards):</strong> 
+            Qualifying teams face off in bracket tournaments to determine cash prizes.
           </li>
         </ul>
-        <p>
-          For those familiar, this structure follows the general format of a Showdown "ladder tournament"—but for bots!
-        </p>
-        <p>
-          Because this is the first time a competition like this has been run, some specifics are flexible and will be finalized during the Research Stage in conversation with the community (via Discord):
-        </p>
-        <p>
-          <strong>Showdown Rulesets:</strong> All of the formats listed above will be available throughout the Research Stage. However, <em>the formal Tournament Stage will limit competition to a subset of this list</em>. Currently, <strong>Gen 1 OU and Gen 9 OU</strong> are guaranteed to have brackets, with additional options to be determined based on the number of participants, ladder activity, community feedback, and available prizes.
-        </p>
-        <p>
-          <strong>Bracket Size and Match Length:</strong> Pokémon has high variance. Human tournaments often use a best two-out-of-three battle structure. 
-          We would prefer to go (significantly) higher, but will work with qualifying participants to determine whether this creates a financial burden
-          and whether credits provided by our sponsors can help. The total bracket size (e.g., 8, 16, 32 teams) will be determined 
-          based on the number of active entrants and announced well in advance of the Qualifying Stage. 
-        </p>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline">
+    <div class="container">
+      <h2 class="text-center mb-2">Timeline and Details</h2>
+      
+      <div style="background: #e8f4f8; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+        <h3 style="color: #3b5998; margin-bottom: 1.5rem; text-align: center;">
+          <i class="fas fa-play"></i> Free Play Period
+        </h3>
+        
+        <div style="
+          background: rgba(255, 255, 255, 0.9); 
+          padding: 1.5rem; 
+          border-radius: 8px; 
+          margin-bottom: 1.5rem;
+        ">
+          <h4 style="color: #3b5998; margin-bottom: 1rem;">
+            <i class="fas fa-gamepad"></i> Available Formats & Baselines
+          </h4>
+          <p style="margin-bottom: 1rem;">
+            The <a href="http://pokeagentshowdown.com.insecure.psim.us" target="_blank">PokéAgent Showdown server</a> supports the following rulesets 
+            (<a href="https://www.smogon.com/bw/articles/bw_tiers" target="_blank">"formats"</a>) 
+            where ML baselines and datasets are readily available: 
+            <strong>Gen1OU, Gen2OU, Gen3OU, Gen4OU, Gen9OU, and Gen9 VGC Regulation I</strong>.
+          </p>
+          <p style="margin-bottom: 1rem;">
+            <i class="fas fa-info-circle"></i> See <a href="faq.html#format-rules" target="_blank">this FAQ</a> for more information on format rules.
+          </p>
+          <p style="margin: 0;">
+            <a href="faq.html#ladder-baselines" target="_blank">Organizer baselines</a> 
+            will keep the ladders active by serving opponents at various 
+            skill levels for testing and development.
+          </p>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">September 6th–7th, 2025</span>
+              <h4>Ladder Exhibition Weekend</h4>
+              <p>
+                Introduction to Pokémon, lightning-round talks from Pokémon AI projects, 
+                and organizer office hours. The top-ranked participants on the Gen1OU and Gen9OU ladders receive 
+                $100 worth of GCP credits to help fund their research.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">September 10th–30th, 2025</span>
+              <h4>Practice Tournaments</h4>
+              <p>
+                Practice tournaments replicating the final bracket format. Announced on 
+                Discord, filled first-come-first-serve. Starter kits will release updates 
+                for joining tournaments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #fff4e6; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+        <h3 style="color: #ff8c00; margin-bottom: 1.5rem; text-align: center;">
+          <i class="fas fa-trophy"></i> Qualifying Window
+        </h3>
+        
+        <div style="text-align: center; font-style: italic; margin-bottom: 1.5rem; color: #ff8c00;">
+          <i class="fas fa-clock"></i> All times listed in Central Daylight Time (GMT -5:00)
+        </div>
+        
+        <div style="
+          background: rgba(255, 255, 255, 0.9); 
+          padding: 1.5rem; 
+          border-radius: 8px; 
+          margin-bottom: 1.5rem;
+        ">
+          <h4 style="color: #ff8c00; margin-bottom: 1rem;">
+            <i class="fas fa-trophy"></i> Rules & Qualification Standard
+          </h4>
+          <p style="margin-bottom: 1rem;">
+            Teams earn a spot in the final tournament bracket by climbing the ranked ladder. 
+            
+            To avoid diluting the player and prize pool, we are currently focusing on <strong>Gen1OU and Gen9OU</strong> for official 
+            tournaments. Other formats can still host informal brackets with small prizes if there is sufficient interest.
+          </p>
+          <ul style="margin: 0; line-height: 1.6;">
+            <li>
+              <strong>Top 8 teams</strong> ranked by 
+              <strong><a href="https://pokemonshowdown.com/pages/ladderhelp" target="_blank">Glicko-1</a></strong> 
+              (below a threshold <strong>rating deviation</strong>) qualify. This cutoff may expand to 16 teams depending on participation levels.
+            </li>
+          </ul>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">Monday, September 29th</span>
+              <h4>Team Registration Deadline & Ladder Reset</h4>
+              <p>
+                Showdown server exits free-play mode. Only registered usernames can participate moving forward. 
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjj6la_Z9x4V39bpPNrByGBHMiF9Ql0aUsUwznJ158NUOGDA/viewform?usp=sharing&ouid=105703838142203622664" target="_blank">Register here</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">September 29th – October 5th</span>
+              <h4 style="color: #ff8c00;">Gen1OU Qualifier</h4>
+              <div style="background: rgba(255, 255, 255, 0.6); padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem;">
+                <p style="margin: 0; font-weight: 500;">
+                  <i class="fas fa-play"></i> <strong>Begins:</strong> Monday, September 29th at 12:01 AM<br>
+                  <i class="fas fa-stop"></i> <strong>Ends:</strong> Sunday, October 5th at 11:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">October 6th – October 12th</span>
+              <h4 style="color: #ff8c00;">Gen9OU Qualifier</h4>
+              <div style="background: rgba(255, 255, 255, 0.6); padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem;">
+                <p style="margin: 0; font-weight: 500;">
+                  <i class="fas fa-play"></i> <strong>Begins:</strong> Monday, October 6th at 12:01 AM<br>
+                  <i class="fas fa-stop"></i> <strong>Ends:</strong> Sunday, October 12th at 11:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #f0f8f0; padding: 1.5rem; border-radius: 12px;">
+        <h3 style="color: #228b22; margin-bottom: 1.5rem; text-align: center;">
+          <i class="fas fa-crown"></i> Tournament Stage
+        </h3>
+        
+        <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+          <h4 style="color: #228b22; margin-bottom: 1rem;">
+            <i class="fas fa-trophy"></i> Tournament Format
+          </h4>
+          <ul style="margin: 0; line-height: 1.6;">
+            <li><strong>Gen1OU and Gen9OU single-elimination brackets</strong>
+              <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;">
+                <li>Seeds determined by <strong><a href="https://pokemonshowdown.com/pages/ladderhelp" target="_blank">Glicko-1</a></strong> performance during qualifying windows</li>
+                <li>Matches are <strong>best-of-99 battles</strong>; draws go to the higher seed</li>
+                <li>These details are still subject to change as we work to ensure a fair but affordable tournament.</li>
+                <li>Agents will be able to <strong>pick their own Pokémon teams</strong> and change teams between battles (as in a standard OU tournament)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <span class="timeline-date">October 15th onwards</span>
+              <h4>Tournament Brackets Begin</h4>
+              <p>Qualifying teams compete in bracket tournaments for cash prizes and GCP credits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Prizes Section -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Prizes</h2>
+      <div class="card showdown-content">
+        <div style="text-align: center; font-style: italic; margin-bottom: 1.5rem; color: #666;">
+          <i class="fas fa-info-circle"></i>
+          "100 GCP" refers to "$100 worth of GCP credits."
+        </div>
+
+        <div class="prize-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+          
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6;">
+            <h3 style="color: #495057; margin-bottom: 1rem;">
+              <i class="fas fa-trophy"></i> Tournament Brackets
+            </h3>
+            <p>
+              The <strong>Gen1OU</strong> and <strong>Gen9OU</strong> brackets each award 
+              <strong>$2,500</strong> and <strong>1000 GCP</strong> (separately):
+            </p>
+            <ul style="margin-top: 1rem;">
+              <li>All qualifying teams: <strong>125 GCP</strong></li>
+              <li><strong>1st Place:</strong> $900</li>
+              <li><strong>2nd Place:</strong> $600</li>
+              <li><strong>3rd–4th Place:</strong> $300</li>
+              <li><strong>5th–8th Place:</strong> $100</li>
+            </ul>
+          </div>
+
+          <div style="background: #e8f4f8; padding: 1.5rem; border-radius: 8px; border: 1px solid #b8daff;">
+            <h3 style="color: #3b5998; margin-bottom: 1rem;">
+              <i class="fas fa-star"></i> Judge's Choice Awards
+            </h3>
+            <p>
+              Senior organizers will award <strong>two projects</strong> with 
+              <strong>400 GCP</strong> to help continue their work after the 
+              competition ends.
+            </p>
+            <p style="margin-top: 1rem; color: #666;">
+              These projects do not necessarily have to qualify for the tournament stage 
+              but should propose a novel method or highlight 
+              an interesting direction for future research.
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -223,14 +398,14 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           We have also been joined by <a href="https://github.com/cameronangliss/VGC-Bench" target="_blank">VGC-Bench</a> to extend support to VGC (doubles)!
         </p>
 
-        <div class="track-links" style="margin: 2rem 0;">
-          <div style="text-align: center; margin-right: 1rem;">
+        <div class="track-links" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; justify-items: center;">
+          <div style="text-align: center;">
             <a href="https://github.com/UT-Austin-RPL/metamon" class="track-link" target="_blank">
               <img src="media/figures/metamon.png" alt="Metamon Starter Kit" class="track-image">
             </a>
             <p style="margin-top: 0.5rem; font-size: 1.1rem; color: #666; font-style: italic;">RL on Human Replays</p>
           </div>
-          <div style="text-align: center; margin-left: 1rem;">
+          <div style="text-align: center;">
             <a href="https://github.com/sethkarten/pokechamp" class="track-link" target="_blank">
               <img src="media/figures/pokechamp.png" alt="PokéChamp Starter Kit" class="track-image">
             </a>
@@ -240,7 +415,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
 
         <p>
           These projects have their own repositories and publications where you can find more detailed information. 
-          The "Resources" section below highlights datasets and baselines from these efforts that may be more broadly useful in the development of new methods. Participants looking for more of a blank slate to get started with are encouraged to check out <a href="https://github.com/hsahovic/poke-env" target="_blank"><code>poke-env</code></a> --- the python interface to Showdown used by most recent academic work.
+          The "Resources" section below highlights datasets and baselines from these efforts that may be more broadly useful in the development of new methods. Participants looking for more of a blank slate to get started are encouraged to check out <a href="https://github.com/hsahovic/poke-env" target="_blank"><code>poke-env</code></a> — the Python interface to Showdown used by most recent academic work.
         </p>
 
         <div style="background-color: #e8f4f8; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
@@ -248,7 +423,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
             <i class="fas fa-cloud"></i> Compute Credits Available
           </h4>
           <p style="margin-bottom: 1rem;">
-            <strong>Recommended for students:</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (pending submissions).
+            <strong>Recommended for students:</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (subject to application approval).
           </p>
           <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank" style="display: inline-block; color: white !important; text-decoration: none;">
             Apply for Compute Credits
@@ -275,22 +450,19 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
       <div class="card">
         <h3>How to Submit for Track 1</h3>
 
-        Evaluation for Track 1 will take place on the PokéAgent Showdown server. Test your method by searching for battles on the ladder!
+        <p>Evaluation for Track 1 will take place on the PokéAgent Showdown server. Test your method by searching for battles on the ladder!</p>
 
-
-        
-                <div class="mt-3">
+        <div class="mt-3">
           <div class="text-center mt-2">
             <a href="http://pokeagentshowdown.com.insecure.psim.us" class="btn btn-secondary" target="_blank">
               <i class="fas fa-gamepad"></i> Open PokéAgent's Showdown Server
             </a>
-            <p class="mt-1" style="font-size: 0.9rem; color: #666; font-style: italic;">
-            </p>
+
           </div>
         </div>
 
         <p>
-          <strong>1. Register:</strong> Create a Showdown username and password by clicking the gear icon in the top right corner. Bot usernames should begin with "PAC" (PokéAgent Challenge).
+          <strong>1. Create Account:</strong> Create a Showdown username and password by clicking the gear icon in the top right corner. Bot usernames should begin with "PAC" (PokéAgent Challenge).
         </p>
 
         <p>
@@ -305,78 +477,25 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         </div>
 
         <p>
-          <strong>3. Battle!:</strong> Watch live battles and climb to the top of the ranked ladder! You'll be matched against other participants and a set of <a href="https://pokeagent.github.io/faq.html#ladder-baselines" target="_blank">organizer-hosted baselines</a> that keep the ladder active.
+          <strong>3. Battle:</strong> Watch live battles and climb to the top of the ranked ladder! You'll be matched against other participants and a set of <a href="https://pokeagent.github.io/faq.html#ladder-baselines" target="_blank">organizer-hosted baselines</a> that keep the ladder active.
         </p>
 
         <p>
-        <strong>4. Verify:</strong>
-        In order to verify entries and have your entry count towards the official ladder. Please declare your team members, 
-        provide a contact email, and designate one Showdown username for your team. By registering, you will have to agree to provide the organizers with 
-        source code and written technical details of your method upon request. </p>
-        
+          <strong>4. Team Registration (Required):</strong> On Monday, September 29th, the practice ladder will be taken offline and only
+          <em>registered</em> usernames may play in the qualifiers. Each team may register exactly one Showdown username for the remainder of the competition.
+        </p>
         <div class="text-center mt-3">
-          <a href="https://forms.gle/uHKAbSANaLFEXioB6" class="btn btn-primary btn-large" target="_blank">
-            <i class="fas fa-paper-plane"></i> Verify Your Entry
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjj6la_Z9x4V39bpPNrByGBHMiF9Ql0aUsUwznJ158NUOGDA/viewform?usp=sharing&ouid=105703838142203622664" class="btn btn-primary btn-large" target="_blank">
+            <i class="fas fa-paper-plane"></i> Register Your Team
           </a>
         </div>
         
     </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section id="timeline">
-    <div class="container">
-      <h2 class="text-center mb-2">Track 1 Timeline</h2>
-      <div class="timeline">
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">July 11th, 2025</span>
-            <h3>Practice Window Begins</h3>
-            <p>The PokéAgent Showdown server launches for free-play AI battles.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">September 29th, 2025</span>
-            <h3>Qualification Window Begins</h3>
-            <p>Ladder ratings are reset and participants battle for leaderboard positions.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 12th, 2025</span>
-            <h3>Qualification Window Ends</h3>
-            <p>Ladder ratings are finalized and top-ranked participants qualify for the tournament.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 15th, 2025</span>
-            <h3>Bracket Tournament Begins</h3>
-            <p>Qualifying participants battle in a best-of-k single-elimination tournament.</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-date">October 31st, 2025</span>
-            <h3>Bracket Tournament Ends</h3>
-            <p>Tournament concludes and final results are announced.</p>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Resources Section -->
   <section>
     <div class="container">
-      <h2 class="text-center mb-2">Resources and Support</h2>
+      <h2 class="text-center mb-2">Additional Resources and Support</h2>
       <div class="card showdown-content">
 
         <h3>Datasets</h3>
@@ -482,9 +601,9 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
         <p>
           Competition staff will be active on the community Discord and are committed to answering questions (and fixing any issues that may arise) 
           related to the starter datasets, baselines, competition logistics, and Showdown/Pokémon more broadly. 
-          However, due to limited bandwidth, we caution that the technical details involved in improving upon provided methods may be deemed out-of-scope
-           (e.g., RL training details beyond the provided documentation). This is mainly because, given the datasets and baselines, you would have many other viable options
-          that are maintaned by larger teams and better suited to a broad audience. Still, please feel free to reach out, and we will help in any way we can.
+          However, due to limited bandwidth, we caution that the technical details involved in improving upon provided methods may be deemed out-of-scope 
+          (e.g., RL training details beyond the provided documentation). This is mainly because, given the datasets and baselines, you would have many other viable options
+          that are maintained by larger teams and better suited to a broad audience. Still, please feel free to reach out, and we will help in any way we can.
         </p>
 
       </div>
