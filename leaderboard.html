@@ -69,29 +69,50 @@
         </div>
         
         <!-- Side-by-side Leaderboards -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem;">
           
           <!-- Gen1OU Leaderboard -->
-          <div class="card">
-            <h4 style="text-align: center; margin-bottom: 1rem; color: #3b5998;">Gen 1 OU</h4>
-            <div style="max-height: 500px; overflow-y: auto;">
+          <div style="
+            background: white; 
+            border: 2px solid #e0e6ed; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+          ">
+            <div style="
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+              color: white; 
+              padding: 1.5rem; 
+              text-align: center;
+              border-bottom: 1px solid #e0e6ed;
+            ">
+              <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                Gen 1 OU
+              </h3>
+            </div>
+            <div style="
+              max-height: 500px; 
+              overflow-y: auto;
+              scrollbar-width: thin;
+              scrollbar-color: #cbd5e0 #f7fafc;
+            ">
               <table style="width: 100%; border-collapse: collapse;">
-                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
-                  <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                    <th style="padding: 8px; font-size: 0.9rem;">Rank</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">Username</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">ELO</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">GXE</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">W/L</th>
+                <thead style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
+                  <tr>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
                   </tr>
                 </thead>
                 <tbody id="gen1ou-leaderboard">
-                  <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 8px;">1</td>
-                    <td style="padding: 8px;">Loading...</td>
-                    <td style="padding: 8px;">-</td>
-                    <td style="padding: 8px;">-</td>
-                    <td style="padding: 8px;">-</td>
+                  <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 10px; color: #718096;">1</td>
+                    <td style="padding: 10px; color: #718096;">Loading...</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                   </tr>
                 </tbody>
               </table>
@@ -99,26 +120,47 @@
           </div>
           
           <!-- Gen9OU Leaderboard -->
-          <div class="card">
-            <h4 style="text-align: center; margin-bottom: 1rem; color: #3b5998;">Gen 9 OU</h4>
-            <div style="max-height: 500px; overflow-y: auto;">
+          <div style="
+            background: white; 
+            border: 2px solid #e0e6ed; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+          ">
+            <div style="
+              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+              color: white; 
+              padding: 1.5rem; 
+              text-align: center;
+              border-bottom: 1px solid #e0e6ed;
+            ">
+              <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                Gen 9 OU
+              </h3>
+            </div>
+            <div style="
+              max-height: 500px; 
+              overflow-y: auto;
+              scrollbar-width: thin;
+              scrollbar-color: #cbd5e0 #f7fafc;
+            ">
               <table style="width: 100%; border-collapse: collapse;">
-                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
-                  <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                    <th style="padding: 8px; font-size: 0.9rem;">Rank</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">Username</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">ELO</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">GXE</th>
-                    <th style="padding: 8px; font-size: 0.9rem;">W/L</th>
+                <thead style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
+                  <tr>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
                   </tr>
                 </thead>
                 <tbody id="gen9ou-leaderboard">
-                  <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 8px;">1</td>
-                    <td style="padding: 8px;">Loading...</td>
-                    <td style="padding: 8px;">-</td>
-                    <td style="padding: 8px;">-</td>
-                    <td style="padding: 8px;">-</td>
+                  <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 10px; color: #718096;">1</td>
+                    <td style="padding: 10px; color: #718096;">Loading...</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                   </tr>
                 </tbody>
               </table>
@@ -133,6 +175,25 @@
             div[style*="grid-template-columns: 1fr 1fr"] {
               grid-template-columns: 1fr !important;
             }
+          }
+          
+          /* Custom scrollbar styling for webkit browsers */
+          div[style*="overflow-y: auto"]::-webkit-scrollbar {
+            width: 8px;
+          }
+          
+          div[style*="overflow-y: auto"]::-webkit-scrollbar-track {
+            background: #f7fafc;
+            border-radius: 4px;
+          }
+          
+          div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 4px;
+          }
+          
+          div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
           }
         </style>
         
@@ -316,12 +377,12 @@
       const tableBody = document.getElementById(tableBodyId);
       
       if (!track1Data.formats || !track1Data.formats[format]) {
-        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">No data available</td>
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">-</td>
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 10px; color: #718096;">-</td>
+          <td style="padding: 10px; color: #718096;">No data available</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
         </tr>`;
         return;
       }
@@ -381,12 +442,12 @@
         // Combine wins/losses for compact display
         const wlRatio = `${player.wins || '0'}/${player.losses || '0'}`;
         
-        const row = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px;">${displayRank}</td>
-          <td style="padding: 8px; ${usernameStyle}">${username.display}</td>
-          <td style="padding: 8px;">${player.elo || '-'}</td>
-          <td style="padding: 8px;">${formattedGxe}</td>
-          <td style="padding: 8px;">${wlRatio}</td>
+        const row = `<tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#f8fafc'" onmouseout="this.style.backgroundColor='white'">
+          <td style="padding: 10px; font-weight: 600; color: #2d3748;">${displayRank}</td>
+          <td style="padding: 10px; ${usernameStyle}">${username.display}</td>
+          <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${player.elo || '-'}</td>
+          <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${formattedGxe}</td>
+          <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${wlRatio}</td>
         </tr>`;
         tableBody.innerHTML += row;
       });
@@ -413,12 +474,12 @@
         console.error("Error loading Track 1 leaderboard:", err);
         const gen1Table = document.getElementById("gen1ou-leaderboard");
         const gen9Table = document.getElementById("gen9ou-leaderboard");
-        const errorRow = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">Error loading data</td>
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">-</td>
-          <td style="padding: 8px;">-</td>
+        const errorRow = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 10px; color: #718096;">-</td>
+          <td style="padding: 10px; color: #718096;">Error loading data</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+          <td style="padding: 10px; text-align: center; color: #718096;">-</td>
         </tr>`;
         gen1Table.innerHTML = errorRow;
         gen9Table.innerHTML = errorRow;
