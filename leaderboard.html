@@ -42,18 +42,9 @@
       <div id="battling-tab" class="tab-content active">
         <h3>Track 1: Competitive Battling</h3>
         
-        <!-- Format Selector -->
-        <div class="format-selector">
-          <label for="format-select">Format:</label>
-          <select id="format-select" onchange="switchFormat()">
-            <option value="gen1ou">Gen 1 OU</option>
-            <option value="gen2ou">Gen 2 OU</option>
-            <option value="gen3ou">Gen 3 OU</option>
-            <option value="gen4ou">Gen 4 OU</option>
-            <option value="gen9ou">Gen 9 OU</option>
-          </select>
-          
-          <label for="sort-select" style="margin-left: 2rem;">Sort by:</label>
+        <!-- Controls -->
+        <div class="format-selector" style="text-align: center; margin-bottom: 1.5rem;">
+          <label for="sort-select">Sort by:</label>
           <select id="sort-select" onchange="sortLeaderboard()">
             <option value="elo" selected>ELO</option>
             <option value="gxe">GXE</option>
@@ -63,13 +54,13 @@
           </select>
           
           <label for="hide-baselines" style="margin-left: 2rem;">
-            <input type="checkbox" id="hide-baselines" onchange="toggleBaselines()" style="margin-right: 0.5rem;">
+            <input type="checkbox" id="hide-baselines" onchange="toggleBaselines()" checked style="margin-right: 0.5rem;">
             Hide organizer baselines
           </label>
         </div>
         
         <!-- Baseline Explanation -->
-        <div id="baseline-explanation" style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.9); border-radius: 8px; border-left: 4px solid #ff9800;">
+        <div id="baseline-explanation" style="display: none; text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.9); border-radius: 8px; border-left: 4px solid #ff9800;">
           <p style="margin: 0; font-size: 1.1rem; color: #555; line-height: 1.4;">
             <span style="color: #999; font-style: italic;">Gray/italicized names</span> are <strong>organizer-hosted baseline opponents</strong>. 
             They are not eligible for prizes but are listed here as a point of reference; 
@@ -77,35 +68,73 @@
           </p>
         </div>
         
-        <!-- Leaderboard Table -->
-        <div class="card">
-          <div style="max-height: 600px; overflow-y: auto;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
-                <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                  <th style="padding: 12px;">Rank</th>
-                  <th style="padding: 12px;">Username</th>
-                  <th style="padding: 12px;">ELO</th>
-                  <th style="padding: 12px;">GXE</th>
-                  <th style="padding: 12px;">Glicko-1</th>
-                  <th style="padding: 12px;">Wins</th>
-                  <th style="padding: 12px;">Losses</th>
-                </tr>
-              </thead>
-              <tbody id="battling-leaderboard">
-                <tr style="border-bottom: 1px solid #ddd;">
-                  <td style="padding: 12px;">1</td>
-                  <td style="padding: 12px;">Loading leaderboard data...</td>
-                  <td style="padding: 12px;">-</td>
-                  <td style="padding: 12px;">-</td>
-                  <td style="padding: 12px;">-</td>
-                  <td style="padding: 12px;">-</td>
-                  <td style="padding: 12px;">-</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- Side-by-side Leaderboards -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+          
+          <!-- Gen1OU Leaderboard -->
+          <div class="card">
+            <h4 style="text-align: center; margin-bottom: 1rem; color: #3b5998;">Gen 1 OU</h4>
+            <div style="max-height: 500px; overflow-y: auto;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+                    <th style="padding: 8px; font-size: 0.9rem;">Rank</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">Username</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">ELO</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">GXE</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">W/L</th>
+                  </tr>
+                </thead>
+                <tbody id="gen1ou-leaderboard">
+                  <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px;">1</td>
+                    <td style="padding: 8px;">Loading...</td>
+                    <td style="padding: 8px;">-</td>
+                    <td style="padding: 8px;">-</td>
+                    <td style="padding: 8px;">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+          
+          <!-- Gen9OU Leaderboard -->
+          <div class="card">
+            <h4 style="text-align: center; margin-bottom: 1rem; color: #3b5998;">Gen 9 OU</h4>
+            <div style="max-height: 500px; overflow-y: auto;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+                  <tr style="border-bottom: 2px solid #ddd; text-align: left;">
+                    <th style="padding: 8px; font-size: 0.9rem;">Rank</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">Username</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">ELO</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">GXE</th>
+                    <th style="padding: 8px; font-size: 0.9rem;">W/L</th>
+                  </tr>
+                </thead>
+                <tbody id="gen9ou-leaderboard">
+                  <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px;">1</td>
+                    <td style="padding: 8px;">Loading...</td>
+                    <td style="padding: 8px;">-</td>
+                    <td style="padding: 8px;">-</td>
+                    <td style="padding: 8px;">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
         </div>
+        
+        <!-- Mobile responsive: stack on small screens -->
+        <style>
+          @media (max-width: 768px) {
+            div[style*="grid-template-columns: 1fr 1fr"] {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        </style>
         
         <!-- Last Updated and Live Ladder Link -->
         <div style="text-align: center; margin-top: 1.5rem;">
@@ -123,7 +152,7 @@
           <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.8); border-radius: 8px; border: 1px solid #e0e0e0; margin: 1rem 0;">
             <i class="fas fa-trophy" style="font-size: 1.5rem; color: #ff9800;"></i>
             <p style="margin: 0; font-size: 1rem; color: #333;">
-              For real-time updates, visit the 
+              For real-time updates and additional battle formats, visit the 
               <strong>live PokéAgent Challenge Ladder</strong>
             </p>
             <a href="http://pokeagentshowdown.com.insecure.psim.us/ladder" target="_blank" class="btn btn-primary">
@@ -231,7 +260,7 @@
     let track1Data = {};
     let currentFormat = 'gen1ou';
     let currentSortBy = 'elo';
-    let hideBaselines = false;
+    let hideBaselines = true;
 
     // Tab switching function
     // function switchTab(tabName) {
@@ -248,18 +277,11 @@
     //   document.getElementById(`${tabName}-tab`).classList.add('active');
     // }
 
-    // Format switching function for Track 1
-    function switchFormat() {
-      const select = document.getElementById('format-select');
-      currentFormat = select.value;
-      displayTrack1Leaderboard(currentFormat);
-    }
-
     // Sorting function for Track 1 leaderboard
     function sortLeaderboard() {
       const select = document.getElementById('sort-select');
       currentSortBy = select.value;
-      displayTrack1Leaderboard(currentFormat);
+      displayTrack1Leaderboards();
     }
 
     // Toggle baselines visibility
@@ -271,7 +293,13 @@
       // Hide/show the baseline explanation
       explanationDiv.style.display = hideBaselines ? 'none' : 'block';
       
-      displayTrack1Leaderboard(currentFormat);
+      displayTrack1Leaderboards();
+    }
+
+    // Display both Gen1OU and Gen9OU leaderboards
+    function displayTrack1Leaderboards() {
+      displayFormatLeaderboard('gen1ou', 'gen1ou-leaderboard');
+      displayFormatLeaderboard('gen9ou', 'gen9ou-leaderboard');
     }
 
     // Helper function to get numeric value for sorting
@@ -283,19 +311,17 @@
       return isNaN(num) ? 0 : num;
     }
 
-    // Display Track 1 leaderboard for a specific format
-    function displayTrack1Leaderboard(format) {
-      const tableBody = document.getElementById('battling-leaderboard');
+    // Display leaderboard for a specific format
+    function displayFormatLeaderboard(format, tableBodyId) {
+      const tableBody = document.getElementById(tableBodyId);
       
       if (!track1Data.formats || !track1Data.formats[format]) {
         tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">No data available for ${format.toUpperCase()}</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">No data available</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">-</td>
         </tr>`;
         return;
       }
@@ -352,14 +378,15 @@
           parseFloat(player.gxe.toString().replace('%', '')).toFixed(1) + '%' : 
           '-';
         
+        // Combine wins/losses for compact display
+        const wlRatio = `${player.wins || '0'}/${player.losses || '0'}`;
+        
         const row = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 12px;">${displayRank}</td>
-          <td style="padding: 12px; ${usernameStyle}">${username.display}</td>
-          <td style="padding: 12px;">${player.elo || '-'}</td>
-          <td style="padding: 12px;">${formattedGxe}</td>
-          <td style="padding: 12px;">${player.glicko || '-'}</td>
-          <td style="padding: 12px;">${player.wins || '-'}</td>
-          <td style="padding: 12px;">${player.losses || '-'}</td>
+          <td style="padding: 8px;">${displayRank}</td>
+          <td style="padding: 8px; ${usernameStyle}">${username.display}</td>
+          <td style="padding: 8px;">${player.elo || '-'}</td>
+          <td style="padding: 8px;">${formattedGxe}</td>
+          <td style="padding: 8px;">${wlRatio}</td>
         </tr>`;
         tableBody.innerHTML += row;
       });
@@ -380,20 +407,21 @@
       })
       .then(data => {
         track1Data = data;
-        displayTrack1Leaderboard(currentFormat);
+        displayTrack1Leaderboards();
       })
       .catch(err => {
         console.error("Error loading Track 1 leaderboard:", err);
-        const tableBody = document.getElementById("battling-leaderboard");
-        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">Error loading Track 1 leaderboard data</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
+        const gen1Table = document.getElementById("gen1ou-leaderboard");
+        const gen9Table = document.getElementById("gen9ou-leaderboard");
+        const errorRow = `<tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">Error loading data</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">-</td>
+          <td style="padding: 8px;">-</td>
         </tr>`;
+        gen1Table.innerHTML = errorRow;
+        gen9Table.innerHTML = errorRow;
       });
 
     // Load speedrunning leaderboard data
