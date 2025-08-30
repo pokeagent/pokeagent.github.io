@@ -74,9 +74,9 @@
           <!-- Gen1OU Leaderboard -->
           <div style="
             background: white; 
-            border: 2px solid #e0e6ed; 
+            border: 3px solid #2d3748; 
             border-radius: 12px; 
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             overflow: hidden;
           ">
             <div style="
@@ -84,14 +84,14 @@
               color: white; 
               padding: 1.5rem; 
               text-align: center;
-              border-bottom: 1px solid #e0e6ed;
+              border-bottom: 2px solid #2d3748;
             ">
               <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
                 Gen 1 OU
               </h3>
             </div>
             <div style="
-              max-height: 500px; 
+              max-height: 650px; 
               overflow-y: auto;
               scrollbar-width: thin;
               scrollbar-color: #cbd5e0 #f7fafc;
@@ -122,9 +122,9 @@
           <!-- Gen9OU Leaderboard -->
           <div style="
             background: white; 
-            border: 2px solid #e0e6ed; 
+            border: 3px solid #2d3748; 
             border-radius: 12px; 
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             overflow: hidden;
           ">
             <div style="
@@ -132,14 +132,14 @@
               color: white; 
               padding: 1.5rem; 
               text-align: center;
-              border-bottom: 1px solid #e0e6ed;
+              border-bottom: 2px solid #2d3748;
             ">
               <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
                 Gen 9 OU
               </h3>
             </div>
             <div style="
-              max-height: 500px; 
+              max-height: 650px; 
               overflow-y: auto;
               scrollbar-width: thin;
               scrollbar-color: #cbd5e0 #f7fafc;
@@ -391,7 +391,11 @@
       
       // Filter out baselines if hideBaselines is true
       if (hideBaselines) {
-        players = players.filter(player => !player.username.is_starter_kit);
+        players = players.filter(player => {
+          const username = player.username.original || player.username.display;
+          // Filter out organizer baselines: starter kits and PAC-LLM users
+          return !player.username.is_starter_kit && !username.startsWith('PAC-LLM-');
+        });
       }
       
       // Sort players based on current sort criteria
@@ -427,7 +431,9 @@
 
       players.forEach((player, index) => {
         const username = player.username;
-        const usernameStyle = username.is_starter_kit ? 
+        const originalUsername = username.original || username.display;
+        const isBaseline = username.is_starter_kit || originalUsername.startsWith('PAC-LLM-');
+        const usernameStyle = isBaseline ? 
           'font-style: italic; color: #999; font-weight: 300;' : 
           'font-weight: 500;';
         
