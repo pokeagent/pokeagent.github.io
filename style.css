@@ -1301,6 +1301,23 @@ footer {
          max-width: 100% !important;
          height: auto !important;
      }
+     
+     .sponsor-tier {
+         margin-bottom: 2rem;
+     }
+     
+     .tier-label {
+         font-size: 1.1rem;
+     }
+     
+     .gold-tier .sponsor-item,
+     .silver-tier .sponsor-item {
+         transform: scale(1);
+     }
+     
+     .aij-logo {
+         max-width: 200px;
+     }
 
      /* Ensure all images are responsive */
      img {
@@ -1584,12 +1601,36 @@ pre {
 
 /* Sponsorship Section */
 .sponsors-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .current-sponsors {
     margin-bottom: 3rem;
+}
+
+.sponsor-tier {
+    margin-bottom: 2.5rem;
+}
+
+.tier-label {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.gold-tier .tier-label {
+    color: #FFD700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.silver-tier .tier-label {
+    color: #C0C0C0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .sponsor-logos {
@@ -1642,6 +1683,28 @@ pre {
     font-weight: 600;
     color: var(--dark-color);
     margin: 0;
+}
+
+.aij-logo {
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.gold-tier .sponsor-item {
+    transform: scale(1.1);
+}
+
+.silver-tier .sponsor-item {
+    transform: scale(0.95);
+}
+
+.gold-tier .sponsor-item:hover {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.silver-tier .sponsor-item:hover {
+    transform: scale(1) translateY(-5px);
 }
 
 .sponsor-cta {
