@@ -91,7 +91,7 @@
               </h3>
             </div>
             <div style="
-              max-height: 650px; 
+              max-height: 320px; 
               overflow-y: auto;
               scrollbar-width: thin;
               scrollbar-color: #cbd5e0 #f7fafc;
@@ -139,7 +139,7 @@
               </h3>
             </div>
             <div style="
-              max-height: 650px; 
+              max-height: 320px; 
               overflow-y: auto;
               scrollbar-width: thin;
               scrollbar-color: #cbd5e0 #f7fafc;
@@ -232,32 +232,43 @@
         <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">
           <strong>Milestone Splits:</strong> Times shown for reaching key early-game locations. Hover over column headers for full location names.
         </p>
-      <div class="card">
-        <div style="max-height: 300px; overflow-y: auto;">
+      <div style="
+        background: white; 
+        border: 3px solid #2d3748; 
+        border-radius: 12px; 
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      ">
+        <div style="
+          max-height: 300px; 
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #cbd5e0 #f7fafc;
+        ">
           <table style="width: 100%; border-collapse: collapse;">
-            <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
-              <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                <th style="padding: 8px; font-size: 0.85rem;">Rank</th>
-                <th style="padding: 8px; font-size: 0.85rem;">Team</th>
-                <th style="padding: 8px; font-size: 0.85rem;">%</th>
-                <th style="padding: 8px; font-size: 0.85rem;">Time</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Littleroot Town">Littleroot</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Route 101">R101</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Oldale Town">Oldale</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Route 103">R103</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Route 102">R102</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Petalburg City">Petalburg</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Route 104">R104</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Petalburg Woods">Woods</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Rustboro City">Rustboro</th>
-                <th style="padding: 8px; font-size: 0.85rem;" title="Rustboro Gym">Gym1</th>
-                <th style="padding: 8px; font-size: 0.85rem;">Video</th>
-                <th style="padding: 8px; font-size: 0.85rem;">Updated</th>
+            <thead style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
+              <tr>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">%</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Time</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Littleroot Town">Littleroot</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 101">R101</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Oldale Town">Oldale</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 103">R103</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 102">R102</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Petalburg City">Petalburg</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 104">R104</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Petalburg Woods">Woods</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Rustboro City">Rustboro</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Rustboro Gym">Gym1</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Video</th>
+                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Updated</th>
               </tr>
             </thead>
             <tbody id="speedrunning-leaderboard">
-              <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 8px;" colspan="16">Loading leaderboard data...</td>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px; color: #718096;" colspan="16">Loading leaderboard data...</td>
               </tr>
             </tbody>
           </table>
@@ -519,23 +530,23 @@
             `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
             '-';
           
-          const row = `<tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.rank || (index + 1)}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.team}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.completion_percent.toFixed(1)}%</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.runtime || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_littleroot_town || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_101 || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_oldale_town || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_103 || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_102 || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_petalburg_city || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_104 || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_petalburg_woods || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_rustboro_city || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_rustboro_gym || '-'}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${videoCell}</td>
-            <td style="padding: 8px; font-size: 0.85rem;">${timestamp}</td>
+          const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748;">${entry.rank || (index + 1)}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.completion_percent.toFixed(1)}%</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.runtime || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_littleroot_town || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_101 || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_oldale_town || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_103 || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_102 || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_petalburg_city || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_104 || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_petalburg_woods || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_rustboro_city || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_rustboro_gym || '-'}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
+            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${timestamp}</td>
           </tr>`;
           tableBody.innerHTML += row;
         });
@@ -543,8 +554,8 @@
       .catch(err => {
         console.error("Error loading speedrunning leaderboard:", err);
         const tableBody = document.getElementById("speedrunning-leaderboard");
-        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px;" colspan="16">Error loading speedrunning leaderboard data</td>
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 10px; color: #718096;" colspan="16">Error loading speedrunning leaderboard data</td>
         </tr>`;
       });
 
