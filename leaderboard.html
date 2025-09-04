@@ -57,6 +57,11 @@
             <input type="checkbox" id="hide-baselines" onchange="toggleBaselines()" checked style="margin-right: 0.5rem;">
             Hide organizer baselines
           </label>
+          
+          <label for="show-llm-only" style="margin-left: 2rem;">
+            <input type="checkbox" id="show-llm-only" onchange="toggleLLMOnly()" disabled style="margin-right: 0.5rem;">
+            Show LLM-based methods only (Gen 9 OU)
+          </label>
         </div>
         
         <!-- Baseline Explanation -->
@@ -341,6 +346,7 @@
     let currentFormat = 'gen1ou';
     let currentSortBy = 'elo';
     let hideBaselines = true;
+    let showLLMOnly = false;
 
     // Tab switching function
     // function switchTab(tabName) {
@@ -368,10 +374,42 @@
     function toggleBaselines() {
       const checkbox = document.getElementById('hide-baselines');
       const explanationDiv = document.getElementById('baseline-explanation');
+      const llmCheckbox = document.getElementById('show-llm-only');
       hideBaselines = checkbox.checked;
+      
+      console.log('toggleBaselines: hideBaselines =', hideBaselines, ', showLLMOnly =', showLLMOnly);
+      
+      // If hiding baselines, disable LLM-only filter and disable the checkbox
+      if (hideBaselines && showLLMOnly) {
+        llmCheckbox.checked = false;
+        showLLMOnly = false;
+        console.log('Unchecked LLM filter because baselines are hidden');
+      }
+      
+      // Enable/disable LLM checkbox based on baseline visibility
+      llmCheckbox.disabled = hideBaselines;
+      console.log('LLM checkbox disabled:', llmCheckbox.disabled);
       
       // Hide/show the baseline explanation
       explanationDiv.style.display = hideBaselines ? 'none' : 'block';
+      
+      displayTrack1Leaderboards();
+    }
+
+    // Toggle LLM-only visibility
+    function toggleLLMOnly() {
+      const checkbox = document.getElementById('show-llm-only');
+      const baselineCheckbox = document.getElementById('hide-baselines');
+      const explanationDiv = document.getElementById('baseline-explanation');
+      showLLMOnly = checkbox.checked;
+      
+      // If enabling LLM-only, ensure baselines are shown (uncheck hide baselines)
+      if (showLLMOnly && hideBaselines) {
+        baselineCheckbox.checked = false;
+        hideBaselines = false;
+        explanationDiv.style.display = 'block';
+        console.log('Unchecked hide baselines to show LLM methods');
+      }
       
       displayTrack1Leaderboards();
     }
@@ -415,6 +453,28 @@
           // Filter out organizer baselines: starter kits and PAC-LLM users
           return !player.username.is_starter_kit && !username.startsWith('PAC-LLM-');
         });
+      }
+      
+      // Filter for LLM methods only if showLLMOnly is true (only for Gen 9 OU when baselines are shown)
+      if (showLLMOnly && format === 'gen9ou' && !hideBaselines) {
+        console.log('Filtering for LLM methods. All usernames in gen9ou:', 
+          players.map(p => p.username.original || p.username.display));
+        
+        players = players.filter(player => {
+          const username = player.username.original || player.username.display;
+          // Normalize Unicode to handle different representations of accented characters
+          const normalizedUsername = username.normalize('NFD');
+          
+          const isLLM = normalizedUsername.startsWith('PAC-PokeChamp-') || 
+                        normalizedUsername.startsWith('PAC-PokéChamp-'.normalize('NFD')) || 
+                        normalizedUsername.startsWith('PAC-PC-') ||
+                        normalizedUsername.startsWith('PAC-LLM-');
+          
+          console.log(`Username: "${username}" - Normalized: "${normalizedUsername}" - isLLM: ${isLLM}`);
+          return isLLM;
+        });
+        
+        console.log('Filtered LLM players:', players.length);
       }
       
       // Sort players based on current sort criteria
@@ -558,6 +618,22 @@
           <td style="padding: 10px; color: #718096;" colspan="16">Error loading speedrunning leaderboard data</td>
         </tr>`;
       });
+
+    // Initialize page state
+    function initializePage() {
+      const llmCheckbox = document.getElementById('show-llm-only');
+      const baselineCheckbox = document.getElementById('hide-baselines');
+      
+      console.log('Initializing page: hideBaselines =', hideBaselines, ', baselineCheckbox.checked =', baselineCheckbox.checked);
+      
+      // Ensure proper initial state: baselines hidden by default, LLM filter disabled
+      llmCheckbox.disabled = baselineCheckbox.checked;
+      
+      console.log('LLM checkbox disabled:', llmCheckbox.disabled);
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', initializePage);
 
     // Removed Track 1 data loading; external ladder provides live leaderboard
   </script>
