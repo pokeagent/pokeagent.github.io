@@ -465,10 +465,13 @@
           // Normalize Unicode to handle different representations of accented characters
           const normalizedUsername = username.normalize('NFD');
           
-          const isLLM = normalizedUsername.startsWith('PAC-PokeChamp-') || 
-                        normalizedUsername.startsWith('PAC-PokéChamp-'.normalize('NFD')) || 
-                        normalizedUsername.startsWith('PAC-PC-') ||
-                        normalizedUsername.startsWith('PAC-LLM-');
+          // Non-LLM PAC-PC entries to exclude
+          const nonLLMPacPC = ['PAC-PC-ABYSSAL', 'PAC-PC-DC', 'PAC-PC-FAST', 'PAC-PC-MAX-POWER'];
+          
+          const isLLM = (normalizedUsername.startsWith('PAC-PokeChamp-') || 
+                         normalizedUsername.startsWith('PAC-PokéChamp-'.normalize('NFD')) || 
+                         normalizedUsername.startsWith('PAC-LLM-') ||
+                         (normalizedUsername.startsWith('PAC-PC-') && !nonLLMPacPC.includes(normalizedUsername)));
           
           console.log(`Username: "${username}" - Normalized: "${normalizedUsername}" - isLLM: ${isLLM}`);
           return isLLM;
