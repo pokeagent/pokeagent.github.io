@@ -1,9 +1,10 @@
 [
   {
+    "rank": 1,
     "team": "Ed",
-    "runtime": "00:11:39",
     "completion_percent": 5,
+    "time_minutes": 12,
     "video": "have not completed full run still testing ",
-    "timestamp": "2025-08-31T10:47:12.676Z"
+    "last_updated": "2025-08-31T10:47:12.676Z"
   }
 ]
