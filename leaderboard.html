@@ -229,27 +229,35 @@
       <!-- Speedrunning Tab -->
       <div id="speedrunning-tab" class="tab-content active">
         <h3>Track 2: RPG Speedrunning</h3>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">
+          <strong>Milestone Splits:</strong> Times shown for reaching key early-game locations. Hover over column headers for full location names.
+        </p>
       <div class="card">
         <div style="max-height: 300px; overflow-y: auto;">
           <table style="width: 100%; border-collapse: collapse;">
             <thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
               <tr style="border-bottom: 2px solid #ddd; text-align: left;">
-                <th style="padding: 12px;">Rank</th>
-                <th style="padding: 12px;">Team</th>
-                <th style="padding: 12px;">Completion %</th>
-                <th style="padding: 12px;">Time (min)</th>
-                <th style="padding: 12px;">Video</th>
-                <th style="padding: 12px;">Last Updated</th>
+                <th style="padding: 8px; font-size: 0.85rem;">Rank</th>
+                <th style="padding: 8px; font-size: 0.85rem;">Team</th>
+                <th style="padding: 8px; font-size: 0.85rem;">%</th>
+                <th style="padding: 8px; font-size: 0.85rem;">Time</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Littleroot Town">Littleroot</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Route 101">R101</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Oldale Town">Oldale</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Route 103">R103</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Route 102">R102</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Petalburg City">Petalburg</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Route 104">R104</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Petalburg Woods">Woods</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Rustboro City">Rustboro</th>
+                <th style="padding: 8px; font-size: 0.85rem;" title="Rustboro Gym">Gym1</th>
+                <th style="padding: 8px; font-size: 0.85rem;">Video</th>
+                <th style="padding: 8px; font-size: 0.85rem;">Updated</th>
               </tr>
             </thead>
             <tbody id="speedrunning-leaderboard">
               <tr style="border-bottom: 1px solid #ddd;">
-                <td style="padding: 12px;">1</td>
-                <td style="padding: 12px;">Loading leaderboard data...</td>
-                <td style="padding: 12px;">-</td>
-                <td style="padding: 12px;">-</td>
-                <td style="padding: 12px;">-</td>
-                <td style="padding: 12px;">-</td>
+                <td style="padding: 8px;" colspan="16">Loading leaderboard data...</td>
               </tr>
             </tbody>
           </table>
@@ -506,14 +514,28 @@
         const allEntries = data.slice(0, 100);
         
         allEntries.forEach((entry, index) => {
-          const timestamp = new Date(entry.timestamp).toLocaleDateString();
+          const timestamp = new Date(entry.last_updated).toLocaleDateString();
+          const videoCell = entry.video ? 
+            `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
+            '-';
+          
           const row = `<tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 12px;">${index + 1}</td>
-            <td style="padding: 12px;">${entry.team}</td>
-            <td style="padding: 12px;">${entry.completion_percent.toFixed(1)}%</td>
-            <td style="padding: 12px;">${entry.runtime}</td>
-            <td style="padding: 12px;"><a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a></td>
-            <td style="padding: 12px;">${timestamp}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.rank || (index + 1)}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.team}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.completion_percent.toFixed(1)}%</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.runtime || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_littleroot_town || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_101 || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_oldale_town || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_103 || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_102 || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_petalburg_city || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_route_104 || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_petalburg_woods || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_rustboro_city || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${entry.split_rustboro_gym || '-'}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${videoCell}</td>
+            <td style="padding: 8px; font-size: 0.85rem;">${timestamp}</td>
           </tr>`;
           tableBody.innerHTML += row;
         });
@@ -522,12 +544,7 @@
         console.error("Error loading speedrunning leaderboard:", err);
         const tableBody = document.getElementById("speedrunning-leaderboard");
         tableBody.innerHTML = `<tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">Error loading speedrunning leaderboard data</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
-          <td style="padding: 12px;">-</td>
+          <td style="padding: 8px;" colspan="16">Error loading speedrunning leaderboard data</td>
         </tr>`;
       });
 
