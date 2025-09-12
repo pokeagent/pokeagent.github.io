@@ -40,15 +40,51 @@
         alt="PokéAgent Logo"
         class="hero-image"
         />
+        <div style="margin: 2rem 0;">
+            <a href="https://discord.gg/E2DuX5FWF7" class="btn btn-discord" target="_blank">
+                <i class="fab fa-discord"></i>
+                Join us on Discord
+            </a>
+        </div>
         <p class="hero-description">
         A NeurIPS 2025 competition advancing AI decision-making through Pokémon.
         Featuring competitive battling and RPG speedrunning tracks to unify
         research in reinforcement learning and large language models.
         </p>
-        <div class="scroll-indicator" onclick="document.getElementById('tracks').scrollIntoView({behavior: 'smooth'})">
+        <div class="scroll-indicator" onclick="document.getElementById('hackathon').scrollIntoView({behavior: 'smooth'})">
             <i class="fas fa-chevron-down"></i>
         </div>
     </div>
+    </section>
+
+    <!-- Special Event: PokéAgent Weekend Hackathon Section -->
+    <section id="hackathon" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-2">Special Event: PokéAgent Weekend Hackathon</h2>
+            <p class="text-center mb-2" style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 2rem; color: #666;">
+                Join us for a weekend of Pokémon-themed research and competition! Kickstart your submissions and earn up to $2k in Google Cloud Platform credits.
+            </p>
+            <div class="text-center">
+                <img src="media/figures/pokeagent_hackathon_schedule_v2.png" 
+                     alt="PokéAgent Weekend Hackathon Schedule" 
+                     style="max-width: 70%; height: auto; margin: 1rem 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="https://www.youtube.com/live/CaXM2hr_n2A" class="btn btn-primary youtube-live-btn" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #cc3333; border: 3px solid #000; border-radius: 12px; font-size: 1.1rem; padding: 1rem 2rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-decoration: none;">
+                    <i class="fab fa-youtube"></i>
+                    Talks Live on YouTube 9/13 @ 12pm EDT
+                </a>
+            </div>
+
+            <style>
+                .youtube-live-btn:hover {
+                    transform: translateY(-5px) scale(1.05);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                    background: #b82828 !important;
+                    color: white !important;
+                }
+            </style>
+        </div>
     </section>
 
     <!-- Countdown Timer -->
@@ -97,8 +133,6 @@
         </div>
     </section>
 
-
-
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -126,7 +160,7 @@
     <section id="get-started" style="background-color: #f8f9fa;">
         <div class="container text-center">
             <h2 class="mb-2">Ready to Get Started?</h2>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
+            <p style="font-size: 1.4rem; max-width: 600px; margin: 0 auto 2rem; color: #666;">
                 Join the PokéAgent Challenge Discord server to register and connect with other participants!
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -149,7 +183,7 @@
     <section id="prizes">
         <div class="container">
             <h2 class="text-center mb-2">Prizes & Recognition</h2>
-            <p class="text-center mb-2" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: #666;">
+            <p class="text-center mb-2" style="font-size: 1.4rem; max-width: 800px; margin: 0 auto; color: #666;">
                 Multiple prize categories ensure diverse contributions are recognized and rewarded
             </p>
             <div class="grid-3">
@@ -225,7 +259,7 @@
                 </div>
                 <div class="sponsor-cta">
                     <h3 class="text-center mb-2">Become a Sponsor</h3>
-                    <p class="text-center mb-2" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    <p class="text-center mb-2" style="font-size: 1.3rem; max-width: 600px; margin: 0 auto;">
                         We're actively seeking additional sponsors to support this groundbreaking AI competition. 
                         Sponsorship opportunities include prize pool contributions, infrastructure support, and more.
                     </p>
@@ -309,7 +343,7 @@
     <section id="citation" style="background-color: #f8f9fa;">
         <div class="container">
             <h2 class="text-center mb-2">Cite This Work</h2>
-            <p class="text-center mb-2" style="font-size: 1.1rem; color: #666;">
+            <p class="text-center mb-2" style="font-size: 1.3rem; color: #666;">
                 If you use this competition in your research, please cite our paper:
             </p>
             <div class="text-center mb-2">
