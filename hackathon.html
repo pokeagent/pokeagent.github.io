@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokéAgent Weekend Hackathon - PokéAgent Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">PokéAgent Challenge</a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="track1.html">Track 1</a></li>
+        <li><a href="track2.html">Track 2</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="hackathon.html">Hackathon</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hackathon Hero -->
+  <section class="hero" style="height: auto; padding: 4rem 0; background: radial-gradient(ellipse 150% 100% at 50% 30%, #fff4e6, #ffb366); color: var(--dark-color); text-align: center; mask: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask: linear-gradient(to bottom, black 85%, transparent 100%); position: relative;">
+    <div class="container">
+      <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+        PokéAgent Weekend Hackathon
+      </h1>
+      <p style="font-size: 1.5rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Join us for a weekend of Pokémon-themed research and competition! Kickstart your submissions and earn up to $2k in Google Cloud Platform credits.
+      </p>
+      <div class="text-center">
+        <img src="media/figures/pokeagent_hackathon_schedule_v2.png" 
+             alt="PokéAgent Weekend Hackathon Schedule" 
+             style="max-width: 70%; height: auto; margin: 1rem 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section style="background-color: #f8f9fa; padding: 2rem 0;">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="https://www.youtube.com/live/CaXM2hr_n2A" class="btn btn-primary" target="_blank" style="background: #cc3333; border-color: #cc3333; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <i class="fab fa-youtube"></i>
+          YouTube Stream
+        </a>
+        <a href="https://discord.gg/E2DuX5FWF7" class="btn btn-discord" target="_blank">
+          <i class="fab fa-discord"></i>
+          Join Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weekend Timeline -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Weekend Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Friday 9/13 @ 10am EDT</span>
+            <h3>Track 1 Competition Begins</h3>
+            <p>PokéAgent Showdown server comes online. Leaderboard reset. The race is on!</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Friday 9/13 @ 12pm EDT</span>
+            <h3>Kickoff & Research Talks</h3>
+            <p>Live YouTube stream with research presentations and hackathon kickoff.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Saturday & Sunday</span>
+            <h3>Hack & Build</h3>
+            <p>Work on your agents, climb the leaderboards, and prepare submissions for both tracks.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Sunday @ 11:59pm EDT</span>
+            <h3>Submission Deadline</h3>
+            <p>Final submissions due for both Track 1 and Track 2 hackathon prizes.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Monday @ 5pm EDT</span>
+            <h3>Winners Announced</h3>
+            <p>Hackathon winners announced on Discord and website leaderboard sync.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track 1 Hackathon Details -->
+  <section style="background-color: #f5f5f5;">
+    <div class="container">
+      <h2 class="text-center mb-2">Track 1: Competitive Battling</h2>
+      
+      <!-- Submission Guidelines Track 1 -->
+      <div class="card">
+        <h3>How to Submit for Track 1</h3>
+        <p>The leaderboard will be reset Friday morning and the server will come online at 10 AM EDT. On Sunday night the leaderboard will sync with the pokeagent website. Please use one registered username throughout the weekend - we are ranking by ELO for the hackathon, so there's no need to change usernames to reset your stats when your method improves.</p>
+        
+        <ol>
+          <li><strong>Register:</strong> Use the registration form to claim your username on PokéAgent Showdown</li>
+          <li><strong>Battle:</strong> Climb the ladder using your registered username in Gen1OU and/or Gen9OU formats</li>
+          <li><strong>Maintain Rank:</strong> Your final ELO at the deadline determines your hackathon ranking</li>
+          <li><strong>One Username:</strong> Stick to one registered username throughout the weekend</li>
+        </ol>
+        
+        <div class="mt-3">
+          <h4>Hackathon Prizes</h4>
+          <ul>
+            <li><strong>#1 Gen1OU:</strong> $1,000 in GCP credits</li>
+            <li><strong>#1 Gen9OU:</strong> $1,000 in GCP credits</li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank">
+            <i class="fas fa-user-plus"></i> Register Username
+          </a>
+        </div>
+      </div>
+
+      <!-- Support Resources -->
+      <div class="card mt-2">
+        <h3>Support Resources</h3>
+        <p>For detailed information about Track 1, including starter code, datasets, and tutorials:</p>
+        <div class="text-center">
+          <a href="track1.html" class="btn btn-secondary">
+            <i class="fas fa-external-link-alt"></i> Visit Track 1 Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track 2 Hackathon Details -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Track 2: RPG Speedrunning</h2>
+      
+      <!-- Starting Checkpoint & Milestones -->
+      <div class="card">
+        <h3>Starting Checkpoint & Milestones</h3>
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <div>
+            <h4>Starting Point</h4>
+            <p>Your agent begins at the start of Pokémon Emerald with a fresh save file. No prior progress or advantages.</p>
+          </div>
+          <div>
+            <h4>Key Milestones</h4>
+            <ul>
+              <li>First Gym Badge</li>
+              <li>Pokémon Center Navigation</li>
+              <li>Route Traversal</li>
+              <li>Trainer Battles Won</li>
+              <li>Story Progression Points</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submission Guidelines Track 2 -->
+      <div class="card mt-2">
+        <h3>Submission Guidelines for Track 2</h3>
+        <p>Submit your RPG speedrunning agent with the following requirements:</p>
+        
+        <div class="mt-3">
+          <h4>Required Materials</h4>
+          <ol>
+            <li><strong>Agent Code:</strong> Complete implementation with dependencies and setup instructions</li>
+            <li><strong>Run Recording:</strong> Video evidence of your agent's best run uploaded to YouTube</li>
+            <li><strong>Performance Log:</strong> Detailed log of milestones achieved and completion time</li>
+            <li><strong>Documentation:</strong> Brief description of your approach and any novel techniques</li>
+          </ol>
+        </div>
+
+        <div class="mt-3">
+          <h4>Evaluation Criteria</h4>
+          <ul>
+            <li><strong>Milestone Completion:</strong> Percentage of key game milestones achieved</li>
+            <li><strong>Speed:</strong> Time taken to reach milestones</li>
+            <li><strong>Consistency:</strong> Reproducible performance across multiple runs</li>
+            <li><strong>Innovation:</strong> Novel approaches to long-horizon planning</li>
+          </ul>
+        </div>
+
+        <div class="mt-3">
+          <h4>Hackathon Prizes</h4>
+          <ul>
+            <li><strong>1st Place:</strong> $1,000 in GCP credits</li>
+            <li><strong>2nd Place:</strong> $1,000 in GCP credits</li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="https://forms.gle/nFciH9DrT4RKC1vt9" class="btn btn-primary" target="_blank">
+            <i class="fas fa-paper-plane"></i> Submit Track 2 Entry
+          </a>
+        </div>
+      </div>
+
+      <!-- Support Resources -->
+      <div class="card mt-2">
+        <h3>Support Resources</h3>
+        <p>For detailed information about Track 2, including starter code, emulator setup, and tutorials:</p>
+        <div class="text-center">
+          <a href="track2.html" class="btn btn-secondary">
+            <i class="fas fa-external-link-alt"></i> Visit Track 2 Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Important Deadlines -->
+  <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 0;">
+    <div class="container text-center">
+      <h2 style="color: white; margin-bottom: 2rem;">Important Deadlines</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+          <h3 style="color: #ffeb3b; margin-bottom: 1rem;">
+            <i class="fas fa-clock"></i> Submissions Due
+          </h3>
+          <p style="font-size: 1.5rem; font-weight: bold;">Sunday 11:59 PM EDT</p>
+          <p>Final deadline for all hackathon submissions</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+          <h3 style="color: #4caf50; margin-bottom: 1rem;">
+            <i class="fas fa-trophy"></i> Winners Announced
+          </h3>
+          <p style="font-size: 1.5rem; font-weight: bold;">Monday 5:00 PM EDT</p>
+          <p>Hackathon winners announced on Discord</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support & Community -->
+  <section style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-2">Support & Community</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="card">
+          <h3 style="color: #5865f2;">
+            <i class="fab fa-discord"></i> Discord Support
+          </h3>
+          <p>Join our Discord server for real-time support, announcements, and community discussion during the hackathon.</p>
+          <a href="https://discord.gg/E2DuX5FWF7" class="btn btn-discord mt-1" target="_blank">
+            <i class="fab fa-discord"></i> Join Discord
+          </a>
+        </div>
+        <div class="card">
+          <h3 style="color: #cc3333;">
+            <i class="fab fa-youtube"></i> Live Stream
+          </h3>
+          <p>Watch the kickoff presentations and stay updated with live coverage of the hackathon weekend.</p>
+          <a href="https://www.youtube.com/live/CaXM2hr_n2A" class="btn btn-primary mt-1" target="_blank" style="background: #cc3333; border-color: #cc3333;">
+            <i class="fab fa-youtube"></i> Watch Stream
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>PokéAgent Challenge</h3>
+          <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
+          <div class="social-links mt-1">
+            <a href="https://x.com/intent/post?text=Excited%20to%20join%20the%20%23PokeAgent%20Challenge%20at%20%23NeurIPS2025!%20%F0%9F%8E%AE%E2%9A%A1%20Advancing%20AI%20decision-making%20through%20Pok%C3%A9mon%20battles%20and%20speedruns.%20Learn%20more%3A%20https%3A%2F%2Fpokeagent.github.io" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@PokeAgentChallenge" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="hackathon.html">Hackathon</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>For questions or support, please contact:</p>
+          <p>Email: pokeagentchallenge@gmail.com</p>
+          <p>Join our Discord community for direct assistance and discussions.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

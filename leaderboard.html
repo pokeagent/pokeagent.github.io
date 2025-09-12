@@ -21,6 +21,7 @@
         <li><a href="track2.html">Track 2</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
         <li><a href="rules.html">Rules</a></li>
+        <li><a href="hackathon.html">Hackathon</a></li>
         <li><a href="index.html#sponsors">Sponsors</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
@@ -235,9 +236,29 @@
       <!-- Speedrunning Tab -->
       <div id="speedrunning-tab" class="tab-content active">
         <h3>Track 2: RPG Speedrunning</h3>
-        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">
-          <strong>Milestone Splits:</strong> Times shown for reaching key early-game locations. Hover over column headers for full location names.
+        
+        <!-- Milestone Filter -->
+        <div class="format-selector" style="text-align: center; margin-bottom: 1.5rem;">
+          <label for="milestone-select">Filter by milestone:</label>
+          <select id="milestone-select" onchange="filterByMilestone()">
+            <option value="all">All (Furthest Milestone)</option>
+            <option value="littleroot_town">Littleroot Town</option>
+            <option value="route_101">Route 101</option>
+            <option value="oldale_town">Oldale Town</option>
+            <option value="route_103">Route 103</option>
+            <option value="route_102">Route 102</option>
+            <option value="petalburg_city">Petalburg City</option>
+            <option value="route_104">Route 104</option>
+            <option value="petalburg_woods">Petalburg Woods</option>
+            <option value="rustboro_city">Rustboro City</option>
+            <option value="rustboro_gym">Rustboro Gym (1st Gym Badge)</option>
+          </select>
+        </div>
+        
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem; text-align: center;">
+          <strong>Sorted by completion time.</strong> "All" shows each team's furthest milestone reached and time to reach it.
         </p>
+        
       <div style="
         background: white; 
         border: 3px solid #2d3748; 
@@ -246,7 +267,7 @@
         overflow: hidden;
       ">
         <div style="
-          max-height: 300px; 
+          max-height: 400px; 
           overflow-y: auto;
           scrollbar-width: thin;
           scrollbar-color: #cbd5e0 #f7fafc;
@@ -254,27 +275,16 @@
           <table style="width: 100%; border-collapse: collapse;">
             <thead style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
               <tr>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">%</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Time</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Littleroot Town">Littleroot</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 101">R101</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Oldale Town">Oldale</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 103">R103</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 102">R102</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Petalburg City">Petalburg</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Route 104">R104</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Petalburg Woods">Woods</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Rustboro City">Rustboro</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;" title="Rustboro Gym">Gym1</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Video</th>
-                <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Updated</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Milestone</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Time</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Video</th>
               </tr>
             </thead>
             <tbody id="speedrunning-leaderboard">
               <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 10px; color: #718096;" colspan="16">Loading leaderboard data...</td>
+                <td style="padding: 15px; color: #718096;" colspan="5">Loading leaderboard data...</td>
               </tr>
             </tbody>
           </table>
@@ -297,7 +307,7 @@
             <a href="https://x.com/intent/post?text=Excited%20to%20join%20the%20%23PokeAgent%20Challenge%20at%20%23NeurIPS2025!%20%F0%9F%8E%AE%E2%9A%A1%20Advancing%20AI%20decision-making%20through%20Pok%C3%A9mon%20battles%20and%20speedruns.%20Learn%20more%3A%20https%3A%2F%2Fpokeagent.github.io" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
                                     <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/@PokeAgentChallenge" target="_blank"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         <div class="footer-column">
@@ -308,6 +318,7 @@
             <li><a href="track2.html">Track 2</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
             <li><a href="rules.html">Rules</a></li>
+        <li><a href="hackathon.html">Hackathon</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
@@ -574,6 +585,129 @@
         gen9Table.innerHTML = errorRow;
       });
 
+    // Define milestone order for progression
+    const milestoneOrder = [
+      'littleroot_town', 'route_101', 'oldale_town', 'route_103', 'route_102', 
+      'petalburg_city', 'route_104', 'petalburg_woods', 'rustboro_city', 'rustboro_gym'
+    ];
+    
+    const milestoneNames = {
+      'littleroot_town': 'Littleroot Town',
+      'route_101': 'Route 101', 
+      'oldale_town': 'Oldale Town',
+      'route_103': 'Route 103',
+      'route_102': 'Route 102',
+      'petalburg_city': 'Petalburg City',
+      'route_104': 'Route 104',
+      'petalburg_woods': 'Petalburg Woods',
+      'rustboro_city': 'Rustboro City',
+      'rustboro_gym': 'Rustboro Gym'
+    };
+
+    // Function to get furthest milestone for a team
+    function getFurthestMilestone(entry) {
+      for (let i = milestoneOrder.length - 1; i >= 0; i--) {
+        const milestone = milestoneOrder[i];
+        const splitField = `split_${milestone}`;
+        if (entry[splitField] && entry[splitField] !== '-' && entry[splitField] !== '') {
+          return {
+            milestone: milestone,
+            time: entry[splitField],
+            name: milestoneNames[milestone]
+          };
+        }
+      }
+      return { milestone: 'none', time: '-', name: 'None' };
+    }
+
+    // Function to parse time string to seconds for sorting
+    function parseTimeToSeconds(timeStr) {
+      if (!timeStr || timeStr === '-') return Infinity;
+      
+      // Handle formats like "1:23:45", "23:45", or "45"
+      const parts = timeStr.split(':').map(p => parseInt(p) || 0);
+      if (parts.length === 3) {
+        return parts[0] * 3600 + parts[1] * 60 + parts[2]; // hours:minutes:seconds
+      } else if (parts.length === 2) {
+        return parts[0] * 60 + parts[1]; // minutes:seconds
+      } else {
+        return parts[0] || 0; // seconds
+      }
+    }
+
+    // Function to filter and display speedrunning leaderboard
+    function filterByMilestone() {
+      const selectedMilestone = document.getElementById('milestone-select').value;
+      displaySpeedrunningLeaderboard(selectedMilestone);
+    }
+
+    function displaySpeedrunningLeaderboard(filterMilestone = 'all') {
+      const tableBody = document.getElementById("speedrunning-leaderboard");
+      
+      if (!speedrunningData || speedrunningData.length === 0) {
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 15px; color: #718096;" colspan="5">No leaderboard data available</td>
+        </tr>`;
+        return;
+      }
+
+      let processedData = [];
+
+      speedrunningData.forEach(entry => {
+        if (filterMilestone === 'all') {
+          // Show furthest milestone reached
+          const furthest = getFurthestMilestone(entry);
+          if (furthest.milestone !== 'none') {
+            processedData.push({
+              team: entry.team,
+              milestone: furthest.name,
+              time: furthest.time,
+              timeInSeconds: parseTimeToSeconds(furthest.time),
+              video: entry.video
+            });
+          }
+        } else {
+          // Show specific milestone
+          const splitField = `split_${filterMilestone}`;
+          const time = entry[splitField];
+          if (time && time !== '-' && time !== '') {
+            processedData.push({
+              team: entry.team,
+              milestone: milestoneNames[filterMilestone],
+              time: time,
+              timeInSeconds: parseTimeToSeconds(time),
+              video: entry.video
+            });
+          }
+        }
+      });
+
+      // Sort by time (fastest first)
+      processedData.sort((a, b) => a.timeInSeconds - b.timeInSeconds);
+
+      tableBody.innerHTML = '';
+      processedData.forEach((entry, index) => {
+        const videoCell = entry.video ? 
+          `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
+          '-';
+
+        const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748;">${index + 1}</td>
+          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.milestone}</td>
+          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.time}</td>
+          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+
+      if (processedData.length === 0) {
+        tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="padding: 15px; color: #718096;" colspan="5">No entries found for selected milestone</td>
+        </tr>`;
+      }
+    }
+
     // Load speedrunning leaderboard data
     fetch("leaderboard/speedrunning.json")
       .then(res => {
@@ -582,44 +716,13 @@
       })
       .then(data => {
         speedrunningData = data;
-        const tableBody = document.getElementById("speedrunning-leaderboard");
-        tableBody.innerHTML = ''; // Clear loading message
-        
-        // Show all entries (up to 256) but display in scrollable area
-        const allEntries = data.slice(0, 100);
-        
-        allEntries.forEach((entry, index) => {
-          const timestamp = new Date(entry.last_updated).toLocaleDateString();
-          const videoCell = entry.video ? 
-            `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
-            '-';
-          
-          const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748;">${entry.rank || (index + 1)}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.completion_percent.toFixed(1)}%</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.runtime || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_littleroot_town || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_101 || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_oldale_town || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_103 || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_102 || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_petalburg_city || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_route_104 || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_petalburg_woods || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_rustboro_city || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.split_rustboro_gym || '-'}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
-            <td style="padding: 10px; font-size: 0.9rem; color: #2d3748; text-align: center;">${timestamp}</td>
-          </tr>`;
-          tableBody.innerHTML += row;
-        });
+        displaySpeedrunningLeaderboard('all'); // Show furthest milestones by default
       })
       .catch(err => {
         console.error("Error loading speedrunning leaderboard:", err);
         const tableBody = document.getElementById("speedrunning-leaderboard");
         tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
-          <td style="padding: 10px; color: #718096;" colspan="16">Error loading speedrunning leaderboard data</td>
+          <td style="padding: 15px; color: #718096;" colspan="5">Error loading speedrunning leaderboard data</td>
         </tr>`;
       });
 
