@@ -138,7 +138,7 @@
             <span class="countdown-label">Seconds</span>
           </div>
         </div>
-        <p class="countdown-message">Track 2 Submissions end October 31st, 2025</p>
+        <p class="countdown-message">Track 2 Submissions end November 15th, 2025</p>
       </div>
     </div>
   </section>
@@ -254,21 +254,68 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date">October 31st, 2025</span>
+                    <span class="timeline-date">November 15th, 2025</span>
                     <h3>Results Announcement</h3>
-                    <p>Final results announced, winners notified.</p>
+                    <p>Final submission deadline.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <span class="timeline-date">December 2025</span>
                     <h3>NeurIPS 2025 Presentation</h3>
-                    <p>Winners present their solutions at NeurIPS 2025.</p>
+                    <p>Winners announced at NeurIPS 2025.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+  <!-- Prizes Section -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-2">Prizes</h2>
+      <div class="card showdown-content">
+        <div style="text-align: center; font-style: italic; margin-bottom: 1.5rem; color: #666;">
+          <i class="fas fa-info-circle"></i>
+          "100 GCP" refers to "$100 worth of GCP credits."
+        </div>
+        <div class="prize-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+          
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6;">
+            <h3 style="color: #495057; margin-bottom: 1rem;">
+              <i class="fas fa-trophy"></i> Speedrun Rankings
+            </h3>
+            <p>
+              Top performing agents in the RPG speedrunning challenge will be awarded 
+              <strong>$4,500</strong> and <strong>1000 GCP</strong> total:
+            </p>
+            <ul style="margin-top: 1rem;">
+              <li><strong>1st Place:</strong> $1,500 + 700 GCP</li>
+              <li><strong>2nd Place:</strong> $1,000 + 300 GCP</li>
+              <li><strong>3rd-4th Place:</strong> $500</li>
+              <li><strong>5th-8th Place:</strong> $250</li>
+            </ul>
+          </div>
+          <div style="background: #e8f4f8; padding: 1.5rem; border-radius: 8px; border: 1px solid #b8daff;">
+            <h3 style="color: #3b5998; margin-bottom: 1rem;">
+              <i class="fas fa-star"></i> Judge's Choice Award
+            </h3>
+            <p>
+              Senior organizers will award at least <strong>two projects</strong> with 
+              <strong>$400</strong> or <strong>500 GCP</strong> to help continue their work after the 
+              competition ends.
+            </p>
+            <p style="margin-top: 1rem; color: #666;">
+              This project does not necessarily have to place highly in the speedrun rankings 
+              but should propose a novel approach or demonstrate interesting capabilities 
+              in long-horizon planning or RPG navigation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -326,7 +373,7 @@
 
     // Countdown Timer
     function updateCountdown() {
-      const endDate = new Date('October 31, 2025 23:59:59 PST').getTime();
+      const endDate = new Date('November 15, 2025 23:59:59 EDT').getTime();
       const now = new Date().getTime();
       const timeLeft = endDate - now;
 
