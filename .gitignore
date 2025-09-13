@@ -121,3 +121,6 @@ coverage/
 
 # claude code
 CLAUDE.md
+# Budget files
+master budget*.csv
+master budget*.xlsx
