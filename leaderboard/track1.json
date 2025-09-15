@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-15T01:57:51.292828+00:00",
+  "last_updated": "2025-09-15T03:59:02.907145+00:00",
   "formats": {
     "gen1ou": [
       {
@@ -9,11 +9,11 @@
           "display": "Metamon-Alakazam",
           "is_starter_kit": true
         },
-        "elo": "1695",
-        "gxe": "84.28%",
-        "glicko": "1936",
-        "wins": "2266",
-        "losses": "302"
+        "elo": "1690",
+        "gxe": "84.15%",
+        "glicko": "1933",
+        "wins": "2383",
+        "losses": "321"
       },
       {
         "rank": 2,
@@ -22,27 +22,14 @@
           "display": "Metamon-Variety",
           "is_starter_kit": true
         },
-        "elo": "1607",
-        "gxe": "78.22%",
-        "glicko": "1832",
-        "wins": "1777",
-        "losses": "470"
+        "elo": "1638",
+        "gxe": "78.67%",
+        "glicko": "1839",
+        "wins": "1890",
+        "losses": "490"
       },
       {
         "rank": 3,
-        "username": {
-          "original": "PAC-MM-Kadabra",
-          "display": "Metamon-Kadabra",
-          "is_starter_kit": true
-        },
-        "elo": "1592",
-        "gxe": "77.03%",
-        "glicko": "1814",
-        "wins": "1923",
-        "losses": "528"
-      },
-      {
-        "rank": 4,
         "username": {
           "original": "PAC-Exp-05",
           "display": "Exp-05",
@@ -53,6 +40,19 @@
         "glicko": "1798",
         "wins": "139",
         "losses": "36"
+      },
+      {
+        "rank": 4,
+        "username": {
+          "original": "PAC-MM-Kadabra",
+          "display": "Metamon-Kadabra",
+          "is_starter_kit": true
+        },
+        "elo": "1584",
+        "gxe": "77.24%",
+        "glicko": "1817",
+        "wins": "2033",
+        "losses": "555"
       },
       {
         "rank": 5,
@@ -70,6 +70,19 @@
       {
         "rank": 6,
         "username": {
+          "original": "PAC-MM-SynRLV1-SP",
+          "display": "Metamon-SynRLV1-SP",
+          "is_starter_kit": true
+        },
+        "elo": "1517",
+        "gxe": "65.88%",
+        "glicko": "1671",
+        "wins": "1764",
+        "losses": "947"
+      },
+      {
+        "rank": 7,
+        "username": {
           "original": "PAC-Metamon-A1",
           "display": "Metamon-A1",
           "is_starter_kit": false
@@ -81,7 +94,7 @@
         "losses": "119"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "username": {
           "original": "PAC-Ultra-04",
           "display": "Ultra-04",
@@ -94,7 +107,7 @@
         "losses": "56"
       },
       {
-        "rank": 8,
+        "rank": 9,
         "username": {
           "original": "PAC-Ultra-A2",
           "display": "Ultra-A2",
@@ -107,7 +120,7 @@
         "losses": "57"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "username": {
           "original": "PAC-ED-Testing",
           "display": "ED-Testing",
@@ -120,7 +133,7 @@
         "losses": "41"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "username": {
           "original": "PAC-Scale-01",
           "display": "Scale-01",
@@ -133,7 +146,20 @@
         "losses": "63"
       },
       {
-        "rank": 11,
+        "rank": 12,
+        "username": {
+          "original": "PAC-MM-SynRLV2",
+          "display": "Metamon-SynRLV2",
+          "is_starter_kit": true
+        },
+        "elo": "1499",
+        "gxe": "71.87%",
+        "glicko": "1743",
+        "wins": "1919",
+        "losses": "660"
+      },
+      {
+        "rank": 13,
         "username": {
           "original": "PAC-Core-10",
           "display": "Core-10",
@@ -146,7 +172,7 @@
         "losses": "49"
       },
       {
-        "rank": 12,
+        "rank": 14,
         "username": {
           "original": "PAC-Break-01",
           "display": "Break-01",
@@ -159,20 +185,7 @@
         "losses": "53"
       },
       {
-        "rank": 13,
-        "username": {
-          "original": "PAC-MM-SynRLV2",
-          "display": "Metamon-SynRLV2",
-          "is_starter_kit": true
-        },
-        "elo": "1466",
-        "gxe": "71.90%",
-        "glicko": "1744",
-        "wins": "1819",
-        "losses": "629"
-      },
-      {
-        "rank": 14,
+        "rank": 15,
         "username": {
           "original": "PAC-Exp-02",
           "display": "Exp-02",
@@ -185,7 +198,20 @@
         "losses": "17"
       },
       {
-        "rank": 15,
+        "rank": 16,
+        "username": {
+          "original": "PAC-SS-Lugia",
+          "display": "SS-Lugia",
+          "is_starter_kit": false
+        },
+        "elo": "1458",
+        "gxe": "66.95%",
+        "glicko": "1684",
+        "wins": "66",
+        "losses": "25"
+      },
+      {
+        "rank": 17,
         "username": {
           "original": "PAC-Ultra-A3",
           "display": "Ultra-A3",
@@ -198,20 +224,20 @@
         "losses": "71"
       },
       {
-        "rank": 16,
+        "rank": 18,
         "username": {
-          "original": "PAC-MM-Minikazam",
-          "display": "Metamon-Minikazam",
+          "original": "PAC-MM-SynRLV1",
+          "display": "Metamon-SynRLV1",
           "is_starter_kit": true
         },
-        "elo": "1413",
-        "gxe": "63.44%",
-        "glicko": "1643",
-        "wins": "1535",
-        "losses": "955"
+        "elo": "1423",
+        "gxe": "59.42%",
+        "glicko": "1599",
+        "wins": "1538",
+        "losses": "1182"
       },
       {
-        "rank": 17,
+        "rank": 19,
         "username": {
           "original": "PAC-Ultra-A1",
           "display": "Ultra-A1",
@@ -224,7 +250,20 @@
         "losses": "59"
       },
       {
-        "rank": 18,
+        "rank": 20,
+        "username": {
+          "original": "PAC-MM-Minikazam",
+          "display": "Metamon-Minikazam",
+          "is_starter_kit": true
+        },
+        "elo": "1409",
+        "gxe": "63.09%",
+        "glicko": "1639",
+        "wins": "1618",
+        "losses": "1005"
+      },
+      {
+        "rank": 21,
         "username": {
           "original": "PAC-PA-Agent",
           "display": "PA-Agent",
@@ -237,69 +276,30 @@
         "losses": "20"
       },
       {
-        "rank": 19,
-        "username": {
-          "original": "PAC-MM-SynRLV0",
-          "display": "Metamon-SynRLV0",
-          "is_starter_kit": true
-        },
-        "elo": "1384",
-        "gxe": "60.33%",
-        "glicko": "1609",
-        "wins": "1459",
-        "losses": "1126"
-      },
-      {
-        "rank": 20,
-        "username": {
-          "original": "PAC-MM-SynRLV1-SP",
-          "display": "Metamon-SynRLV1-SP",
-          "is_starter_kit": true
-        },
-        "elo": "1372",
-        "gxe": "62.79%",
-        "glicko": "1636",
-        "wins": "1669",
-        "losses": "912"
-      },
-      {
-        "rank": 21,
-        "username": {
-          "original": "PAC-MM-SynRLV1",
-          "display": "Metamon-SynRLV1",
-          "is_starter_kit": true
-        },
-        "elo": "1354",
-        "gxe": "58.60%",
-        "glicko": "1590",
-        "wins": "1451",
-        "losses": "1122"
-      },
-      {
         "rank": 22,
         "username": {
           "original": "PAC-MM-Abra",
           "display": "Metamon-Abra",
           "is_starter_kit": true
         },
-        "elo": "1335",
-        "gxe": "56.93%",
-        "glicko": "1572",
-        "wins": "1294",
-        "losses": "1175"
+        "elo": "1347",
+        "gxe": "56.49%",
+        "glicko": "1567",
+        "wins": "1364",
+        "losses": "1249"
       },
       {
         "rank": 23,
         "username": {
-          "original": "PAC-MM-SmallILFA",
-          "display": "Metamon-SmallILFA",
+          "original": "PAC-MM-SynRLV0",
+          "display": "Metamon-SynRLV0",
           "is_starter_kit": true
         },
-        "elo": "1317",
-        "gxe": "47.66%",
-        "glicko": "1475",
-        "wins": "998",
-        "losses": "1476"
+        "elo": "1341",
+        "gxe": "59.05%",
+        "glicko": "1595",
+        "wins": "1529",
+        "losses": "1186"
       },
       {
         "rank": 24,
@@ -308,27 +308,14 @@
           "display": "Metamon-SmallRLG9",
           "is_starter_kit": true
         },
-        "elo": "1269",
-        "gxe": "48.13%",
-        "glicko": "1480",
-        "wins": "1113",
-        "losses": "1529"
+        "elo": "1278",
+        "gxe": "48.05%",
+        "glicko": "1479",
+        "wins": "1172",
+        "losses": "1610"
       },
       {
         "rank": 25,
-        "username": {
-          "original": "PAC-FS-Basic",
-          "display": "FS-Basic",
-          "is_starter_kit": false
-        },
-        "elo": "1260",
-        "gxe": "55.86%",
-        "glicko": "1561",
-        "wins": "34",
-        "losses": "24"
-      },
-      {
-        "rank": 26,
         "username": {
           "original": "PAC-Metamon-Ultra",
           "display": "Metamon-Ultra",
@@ -341,30 +328,43 @@
         "losses": "13"
       },
       {
-        "rank": 27,
+        "rank": 26,
         "username": {
           "original": "PAC-MM-LargeRL",
           "display": "Metamon-LargeRL",
           "is_starter_kit": true
         },
-        "elo": "1215",
-        "gxe": "46.59%",
-        "glicko": "1464",
-        "wins": "1075",
-        "losses": "1546"
+        "elo": "1230",
+        "gxe": "46.96%",
+        "glicko": "1468",
+        "wins": "1108",
+        "losses": "1600"
+      },
+      {
+        "rank": 27,
+        "username": {
+          "original": "PAC-FS-Basic",
+          "display": "FS-Basic",
+          "is_starter_kit": false
+        },
+        "elo": "1206",
+        "gxe": "45.64%",
+        "glicko": "1454",
+        "wins": "92",
+        "losses": "93"
       },
       {
         "rank": 28,
         "username": {
-          "original": "PAC-MM-SmallIL",
-          "display": "Metamon-SmallIL",
+          "original": "PAC-MM-SmallILFA",
+          "display": "Metamon-SmallILFA",
           "is_starter_kit": true
         },
-        "elo": "1193",
-        "gxe": "39.64%",
-        "glicko": "1390",
-        "wins": "819",
-        "losses": "1810"
+        "elo": "1174",
+        "gxe": "44.91%",
+        "glicko": "1446",
+        "wins": "1045",
+        "losses": "1566"
       },
       {
         "rank": 29,
@@ -373,27 +373,53 @@
           "display": "Metamon-BaseRNN",
           "is_starter_kit": true
         },
-        "elo": "1115",
-        "gxe": "35.83%",
-        "glicko": "1348",
-        "wins": "642",
-        "losses": "1081"
+        "elo": "1173",
+        "gxe": "36.83%",
+        "glicko": "1359",
+        "wins": "671",
+        "losses": "1121"
       },
       {
         "rank": 30,
+        "username": {
+          "original": "PAC-MM-SmallIL",
+          "display": "Metamon-SmallIL",
+          "is_starter_kit": true
+        },
+        "elo": "1155",
+        "gxe": "39.44%",
+        "glicko": "1388",
+        "wins": "866",
+        "losses": "1906"
+      },
+      {
+        "rank": 31,
         "username": {
           "original": "PAC-BH-Kaizo",
           "display": "Heuristic-Kaizo",
           "is_starter_kit": true
         },
-        "elo": "1051",
-        "gxe": "29.53%",
-        "glicko": "1273",
-        "wins": "569",
-        "losses": "1312"
+        "elo": "1128",
+        "gxe": "30.74%",
+        "glicko": "1288",
+        "wins": "607",
+        "losses": "1387"
       },
       {
-        "rank": 31,
+        "rank": 32,
+        "username": {
+          "original": "PAC-BH-SmogSwitch",
+          "display": "Heuristic-SmogSwitch",
+          "is_starter_kit": true
+        },
+        "elo": "1072",
+        "gxe": "28.01%",
+        "glicko": "1254",
+        "wins": "528",
+        "losses": "1406"
+      },
+      {
+        "rank": 33,
         "username": {
           "original": "PAC-VibePoking",
           "display": "VibePoking",
@@ -406,69 +432,56 @@
         "losses": "47"
       },
       {
-        "rank": 32,
+        "rank": 34,
         "username": {
           "original": "PAC-BH-GymLeader",
           "display": "Heuristic-GymLeader",
           "is_starter_kit": true
         },
-        "elo": "1034",
-        "gxe": "24.80%",
-        "glicko": "1211",
-        "wins": "473",
-        "losses": "1507"
+        "elo": "1028",
+        "gxe": "24.86%",
+        "glicko": "1212",
+        "wins": "504",
+        "losses": "1610"
       },
       {
-        "rank": 33,
+        "rank": 35,
         "username": {
           "original": "PAC-BH-PokeEnv",
           "display": "Heuristic-PokeEnv",
           "is_starter_kit": true
         },
-        "elo": "1029",
-        "gxe": "27.18%",
-        "glicko": "1243",
-        "wins": "497",
-        "losses": "1399"
+        "elo": "1012",
+        "gxe": "26.75%",
+        "glicko": "1238",
+        "wins": "531",
+        "losses": "1496"
       },
       {
-        "rank": 34,
+        "rank": 36,
         "username": {
           "original": "PAC-BH-G1Boss",
           "display": "Heuristic-G1Boss",
           "is_starter_kit": true
         },
-        "elo": "1020",
-        "gxe": "13.67%",
-        "glicko": "1020",
-        "wins": "163",
-        "losses": "1624"
+        "elo": "1000",
+        "gxe": "13.44%",
+        "glicko": "1015",
+        "wins": "169",
+        "losses": "1700"
       },
       {
-        "rank": 35,
-        "username": {
-          "original": "PAC-BH-SmogSwitch",
-          "display": "Heuristic-SmogSwitch",
-          "is_starter_kit": true
-        },
-        "elo": "1017",
-        "gxe": "27.12%",
-        "glicko": "1243",
-        "wins": "499",
-        "losses": "1350"
-      },
-      {
-        "rank": 36,
+        "rank": 37,
         "username": {
           "original": "PAC-BH-Grunt",
           "display": "Heuristic-Grunt",
           "is_starter_kit": true
         },
-        "elo": "1014",
-        "gxe": "23.11%",
-        "glicko": "1187",
-        "wins": "506",
-        "losses": "1466"
+        "elo": "1000",
+        "gxe": "22.06%",
+        "glicko": "1171",
+        "wins": "522",
+        "losses": "1544"
       }
     ],
     "gen2ou": [
@@ -1070,11 +1083,11 @@
           "display": "Metamon-Alakazam",
           "is_starter_kit": true
         },
-        "elo": "1671",
-        "gxe": "83.38%",
-        "glicko": "1919",
-        "wins": "2544",
-        "losses": "502"
+        "elo": "1731",
+        "gxe": "84.21%",
+        "glicko": "1935",
+        "wins": "2651",
+        "losses": "518"
       },
       {
         "rank": 2,
@@ -1096,11 +1109,11 @@
           "display": "Metamon-Kadabra",
           "is_starter_kit": true
         },
-        "elo": "1655",
-        "gxe": "79.74%",
-        "glicko": "1856",
-        "wins": "2278",
-        "losses": "695"
+        "elo": "1634",
+        "gxe": "79.67%",
+        "glicko": "1855",
+        "wins": "2331",
+        "losses": "716"
       },
       {
         "rank": 4,
@@ -1109,11 +1122,11 @@
           "display": "Metamon-AlakazamVar",
           "is_starter_kit": true
         },
-        "elo": "1542",
-        "gxe": "74.48%",
-        "glicko": "1778",
-        "wins": "1815",
-        "losses": "864"
+        "elo": "1577",
+        "gxe": "75.22%",
+        "glicko": "1788",
+        "wins": "1887",
+        "losses": "899"
       },
       {
         "rank": 5,
@@ -1122,14 +1135,27 @@
           "display": "Metamon-Abra",
           "is_starter_kit": true
         },
-        "elo": "1450",
-        "gxe": "66.20%",
-        "glicko": "1674",
-        "wins": "1586",
-        "losses": "1439"
+        "elo": "1414",
+        "gxe": "65.16%",
+        "glicko": "1662",
+        "wins": "1644",
+        "losses": "1495"
       },
       {
         "rank": 6,
+        "username": {
+          "original": "PAC-MM-SmallRLG9-9",
+          "display": "Metamon-SmallRLG9",
+          "is_starter_kit": true
+        },
+        "elo": "1412",
+        "gxe": "64.03%",
+        "glicko": "1649",
+        "wins": "1520",
+        "losses": "1466"
+      },
+      {
+        "rank": 7,
         "username": {
           "original": "PAC-PA-Agent",
           "display": "PA-Agent",
@@ -1142,30 +1168,17 @@
         "losses": "27"
       },
       {
-        "rank": 7,
-        "username": {
-          "original": "PAC-MM-SmallRLG9-9",
-          "display": "Metamon-SmallRLG9",
-          "is_starter_kit": true
-        },
-        "elo": "1373",
-        "gxe": "63.52%",
-        "glicko": "1644",
-        "wins": "1454",
-        "losses": "1426"
-      },
-      {
         "rank": 8,
         "username": {
           "original": "PAC-MM-SmallG9v2-9",
           "display": "Metamon-SmallG9v2",
           "is_starter_kit": true
         },
-        "elo": "1359",
-        "gxe": "62.63%",
-        "glicko": "1634",
-        "wins": "1438",
-        "losses": "1571"
+        "elo": "1379",
+        "gxe": "61.99%",
+        "glicko": "1627",
+        "wins": "1508",
+        "losses": "1639"
       },
       {
         "rank": 9,
@@ -1174,11 +1187,11 @@
           "display": "Metamon-SmallG9Var",
           "is_starter_kit": true
         },
-        "elo": "1358",
-        "gxe": "57.53%",
-        "glicko": "1578",
-        "wins": "1224",
-        "losses": "1803"
+        "elo": "1320",
+        "gxe": "56.45%",
+        "glicko": "1567",
+        "wins": "1266",
+        "losses": "1885"
       },
       {
         "rank": 10,
@@ -1187,27 +1200,14 @@
           "display": "Pok\u00e9Champ-gemma3-1b",
           "is_starter_kit": true
         },
-        "elo": "1249",
-        "gxe": "62.64%",
-        "glicko": "1634",
-        "wins": "56",
-        "losses": "24"
+        "elo": "1251",
+        "gxe": "62.54%",
+        "glicko": "1633",
+        "wins": "59",
+        "losses": "25"
       },
       {
         "rank": 11,
-        "username": {
-          "original": "PAC-PC-gemma3-4b",
-          "display": "Pok\u00e9Champ-gemma3-4b",
-          "is_starter_kit": true
-        },
-        "elo": "1218",
-        "gxe": "58.46%",
-        "glicko": "1589",
-        "wins": "52",
-        "losses": "27"
-      },
-      {
-        "rank": 12,
         "username": {
           "original": "PAC-G9-Alpha-2",
           "display": "G9-Alpha-2",
@@ -1220,20 +1220,59 @@
         "losses": "93"
       },
       {
-        "rank": 13,
+        "rank": 12,
         "username": {
           "original": "PAC-PC-qwen3-8b",
           "display": "Pok\u00e9Champ-qwen3-8b",
           "is_starter_kit": true
         },
-        "elo": "1212",
-        "gxe": "57.02%",
-        "glicko": "1573",
-        "wins": "53",
-        "losses": "27"
+        "elo": "1208",
+        "gxe": "56.69%",
+        "glicko": "1570",
+        "wins": "55",
+        "losses": "29"
+      },
+      {
+        "rank": 13,
+        "username": {
+          "original": "PAC-BH-SSwitch-9",
+          "display": "Heuristic-SSwitch",
+          "is_starter_kit": true
+        },
+        "elo": "1206",
+        "gxe": "36.34%",
+        "glicko": "1354",
+        "wins": "554",
+        "losses": "1008"
       },
       {
         "rank": 14,
+        "username": {
+          "original": "PAC-PC-gemma3-4b",
+          "display": "Pok\u00e9Champ-gemma3-4b",
+          "is_starter_kit": true
+        },
+        "elo": "1204",
+        "gxe": "57.96%",
+        "glicko": "1583",
+        "wins": "54",
+        "losses": "30"
+      },
+      {
+        "rank": 15,
+        "username": {
+          "original": "PAC-PC-DC",
+          "display": "Pok\u00e9Champ-DC",
+          "is_starter_kit": true
+        },
+        "elo": "1198",
+        "gxe": "59.56%",
+        "glicko": "1600",
+        "wins": "55",
+        "losses": "28"
+      },
+      {
+        "rank": 16,
         "username": {
           "original": "PAC-G9-Gamma-1",
           "display": "G9-Gamma-1",
@@ -1246,7 +1285,20 @@
         "losses": "65"
       },
       {
-        "rank": 15,
+        "rank": 17,
+        "username": {
+          "original": "PAC-BH-PokeEnv-9",
+          "display": "Heuristic-PokeEnv",
+          "is_starter_kit": true
+        },
+        "elo": "1190",
+        "gxe": "37.02%",
+        "glicko": "1361",
+        "wins": "532",
+        "losses": "976"
+      },
+      {
+        "rank": 18,
         "username": {
           "original": "PAC-G9-Beta-3",
           "display": "G9-Beta-3",
@@ -1259,20 +1311,7 @@
         "losses": "95"
       },
       {
-        "rank": 16,
-        "username": {
-          "original": "PAC-PC-DC",
-          "display": "Pok\u00e9Champ-DC",
-          "is_starter_kit": true
-        },
-        "elo": "1182",
-        "gxe": "58.92%",
-        "glicko": "1594",
-        "wins": "52",
-        "losses": "26"
-      },
-      {
-        "rank": 17,
+        "rank": 19,
         "username": {
           "original": "PAC-G9-Elite-4",
           "display": "G9-Elite-4",
@@ -1285,7 +1324,7 @@
         "losses": "64"
       },
       {
-        "rank": 18,
+        "rank": 20,
         "username": {
           "original": "PAC-G9-Alpha-4",
           "display": "G9-Alpha-4",
@@ -1298,7 +1337,7 @@
         "losses": "101"
       },
       {
-        "rank": 19,
+        "rank": 21,
         "username": {
           "original": "PAC-G9-Elite-6",
           "display": "G9-Elite-6",
@@ -1311,20 +1350,20 @@
         "losses": "55"
       },
       {
-        "rank": 20,
+        "rank": 22,
         "username": {
-          "original": "PAC-BH-PokeEnv-9",
-          "display": "Heuristic-PokeEnv",
+          "original": "PAC-BH-Kaizo-9",
+          "display": "Heuristic-Kaizo",
           "is_starter_kit": true
         },
-        "elo": "1154",
-        "gxe": "36.38%",
-        "glicko": "1354",
-        "wins": "508",
-        "losses": "938"
+        "elo": "1151",
+        "gxe": "35.30%",
+        "glicko": "1342",
+        "wins": "561",
+        "losses": "1066"
       },
       {
-        "rank": 21,
+        "rank": 23,
         "username": {
           "original": "PAC-G9-Gamma-3",
           "display": "G9-Gamma-3",
@@ -1337,20 +1376,7 @@
         "losses": "68"
       },
       {
-        "rank": 22,
-        "username": {
-          "original": "PAC-LLM-gem25f",
-          "display": "LLM-gem25f",
-          "is_starter_kit": false
-        },
-        "elo": "1144",
-        "gxe": "54.98%",
-        "glicko": "1552",
-        "wins": "48",
-        "losses": "31"
-      },
-      {
-        "rank": 23,
+        "rank": 24,
         "username": {
           "original": "PAC-G9-Beta-1",
           "display": "G9-Beta-1",
@@ -1363,7 +1389,7 @@
         "losses": "93"
       },
       {
-        "rank": 24,
+        "rank": 25,
         "username": {
           "original": "PAC-G9-Elite-3",
           "display": "G9-Elite-3",
@@ -1376,7 +1402,7 @@
         "losses": "76"
       },
       {
-        "rank": 25,
+        "rank": 26,
         "username": {
           "original": "PAC-G9-Elite-5",
           "display": "G9-Elite-5",
@@ -1389,7 +1415,20 @@
         "losses": "56"
       },
       {
-        "rank": 26,
+        "rank": 27,
+        "username": {
+          "original": "PAC-LLM-gemma3-1b",
+          "display": "LLM-gemma3-1b",
+          "is_starter_kit": false
+        },
+        "elo": "1138",
+        "gxe": "47.33%",
+        "glicko": "1472",
+        "wins": "41",
+        "losses": "43"
+      },
+      {
+        "rank": 28,
         "username": {
           "original": "PAC-G9-ULTRA-03",
           "display": "G9-ULTRA-03",
@@ -1402,7 +1441,7 @@
         "losses": "26"
       },
       {
-        "rank": 27,
+        "rank": 29,
         "username": {
           "original": "PAC-G9-ULTRA-01",
           "display": "G9-ULTRA-01",
@@ -1415,7 +1454,7 @@
         "losses": "27"
       },
       {
-        "rank": 28,
+        "rank": 30,
         "username": {
           "original": "PAC-G9-Alpha-3",
           "display": "G9-Alpha-3",
@@ -1428,7 +1467,20 @@
         "losses": "98"
       },
       {
-        "rank": 29,
+        "rank": 31,
+        "username": {
+          "original": "PAC-LLM-gem25f",
+          "display": "LLM-gem25f",
+          "is_starter_kit": false
+        },
+        "elo": "1131",
+        "gxe": "54.02%",
+        "glicko": "1542",
+        "wins": "50",
+        "losses": "34"
+      },
+      {
+        "rank": 32,
         "username": {
           "original": "PAC-G9-Gamma-4",
           "display": "G9-Gamma-4",
@@ -1441,20 +1493,7 @@
         "losses": "65"
       },
       {
-        "rank": 30,
-        "username": {
-          "original": "PAC-BH-GymLeader-9",
-          "display": "Heuristic-GymLeader",
-          "is_starter_kit": true
-        },
-        "elo": "1127",
-        "gxe": "30.71%",
-        "glicko": "1288",
-        "wins": "446",
-        "losses": "1062"
-      },
-      {
-        "rank": 31,
+        "rank": 33,
         "username": {
           "original": "PAC-G9-Beta-2",
           "display": "G9-Beta-2",
@@ -1467,33 +1506,33 @@
         "losses": "104"
       },
       {
-        "rank": 32,
-        "username": {
-          "original": "PAC-BH-Grunt-9",
-          "display": "Heuristic-Grunt",
-          "is_starter_kit": true
-        },
-        "elo": "1123",
-        "gxe": "34.38%",
-        "glicko": "1332",
-        "wins": "507",
-        "losses": "938"
-      },
-      {
-        "rank": 33,
-        "username": {
-          "original": "PAC-BH-SSwitch-9",
-          "display": "Heuristic-SSwitch",
-          "is_starter_kit": true
-        },
-        "elo": "1120",
-        "gxe": "34.53%",
-        "glicko": "1333",
-        "wins": "514",
-        "losses": "968"
-      },
-      {
         "rank": 34,
+        "username": {
+          "original": "PAC-LLM-llama31-8b",
+          "display": "LLM-llama31-8b",
+          "is_starter_kit": false
+        },
+        "elo": "1124",
+        "gxe": "48.33%",
+        "glicko": "1482",
+        "wins": "44",
+        "losses": "40"
+      },
+      {
+        "rank": 35,
+        "username": {
+          "original": "PAC-PC-ABYSSAL",
+          "display": "Pok\u00e9Champ-ABYSSAL",
+          "is_starter_kit": true
+        },
+        "elo": "1119",
+        "gxe": "54.43%",
+        "glicko": "1546",
+        "wins": "50",
+        "losses": "34"
+      },
+      {
+        "rank": 36,
         "username": {
           "original": "PAC-G9-Beta-4",
           "display": "G9-Beta-4",
@@ -1506,33 +1545,20 @@
         "losses": "102"
       },
       {
-        "rank": 35,
-        "username": {
-          "original": "PAC-LLM-gemma3-1b",
-          "display": "LLM-gemma3-1b",
-          "is_starter_kit": false
-        },
-        "elo": "1113",
-        "gxe": "45.80%",
-        "glicko": "1456",
-        "wins": "37",
-        "losses": "42"
-      },
-      {
-        "rank": 36,
+        "rank": 37,
         "username": {
           "original": "PAC-LLM-gemma3-12b",
           "display": "LLM-gemma3-12b",
           "is_starter_kit": false
         },
-        "elo": "1108",
-        "gxe": "49.16%",
+        "elo": "1112",
+        "gxe": "49.15%",
         "glicko": "1491",
-        "wins": "39",
-        "losses": "40"
+        "wins": "42",
+        "losses": "43"
       },
       {
-        "rank": 37,
+        "rank": 38,
         "username": {
           "original": "PAC-G9-ULTRA-02",
           "display": "G9-ULTRA-02",
@@ -1545,7 +1571,7 @@
         "losses": "18"
       },
       {
-        "rank": 38,
+        "rank": 39,
         "username": {
           "original": "PAC-G9-Elite-2",
           "display": "G9-Elite-2",
@@ -1558,46 +1584,7 @@
         "losses": "77"
       },
       {
-        "rank": 39,
-        "username": {
-          "original": "PAC-PC-llama31-8b",
-          "display": "Pok\u00e9Champ-llama31-8b",
-          "is_starter_kit": true
-        },
-        "elo": "1106",
-        "gxe": "48.47%",
-        "glicko": "1484",
-        "wins": "41",
-        "losses": "38"
-      },
-      {
         "rank": 40,
-        "username": {
-          "original": "PAC-LLM-llama31-8b",
-          "display": "LLM-llama31-8b",
-          "is_starter_kit": false
-        },
-        "elo": "1106",
-        "gxe": "47.50%",
-        "glicko": "1473",
-        "wins": "40",
-        "losses": "39"
-      },
-      {
-        "rank": 41,
-        "username": {
-          "original": "PAC-PC-MAX-POWER",
-          "display": "Pok\u00e9Champ-MAX-POWER",
-          "is_starter_kit": true
-        },
-        "elo": "1106",
-        "gxe": "45.33%",
-        "glicko": "1451",
-        "wins": "32",
-        "losses": "46"
-      },
-      {
-        "rank": 42,
         "username": {
           "original": "PAC-G9-Gamma-2",
           "display": "G9-Gamma-2",
@@ -1610,46 +1597,85 @@
         "losses": "76"
       },
       {
+        "rank": 41,
+        "username": {
+          "original": "PAC-LLM-gpt-oss",
+          "display": "LLM-gpt-oss",
+          "is_starter_kit": false
+        },
+        "elo": "1104",
+        "gxe": "46.26%",
+        "glicko": "1460",
+        "wins": "38",
+        "losses": "46"
+      },
+      {
+        "rank": 42,
+        "username": {
+          "original": "PAC-PC-MAX-POWER",
+          "display": "Pok\u00e9Champ-MAX-POWER",
+          "is_starter_kit": true
+        },
+        "elo": "1100",
+        "gxe": "45.20%",
+        "glicko": "1449",
+        "wins": "34",
+        "losses": "49"
+      },
+      {
         "rank": 43,
+        "username": {
+          "original": "PAC-PC-llama31-8b",
+          "display": "Pok\u00e9Champ-llama31-8b",
+          "is_starter_kit": true
+        },
+        "elo": "1098",
+        "gxe": "47.51%",
+        "glicko": "1474",
+        "wins": "43",
+        "losses": "41"
+      },
+      {
+        "rank": 44,
+        "username": {
+          "original": "PAC-BH-Grunt-9",
+          "display": "Heuristic-Grunt",
+          "is_starter_kit": true
+        },
+        "elo": "1096",
+        "gxe": "33.11%",
+        "glicko": "1317",
+        "wins": "528",
+        "losses": "990"
+      },
+      {
+        "rank": 45,
         "username": {
           "original": "PAC-LLM-qwen3-14b",
           "display": "LLM-qwen3-14b",
           "is_starter_kit": false
         },
-        "elo": "1097",
-        "gxe": "48.89%",
-        "glicko": "1488",
-        "wins": "44",
-        "losses": "35"
-      },
-      {
-        "rank": 44,
-        "username": {
-          "original": "PAC-BH-Kaizo-9",
-          "display": "Heuristic-Kaizo",
-          "is_starter_kit": true
-        },
-        "elo": "1093",
-        "gxe": "34.09%",
-        "glicko": "1328",
-        "wins": "528",
-        "losses": "1035"
-      },
-      {
-        "rank": 45,
-        "username": {
-          "original": "PAC-PC-ABYSSAL",
-          "display": "Pok\u00e9Champ-ABYSSAL",
-          "is_starter_kit": true
-        },
-        "elo": "1091",
-        "gxe": "53.67%",
-        "glicko": "1538",
+        "elo": "1089",
+        "gxe": "48.37%",
+        "glicko": "1483",
         "wins": "46",
-        "losses": "33"
+        "losses": "38"
       },
       {
         "rank": 46,
+        "username": {
+          "original": "PAC-BH-GymLeader-9",
+          "display": "Heuristic-GymLeader",
+          "is_starter_kit": true
+        },
+        "elo": "1085",
+        "gxe": "30.22%",
+        "glicko": "1282",
+        "wins": "473",
+        "losses": "1127"
+      },
+      {
+        "rank": 47,
         "username": {
           "original": "PAC-G9-Elite-1",
           "display": "G9-Elite-1",
@@ -1662,46 +1688,20 @@
         "losses": "79"
       },
       {
-        "rank": 47,
-        "username": {
-          "original": "PAC-LLM-gpt-oss",
-          "display": "LLM-gpt-oss",
-          "is_starter_kit": false
-        },
-        "elo": "1075",
-        "gxe": "45.46%",
-        "glicko": "1452",
-        "wins": "34",
-        "losses": "45"
-      },
-      {
         "rank": 48,
-        "username": {
-          "original": "PAC-BH-G1Boss-9",
-          "display": "Heuristic-G1Boss",
-          "is_starter_kit": true
-        },
-        "elo": "1068",
-        "gxe": "18.29%",
-        "glicko": "1110",
-        "wins": "202",
-        "losses": "1351"
-      },
-      {
-        "rank": 49,
         "username": {
           "original": "PAC-LLM-gem25p",
           "display": "LLM-gem25p",
           "is_starter_kit": false
         },
-        "elo": "1059",
-        "gxe": "44.86%",
-        "glicko": "1446",
-        "wins": "36",
-        "losses": "43"
+        "elo": "1058",
+        "gxe": "44.80%",
+        "glicko": "1445",
+        "wins": "38",
+        "losses": "46"
       },
       {
-        "rank": 50,
+        "rank": 49,
         "username": {
           "original": "PAC-G9-Alpha-1",
           "display": "G9-Alpha-1",
@@ -1714,68 +1714,81 @@
         "losses": "105"
       },
       {
+        "rank": 50,
+        "username": {
+          "original": "PAC-LLM-gemma3-4b",
+          "display": "LLM-gemma3-4b",
+          "is_starter_kit": false
+        },
+        "elo": "1033",
+        "gxe": "38.63%",
+        "glicko": "1379",
+        "wins": "31",
+        "losses": "54"
+      },
+      {
         "rank": 51,
         "username": {
           "original": "PAC-PC-pokellmon",
           "display": "Pok\u00e9Champ-pokellmon",
           "is_starter_kit": true
         },
-        "elo": "1025",
-        "gxe": "45.14%",
-        "glicko": "1449",
-        "wins": "36",
-        "losses": "44"
+        "elo": "1010",
+        "gxe": "44.24%",
+        "glicko": "1439",
+        "wins": "37",
+        "losses": "47"
       },
       {
         "rank": 52,
+        "username": {
+          "original": "PAC-PC-qwen3-4b",
+          "display": "Pok\u00e9Champ-qwen3-4b",
+          "is_starter_kit": true
+        },
+        "elo": "1002",
+        "gxe": "21.49%",
+        "glicko": "1162",
+        "wins": "9",
+        "losses": "75"
+      },
+      {
+        "rank": 53,
         "username": {
           "original": "PAC-LLM-qwen3-8b",
           "display": "LLM-qwen3-8b",
           "is_starter_kit": false
         },
-        "elo": "1005",
-        "gxe": "28.48%",
-        "glicko": "1259",
-        "wins": "16",
-        "losses": "63"
-      },
-      {
-        "rank": 53,
-        "username": {
-          "original": "PAC-LLM-gemma3-4b",
-          "display": "LLM-gemma3-4b",
-          "is_starter_kit": false
-        },
         "elo": "1000",
-        "gxe": "37.94%",
-        "glicko": "1371",
-        "wins": "28",
-        "losses": "52"
+        "gxe": "27.40%",
+        "glicko": "1246",
+        "wins": "16",
+        "losses": "69"
       },
       {
         "rank": 54,
+        "username": {
+          "original": "PAC-BH-G1Boss-9",
+          "display": "Heuristic-G1Boss",
+          "is_starter_kit": true
+        },
+        "elo": "1000",
+        "gxe": "18.06%",
+        "glicko": "1106",
+        "wins": "208",
+        "losses": "1405"
+      },
+      {
+        "rank": 55,
         "username": {
           "original": "PAC-LLM-qwen3-4b",
           "display": "LLM-qwen3-4b",
           "is_starter_kit": false
         },
         "elo": "1000",
-        "gxe": "25.34%",
-        "glicko": "1218",
+        "gxe": "24.48%",
+        "glicko": "1206",
         "wins": "13",
-        "losses": "66"
-      },
-      {
-        "rank": 55,
-        "username": {
-          "original": "PAC-PC-qwen3-4b",
-          "display": "Pok\u00e9Champ-qwen3-4b",
-          "is_starter_kit": true
-        },
-        "elo": "1000",
-        "gxe": "21.42%",
-        "glicko": "1160",
-        "wins": "8",
         "losses": "71"
       },
       {
