@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "rank": 1,
+    "team": "Ed",
+    "completion_percent": 15.4,
+    "runtime": "00:11:39",
+    "last_updated": "2025-09-23T02:35:21.054Z",
+    "video": null,
+    "split_littleroot_town": "0:00",
+    "split_starter_chosen": null,
+    "split_oldale_town": null,
+    "split_route_103": null,
+    "split_received_pokedex": null,
+    "split_petalburg_city": null,
+    "split_dad_first_meeting": null,
+    "split_petalburg_woods": null,
+    "split_rustboro_city": null,
+    "split_rustboro_gym_entered": null,
+    "split_first_gym_complete": null,
+    "phase_splits": {
+      "Phase_2_Tutorial_Starting_Town": {
+        "completed": 1,
+        "total": 5,
+        "duration": "-",
+        "endTime": "-"
+      }
+    },
+    "submission_count": 1
+  },
+  {
+    "rank": 2,
+    "team": "Human",
+    "completion_percent": 12,
+    "runtime": "00:01:10",
+    "last_updated": "2025-09-23T02:35:27.609Z",
+    "video": null,
+    "split_littleroot_town": null,
+    "split_starter_chosen": null,
+    "split_oldale_town": null,
+    "split_route_103": null,
+    "split_received_pokedex": null,
+    "split_petalburg_city": null,
+    "split_dad_first_meeting": null,
+    "split_petalburg_woods": null,
+    "split_rustboro_city": null,
+    "split_rustboro_gym_entered": null,
+    "split_first_gym_complete": null,
+    "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "00:33",
+        "endTime": "01:10"
+      }
+    },
+    "submission_count": 1
+  }
+]
