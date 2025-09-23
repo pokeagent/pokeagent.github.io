@@ -9,28 +9,68 @@ function generateLeaderboardJSON() {
   const teamCol = headers.indexOf("Team Name");
   const runtimeCol = headers.indexOf("Runtime");
   const pctCol = headers.indexOf("Completion Percentage (%)");
-  const logFileCol = headers.indexOf("Log File (.txt, .json, or .log)");
+  const logFileCol = headers.indexOf("Log File (submission.log)");
   const videoCol = headers.indexOf("YouTube Video Link (full run)");
   const tsCol = headers.indexOf("Timestamp");
 
-  const leaderboard = rows
-    .filter((row, index) => {
-      const hasTeam = !!row[teamCol];
-      const hasRuntime = !!row[runtimeCol];
-      const hasLog = !!row[logFileCol];
-      const hasPct = !!row[pctCol];
-      const hasVideo = !!row[videoCol];
-      const isValid = hasTeam && (hasRuntime || hasLog) && (hasPct || hasLog) && hasVideo;
+  // Group rows by team name first to combine multiple submissions
+  const teamSubmissions = {};
+  
+  rows.forEach((row, index) => {
+    const teamName = row[teamCol];
+    if (!teamName) return;
+    
+    const hasLog = !!row[logFileCol];
+    const hasVideo = !!row[videoCol];
+    
+    // Initialize team entry if not exists
+    if (!teamSubmissions[teamName]) {
+      teamSubmissions[teamName] = {
+        team: teamName,
+        submissions: [],
+        bestRuntime: null,
+        bestRuntimeMs: Infinity,
+        bestCompletion: 0,
+        combinedMilestoneSplits: {},
+        latestVideo: null,
+        latestTimestamp: null
+      };
+    }
+    
+    // Add this submission to the team's list
+    teamSubmissions[teamName].submissions.push({
+      row: row,
+      index: index,
+      timestamp: new Date(row[tsCol])
+    });
+  });
+  
+  // Process each team's submissions to find best times and combine splits
+  const leaderboard = Object.values(teamSubmissions)
+    .map(teamData => {
+      let bestRuntimeStr = null;
+      let bestCompletion = 0;
+      let combinedMilestoneSplits = {};
+      let combinedPhaseSplits = {};
+      let latestVideo = null;
+      let latestTimestamp = null;
       
-      Logger.log(`Row ${index + 1}: Team="${row[teamCol]}", Runtime=${hasRuntime}, Log=${hasLog}, Pct=${hasPct}, Video=${hasVideo}, Valid=${isValid}`);
-      return isValid;
-    })
-    .map(row => {
-      let runtimeStr = row[runtimeCol];
-      let completion = row[pctCol] ? parseFloat(row[pctCol]) : 0;
-      let milestoneSplits = {};
-      
-      if (row[logFileCol]) {
+      // Process all submissions for this team
+      teamData.submissions.forEach(submission => {
+        const row = submission.row;
+        let runtimeStr = row[runtimeCol];
+        let completion = row[pctCol] ? parseFloat(row[pctCol]) : 0;
+        let milestoneSplits = {};
+        
+        // Update latest video and timestamp
+        if (row[videoCol] && (row[videoCol].includes('youtube.com') || row[videoCol].includes('youtu.be'))) {
+          if (!latestTimestamp || submission.timestamp > latestTimestamp) {
+            latestVideo = row[videoCol];
+            latestTimestamp = submission.timestamp;
+          }
+        }
+        
+        if (row[logFileCol]) {
         try {
           let logContent = '';
           const fileUrl = row[logFileCol].toString().trim();
@@ -62,19 +102,63 @@ function generateLeaderboardJSON() {
             milestoneSplits = logData.milestoneSplits;
             Logger.log(`Found ${Object.keys(milestoneSplits).length} milestone splits`);
           }
+          
+          if (logData.phaseSplits) {
+            // Combine phase splits - keep the best completion for each phase
+            Object.entries(logData.phaseSplits).forEach(([phaseName, phaseData]) => {
+              if (!combinedPhaseSplits[phaseName] || 
+                  phaseData.completed > combinedPhaseSplits[phaseName].completed) {
+                combinedPhaseSplits[phaseName] = phaseData;
+              }
+            });
+          }
         } catch (e) {
-          Logger.log(`Error parsing log file for ${row[teamCol]}: ${e}`);
+            Logger.log(`Error parsing log file for ${row[teamCol]}: ${e}`);
+          }
         }
-      }
+        
+        // Update best runtime for this team
+        if (runtimeStr) {
+          const runtimeMs = parseRuntime(runtimeStr);
+          if (runtimeMs > 0 && runtimeMs < teamData.bestRuntimeMs) {
+            teamData.bestRuntimeMs = runtimeMs;
+            bestRuntimeStr = runtimeStr;
+          }
+        }
+        
+        // Update best completion for this team
+        if (completion > bestCompletion) {
+          bestCompletion = completion;
+        }
+        
+        // Combine milestone splits - keep the fastest time for each milestone
+        Object.entries(milestoneSplits).forEach(([milestone, time]) => {
+          if (!combinedMilestoneSplits[milestone]) {
+            combinedMilestoneSplits[milestone] = time;
+          } else {
+            // Compare times and keep the faster one
+            const existingMs = parseRuntime(combinedMilestoneSplits[milestone]);
+            const newMs = parseRuntime(time);
+            if (newMs > 0 && newMs < existingMs) {
+              combinedMilestoneSplits[milestone] = time;
+              Logger.log(`Updated ${milestone} split for ${teamData.team}: ${time} (was ${combinedMilestoneSplits[milestone]})`);}
+          }
+        });
+      });
+      
+      Logger.log(`Team ${teamData.team}: ${teamData.submissions.length} submissions, best runtime=${bestRuntimeStr}, best completion=${bestCompletion}%`);
+      Logger.log(`Combined splits: ${Object.keys(combinedMilestoneSplits).length} milestones`);
       
       return {
-        team: row[teamCol],
-        runtimeStr: runtimeStr,
-        runtimeMs: parseRuntime(runtimeStr),
-        completion: completion,
-        video: row[videoCol],
-        timestamp: new Date(row[tsCol]).toISOString(),
-        milestoneSplits: milestoneSplits
+        team: teamData.team,
+        runtimeStr: bestRuntimeStr,
+        runtimeMs: teamData.bestRuntimeMs < Infinity ? teamData.bestRuntimeMs : 0,
+        completion: bestCompletion,
+        video: latestVideo,
+        timestamp: latestTimestamp ? latestTimestamp.toISOString() : new Date().toISOString(),
+        milestoneSplits: combinedMilestoneSplits,
+        phaseSplits: combinedPhaseSplits,
+        submissionCount: teamData.submissions.length
       };
     })
     .filter(entry => {
@@ -106,31 +190,46 @@ function generateLeaderboardJSON() {
         result.video = null;
       }
       
-      // Add ALL milestone splits for early-game progression (including blank/null entries)
-      const keyMilestones = [
-        'LITTLEROOT_TOWN',
-        'ROUTE_101', 
-        'OLDALE_TOWN',
-        'ROUTE_103',
-        'ROUTE_102',
-        'PETALBURG_CITY',
-        'ROUTE_104',
-        'PETALBURG_WOODS',
-        'RUSTBORO_CITY',
-        'RUSTBORO_GYM'
+      // Add ALL milestone splits from MILESTONES.md organized by phase
+      const allMilestones = [
+        // Phase 1: Game Initialization
+        'GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE',
+        // Phase 2: Tutorial & Starting Town
+        'LITTLEROOT_TOWN', 'PLAYER_HOUSE_ENTERED', 'PLAYER_BEDROOM', 'RIVAL_HOUSE', 'RIVAL_BEDROOM',
+        // Phase 3: Professor Birch & Starter
+        'ROUTE_101', 'STARTER_CHOSEN', 'BIRCH_LAB_VISITED',
+        // Phase 4: Rival
+        'OLDALE_TOWN', 'ROUTE_103', 'RECEIVED_POKEDEX',
+        // Phase 5: Route 102 & Petalburg
+        'ROUTE_102', 'PETALBURG_CITY', 'DAD_FIRST_MEETING', 'GYM_EXPLANATION',
+        // Phase 6: Road to Rustboro City
+        'ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY',
+        // Phase 7: First Gym Challenge
+        'RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE'
       ];
       
-      // Initialize all milestone splits to null first
-      keyMilestones.forEach(milestone => {
-        result[`split_${milestone.toLowerCase()}`] = null;
+      // Add all milestone splits - initialize to null first
+      result.milestone_splits = {};
+      allMilestones.forEach(milestone => {
+        result.milestone_splits[milestone] = null;
       });
       
       // Then populate with actual data if available
-      keyMilestones.forEach(milestone => {
+      allMilestones.forEach(milestone => {
         if (entry.milestoneSplits[milestone]) {
-          result[`split_${milestone.toLowerCase()}`] = entry.milestoneSplits[milestone];
+          result.milestone_splits[milestone] = entry.milestoneSplits[milestone];
         }
       });
+      
+      // Add phase splits if available
+      if (entry.phaseSplits) {
+        result.phase_splits = entry.phaseSplits;
+      }
+      
+      // Add submission count for transparency
+      if (entry.submissionCount) {
+        result.submission_count = entry.submissionCount;
+      }
       
       return result;
     });
@@ -261,6 +360,18 @@ function parseSubmissionLog(logContent) {
   let runtime = '';
   let completionPercent = 0;
   let milestoneSplits = {};
+  let phaseSplits = {};
+  
+  // Define phase milestones for tracking - exact names from MILESTONES.md
+  const PHASE_DEFINITIONS = {
+    'Phase_1_Game_Initialization': ['GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE'],
+    'Phase_2_Tutorial_Starting_Town': ['LITTLEROOT_TOWN', 'PLAYER_HOUSE_ENTERED', 'PLAYER_BEDROOM', 'RIVAL_HOUSE', 'RIVAL_BEDROOM'],
+    'Phase_3_Professor_Birch_Starter': ['ROUTE_101', 'STARTER_CHOSEN', 'BIRCH_LAB_VISITED'],
+    'Phase_4_Rival': ['OLDALE_TOWN', 'ROUTE_103', 'RECEIVED_POKEDEX'],
+    'Phase_5_Route_102_Petalburg': ['ROUTE_102', 'PETALBURG_CITY', 'DAD_FIRST_MEETING', 'GYM_EXPLANATION'],
+    'Phase_6_Road_to_Rustboro_City': ['ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY'],
+    'Phase_7_First_Gym_Challenge': ['RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE']
+  };
   
   // Find the header line first (looking for Format: line)
   let headerLine = null;
@@ -342,31 +453,47 @@ function parseSubmissionLog(logContent) {
             milestoneSplits[milestone] = runtimeValue;
           }
           
-          // Map milestones to approximate completion percentages
+          // Map milestones to approximate completion percentages (26 total milestones from MILESTONES.md)
           const milestoneProgress = {
-              'LITTLEROOT_TOWN': 4,
-              'ROUTE_101': 8,
-              'OLDALE_TOWN': 12,
-              'ROUTE_103': 16,
-              'ROUTE_102': 20,
-              'PETALBURG_CITY': 24,
-              'ROUTE_104': 28,
-              'PETALBURG_WOODS': 32,
-              'RUSTBORO_CITY': 36,
-              'RUSTBORO_GYM': 40,           // First Gym Badge
-              'DEVON_CORPORATION_3F': 44,
-              'ROUTE_116': 48,
-              'RUSTURF_TUNNEL': 52,
-              'MR_BRINEYS_COTTAGE': 56,
-              'ROUTE_105': 60,
-              'DEWFORD_TOWN': 64,
-              'GRANITE_CAVE_STEVEN_ROOM': 68,
-              'ROUTE_109': 72,
-              'SLATEPORT_CITY': 76,
-              'SLATEPORT_MUSEUM_1F': 80,
-              'ROUTE_110': 84,
-              'MAUVILLE_CITY': 88,
-              'MAUVILLE_GYM': 92             // Third Gym Badge (Wattson)
+              // Phase 1: Game Initialization (3 milestones)
+              'GAME_RUNNING': 3.8,
+              'PLAYER_NAME_SET': 7.7,
+              'INTRO_CUTSCENE_COMPLETE': 11.5,
+              
+              // Phase 2: Tutorial & Starting Town (5 milestones)
+              'LITTLEROOT_TOWN': 15.4,
+              'PLAYER_HOUSE_ENTERED': 19.2,
+              'PLAYER_BEDROOM': 23.1,
+              'RIVAL_HOUSE': 26.9,
+              'RIVAL_BEDROOM': 30.8,
+              
+              // Phase 3: Professor Birch & Starter (3 milestones)
+              'ROUTE_101': 34.6,
+              'STARTER_CHOSEN': 38.5,
+              'BIRCH_LAB_VISITED': 42.3,
+              
+              // Phase 4: Rival (3 milestones)
+              'OLDALE_TOWN': 46.2,
+              'ROUTE_103': 50.0,
+              'RECEIVED_POKEDEX': 53.8,
+              
+              // Phase 5: Route 102 & Petalburg (4 milestones)
+              'ROUTE_102': 57.7,
+              'PETALBURG_CITY': 61.5,
+              'DAD_FIRST_MEETING': 65.4,
+              'GYM_EXPLANATION': 69.2,
+              
+              // Phase 6: Road to Rustboro City (5 milestones)
+              'ROUTE_104_SOUTH': 73.1,
+              'PETALBURG_WOODS': 76.9,
+              'TEAM_AQUA_GRUNT_DEFEATED': 80.8,
+              'ROUTE_104_NORTH': 84.6,
+              'RUSTBORO_CITY': 88.5,
+              
+              // Phase 7: First Gym Challenge (3 milestones)
+              'RUSTBORO_GYM_ENTERED': 92.3,
+              'ROXANNE_DEFEATED': 96.2,
+              'FIRST_GYM_COMPLETE': 100.0
           };
           
           const progress = milestoneProgress[milestone] || 0;
@@ -395,16 +522,63 @@ function parseSubmissionLog(logContent) {
     }
   }
   
+  // Calculate phase splits based on collected milestones
+  for (const [phaseName, phaseMilestones] of Object.entries(PHASE_DEFINITIONS)) {
+    let phaseStartTime = null;
+    let phaseEndTime = null;
+    let completedCount = 0;
+    
+    phaseMilestones.forEach(milestone => {
+      if (milestoneSplits[milestone]) {
+        completedCount++;
+        const timeMs = parseRuntime(milestoneSplits[milestone]);
+        
+        if (phaseStartTime === null || timeMs < phaseStartTime) {
+          phaseStartTime = timeMs;
+        }
+        if (phaseEndTime === null || timeMs > phaseEndTime) {
+          phaseEndTime = timeMs;
+        }
+      }
+    });
+    
+    if (completedCount > 0) {
+      const phaseDuration = phaseEndTime - phaseStartTime;
+      phaseSplits[phaseName] = {
+        completed: completedCount,
+        total: phaseMilestones.length,
+        duration: formatMsToTime(phaseDuration),
+        endTime: formatMsToTime(phaseEndTime)
+      };
+      
+      Logger.log(`Phase ${phaseName}: ${completedCount}/${phaseMilestones.length} milestones, duration=${phaseSplits[phaseName].duration}`);
+    }
+  }
+  
+  // Update completion percentage based on milestone count if not already set
+  const totalMilestones = Object.values(PHASE_DEFINITIONS).flat().length;
+  const completedMilestones = Object.keys(milestoneSplits).filter(m => 
+    Object.values(PHASE_DEFINITIONS).flat().includes(m)
+  ).length;
+  const calculatedCompletion = Math.round((completedMilestones / totalMilestones) * 100);
+  
+  if (calculatedCompletion > completionPercent) {
+    completionPercent = calculatedCompletion;
+    Logger.log(`Updated completion to ${completionPercent}% based on ${completedMilestones}/${totalMilestones} milestones`);
+  }
+  
   const result = {
     model: model,
     startTime: startTime,
     runtime: runtime,
     completionPercent: completionPercent,
-    milestoneSplits: milestoneSplits
+    milestoneSplits: milestoneSplits,
+    phaseSplits: phaseSplits
   };
   
   Logger.log(`parseSubmissionLog result: runtime="${runtime}", completion=${completionPercent}%`);
   Logger.log(`Milestone splits found: ${Object.keys(milestoneSplits).length} total`);
+  Logger.log(`Phase splits found: ${Object.keys(phaseSplits).length} phases`);
   for (const [milestone, time] of Object.entries(milestoneSplits)) {
     Logger.log(`  ${milestone}: ${time}`);
   }

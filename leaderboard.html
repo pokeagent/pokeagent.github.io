@@ -237,26 +237,29 @@
       <div id="speedrunning-tab" class="tab-content active">
         <h3>Track 2: RPG Speedrunning</h3>
         
-        <!-- Milestone Filter -->
+        <!-- View Mode Selector -->
         <div class="format-selector" style="text-align: center; margin-bottom: 1.5rem;">
-          <label for="milestone-select">Filter by milestone:</label>
-          <select id="milestone-select" onchange="filterByMilestone()">
+          <label for="view-mode-select">View mode:</label>
+          <select id="view-mode-select" onchange="changeViewMode()" style="margin-right: 2rem;">
+            <option value="overall">Overall Progress</option>
+            <option value="milestones">Milestone Splits</option>
+          </select>
+          
+          <label for="milestone-select" id="milestone-filter-label" style="display: none;">Filter by milestone:</label>
+          <select id="milestone-select" onchange="filterByMilestone()" style="display: none;">
             <option value="all">All (Furthest Milestone)</option>
-            <option value="littleroot_town">Littleroot Town</option>
-            <option value="route_101">Route 101</option>
-            <option value="oldale_town">Oldale Town</option>
-            <option value="route_103">Route 103</option>
-            <option value="route_102">Route 102</option>
-            <option value="petalburg_city">Petalburg City</option>
-            <option value="route_104">Route 104</option>
-            <option value="petalburg_woods">Petalburg Woods</option>
-            <option value="rustboro_city">Rustboro City</option>
-            <option value="rustboro_gym">Rustboro Gym (1st Gym Badge)</option>
+            <option value="Phase_1_Game_Initialization">Milestone 1: Game Start</option>
+            <option value="Phase_2_Tutorial_Starting_Town">Milestone 2: Littleroot Town</option>
+            <option value="Phase_3_Professor_Birch_Starter">Milestone 3: Starter Pokemon</option>
+            <option value="Phase_4_Rival">Milestone 4: Rival Battle</option>
+            <option value="Phase_5_Route_102_Petalburg">Milestone 5: Petalburg City</option>
+            <option value="Phase_6_Road_to_Rustboro_City">Milestone 6: Route to Rustboro</option>
+            <option value="Phase_7_First_Gym_Challenge">Milestone 7: First Gym</option>
           </select>
         </div>
         
-        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem; text-align: center;">
-          <strong>Sorted by completion time.</strong> "All" shows each team's furthest milestone reached and time to reach it.
+        <p id="view-description" style="font-size: 0.85rem; color: #666; margin-bottom: 1rem; text-align: center;">
+          <strong>Overall Progress View:</strong> Shows completion percentage and cumulative runtime to furthest milestone. Teams with multiple submissions show their best combined splits.
         </p>
         
       <div style="
@@ -284,13 +287,13 @@
           scrollbar-color: #cbd5e0 #f7fafc;
         ">
           <table style="width: 100%; border-collapse: collapse;">
-            <thead style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
+            <thead id="speedrunning-header" style="position: sticky; top: 0; background-color: #f8fafc; z-index: 1; border-bottom: 2px solid #e2e8f0;">
               <tr>
                 <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
                 <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
-                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Milestone</th>
-                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Time</th>
-                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Video</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Progress</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Runtime</th>
+                <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Details</th>
               </tr>
             </thead>
             <tbody id="speedrunning-leaderboard">
@@ -602,22 +605,80 @@
 
     // Define milestone order for progression
     const milestoneOrder = [
-      'littleroot_town', 'route_101', 'oldale_town', 'route_103', 'route_102', 
-      'petalburg_city', 'route_104', 'petalburg_woods', 'rustboro_city', 'rustboro_gym'
+      'littleroot_town', 'starter_chosen', 'oldale_town', 'route_103', 'received_pokedex',
+      'petalburg_city', 'dad_first_meeting', 'petalburg_woods', 'rustboro_city', 
+      'rustboro_gym_entered', 'first_gym_complete'
     ];
     
     const milestoneNames = {
       'littleroot_town': 'Littleroot Town',
-      'route_101': 'Route 101', 
+      'starter_chosen': 'Starter Chosen',
       'oldale_town': 'Oldale Town',
       'route_103': 'Route 103',
-      'route_102': 'Route 102',
+      'received_pokedex': 'Received Pokedex',
       'petalburg_city': 'Petalburg City',
-      'route_104': 'Route 104',
+      'dad_first_meeting': 'Dad First Meeting',
       'petalburg_woods': 'Petalburg Woods',
       'rustboro_city': 'Rustboro City',
-      'rustboro_gym': 'Rustboro Gym'
+      'rustboro_gym_entered': 'Rustboro Gym Entered',
+      'first_gym_complete': 'First Gym Complete'
     };
+    
+    const phaseNames = {
+      'Phase_1_Game_Initialization': 'Milestone 1: Game Start',
+      'Phase_2_Tutorial_Starting_Town': 'Milestone 2: Littleroot Town',
+      'Phase_3_Professor_Birch_Starter': 'Milestone 3: Starter Pokemon',
+      'Phase_4_Rival': 'Milestone 4: Rival Battle',
+      'Phase_5_Route_102_Petalburg': 'Milestone 5: Petalburg City',
+      'Phase_6_Road_to_Rustboro_City': 'Milestone 6: Route to Rustboro',
+      'Phase_7_First_Gym_Challenge': 'Milestone 7: First Gym'
+    };
+    
+    // Detailed milestone definitions from MILESTONES.md
+    const phaseMilestones = {
+      'Phase_1_Game_Initialization': [
+        { key: 'GAME_RUNNING', name: 'Game Running' },
+        { key: 'PLAYER_NAME_SET', name: 'Player Name Set' },
+        { key: 'INTRO_CUTSCENE_COMPLETE', name: 'Intro Complete' }
+      ],
+      'Phase_2_Tutorial_Starting_Town': [
+        { key: 'LITTLEROOT_TOWN', name: 'Littleroot Town' },
+        { key: 'PLAYER_HOUSE_ENTERED', name: 'Player House' },
+        { key: 'PLAYER_BEDROOM', name: 'Player Bedroom' },
+        { key: 'RIVAL_HOUSE', name: 'Rival House' },
+        { key: 'RIVAL_BEDROOM', name: 'Rival Bedroom' }
+      ],
+      'Phase_3_Professor_Birch_Starter': [
+        { key: 'ROUTE_101', name: 'Route 101' },
+        { key: 'STARTER_CHOSEN', name: 'Starter Chosen' },
+        { key: 'BIRCH_LAB_VISITED', name: 'Birch Lab' }
+      ],
+      'Phase_4_Rival': [
+        { key: 'OLDALE_TOWN', name: 'Oldale Town' },
+        { key: 'ROUTE_103', name: 'Route 103' },
+        { key: 'RECEIVED_POKEDEX', name: 'Received Pokedex' }
+      ],
+      'Phase_5_Route_102_Petalburg': [
+        { key: 'ROUTE_102', name: 'Route 102' },
+        { key: 'PETALBURG_CITY', name: 'Petalburg City' },
+        { key: 'DAD_FIRST_MEETING', name: 'Dad First Meeting' },
+        { key: 'GYM_EXPLANATION', name: 'Gym Explanation' }
+      ],
+      'Phase_6_Road_to_Rustboro_City': [
+        { key: 'ROUTE_104_SOUTH', name: 'Route 104 South' },
+        { key: 'PETALBURG_WOODS', name: 'Petalburg Woods' },
+        { key: 'TEAM_AQUA_GRUNT_DEFEATED', name: 'Team Aqua Defeated' },
+        { key: 'ROUTE_104_NORTH', name: 'Route 104 North' },
+        { key: 'RUSTBORO_CITY', name: 'Rustboro City' }
+      ],
+      'Phase_7_First_Gym_Challenge': [
+        { key: 'RUSTBORO_GYM_ENTERED', name: 'Rustboro Gym' },
+        { key: 'ROXANNE_DEFEATED', name: 'Roxanne Defeated' },
+        { key: 'FIRST_GYM_COMPLETE', name: 'First Gym Complete' }
+      ]
+    };
+    
+    let currentViewMode = 'overall';
 
     // Function to get furthest milestone for a team
     function getFurthestMilestone(entry) {
@@ -650,6 +711,28 @@
       }
     }
 
+    // Function to change view mode
+    function changeViewMode() {
+      const viewMode = document.getElementById('view-mode-select').value;
+      currentViewMode = viewMode;
+      
+      const milestoneSelect = document.getElementById('milestone-select');
+      const milestoneLabel = document.getElementById('milestone-filter-label');
+      const viewDescription = document.getElementById('view-description');
+      
+      if (viewMode === 'milestones') {
+        milestoneSelect.style.display = 'inline-block';
+        milestoneLabel.style.display = 'inline-block';
+        viewDescription.innerHTML = '<strong>Milestone Splits View:</strong> Shows detailed progress through each milestone with sub-milestone completion. Teams that reach later milestones rank higher.';
+      } else {
+        milestoneSelect.style.display = 'none';
+        milestoneLabel.style.display = 'none';
+        viewDescription.innerHTML = '<strong>Overall Progress View:</strong> Shows completion percentage and total runtime summed across completed milestones. Teams with multiple submissions show their best combined milestone times.';
+      }
+      
+      displaySpeedrunningLeaderboard();
+    }
+    
     // Function to filter and display speedrunning leaderboard
     function filterByMilestone() {
       const selectedMilestone = document.getElementById('milestone-select').value;
@@ -658,6 +741,7 @@
 
     function displaySpeedrunningLeaderboard(filterMilestone = 'all') {
       const tableBody = document.getElementById("speedrunning-leaderboard");
+      const tableHeader = document.getElementById("speedrunning-header");
       
       if (!speedrunningData || speedrunningData.length === 0) {
         tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
@@ -666,59 +750,373 @@
         return;
       }
 
+      // Update table headers based on view mode
+      if (currentViewMode === 'overall') {
+        tableHeader.innerHTML = `
+          <tr>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Progress</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Total Runtime</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Details</th>
+          </tr>`;
+      } else {
+        // Milestone view - change header based on filter
+        const timeColumnHeader = filterMilestone === 'all' ? 'Total Runtime' : 'Split Time';
+        tableHeader.innerHTML = `
+          <tr>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Team</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Milestone Progress</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">${timeColumnHeader}</th>
+            <th style="padding: 12px 15px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">Video</th>
+          </tr>`;
+      }
+
       let processedData = [];
 
-      speedrunningData.forEach(entry => {
-        if (filterMilestone === 'all') {
-          // Show furthest milestone reached
-          const furthest = getFurthestMilestone(entry);
-          if (furthest.milestone !== 'none') {
-            processedData.push({
-              team: entry.team,
-              milestone: furthest.name,
-              time: furthest.time,
-              timeInSeconds: parseTimeToSeconds(furthest.time),
-              video: entry.video
+      if (currentViewMode === 'overall') {
+        // Overall progress view - show completion % and sum of phase durations
+        processedData = speedrunningData.map(entry => {
+          let totalDurationMs = 0;
+          let phasesCompleted = 0;
+          let totalPhases = 7;
+          
+          // Calculate sum of phase durations
+          if (entry.phase_splits) {
+            Object.values(entry.phase_splits).forEach(phase => {
+              if (phase.completed > 0 && phase.duration && phase.duration !== '-') {
+                const durationMs = parseTimeToSeconds(phase.duration) * 1000;
+                if (!isNaN(durationMs) && durationMs > 0) {
+                  totalDurationMs += durationMs;
+                }
+                if (phase.completed === phase.total) {
+                  phasesCompleted++;
+                }
+              }
             });
           }
-        } else {
-          // Show specific milestone
-          const splitField = `split_${filterMilestone}`;
-          const time = entry[splitField];
-          if (time && time !== '-' && time !== '') {
-            processedData.push({
-              team: entry.team,
-              milestone: milestoneNames[filterMilestone],
-              time: time,
-              timeInSeconds: parseTimeToSeconds(time),
-              video: entry.video
-            });
+          
+          // Format total duration
+          let formattedDuration = '-';
+          if (totalDurationMs > 0) {
+            const totalSeconds = Math.floor(totalDurationMs / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            
+            if (hours > 0) {
+              formattedDuration = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            } else {
+              formattedDuration = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
           }
-        }
-      });
+          
+          return {
+            team: entry.team,
+            completionPercent: entry.completion_percent,
+            runtime: formattedDuration,
+            timeInSeconds: totalDurationMs / 1000,
+            video: entry.video,
+            submissionCount: entry.submission_count || 1,
+            phaseSplits: entry.phase_splits || {},
+            phasesCompleted: phasesCompleted,
+            totalPhases: totalPhases
+          };
+        });
+        
+        // Sort by completion percentage first, then by time
+        processedData.sort((a, b) => {
+          if (b.completionPercent !== a.completionPercent) {
+            return b.completionPercent - a.completionPercent;
+          }
+          return a.timeInSeconds - b.timeInSeconds;
+        });
+        
+      } else {
+        // Milestone splits view - using phases as milestones with sub-milestone details
+        const phaseOrder = Object.keys(phaseNames);
+        
+        speedrunningData.forEach(entry => {
+          if (entry.phase_splits && Object.keys(entry.phase_splits).length > 0) {
+            if (filterMilestone === 'all') {
+              // Show furthest phase reached with sub-milestone details
+              let latestPhase = null;
+              let latestPhaseIndex = -1;
+              let cumulativeDurationMs = 0;
+              let submilestoneDetails = {};
+              
+              // Process all phases to get sub-milestone details
+              for (let i = 0; i < phaseOrder.length; i++) {
+                const phase = phaseOrder[i];
+                const milestones = phaseMilestones[phase];
+                submilestoneDetails[phase] = [];
+                
+                // Check sub-milestones for this phase
+                for (const milestone of milestones) {
+                  let splitTime = null;
+                  
+                  // Check milestone_splits first (new format)
+                  if (entry.milestone_splits && entry.milestone_splits[milestone.key]) {
+                    splitTime = entry.milestone_splits[milestone.key];
+                  }
+                  
+                  submilestoneDetails[phase].push({
+                    name: milestone.name,
+                    key: milestone.key,
+                    time: splitTime,
+                    completed: splitTime !== null
+                  });
+                }
+                
+                // Update latest phase if this phase has progress
+                if (entry.phase_splits[phase] && entry.phase_splits[phase].completed > 0) {
+                  latestPhase = phase;
+                  latestPhaseIndex = i;
+                  
+                  // Add this phase's duration to cumulative total
+                  const duration = entry.phase_splits[phase].duration;
+                  if (duration && duration !== '-') {
+                    cumulativeDurationMs += parseTimeToSeconds(duration) * 1000;
+                  }
+                }
+              }
+              
+              if (latestPhase) {
+                const phaseSplit = entry.phase_splits[latestPhase];
+                
+                // Format cumulative duration
+                let formattedCumulativeTime = '-';
+                if (cumulativeDurationMs > 0) {
+                  const totalSeconds = Math.floor(cumulativeDurationMs / 1000);
+                  const hours = Math.floor(totalSeconds / 3600);
+                  const minutes = Math.floor((totalSeconds % 3600) / 60);
+                  const seconds = totalSeconds % 60;
+                  
+                  if (hours > 0) {
+                    formattedCumulativeTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                  } else {
+                    formattedCumulativeTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                  }
+                }
+                
+                // For "All" view, use cumulative time; for specific phase, use phase duration
+                processedData.push({
+                  team: entry.team,
+                  phase: phaseNames[latestPhase],
+                  phaseKey: latestPhase,
+                  phaseIndex: latestPhaseIndex,
+                  phaseSplits: entry.phase_splits,
+                  submilestoneDetails: submilestoneDetails,
+                  completed: phaseSplit.completed,
+                  total: phaseSplit.total,
+                  splitTime: formattedCumulativeTime,  // Total runtime for "All" view
+                  timeInSeconds: cumulativeDurationMs / 1000, // For sorting
+                  video: entry.video
+                });
+              }
+            } else {
+              // Show specific phase with sub-milestone details
+              const phaseIndex = phaseOrder.indexOf(filterMilestone);
+              const phaseSplit = entry.phase_splits[filterMilestone];
+              
+              if (phaseSplit && phaseSplit.completed > 0) {
+                let cumulativeDurationMs = 0;
+                let submilestoneDetails = {};
+                
+                // Get sub-milestone details for selected phase
+                const milestones = phaseMilestones[filterMilestone];
+                submilestoneDetails[filterMilestone] = [];
+                
+                for (const milestone of milestones) {
+                  let splitTime = null;
+                  
+                  // Check milestone_splits first (new format)
+                  if (entry.milestone_splits && entry.milestone_splits[milestone.key]) {
+                    splitTime = entry.milestone_splits[milestone.key];
+                  }
+                  
+                  submilestoneDetails[filterMilestone].push({
+                    name: milestone.name,
+                    key: milestone.key,
+                    time: splitTime,
+                    completed: splitTime !== null
+                  });
+                }
+                
+                // Calculate cumulative duration up to and including this phase
+                for (let i = 0; i <= phaseIndex; i++) {
+                  const phase = phaseOrder[i];
+                  if (entry.phase_splits[phase] && entry.phase_splits[phase].completed > 0) {
+                    const duration = entry.phase_splits[phase].duration;
+                    if (duration && duration !== '-') {
+                      cumulativeDurationMs += parseTimeToSeconds(duration) * 1000;
+                    }
+                  } else {
+                    break; // Stop if we hit an incomplete phase before the target
+                  }
+                }
+                
+                // Format cumulative duration
+                let formattedCumulativeTime = '-';
+                if (cumulativeDurationMs > 0) {
+                  const totalSeconds = Math.floor(cumulativeDurationMs / 1000);
+                  const hours = Math.floor(totalSeconds / 3600);
+                  const minutes = Math.floor((totalSeconds % 3600) / 60);
+                  const seconds = totalSeconds % 60;
+                  
+                  if (hours > 0) {
+                    formattedCumulativeTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                  } else {
+                    formattedCumulativeTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                  }
+                }
+                
+                // Get the phase duration (not cumulative) for split time
+                const phaseDuration = phaseSplit.duration || '-';
+                const phaseDurationSeconds = phaseDuration !== '-' ? parseTimeToSeconds(phaseDuration) : 0;
+                
+                processedData.push({
+                  team: entry.team,
+                  phase: phaseNames[filterMilestone],
+                  phaseKey: filterMilestone,
+                  phaseIndex: phaseIndex,
+                  phaseSplits: entry.phase_splits,
+                  submilestoneDetails: submilestoneDetails,
+                  completed: phaseSplit.completed,
+                  total: phaseSplit.total,
+                  splitTime: phaseDuration,  // Phase duration only
+                  timeInSeconds: phaseDurationSeconds, // For sorting
+                  video: entry.video
+                });
+              }
+            }
+          }
+        });
+        
+        // Sort by phase progression, then sub-milestones completed, then by time
+        processedData.sort((a, b) => {
+          if (filterMilestone === 'all') {
+            // When showing all phases, sort by phase index first (descending)
+            if (a.phaseIndex !== b.phaseIndex) {
+              return b.phaseIndex - a.phaseIndex; // Later phases first
+            }
+            // If same phase, sort by number of sub-milestones completed
+            if (a.completed !== b.completed) {
+              return b.completed - a.completed; // More sub-milestones first
+            }
+          } else {
+            // When filtering specific phase, sort by sub-milestones completed first
+            if (a.completed !== b.completed) {
+              return b.completed - a.completed; // More sub-milestones first
+            }
+          }
+          // Finally sort by time (ascending - faster is better)
+          return a.timeInSeconds - b.timeInSeconds;
+        });
+      }
 
-      // Sort by time (fastest first)
-      processedData.sort((a, b) => a.timeInSeconds - b.timeInSeconds);
-
+      // Render the table rows based on view mode
       tableBody.innerHTML = '';
-      processedData.forEach((entry, index) => {
-        const videoCell = entry.video ? 
-          `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
-          '-';
-
-        const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
-          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748;">${index + 1}</td>
-          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
-          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${entry.milestone}</td>
-          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.time}</td>
-          <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
-        </tr>`;
-        tableBody.innerHTML += row;
-      });
+      
+      if (currentViewMode === 'overall') {
+        processedData.forEach((entry, index) => {
+          const progressBar = `
+            <div style="width: 100%; background: #e2e8f0; border-radius: 4px; overflow: hidden; height: 20px;">
+              <div style="width: ${entry.completionPercent}%; background: linear-gradient(90deg, #48bb78, #2f855a); height: 100%; display: flex; align-items: center; padding-left: 5px;">
+                <span style="color: white; font-size: 0.8rem; font-weight: 600;">${entry.completionPercent.toFixed(1)}%</span>
+              </div>
+            </div>`;
+          
+          const detailsCell = entry.video ? 
+            `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;"><i class="fab fa-youtube"></i> Video</a>` : 
+            `<span style="color: #666; font-size: 0.85rem;">${entry.submissionCount} run${entry.submissionCount > 1 ? 's' : ''}</span>`;
+          
+          const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 600;">${index + 1}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+            <td style="padding: 15px;">${progressBar}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.runtime}</td>
+            <td style="padding: 15px; font-size: 0.9rem; text-align: center;">${detailsCell}</td>
+          </tr>`;
+          tableBody.innerHTML += row;
+        });
+        
+      } else {
+        // Milestone view (phases as milestones with sub-milestone details)
+        processedData.forEach((entry, index) => {
+          // Create phase progress display with sub-milestone indicators
+          const phaseOrder = Object.keys(phaseNames);
+          let phaseDisplay = '<div style="width: 100%;">';
+          
+          // Main milestone progress circles
+          phaseDisplay += '<div style="display: flex; gap: 4px; justify-content: center; align-items: center; margin-bottom: 8px;">';
+          for (const phase of phaseOrder) {
+            const phaseSplit = entry.phaseSplits[phase];
+            let phaseColor = '#e2e8f0'; // Default gray
+            let phaseTitle = phaseNames[phase];
+            
+            if (phaseSplit && phaseSplit.completed > 0) {
+              const completionRatio = phaseSplit.completed / phaseSplit.total;
+              if (completionRatio === 1) {
+                phaseColor = '#48bb78'; // Green for complete
+              } else {
+                phaseColor = '#f6ad55'; // Orange for partial
+              }
+              phaseTitle += ` (${phaseSplit.completed}/${phaseSplit.total})`;
+            }
+            
+            const phaseNum = phaseOrder.indexOf(phase) + 1;
+            phaseDisplay += `<div style="width: 30px; height: 30px; background: ${phaseColor}; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.8rem;" title="${phaseTitle}">${phaseNum}</div>`;
+          }
+          phaseDisplay += '</div>';
+          
+          // Add sub-milestone progress bars if viewing specific milestone or if this is the latest milestone
+          if (filterMilestone !== 'all' || entry.phaseIndex >= 0) {
+            const targetPhase = filterMilestone !== 'all' ? filterMilestone : entry.phaseKey;
+            const submilestones = entry.submilestoneDetails[targetPhase];
+            
+            if (submilestones && submilestones.length > 0) {
+              const completedCount = submilestones.filter(s => s.completed).length;
+              phaseDisplay += '<div style="font-size: 0.75rem; color: #666; text-align: center;">';
+              phaseDisplay += `<div style="display: flex; gap: 2px; justify-content: center; margin-top: 4px;">`;
+              
+              // Show mini progress indicators for each sub-milestone
+              for (const submilestone of submilestones) {
+                const bgColor = submilestone.completed ? '#48bb78' : '#e2e8f0';
+                const tooltip = `${submilestone.name}: ${submilestone.time || 'not reached'}`;
+                phaseDisplay += `<div style="width: 8px; height: 8px; background: ${bgColor}; border-radius: 2px;" title="${tooltip}"></div>`;
+              }
+              
+              phaseDisplay += '</div>';
+              phaseDisplay += `<span style="margin-top: 2px; display: block;">${phaseNames[targetPhase]} Progress: ${completedCount}/${submilestones.length}</span>`;
+              phaseDisplay += '</div>';
+            }
+          }
+          
+          phaseDisplay += '</div>';
+          
+          const videoCell = entry.video ? 
+            `<a href="${entry.video}" target="_blank" style="color: #007bff; text-decoration: none;">Watch</a>` : 
+            '-';
+          
+          const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 600;">${index + 1}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+            <td style="padding: 15px;">${phaseDisplay}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.splitTime || '-'}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
+          </tr>`;
+          tableBody.innerHTML += row;
+        });
+      }
 
       if (processedData.length === 0) {
+        const message = currentViewMode === 'milestones' && filterMilestone !== 'all' ? 
+                       'No entries found for selected phase' :
+                       'No entries found';
         tableBody.innerHTML = `<tr style="border-bottom: 1px solid #e2e8f0;">
-          <td style="padding: 15px; color: #718096;" colspan="5">No entries found for selected milestone</td>
+          <td style="padding: 15px; color: #718096;" colspan="5">${message}</td>
         </tr>`;
       }
     }
@@ -731,7 +1129,7 @@
       })
       .then(data => {
         speedrunningData = data;
-        displaySpeedrunningLeaderboard('all'); // Show furthest milestones by default
+        displaySpeedrunningLeaderboard(); // Show overall progress by default
       })
       .catch(err => {
         console.error("Error loading speedrunning leaderboard:", err);
@@ -753,6 +1151,23 @@
       
       console.log('LLM checkbox disabled:', llmCheckbox.disabled);
     }
+    
+    // Function to toggle phase details in detailed view
+    function togglePhaseDetails(phaseId) {
+      const phaseDiv = document.getElementById(phaseId);
+      const arrowSpan = document.getElementById(phaseId + '_arrow');
+      
+      if (phaseDiv.style.display === 'none') {
+        phaseDiv.style.display = 'block';
+        arrowSpan.innerHTML = '▼';
+      } else {
+        phaseDiv.style.display = 'none';
+        arrowSpan.innerHTML = '▶';
+      }
+    }
+    
+    // Make togglePhaseDetails available globally
+    window.togglePhaseDetails = togglePhaseDetails;
     
     // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', initializePage);
