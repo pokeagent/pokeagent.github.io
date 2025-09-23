@@ -1021,6 +1021,13 @@
       
       if (currentViewMode === 'overall') {
         processedData.forEach((entry, index) => {
+          // Check if this is an organizer baseline team
+          const isOrgBaseline = entry.team === 'Avg Human' || entry.team === 'PokeAgent';
+          console.log(`Team: "${entry.team}", isOrgBaseline: ${isOrgBaseline}`);
+          const orgBadge = isOrgBaseline ? 
+            '<span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block;">ORG</span>' : 
+            '';
+          
           const progressBar = `
             <div style="width: 100%; background: #e2e8f0; border-radius: 4px; overflow: hidden; height: 20px;">
               <div style="width: ${entry.completionPercent}%; background: linear-gradient(90deg, #48bb78, #2f855a); height: 100%; display: flex; align-items: center; padding-left: 5px;">
@@ -1034,7 +1041,7 @@
           
           const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 600;">${index + 1}</td>
-            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}${orgBadge}</td>
             <td style="padding: 15px;">${progressBar}</td>
             <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.runtime}</td>
             <td style="padding: 15px; font-size: 0.9rem; text-align: center;">${detailsCell}</td>
@@ -1045,6 +1052,13 @@
       } else {
         // Milestone view (phases as milestones with sub-milestone details)
         processedData.forEach((entry, index) => {
+          // Check if this is an organizer baseline team
+          const isOrgBaseline = entry.team === 'Avg Human' || entry.team === 'PokeAgent';
+          console.log(`Team: "${entry.team}", isOrgBaseline: ${isOrgBaseline}`);
+          const orgBadge = isOrgBaseline ? 
+            '<span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block;">ORG</span>' : 
+            '';
+          
           // Create phase progress display with sub-milestone indicators
           const phaseOrder = Object.keys(phaseNames);
           let phaseDisplay = '<div style="width: 100%;">';
@@ -1102,7 +1116,7 @@
           
           const row = `<tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 600;">${index + 1}</td>
-            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}</td>
+            <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; font-weight: 500;">${entry.team}${orgBadge}</td>
             <td style="padding: 15px;">${phaseDisplay}</td>
             <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center; font-weight: 600;">${entry.splitTime || '-'}</td>
             <td style="padding: 15px; font-size: 0.9rem; color: #2d3748; text-align: center;">${videoCell}</td>
@@ -1122,7 +1136,7 @@
     }
 
     // Load speedrunning leaderboard data
-    fetch("leaderboard/speedrunning.json")
+    fetch(`leaderboard/speedrunning.json?t=${Date.now()}`)
       .then(res => {
         if (!res.ok) throw new Error("Failed to load speedrunning leaderboard");
         return res.json();
