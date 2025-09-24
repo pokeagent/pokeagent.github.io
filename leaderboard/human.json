@@ -1,0 +1,83 @@
+[
+      {
+    "rank": 1,
+    "team": "Avg Human",
+    "completion_percent": 100,
+    "runtime": "00:01:10",
+    "last_updated": "2025-09-23T03:18:03.986Z",
+    "video": null,
+    "milestone_splits": {
+      "GAME_RUNNING": "00:00:37",
+      "PLAYER_NAME_SET": "00:00:54",
+      "INTRO_CUTSCENE_COMPLETE": "00:00:08",
+      "LITTLEROOT_TOWN": "0:00",
+      "PLAYER_HOUSE_ENTERED": "00:00:34",
+      "PLAYER_BEDROOM": "00:01:20",
+      "RIVAL_HOUSE": "00:01:34",
+      "RIVAL_BEDROOM": "00:01:04",
+      "ROUTE_101": "00:01:23",
+      "STARTER_CHOSEN": "00:02:15",
+      "BIRCH_LAB_VISITED": "00:01:20",
+      "OLDALE_TOWN": "00:01:59",
+      "ROUTE_103": "00:05:31",
+      "RECEIVED_POKEDEX": "00:02:58",
+      "ROUTE_102": "00:04:32",
+      "PETALBURG_CITY": "00:01:00",
+      "DAD_FIRST_MEETING": "00:01:00",
+      "GYM_EXPLANATION": "00:01:00",
+      "ROUTE_104_SOUTH": "00:01:00",
+      "PETALBURG_WOODS": "00:01:00",
+      "TEAM_AQUA_GRUNT_DEFEATED": "00:01:00",
+      "ROUTE_104_NORTH": "00:01:00",
+      "RUSTBORO_CITY": "00:30:14",
+      "RUSTBORO_GYM_ENTERED": "00:01:00",
+      "ROXANNE_DEFEATED": "00:11:14",
+      "FIRST_GYM_COMPLETE": "00:01:14"
+    },
+    "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "00:33",
+        "endTime": "01:10"
+      },
+      "Phase_2_Tutorial_Starting_Town": {
+        "completed": 5,
+        "total": 5,
+        "duration": "01:41",
+        "endTime": "01:41"
+      },
+      "Phase_3_Professor_Birch_Starter": {
+        "completed": 3,
+        "total": 3,
+        "duration": "01:26",
+        "endTime": "02:49"
+      },
+      "Phase_4_Rival": {
+        "completed": 3,
+        "total": 3,
+        "duration": "04:24",
+        "endTime": "06:23"
+      },
+      "Phase_5_Route_102_Petalburg": {
+        "completed": 4,
+        "total": 4,
+        "duration": "04:32",
+        "endTime": "04:32"
+      },
+      "Phase_6_Road_to_Rustboro_City": {
+        "completed": 5,
+        "total": 5,
+        "duration": "30:14",
+        "endTime": "30:14"
+      },
+      "Phase_7_First_Gym_Challenge": {
+        "completed": 3,
+        "total": 3,
+        "duration": "11:14",
+        "endTime": "11:14"
+      }
+    },
+    "submission_count": 7
+  }
+]

@@ -80,9 +80,30 @@ class SpeedrunningLeaderboard {
 
   async loadData() {
     try {
-      const response = await fetch(`leaderboard/speedrunning.json?t=${Date.now()}`);
-      if (!response.ok) throw new Error('Failed to load speedrunning leaderboard');
-      this.data = await response.json();
+      // Load both speedrunning.json and human.json
+      const [speedrunResponse, humanResponse] = await Promise.all([
+        fetch(`leaderboard/speedrunning.json?t=${Date.now()}`),
+        fetch(`leaderboard/human.json?t=${Date.now()}`)
+      ]);
+      
+      if (!speedrunResponse.ok) throw new Error('Failed to load speedrunning leaderboard');
+      if (!humanResponse.ok) throw new Error('Failed to load human leaderboard');
+      
+      const speedrunData = await speedrunResponse.json();
+      const humanData = await humanResponse.json();
+      
+      // Replace "Human" entry with "Avg Human" from human.json
+      this.data = speedrunData.map(entry => {
+        if (entry.team === 'Human' && humanData.length > 0) {
+          // Find Avg Human entry in human.json
+          const avgHuman = humanData.find(h => h.team === 'Avg Human');
+          if (avgHuman) {
+            // Keep the rank from original position
+            return { ...avgHuman, rank: entry.rank };
+          }
+        }
+        return entry;
+      });
     } catch (error) {
       console.error('Error loading speedrunning leaderboard:', error);
       this.showError();
