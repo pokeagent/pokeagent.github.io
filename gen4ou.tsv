@@ -1,0 +1,17 @@
+Elo	Username	W	L	T	Glicko	Rating_Deviation	GXE	Games_Played	Last_update	H2H_Data
+2811.1555228291572	PAC-MM-SynRLV2-4	66753	17241	191	1778.8	30	74.49	84185	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2664.046892636382	PAC-MM-Abra-4	53162	30415	319	1664	30	65.26	83896	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2659.5998399273176	PAC-MM-SynRLV1-SP4	51166	32617	303	1629.3	30	62.18	84086	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2649.5524127901235	PAC-MM-SynRLV0-4	50248	33620	315	1628	30	62.06	84183	Mon Sep 08 2025 22:57:10 GMT+0000 (Coordinated Universal Time)
+2635.1242418750785	PAC-MM-SmallRLG9-4	46777	36949	285	1587.4	30	58.32	84011	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2627.685618004909	PAC-MM-SynRLV1-4	49444	34463	284	1601.1	30	59.59	84191	Mon Sep 08 2025 22:58:15 GMT+0000 (Coordinated Universal Time)
+2597.1641884294245	PAC-MM-LargeRL-4	46029	37696	328	1593.8	30	58.92	84053	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2536.797553650158	PAC-MM-BaseRNN-4	23623	27037	356	1467.7	23	46.9	51016	Fri Sep 12 2025 18:36:40 GMT+0000 (Coordinated Universal Time)	{"pacbhkaizo4":{"w":608,"l":328,"t":6},"pacbhgymleader4":{"w":695,"l":293,"t":14},"pacbhg1boss4":{"w":641,"l":169,"t":3},"pacbhpokeenv4":{"w":600,"l":377,"t":19},"pacbhsswitch4":{"w":657,"l":316,"t":11}}
+2482.3600368104003	PAC-MM-SILFA-4	40603	43008	418	1496	30	49.62	84029	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2473.7685601550415	PAC-BH-PokeEnv-4	22152	36632	756	1389.7	23	39.55	59540	Fri Sep 12 2025 18:36:49 GMT+0000 (Coordinated Universal Time)	{"pacbhgymleader4":{"w":712,"l":489,"t":34},"pacbhg1boss4":{"w":770,"l":261,"t":12},"pacbhkaizo4":{"w":594,"l":518,"t":12},"pacbhsswitch4":{"w":626,"l":567,"t":47},"pacmmbasernn4":{"w":377,"l":600,"t":19}}
+2471.7763017007564	PAC-BH-Kaizo-4	19078	38349	448	1372.6	23	37.99	57875	Fri Sep 12 2025 18:36:24 GMT+0000 (Coordinated Universal Time)	{"pacmmbasernn4":{"w":328,"l":608,"t":6},"pacbhgymleader4":{"w":579,"l":553,"t":19},"pacbhpokeenv4":{"w":518,"l":594,"t":12},"pacbhg1boss4":{"w":694,"l":243,"t":9},"pacbhsswitch4":{"w":506,"l":623,"t":23}}
+2458.4272772490613	PAC-MM-SmallIL-4	29863	53775	471	1425.3	30	42.87	84109	Mon Sep 08 2025 22:58:14 GMT+0000 (Coordinated Universal Time)
+2429.1989614988724	PAC-BH-SSwitch-4	21370	37705	808	1372	23	37.93	59883	Fri Sep 12 2025 18:23:58 GMT+0000 (Coordinated Universal Time)	{"pacbhg1boss4":{"w":803,"l":252,"t":23},"pacbhgymleader4":{"w":716,"l":518,"t":34},"pacbhpokeenv4":{"w":567,"l":626,"t":47},"pacmmbasernn4":{"w":316,"l":657,"t":11},"pacbhkaizo4":{"w":623,"l":506,"t":23}}
+2413.7696950682794	PAC-BH-GymLeader-4	17861	40930	786	1357.2	23	36.6	59577	Fri Sep 12 2025 18:36:40 GMT+0000 (Coordinated Universal Time)	{"pacbhpokeenv4":{"w":489,"l":712,"t":34},"pacbhsswitch4":{"w":518,"l":716,"t":34},"pacbhkaizo4":{"w":553,"l":579,"t":19},"pacmmbasernn4":{"w":293,"l":695,"t":14},"pacbhg1boss4":{"w":749,"l":287,"t":22}}
+2178.9238364837693	PAC-BH-G1Boss-4	9535	47206	442	1152.8	23.4	20.82	57183	Fri Sep 12 2025 18:36:49 GMT+0000 (Coordinated Universal Time)	{"pacbhsswitch4":{"w":252,"l":803,"t":23},"pacbhpokeenv4":{"w":261,"l":770,"t":12},"pacmmbasernn4":{"w":169,"l":641,"t":3},"pacbhgymleader4":{"w":287,"l":749,"t":22},"pacbhkaizo4":{"w":243,"l":694,"t":9}}
+1022.232633330476	PAC-FS-Basic	1	22	0	1239.7	74.7	27.09	23	Wed Aug 13 2025 18:00:50 GMT+0000 (Coordinated Universal Time)

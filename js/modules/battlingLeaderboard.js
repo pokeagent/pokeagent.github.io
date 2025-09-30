@@ -3,12 +3,16 @@
  * Handles Track 1 competitive battling leaderboard functionality
  */
 
+import HeadToHeadMatrix from './headToHeadMatrix.js';
+
 class BattlingLeaderboard {
   constructor() {
     this.data = {};
     this.currentSortBy = 'elo';
     this.hideBaselines = true;
     this.showLLMOnly = false;
+    this.h2hMatrix = new HeadToHeadMatrix();
+    this.showH2HMatrix = false;
     this.elements = {
       gen1Table: document.getElementById('gen1ou-leaderboard'),
       gen9Table: document.getElementById('gen9ou-leaderboard'),
@@ -16,12 +20,15 @@ class BattlingLeaderboard {
       hideBaselinesCheckbox: document.getElementById('hide-baselines'),
       showLLMCheckbox: document.getElementById('show-llm-only'),
       baselineExplanation: document.getElementById('baseline-explanation'),
-      lastUpdated: document.getElementById('last-updated')
+      lastUpdated: document.getElementById('last-updated'),
+      h2hContainer: document.getElementById('h2h-matrix-container'),
+      h2hToggleBtn: document.getElementById('h2h-toggle-btn')
     };
   }
 
   async init() {
     await this.loadData();
+    await this.h2hMatrix.init('#h2h-matrix-content');
     this.bindEvents();
     this.render();
   }
@@ -54,6 +61,12 @@ class BattlingLeaderboard {
     if (this.elements.showLLMCheckbox) {
       this.elements.showLLMCheckbox.addEventListener('change', () => {
         this.toggleLLMOnly();
+      });
+    }
+
+    if (this.elements.h2hToggleBtn) {
+      this.elements.h2hToggleBtn.addEventListener('click', () => {
+        this.toggleH2HMatrix();
       });
     }
   }
@@ -89,8 +102,22 @@ class BattlingLeaderboard {
     this.renderFormatLeaderboard('gen9ou', this.elements.gen9Table);
     
     if (this.data.last_updated && this.elements.lastUpdated) {
-      const lastUpdated = new Date(this.data.last_updated).toLocaleString();
-      this.elements.lastUpdated.textContent = `Last updated: ${lastUpdated}`;
+      const lastUpdated = new Date(this.data.last_updated).toLocaleString('en-US', {
+        timeZone: 'America/Chicago',
+        year: 'numeric',
+        month: 'numeric', 
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      this.elements.lastUpdated.textContent = `Last updated: ${lastUpdated} CT`;
+    }
+
+    // Update H2H matrix visibility
+    if (this.elements.h2hContainer) {
+      this.elements.h2hContainer.style.display = this.showH2HMatrix ? 'block' : 'none';
     }
   }
 
@@ -187,6 +214,30 @@ class BattlingLeaderboard {
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
     </tr>`;
+  }
+
+  async toggleH2HMatrix() {
+    this.showH2HMatrix = !this.showH2HMatrix;
+    
+    // Update button text
+    if (this.elements.h2hToggleBtn) {
+      this.elements.h2hToggleBtn.textContent = this.showH2HMatrix ? 'Hide Head-to-Head Matrix' : 'Show Head-to-Head Matrix';
+    }
+    
+    if (this.showH2HMatrix) {
+      // Load and render H2H matrix for Gen1OU by default
+      await this.h2hMatrix.loadData('gen1ou');
+      this.h2hMatrix.render('gen1ou');
+    }
+    
+    this.render();
+  }
+
+  async switchH2HFormat(format) {
+    if (this.showH2HMatrix) {
+      await this.h2hMatrix.loadData(format);
+      this.h2hMatrix.render(format);
+    }
   }
 
   showError() {
