@@ -4,7 +4,7 @@
     "team": "Human",
     "completion_percent": 96.2,
     "runtime": "00:01:10",
-    "last_updated": "2025-09-30T04:14:38.399Z",
+    "last_updated": "2025-09-30T22:23:46.845Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00:37",
@@ -83,20 +83,20 @@
   {
     "rank": 2,
     "team": "PokeAgent",
-    "completion_percent": 23.1,
+    "completion_percent": 34.6,
     "runtime": "01:30:01",
     "last_updated": "2025-09-23T21:07:57.766Z",
     "video": "https://www.youtube.com/@PokeAgentChallenge",
     "milestone_splits": {
       "GAME_RUNNING": "00:01:47",
       "PLAYER_NAME_SET": "00:44:24",
-      "INTRO_CUTSCENE_COMPLETE": "00:46:57",
+      "INTRO_CUTSCENE_COMPLETE": "00:00:21",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:53:49",
+      "PLAYER_HOUSE_ENTERED": "00:03:59",
       "PLAYER_BEDROOM": "01:30:01",
-      "RIVAL_HOUSE": null,
-      "RIVAL_BEDROOM": null,
-      "ROUTE_101": null,
+      "RIVAL_HOUSE": "02:09:24",
+      "RIVAL_BEDROOM": "03:01:23",
+      "ROUTE_101": "03:18:58",
       "STARTER_CHOSEN": null,
       "BIRCH_LAB_VISITED": null,
       "OLDALE_TOWN": null,
@@ -123,20 +123,26 @@
         "endTime": "46:57"
       },
       "Phase_2_Tutorial_Starting_Town": {
-        "completed": 3,
+        "completed": 5,
         "total": 5,
-        "duration": "01:30:01",
-        "endTime": "01:30:01"
+        "duration": "03:01:23",
+        "endTime": "03:01:23"
+      },
+      "Phase_3_Professor_Birch_Starter": {
+        "completed": 1,
+        "total": 3,
+        "duration": "-",
+        "endTime": "03:18:58"
       }
     },
-    "submission_count": 1
+    "submission_count": 3
   },
   {
     "rank": 3,
     "team": "Ed",
     "completion_percent": 15.4,
     "runtime": "00:11:39",
-    "last_updated": "2025-09-30T04:14:02.206Z",
+    "last_updated": "2025-09-30T22:23:29.153Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": null,
