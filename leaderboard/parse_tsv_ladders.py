@@ -183,7 +183,7 @@ def main():
 
     for format_name, filename in files_to_parse.items():
         print(f"\n📊 Parsing {format_name} from {filename}...")
-        players = parse_tsv_file(filename)
+        players = parse_tsv_file(os.path.join("showdown_tsvs", filename))
 
         if players:
             print(f"✅ Found {len(players)} PAC users in {format_name}")
@@ -211,10 +211,9 @@ def main():
             all_data[format_name] = []
 
     # Create output directory if it doesn't exist
-    os.makedirs("leaderboard", exist_ok=True)
 
     # Save the data
-    output_file = "leaderboard/track1.json"
+    output_file = "track1.json"
     output_data = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "formats": all_data,
@@ -242,14 +241,6 @@ def main():
         if players:
             sample_names = [p["username"]["display"] for p in players[:5]]
             print(f"      Top 5: {', '.join(sample_names)}")
-
-        # Look for Porygon2AI specifically
-        porygon_players = [
-            p for p in players if "porygon2ai" in p["username"]["display"].lower()
-        ]
-        if porygon_players:
-            for p in porygon_players:
-                print(f"      Found Porygon2AI: Rank #{p['rank']}, ELO: {p['elo']}")
 
 
 if __name__ == "__main__":
