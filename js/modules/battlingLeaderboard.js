@@ -115,8 +115,8 @@ class BattlingLeaderboard {
       this.elements.lastUpdated.textContent = `Last updated: ${lastUpdated} CT`;
     }
 
-    // Update WHR minimum games display
-    this.updateWHRMinGamesDisplay();
+    // Update HR minimum games display
+    this.updateHRMinGamesDisplay();
 
     // Update H2H matrix visibility
     if (this.elements.h2hContainer) {
@@ -124,8 +124,8 @@ class BattlingLeaderboard {
     }
   }
 
-  extractWHRMinGames() {
-    // Extract WHR min_games_threshold from the data
+  extractHRMinGames() {
+    // Extract HR min_games_threshold from the data
     // Check all players across all formats and verify they all have the same value
     const minGamesValues = new Set();
     
@@ -142,38 +142,86 @@ class BattlingLeaderboard {
     if (minGamesValues.size === 1) {
       return Array.from(minGamesValues)[0];
     } else if (minGamesValues.size > 1) {
-      console.warn('Inconsistent WHR min_games_threshold values found:', Array.from(minGamesValues));
+      console.warn('Inconsistent HR min_games_threshold values found:', Array.from(minGamesValues));
       return null;
     }
     
-    // No WHR data found
+    // No HR data found
     return null;
   }
 
-  updateWHRMinGamesDisplay() {
-    // Find or create the WHR min games display element
-    let whrMinGamesElement = document.getElementById('whr-min-games-display');
+  updateHRMinGamesDisplay() {
+    // Update the HR min games display element (now inline with Glicko text)
+    const hrMinGamesElement = document.getElementById('hr-min-games-display');
     
-    if (!whrMinGamesElement) {
-      // Create the element if it doesn't exist
-      // Insert it after the Glicko deviation text
-      const glickoText = document.querySelector('small[style*="color: #888"]');
-      if (glickoText && glickoText.parentNode) {
-        whrMinGamesElement = document.createElement('small');
-        whrMinGamesElement.id = 'whr-min-games-display';
-        whrMinGamesElement.style.cssText = 'color: #dc2626; margin-top: 0.5rem; display: block; font-weight: 600;';
-        glickoText.parentNode.insertBefore(whrMinGamesElement, glickoText.nextSibling);
-      }
-    }
-    
-    if (whrMinGamesElement) {
-      const minGames = this.extractWHRMinGames();
+    if (hrMinGamesElement) {
+      const minGames = this.extractHRMinGames();
       if (minGames !== null) {
-        whrMinGamesElement.textContent = `WHR minimum sample size: ${minGames} games`;
+        hrMinGamesElement.textContent = `HR requires ${minGames}+ games.`;
       } else {
-        whrMinGamesElement.textContent = '';
+        hrMinGamesElement.textContent = '';
       }
     }
+  }
+
+  computeQualBadges(players) {
+    // Compute QUAL badges: top 2 by ELO + top 6 by HR (excluding those top 2)
+    // Returns a Map with username -> {isQual: boolean, hasAsterisk: boolean}
+    
+    const qualMap = new Map();
+    
+    // Filter to non-organizer players only
+    const nonOrgPlayers = players.filter(player => {
+      const username = player.username.original || player.username.display;
+      return !player.username.is_starter_kit && !username.startsWith('PAC-LLM-');
+    });
+    
+    if (nonOrgPlayers.length === 0) {
+      return qualMap;
+    }
+    
+    // Sort by ELO (descending) and take top 2
+    const sortedByELO = [...nonOrgPlayers].sort((a, b) => {
+      const aELO = parseFloat(a.elo) || 0;
+      const bELO = parseFloat(b.elo) || 0;
+      return bELO - aELO;
+    });
+    
+    const top2ELO = sortedByELO.slice(0, 2);
+    const top2ELOUsernames = new Set(top2ELO.map(p => p.username.original || p.username.display));
+    
+    // Add top 2 ELO players to QUAL
+    top2ELO.forEach(player => {
+      const username = player.username.original || player.username.display;
+      qualMap.set(username, {isQual: true, hasAsterisk: false});
+    });
+    
+    // Filter to players with HR data, excluding the top 2 ELO players
+    const remainingPlayers = nonOrgPlayers.filter(p => {
+      const username = p.username.original || p.username.display;
+      return !top2ELOUsernames.has(username) && p.whr && p.whr.whr_elo;
+    });
+    
+    if (remainingPlayers.length === 0) {
+      return qualMap;
+    }
+    
+    // Sort remaining players by HR (descending) and take top 6
+    const sortedByHR = [...remainingPlayers].sort((a, b) => {
+      const aHR = parseFloat(a.whr.whr_elo);
+      const bHR = parseFloat(b.whr.whr_elo);
+      return bHR - aHR;
+    });
+    
+    const top6HR = sortedByHR.slice(0, 6);
+    
+    // Add top 6 HR players to QUAL
+    top6HR.forEach(player => {
+      const username = player.username.original || player.username.display;
+      qualMap.set(username, {isQual: true, hasAsterisk: false});
+    });
+    
+    return qualMap;
   }
 
   renderFormatLeaderboard(format, tableElement) {
@@ -192,9 +240,12 @@ class BattlingLeaderboard {
     // Sort players
     players = this.sortPlayers(players);
     
+    // Compute QUAL badges
+    const qualPlayers = this.computeQualBadges(players);
+    
     // Render table
     tableElement.innerHTML = players.map((player, index) => 
-      this.renderPlayerRow(player, index + 1)
+      this.renderPlayerRow(player, index + 1, qualPlayers)
     ).join('');
   }
 
@@ -223,7 +274,7 @@ class BattlingLeaderboard {
 
   sortPlayers(players) {
     return players.sort((a, b) => {
-      // Handle WHR sorting specially - need to extract from whr object
+      // Handle HR sorting specially - need to extract from whr object
       let aVal, bVal;
       if (this.currentSortBy === 'whr') {
         aVal = a.whr && a.whr.whr_elo ? parseFloat(a.whr.whr_elo) : -Infinity;
@@ -244,7 +295,7 @@ class BattlingLeaderboard {
     return isNaN(num) ? 0 : num;
   }
 
-  renderPlayerRow(player, rank) {
+  renderPlayerRow(player, rank, qualPlayers = new Map()) {
     const username = player.username;
     const originalUsername = username.original || username.display;
     const isBaseline = username.is_starter_kit || originalUsername.startsWith('PAC-LLM-');
@@ -253,24 +304,31 @@ class BattlingLeaderboard {
       '<span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block; white-space: nowrap;">ORG</span>' : 
       '';
     
+    // QUAL badge (pink themed)
+    const qualInfo = qualPlayers.get(originalUsername);
+    let qualBadge = '';
+    if (qualInfo && qualInfo.isQual) {
+      qualBadge = `<span style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block; white-space: nowrap;">QUAL</span>`;
+    }
+    
     const formattedGxe = player.gxe && player.gxe !== '-' ? 
       parseFloat(player.gxe.toString().replace('%', '')).toFixed(1) + '%' : 
       '-';
     
     const wlRatio = `${player.wins || '0'}/${player.losses || '0'}`;
     
-    // Format WHR with uncertainty
-    let whrDisplay = '-';
+    // Format HR with uncertainty
+    let hrDisplay = '-';
     if (player.whr && player.whr.whr_elo) {
-      const whrElo = parseFloat(player.whr.whr_elo).toFixed(0);
-      const whrStd = parseFloat(player.whr.whr_std).toFixed(0);
-      whrDisplay = `<span title="WHR: ${whrElo} ± ${whrStd} (95% CI: ${parseFloat(player.whr.whr_ci_lower).toFixed(0)}-${parseFloat(player.whr.whr_ci_upper).toFixed(0)})">${whrElo}<span style="font-size: 0.7rem; color: #718096;">±${whrStd}</span></span>`;
+      const hrElo = parseFloat(player.whr.whr_elo).toFixed(0);
+      const hrStd = parseFloat(player.whr.whr_std).toFixed(0);
+      hrDisplay = `<span title="HR: ${hrElo} ± ${hrStd} (95% CI: ${parseFloat(player.whr.whr_ci_lower).toFixed(0)}-${parseFloat(player.whr.whr_ci_upper).toFixed(0)})">${hrElo}<span style="font-size: 0.7rem; color: #718096;">±${hrStd}</span></span>`;
     }
     
     return `<tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#f8fafc'" onmouseout="this.style.backgroundColor='white'">
       <td style="padding: 10px; font-weight: 600; color: #2d3748;">${rank}</td>
-      <td style="padding: 10px; font-weight: 500; white-space: nowrap;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}</td>
-      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${whrDisplay}</td>
+      <td style="padding: 10px; font-weight: 500; white-space: nowrap;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}${qualBadge}</td>
+      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${hrDisplay}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${player.elo || '-'}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${formattedGxe}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${wlRatio}</td>

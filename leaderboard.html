@@ -48,7 +48,7 @@
         <div class="format-selector" style="text-align: center; margin-bottom: 1.5rem;">
           <label for="sort-select">Sort by:</label>
           <select id="sort-select" onchange="sortLeaderboard()">
-            <option value="whr">WHR (Whole History Rating)</option>
+            <option value="whr">HR (History Rating)</option>
             <option value="elo" selected>ELO</option>
             <option value="gxe">GXE</option>
             <option value="glicko">Glicko-1</option>
@@ -74,6 +74,14 @@
             Entries with <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">ORG</span> badges are <strong>organizer-hosted baseline opponents</strong>. 
             They are not eligible for prizes but are listed here as a point of reference; 
             many of the stronger baselines have published ratings against human players.
+          </p>
+        </div>
+        
+        <!-- QUAL Badge Explanation -->
+        <div style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.9); border-radius: 8px; border-left: 4px solid #ec4899;">
+          <p style="margin: 0; font-size: 1.1rem; color: #555; line-height: 1.4;">
+            <span style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); color: white; padding: 1px 4px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">QUAL</span> badges indicate usernames that would currently qualify for the prize money portion of the competition. 
+            The <strong>top 2 players by Elo</strong> automatically qualify, with the remaining <strong>6 spots determined by HR</strong> (History Rating).
           </p>
         </div>
         
@@ -110,7 +118,7 @@
                   <tr>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
-                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">WHR</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">HR</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
@@ -160,7 +168,7 @@
                   <tr>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
-                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">WHR</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">HR</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
@@ -366,8 +374,14 @@
             <br>
             <em>Leaderboard is updated daily. Live leaderboard is available on the PokéAgent ladder.</em>
             <br>
+            <em style="margin-top: 0.5rem; display: block;">
+              Elo, GXE, and Glicko-1 ratings follow the standard <a href="https://pokemonshowdown.com/pages/ladderhelp" target="_blank" style="color: #667eea; text-decoration: underline;">Showdown metrics</a>. 
+              History Rating (HR) is derived from a <a href="https://en.wikipedia.org/wiki/Bradley%E2%80%93Terry_model" target="_blank" style="color: #667eea; text-decoration: underline;">Bradley-Terry model</a> 
+              fit to the outcomes of every battle played between all players (see Head-to-Head Matrix below).
+            </em>
+            <br>
             <small style="color: #888; margin-top: 0.5rem; display: block;">
-              Only players with Glicko-1 Deviation ≤ 80 are shown.
+              Only players with Glicko-1 Deviation ≤ 80 are shown. <span id="hr-min-games-display" style="color: #dc2626; font-weight: 600;"></span>
             </small>
           </div>
           
