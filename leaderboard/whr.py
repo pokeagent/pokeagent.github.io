@@ -491,12 +491,12 @@ class BradleyTerryModel:
 
         return theta
 
-    def fit(self, method: str = "mm", **kwargs) -> np.ndarray:
+    def fit(self, method: str = "lbfgs", **kwargs) -> np.ndarray:
         """
         Fit Bradley-Terry model using specified method.
 
         Args:
-            method: Fitting method - 'mm' (default), 'logistic', 'lbfgs', 'gradient_descent', or 'newton'
+            method: Fitting method - 'logistic', 'lbfgs', 'gradient_descent', or 'newton'
             **kwargs: Additional arguments passed to the fitting method
 
         Returns:
