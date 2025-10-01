@@ -48,6 +48,7 @@
         <div class="format-selector" style="text-align: center; margin-bottom: 1.5rem;">
           <label for="sort-select">Sort by:</label>
           <select id="sort-select" onchange="sortLeaderboard()">
+            <option value="whr">WHR (Whole History Rating)</option>
             <option value="elo" selected>ELO</option>
             <option value="gxe">GXE</option>
             <option value="glicko">Glicko-1</option>
@@ -109,6 +110,7 @@
                   <tr>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">WHR</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
@@ -118,6 +120,7 @@
                   <tr style="border-bottom: 1px solid #e2e8f0;">
                     <td style="padding: 10px; color: #718096;">1</td>
                     <td style="padding: 10px; color: #718096;">Loading...</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>
@@ -157,6 +160,7 @@
                   <tr>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Rank</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: left;">Username</th>
+                    <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">WHR</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">ELO</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">GXE</th>
                     <th style="padding: 12px 10px; font-size: 0.9rem; font-weight: 600; color: #4a5568; text-align: center;">W/L</th>
@@ -166,6 +170,7 @@
                   <tr style="border-bottom: 1px solid #e2e8f0;">
                     <td style="padding: 10px; color: #718096;">1</td>
                     <td style="padding: 10px; color: #718096;">Loading...</td>
+                    <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>
                     <td style="padding: 10px; text-align: center; color: #718096;">-</td>

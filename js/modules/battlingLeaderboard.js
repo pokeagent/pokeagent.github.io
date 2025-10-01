@@ -115,9 +115,64 @@ class BattlingLeaderboard {
       this.elements.lastUpdated.textContent = `Last updated: ${lastUpdated} CT`;
     }
 
+    // Update WHR minimum games display
+    this.updateWHRMinGamesDisplay();
+
     // Update H2H matrix visibility
     if (this.elements.h2hContainer) {
       this.elements.h2hContainer.style.display = this.showH2HMatrix ? 'block' : 'none';
+    }
+  }
+
+  extractWHRMinGames() {
+    // Extract WHR min_games_threshold from the data
+    // Check all players across all formats and verify they all have the same value
+    const minGamesValues = new Set();
+    
+    for (const formatName in this.data.formats) {
+      const players = this.data.formats[formatName];
+      for (const player of players) {
+        if (player.whr && player.whr.min_games_threshold !== undefined) {
+          minGamesValues.add(player.whr.min_games_threshold);
+        }
+      }
+    }
+    
+    // If all values are the same (set size = 1), return that value
+    if (minGamesValues.size === 1) {
+      return Array.from(minGamesValues)[0];
+    } else if (minGamesValues.size > 1) {
+      console.warn('Inconsistent WHR min_games_threshold values found:', Array.from(minGamesValues));
+      return null;
+    }
+    
+    // No WHR data found
+    return null;
+  }
+
+  updateWHRMinGamesDisplay() {
+    // Find or create the WHR min games display element
+    let whrMinGamesElement = document.getElementById('whr-min-games-display');
+    
+    if (!whrMinGamesElement) {
+      // Create the element if it doesn't exist
+      // Insert it after the Glicko deviation text
+      const glickoText = document.querySelector('small[style*="color: #888"]');
+      if (glickoText && glickoText.parentNode) {
+        whrMinGamesElement = document.createElement('small');
+        whrMinGamesElement.id = 'whr-min-games-display';
+        whrMinGamesElement.style.cssText = 'color: #dc2626; margin-top: 0.5rem; display: block; font-weight: 600;';
+        glickoText.parentNode.insertBefore(whrMinGamesElement, glickoText.nextSibling);
+      }
+    }
+    
+    if (whrMinGamesElement) {
+      const minGames = this.extractWHRMinGames();
+      if (minGames !== null) {
+        whrMinGamesElement.textContent = `WHR minimum sample size: ${minGames} games`;
+      } else {
+        whrMinGamesElement.textContent = '';
+      }
     }
   }
 
@@ -168,8 +223,15 @@ class BattlingLeaderboard {
 
   sortPlayers(players) {
     return players.sort((a, b) => {
-      const aVal = this.getNumericValue(a[this.currentSortBy]);
-      const bVal = this.getNumericValue(b[this.currentSortBy]);
+      // Handle WHR sorting specially - need to extract from whr object
+      let aVal, bVal;
+      if (this.currentSortBy === 'whr') {
+        aVal = a.whr && a.whr.whr_elo ? parseFloat(a.whr.whr_elo) : -Infinity;
+        bVal = b.whr && b.whr.whr_elo ? parseFloat(b.whr.whr_elo) : -Infinity;
+      } else {
+        aVal = this.getNumericValue(a[this.currentSortBy]);
+        bVal = this.getNumericValue(b[this.currentSortBy]);
+      }
       
       return this.currentSortBy === 'losses' ? aVal - bVal : bVal - aVal;
     });
@@ -188,7 +250,7 @@ class BattlingLeaderboard {
     const isBaseline = username.is_starter_kit || originalUsername.startsWith('PAC-LLM-');
     
     const baselineBadge = isBaseline ? 
-      '<span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block;">ORG</span>' : 
+      '<span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block; white-space: nowrap;">ORG</span>' : 
       '';
     
     const formattedGxe = player.gxe && player.gxe !== '-' ? 
@@ -197,9 +259,18 @@ class BattlingLeaderboard {
     
     const wlRatio = `${player.wins || '0'}/${player.losses || '0'}`;
     
+    // Format WHR with uncertainty
+    let whrDisplay = '-';
+    if (player.whr && player.whr.whr_elo) {
+      const whrElo = parseFloat(player.whr.whr_elo).toFixed(0);
+      const whrStd = parseFloat(player.whr.whr_std).toFixed(0);
+      whrDisplay = `<span title="WHR: ${whrElo} ± ${whrStd} (95% CI: ${parseFloat(player.whr.whr_ci_lower).toFixed(0)}-${parseFloat(player.whr.whr_ci_upper).toFixed(0)})">${whrElo}<span style="font-size: 0.7rem; color: #718096;">±${whrStd}</span></span>`;
+    }
+    
     return `<tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#f8fafc'" onmouseout="this.style.backgroundColor='white'">
       <td style="padding: 10px; font-weight: 600; color: #2d3748;">${rank}</td>
-      <td style="padding: 10px; font-weight: 500;">${username.display}${baselineBadge}</td>
+      <td style="padding: 10px; font-weight: 500; white-space: nowrap;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}</td>
+      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${whrDisplay}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${player.elo || '-'}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${formattedGxe}</td>
       <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${wlRatio}</td>
@@ -210,6 +281,7 @@ class BattlingLeaderboard {
     return `<tr style="border-bottom: 1px solid #e2e8f0;">
       <td style="padding: 10px; color: #718096;">-</td>
       <td style="padding: 10px; color: #718096;">No data available</td>
+      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
@@ -244,6 +316,7 @@ class BattlingLeaderboard {
     const errorRow = `<tr style="border-bottom: 1px solid #e2e8f0;">
       <td style="padding: 10px; color: #718096;">-</td>
       <td style="padding: 10px; color: #718096;">Error loading data</td>
+      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>
       <td style="padding: 10px; text-align: center; color: #718096;">-</td>

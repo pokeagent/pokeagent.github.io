@@ -194,7 +194,7 @@ class HeadToHeadMatrix {
    */
   async loadData(format = 'gen1ou') {
     try {
-      const response = await fetch(`${format}.tsv?t=${Date.now()}`);
+      const response = await fetch(`leaderboard/showdown_tsvs/${format}.tsv?t=${Date.now()}`);
       if (!response.ok) throw new Error(`Failed to load ${format} data`);
       
       const tsvText = await response.text();
