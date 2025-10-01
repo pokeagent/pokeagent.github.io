@@ -233,6 +233,8 @@ class BradleyTerryModel:
         max_iter: int = 1000,
         tol: float = 1e-6,
         verbose: bool = True,
+        normalize_matchups: str = None,
+        max_games_per_matchup: int = None,
     ) -> np.ndarray:
         """
         Fit Bradley-Terry model using logistic regression formulation.
@@ -253,6 +255,12 @@ class BradleyTerryModel:
             max_iter: Maximum iterations for gradient descent (default: 1000)
             tol: Convergence tolerance for gradient descent (default: 1e-6)
             verbose: Whether to print progress (default: True)
+            normalize_matchups: How to weight matchup contributions (None, 'equal_weight', 'sqrt', 'cap')
+                None: Use all games (default)
+                'equal_weight': Each matchup contributes equally regardless of game count
+                'sqrt': Weight by sqrt(total games), balancing informativeness with preventing domination
+                'cap': Cap games per matchup at max_games_per_matchup
+            max_games_per_matchup: Maximum games to use per matchup (only used with normalize_matchups='cap')
 
         Returns:
             Array of strength parameters (π values)
@@ -263,7 +271,12 @@ class BradleyTerryModel:
             raise ValueError("Must compute H2H matrices first")
 
         # Build dataset from pairwise comparisons
-        vprint("Building comparison dataset...")
+        if normalize_matchups:
+            vprint(
+                f"Building comparison dataset with {normalize_matchups} normalization..."
+            )
+        else:
+            vprint("Building comparison dataset...")
         comparisons = []
         for i in range(self.n_players):
             for j in range(self.n_players):
@@ -272,12 +285,45 @@ class BradleyTerryModel:
                     n_ji = self.h2h.wins_matrix[j, i]  # wins by j over i
                     total = n_ij + n_ji
 
-                    if total >= min_games:
-                        # Add n_ij comparisons where i wins
-                        for _ in range(int(n_ij)):
+                    if total >= min_games and total > 0:
+                        # Apply normalization/weighting
+                        if normalize_matchups == "cap" and max_games_per_matchup:
+                            if total > max_games_per_matchup:
+                                scale_factor = max_games_per_matchup / total
+                                n_ij_use = int(round(n_ij * scale_factor))
+                                n_ji_use = int(round(n_ji * scale_factor))
+                            else:
+                                n_ij_use = int(n_ij)
+                                n_ji_use = int(n_ji)
+                        elif normalize_matchups == "equal_weight":
+                            # Each matchup contributes exactly 1 label, proportional to win rate
+                            n_ij_use = 1 if n_ij > 0 else 0
+                            n_ji_use = 1 if n_ji > 0 else 0
+                        elif normalize_matchups == "sqrt":
+                            # Weight by sqrt of total games
+                            sqrt_total = np.sqrt(total)
+                            win_rate = n_ij / total if total > 0 else 0.5
+                            loss_rate = n_ji / total if total > 0 else 0.5
+                            # Ensure at least 1 label if there were any games
+                            n_ij_use = (
+                                max(1, int(round(win_rate * sqrt_total)))
+                                if n_ij > 0
+                                else 0
+                            )
+                            n_ji_use = (
+                                max(1, int(round(loss_rate * sqrt_total)))
+                                if n_ji > 0
+                                else 0
+                            )
+                        else:
+                            # No normalization - use all games
+                            n_ij_use = int(n_ij)
+                            n_ji_use = int(n_ji)
+
+                        # Add the normalized number of comparisons
+                        for _ in range(n_ij_use):
                             comparisons.append((i, j, 1))
-                        # Add n_ji comparisons where j wins (i loses)
-                        for _ in range(int(n_ji)):
+                        for _ in range(n_ji_use):
                             comparisons.append((i, j, 0))
 
         n_comparisons = len(comparisons)

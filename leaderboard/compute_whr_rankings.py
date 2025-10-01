@@ -2,6 +2,10 @@
 """
 Compute Whole History Rating (WHR) using Bradley-Terry model with bootstrap.
 Updates track1.json with BT Elo ratings and uncertainty estimates.
+
+Uses sqrt normalization by default: weights matchup contributions by the square root
+of total games played, balancing informativeness with preventing high-volume matchups
+from dominating the model.
 """
 
 import json
@@ -46,7 +50,7 @@ def compute_whr_for_format(
         print(f"✓ Loaded {len(h2h.players)} players with >= {min_games} games")
 
         # Fit Bradley-Terry model with bootstrap
-        print("Fitting Bradley-Terry model with bootstrap...")
+        print("Fitting Bradley-Terry model with bootstrap (sqrt normalization)...")
         bt_model = BradleyTerryModel(h2h)
 
         bootstrap_results = bt_model.fit_bootstrap(
@@ -56,6 +60,7 @@ def compute_whr_for_format(
             min_games=0,  # Already filtered in HeadToHeadMatrix
             regularization=0.01,
             verbose=False,
+            normalize_matchups="sqrt",  # Use sqrt normalization by default
         )
 
         print("✓ Model fitted successfully")
