@@ -174,16 +174,10 @@
 
       <div style="background-color: #e8f4f8; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
         <h4 style="color: #3b5998; margin-bottom: 0.75rem;">
-          <i class="fas fa-cloud"></i> Compute Credits Available
+          <i class="fas fa-cloud"></i> Compute Credits
         </h4>
-        <p style="margin-bottom: 1rem;">
-          <strong>Recommended for students:</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (pending submissions).
-        </p>
-        <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank" style="display: inline-block; color: white !important; text-decoration: none;">
-          Apply for Compute Credits
-        </a>
-        <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #666;">
-          Applications will be reviewed and distributed on a rolling basis until funds are depleted.
+        <p style="margin-bottom: 0;">
+          <strong>Application closed and credits awarded.</strong> All compute credits have been distributed to approved teams.
         </p>
       </div>
     </div>
@@ -215,12 +209,45 @@
         </div>
         
         <div class="mt-3">
-          <h4>Evaluation Criteria</h4>
+          <h4>Final Ranking Criteria</h4>
+          <p>Final rankings are determined by <strong>Adjusted Performance</strong>, which accounts for both your agent's raw performance and the complexity of its external scaffolding:</p>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid var(--secondary-color);">
+            <p style="font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Courier New', monospace; text-align: center;">
+              <strong>Adjusted Performance = Raw Performance × λ(Scaffolding)</strong>
+            </p>
+            <p style="font-size: 0.95rem; color: #666; margin: 0;">
+              where <strong>λ(Scaffolding)</strong> is a penalty factor (≤1) based on the external support your agent uses
+            </p>
+          </div>
+
+          <h5 style="margin-top: 1.5rem;">Raw Performance Components</h5>
           <ul>
-            <li><strong>Milestone Completion:</strong> Percentage of game milestones accomplished</li>
-            <li><strong>Completion Time:</strong> Time taken to complete achieved milestones</li>
-            <li><strong>Reproducibility:</strong> Clear documentation and reproducible results</li>
+            <li><strong>Milestone Completion:</strong> Percentage of game milestones accomplished (e.g., gym badges, story progression)</li>
+            <li><strong>Completion Efficiency:</strong> Time and action count to achieve milestones</li>
+            <li><strong>Reproducibility:</strong> Clear documentation and verifiable results</li>
           </ul>
+
+          <h5 style="margin-top: 1.5rem;">Scaffolding Penalty Components</h5>
+          <p>The scaffolding penalty λ evaluates your agent's support structure across five dimensions:</p>
+          <ul>
+            <li><strong>State Information (S):</strong> What information your agent receives (raw pixels vs. parsed game state vs. privileged information)</li>
+            <li><strong>Tools (T):</strong> External tools available during gameplay (web search, calculators, planning utilities, etc.)</li>
+            <li><strong>Memory (M):</strong> Memory mechanisms beyond immediate context (vector databases, knowledge graphs, external storage)</li>
+            <li><strong>Feedback (F):</strong> Human or automated feedback during runs (human-in-the-loop, checkpointing guidance, etc.)</li>
+            <li><strong>Fine-tuning (Φ):</strong> Specialized training on Pokémon data (domain-specific datasets, game-specific RL, etc.)</li>
+          </ul>
+
+          <p style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
+            <strong><i class="fas fa-info-circle"></i> Important:</strong> Agents with more external support receive larger penalties.
+            Pure end-to-end learned systems with minimal scaffolding are favored in rankings, all else being equal.
+            This encourages development of generalizable AI capabilities rather than task-specific engineering.
+          </p>
+
+          <p style="margin-top: 1rem;">
+            Teams must document their scaffolding components in detail during submission.
+            The organizing committee will review and assign scaffolding penalty factors based on the submitted information.
+          </p>
         </div>
       </div>
     </div>

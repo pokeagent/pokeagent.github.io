@@ -88,7 +88,7 @@
         </div>
         <div class="faq-answer">
           <p>For Track 1 (Pokémon Battles), we will use established player rating schemes, win rates against baselines, and metrics for efficiency and reliability.</p>
-          <p>For Track 2 (RPG Speedrunning), the primary metric is time and completion percentage, measuring progress through a standardized list of critical game milestones, with a secondary metric of Success Rate.</p>
+          <p>For Track 2 (RPG Speedrunning), rankings are based on <strong>Adjusted Performance</strong>, which combines raw performance (milestone completion, time, action count) with a scaffolding penalty that accounts for external support used by your agent. Agents using more tools, memory systems, human feedback, or domain-specific fine-tuning receive larger penalties to encourage generalizable AI capabilities.</p>
         </div>
       </div>
 
@@ -99,6 +99,25 @@
         </div>
         <div class="faq-answer">
           <p>Yes, incentives include monetary prizes (subject to sponsorship), research collaboration opportunities, presentation slots at NeurIPS 2025, computational resources, and the opportunity to co-author a subsequent NeurIPS 2026 submission for top solutions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="what-is-scaffolding">
+        <div class="faq-question">
+          <span>What is the scaffolding penalty in Track 2?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>The scaffolding penalty is a framework for fair comparison of AI agents with different levels of external support. Your agent's final ranking is based on <strong>Adjusted Performance = Raw Performance × λ(Scaffolding)</strong>, where λ is a penalty factor (≤1) that decreases with more external support.</p>
+          <p>The scaffolding penalty evaluates five dimensions:</p>
+          <ul>
+            <li><strong>State Information (S):</strong> What information your agent receives (e.g., raw pixels vs. parsed game state vs. privileged memory addresses)</li>
+            <li><strong>Tools (T):</strong> External tools accessible during gameplay (e.g., web search, calculators, planning utilities)</li>
+            <li><strong>Memory (M):</strong> Memory mechanisms beyond immediate context (e.g., vector databases, knowledge graphs)</li>
+            <li><strong>Feedback (F):</strong> Human or automated feedback during runs (e.g., human-in-the-loop corrections, checkpoint guidance)</li>
+            <li><strong>Fine-tuning (Φ):</strong> Domain-specific training on Pokémon data (e.g., specialized datasets, game-specific RL)</li>
+          </ul>
+          <p>This framework encourages development of generalizable AI capabilities rather than task-specific engineering. Agents with minimal scaffolding (pure end-to-end learned systems) are favored in rankings when performance is equal. Teams must document their scaffolding components in detail during submission, and organizers will assign penalty factors based on this information.</p>
         </div>
       </div>
 

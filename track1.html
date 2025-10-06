@@ -397,7 +397,6 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           by the teams behind <a href="https://sites.google.com/view/pokechamp-llm?pli=1" target="_blank">PokéChamp</a> 
           and <a href="https://metamon.tech" target="_blank">Metamon</a>, which are recent papers that demonstrate strong human-level play 
           in singles formats. Both projects are open-source and have recently been updated to create a more helpful starting point for this competition.
-          We have also been joined by <a href="https://github.com/cameronangliss/VGC-Bench" target="_blank">VGC-Bench</a> to extend support to VGC (doubles)!
         </p>
 
         <div class="track-links" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; justify-items: center;">
@@ -411,7 +410,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
             <a href="https://github.com/sethkarten/pokechamp" class="track-link" target="_blank">
               <img src="media/figures/pokechamp.png" alt="PokéChamp Starter Kit" class="track-image">
             </a>
-            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: #666; font-style: italic;">LLM-Agents + Search</p>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: #666; font-style: italic;">LLM-Agents, Search, and Scaffolding</p>
           </div>
         </div>
 
@@ -422,16 +421,10 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
 
         <div style="background-color: #e8f4f8; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
           <h4 style="color: #3b5998; margin-bottom: 0.75rem;">
-            <i class="fas fa-cloud"></i> Compute Credits Available
+            <i class="fas fa-cloud"></i> Compute Credits
           </h4>
-          <p style="margin-bottom: 1rem;">
-            <strong>Recommended for students:</strong> Apply to receive GCP credits for cloud compute and Gemini API access. Roughly $100+ per team (subject to application approval).
-          </p>
-          <a href="https://forms.gle/jgg55Tm1XNj5TQYP8" class="btn btn-primary" target="_blank" style="display: inline-block; color: white !important; text-decoration: none;">
-            Apply for Compute Credits
-          </a>
-          <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #666;">
-            Applications will be reviewed and distributed on a rolling basis until funds are depleted.
+          <p style="margin-bottom: 0;">
+            <strong>Application closed and credits awarded.</strong> All compute credits have been distributed to approved teams.
           </p>
         </div>
 
@@ -522,7 +515,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
             <tbody>
              <tr>
                 <td><a href="https://huggingface.co/datasets/milkkarten/pokechamp" target="_blank"><code>pokechamp</code></a></td>
-                <td>Many (39+)</td>
+                <td>Many (39+ (Gen 1-9 OU, Gen 9 VGC, and more))</td>
                 <td>2024-2025</td>
                 <td>2M</td>
               </tr>
@@ -533,12 +526,6 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
                 <td>1.8M</td>
               </tr>
 
-              <tr>
-                <td><a href="https://huggingface.co/datasets/cameronangliss/vgc-battle-logs" target="_blank"><code>vgc-battle-logs</code></a></td>
-                <td>Gen 9 VGC (OTS)</td>
-                <td>2023-2025</td>
-                <td>330k</td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -554,9 +541,7 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
           <code>metamon</code> converts its replay dataset into a flexible format that allows customization of observations, actions, and rewards. 
           More than 3.5M full battle trajectories are stored on Hugging Face at 
           <a href="https://huggingface.co/datasets/jakegrigsby/metamon-parsed-replays" target="_blank"><code>metamon-parsed-replays</code></a> 
-          and can be accessed through the metamon repo. Utilities in <code>pokechamp</code> can recreate its LLM-Agent prompts and decisions from replays in a similar fashion. 
-          <code>vgc-bench</code> covers the Gen 9 VGC ruleset and does not have to resort to predicting unobserved information 
-          (because VGC replays can have "Open Team Sheets" where ground-truth team info is public).
+          and can be accessed through the metamon repo. <code>pokechamp</code> has a large, diverse set of replays from almost every gamemode that can be accessed at <a href="https://huggingface.co/datasets/milkkarten/pokechamp" target="_blank"><code>pokechamp-replays</code></a>. Utilities in <code>pokechamp</code> can recreate its LLM-Agent prompts and decisions from replays in a similar fashion.
         </p>
 
         <h4>Miscellaneous</h4>

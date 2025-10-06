@@ -7,7 +7,10 @@ class SpeedrunningLeaderboard {
   constructor() {
     this.data = [];
     this.currentViewMode = 'overall';
+    // Teams that should show ORG badge
     this.organizerTeams = ['Avg Human', 'PokeAgent'];
+    // Teams that use duration (split times) instead of endTime (cumulative)
+    this.splitTimeTeams = ['Avg Human'];
     
     this.phaseNames = {
       'Phase_1_Game_Initialization': 'Milestone 1: Game Start',
@@ -202,36 +205,102 @@ class SpeedrunningLeaderboard {
       let totalDurationMs = 0;
       let phasesCompleted = 0;
       let totalPhases = 7;
-      
+      const phaseOrder = Object.keys(this.phaseNames);
+      const useSplitTimes = this.splitTimeTeams.includes(entry.team);
+
       if (entry.phase_splits) {
-        Object.values(entry.phase_splits).forEach(phase => {
-          if (phase.completed > 0 && phase.duration && phase.duration !== '-') {
-            const durationMs = this.parseTimeToSeconds(phase.duration) * 1000;
-            if (!isNaN(durationMs) && durationMs > 0) {
-              totalDurationMs += durationMs;
+        if (useSplitTimes) {
+          // For teams using split times (Avg Human), duration represents split times that need to be summed
+          phaseOrder.forEach(phaseKey => {
+            const phase = entry.phase_splits[phaseKey];
+            if (phase && phase.completed > 0) {
+              // Use duration for baselines (split times), not endTime
+              const timeToUse = phase.duration;
+              if (timeToUse && timeToUse !== '-') {
+                const seconds = this.parseTimeToSeconds(timeToUse);
+                if (!isNaN(seconds) && isFinite(seconds) && seconds > 0) {
+                  totalDurationMs += seconds * 1000;
+                }
+              }
+              if (phase.completed === phase.total) {
+                phasesCompleted++;
+              }
             }
-            if (phase.completed === phase.total) {
-              phasesCompleted++;
+          });
+        } else {
+          // For regular entries, endTime is cumulative, so use the latest one
+          let latestEndTime = null;
+          phaseOrder.forEach(phaseKey => {
+            const phase = entry.phase_splits[phaseKey];
+            if (phase && phase.completed > 0) {
+              const timeToUse = phase.endTime || phase.duration;
+              if (timeToUse && timeToUse !== '-') {
+                latestEndTime = timeToUse;
+              }
+              if (phase.completed === phase.total) {
+                phasesCompleted++;
+              }
             }
+          });
+
+          // Convert latest endTime to milliseconds
+          if (latestEndTime) {
+            const seconds = this.parseTimeToSeconds(latestEndTime);
+            if (!isNaN(seconds) && isFinite(seconds) && seconds > 0) {
+              totalDurationMs = seconds * 1000;
+            }
+          }
+        }
+      }
+
+      // Calculate more granular completion percentage based on milestones
+      let totalMilestonesCompleted = 0;
+      // Calculate total possible milestones across ALL phases (not just completed ones)
+      let totalMilestonesPossible = 0;
+
+      // First, calculate the total possible milestones from the phase structure
+      phaseOrder.forEach(phaseKey => {
+        const milestones = this.phaseMilestones[phaseKey];
+        totalMilestonesPossible += milestones ? milestones.length : 0;
+      });
+
+      // Then count how many milestones were actually completed
+      if (entry.phase_splits) {
+        phaseOrder.forEach(phaseKey => {
+          const phase = entry.phase_splits[phaseKey];
+          if (phase) {
+            totalMilestonesCompleted += phase.completed || 0;
           }
         });
       }
-      
+
+      const granularCompletionPercent = totalMilestonesPossible > 0 ?
+        (totalMilestonesCompleted / totalMilestonesPossible) * 100 : 0;
+
       return {
         team: entry.team,
         completionPercent: entry.completion_percent,
+        granularCompletionPercent: granularCompletionPercent,
         runtime: this.formatDuration(totalDurationMs),
         timeInSeconds: totalDurationMs / 1000,
         video: entry.video,
         submissionCount: entry.submission_count || 1,
         phaseSplits: entry.phase_splits || {},
         phasesCompleted: phasesCompleted,
-        totalPhases: totalPhases
+        totalPhases: totalPhases,
+        totalMilestonesCompleted: totalMilestonesCompleted,
+        totalMilestonesPossible: totalMilestonesPossible
       };
     }).sort((a, b) => {
-      if (b.completionPercent !== a.completionPercent) {
-        return b.completionPercent - a.completionPercent;
+      // Primary sort: by granular completion percentage (milestones completed)
+      if (b.granularCompletionPercent !== a.granularCompletionPercent) {
+        return b.granularCompletionPercent - a.granularCompletionPercent;
       }
+      // Secondary sort: by time (lower is better)
+      // Handle cases where time might be 0 or invalid
+      if (a.timeInSeconds === 0 && b.timeInSeconds === 0) return 0;
+      if (a.timeInSeconds === 0) return 1; // entries with no time go to the bottom
+      if (b.timeInSeconds === 0) return -1;
       return a.timeInSeconds - b.timeInSeconds;
     });
   }
@@ -247,14 +316,15 @@ class SpeedrunningLeaderboard {
         // Process for furthest phase reached
         let latestPhase = null;
         let latestPhaseIndex = -1;
-        let cumulativeDurationMs = 0;
+        let totalTimeMs = 0;
         let submilestoneDetails = {};
-        
+        const useSplitTimes = this.splitTimeTeams.includes(entry.team);
+
         for (let i = 0; i < phaseOrder.length; i++) {
           const phase = phaseOrder[i];
           const milestones = this.phaseMilestones[phase];
           submilestoneDetails[phase] = [];
-          
+
           for (const milestone of milestones) {
             let splitTime = entry.milestone_splits && entry.milestone_splits[milestone.key] || null;
             submilestoneDetails[phase].push({
@@ -264,20 +334,36 @@ class SpeedrunningLeaderboard {
               completed: splitTime !== null
             });
           }
-          
+
           if (entry.phase_splits[phase] && entry.phase_splits[phase].completed > 0) {
             latestPhase = phase;
             latestPhaseIndex = i;
-            
-            const duration = entry.phase_splits[phase].duration;
-            if (duration && duration !== '-') {
-              cumulativeDurationMs += this.parseTimeToSeconds(duration) * 1000;
+
+            if (useSplitTimes) {
+              // For teams using split times, use duration and sum them
+              const timeToUse = entry.phase_splits[phase].duration;
+              if (timeToUse && timeToUse !== '-') {
+                const seconds = this.parseTimeToSeconds(timeToUse);
+                if (!isNaN(seconds) && isFinite(seconds) && seconds > 0) {
+                  totalTimeMs += seconds * 1000;
+                }
+              }
+            } else {
+              // For regular entries, use endTime (cumulative), take the latest
+              const timeToUse = entry.phase_splits[phase].endTime || entry.phase_splits[phase].duration;
+              if (timeToUse && timeToUse !== '-') {
+                const seconds = this.parseTimeToSeconds(timeToUse);
+                if (!isNaN(seconds) && isFinite(seconds) && seconds > 0) {
+                  totalTimeMs = seconds * 1000;
+                }
+              }
             }
           }
         }
-        
+
         if (latestPhase) {
           const phaseSplit = entry.phase_splits[latestPhase];
+
           processedData.push({
             team: entry.team,
             phase: this.phaseNames[latestPhase],
@@ -287,8 +373,8 @@ class SpeedrunningLeaderboard {
             submilestoneDetails: submilestoneDetails,
             completed: phaseSplit.completed,
             total: phaseSplit.total,
-            splitTime: this.formatDuration(cumulativeDurationMs),
-            timeInSeconds: cumulativeDurationMs / 1000,
+            splitTime: this.formatDuration(totalTimeMs),
+            timeInSeconds: totalTimeMs / 1000,
             video: entry.video
           });
         }
@@ -346,11 +432,14 @@ class SpeedrunningLeaderboard {
   renderOverallRow(entry, rank) {
     const isOrgBaseline = this.organizerTeams.includes(entry.team);
     const orgBadge = isOrgBaseline ? this.getOrgBadge() : '';
-    
+
+    // Use granularCompletionPercent for both display and bar width
+    const displayPercent = entry.granularCompletionPercent || entry.completionPercent || 0;
+
     const progressBar = `
       <div style="width: 100%; background: #e2e8f0; border-radius: 4px; overflow: hidden; height: 20px;">
-        <div style="width: ${entry.completionPercent}%; background: linear-gradient(90deg, #48bb78, #2f855a); height: 100%; display: flex; align-items: center; padding-left: 5px;">
-          <span style="color: white; font-size: 0.8rem; font-weight: 600;">${entry.completionPercent.toFixed(1)}%</span>
+        <div style="width: ${displayPercent}%; background: linear-gradient(90deg, #48bb78, #2f855a); height: 100%; display: flex; align-items: center; padding-left: 5px;">
+          <span style="color: white; font-size: 0.8rem; font-weight: 600;">${displayPercent.toFixed(1)}%</span>
         </div>
       </div>`;
     
