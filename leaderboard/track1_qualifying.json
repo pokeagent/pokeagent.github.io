@@ -1,0 +1,17 @@
+{
+  "last_updated": "2025-10-13T01:22:37.344732+00:00",
+  "qualifying_status": {
+    "gen1ou": {
+      "active": false,
+      "start_date": "October 13, 2025"
+    },
+    "gen9ou": {
+      "active": false,
+      "start_date": "October 20, 2025"
+    }
+  },
+  "formats": {
+    "gen1ou": [],
+    "gen9ou": []
+  }
+}

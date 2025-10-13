@@ -35,7 +35,7 @@ class BattlingLeaderboard {
 
   async loadData() {
     try {
-      const response = await fetch(`leaderboard/track1.json?t=${Date.now()}`);
+      const response = await fetch(`leaderboard/track1_qualifying.json?t=${Date.now()}`);
       if (!response.ok) throw new Error('Failed to load Track 1 leaderboard');
       this.data = await response.json();
     } catch (error) {
@@ -225,8 +225,26 @@ class BattlingLeaderboard {
   }
 
   renderFormatLeaderboard(format, tableElement) {
-    if (!tableElement || !this.data.formats || !this.data.formats[format]) {
-      if (tableElement) {
+    if (!tableElement) {
+      return;
+    }
+
+    // Check if this format is inactive
+    if (this.data.qualifying_status) {
+      const status = this.data.qualifying_status[format];
+      if (status && !status.active) {
+        // Format is inactive - show blur overlay
+        this.showInactiveOverlay(tableElement, format, status.start_date);
+        return;
+      }
+    }
+
+    if (!this.data.formats || !this.data.formats[format] || this.data.formats[format].length === 0) {
+      // No data - might be inactive
+      const status = this.data.qualifying_status?.[format];
+      if (status) {
+        this.showInactiveOverlay(tableElement, format, status.start_date);
+      } else {
         tableElement.innerHTML = this.getNoDataRow();
       }
       return;
@@ -247,6 +265,45 @@ class BattlingLeaderboard {
     tableElement.innerHTML = players.map((player, index) => 
       this.renderPlayerRow(player, index + 1, qualPlayers)
     ).join('');
+  }
+
+  showInactiveOverlay(tableElement, format, startDate) {
+    const formatName = format === 'gen1ou' ? 'Gen 1 OU' : 'Gen 9 OU';
+    const dateFormatted = new Date(startDate).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+    
+    tableElement.innerHTML = `
+      <tr>
+        <td colspan="6" style="padding: 0; height: 300px; position: relative;">
+          <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 10;
+          ">
+            <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #cbd5e0; margin-bottom: 1rem;"></i>
+            <h3 style="color: #4a5568; margin: 0 0 0.5rem 0; font-size: 1.5rem;">
+              ${formatName} Qualifier
+            </h3>
+            <p style="color: #718096; margin: 0; font-size: 1.1rem;">
+              Begins ${dateFormatted}
+            </p>
+          </div>
+        </td>
+      </tr>
+    `;
   }
 
   filterPlayers(players, format) {
@@ -355,9 +412,10 @@ class BattlingLeaderboard {
     }
     
     if (this.showH2HMatrix) {
-      // Load and render H2H matrix for Gen1OU by default
-      await this.h2hMatrix.loadData('gen1ou');
-      this.h2hMatrix.render('gen1ou');
+      // Load and render H2H matrix for Gen1OU
+      const format = document.getElementById('h2h-format-select')?.value || 'gen1ou';
+      await this.h2hMatrix.loadData(format);
+      this.h2hMatrix.render(format);
     }
     
     this.render();
