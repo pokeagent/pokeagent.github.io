@@ -124,12 +124,12 @@ def parse_tsv_file(filename):
                 except (ValueError, TypeError):
                     glicko = ""
 
-                # Check Rating Deviation constraint (must be <= 70 to appear on leaderboard)
+                # Check Rating Deviation constraint (must be <= 80 to appear on leaderboard)
                 try:
                     deviation_float = float(rating_deviation)
-                    if deviation_float > 70:
+                    if deviation_float > 80:
                         print(
-                            f"⚠️  Skipping {username} (Rating Deviation: {deviation_float} > 70)"
+                            f"⚠️  Skipping {username} (Rating Deviation: {deviation_float} > 80)"
                         )
                         continue
                 except (ValueError, TypeError):

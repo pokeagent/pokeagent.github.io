@@ -10,7 +10,7 @@ class HeadToHeadMatrix {
     this.matrixContainer = null;
     this.currentFormat = 'gen1ou';
     this.minGames = 10; // Minimum games for non-grey squares
-    this.maxDeviation = 50; // Maximum Glicko-1 deviation
+    this.maxDeviation = 80; // Maximum Glicko-1 deviation (matches main leaderboard)
     this.debugCount = 0; // For debugging H2H lookups
   }
 
@@ -195,13 +195,13 @@ class HeadToHeadMatrix {
   async loadData(format = 'gen1ou') {
     try {
       const response = await fetch(`leaderboard/showdown_tsvs/${format}.tsv?t=${Date.now()}`);
-      if (!response.ok) throw new Error(`Failed to load ${format} data`);
+      if (!response.ok) throw new Error(`Failed to load ${format} TSV`);
       
       const tsvText = await response.text();
       const lines = tsvText.trim().split('\n');
       const headers = lines[0].split('\t');
       
-      // Clean headers by removing whitespace and carriage returns
+      // Clean headers
       const cleanHeaders = headers.map(h => h.replace(/\r/g, '').trim());
       
       const h2hIndex = cleanHeaders.indexOf('H2H_Data');
@@ -210,12 +210,10 @@ class HeadToHeadMatrix {
       const glickoIndex = cleanHeaders.indexOf('Glicko');
       const deviationIndex = cleanHeaders.indexOf('Rating_Deviation');
       
-      
       const players = [];
       for (let i = 1; i < lines.length; i++) {
         const values = lines[i].split('\t');
         
-        // Skip if not enough columns
         if (values.length <= Math.max(h2hIndex, usernameIndex, deviationIndex)) continue;
         
         const username = values[usernameIndex];
@@ -240,13 +238,11 @@ class HeadToHeadMatrix {
         }
       }
       
-      // Sort by ELO and show all players with low deviation
-      this.filteredPlayers = players
-        .sort((a, b) => b.Elo - a.Elo);
-      
+      // Sort by ELO
+      this.filteredPlayers = players.sort((a, b) => b.Elo - a.Elo);
       
     } catch (error) {
-      console.error(`Error loading ${format} data:`, error);
+      console.error(`Error loading ${format} TSV:`, error);
       this.filteredPlayers = [];
     }
   }
