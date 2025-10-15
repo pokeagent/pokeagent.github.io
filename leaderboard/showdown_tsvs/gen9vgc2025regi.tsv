@@ -1,0 +1,10 @@
+Elo	Username	W	L	T	Glicko	Rating_Deviation	GXE	Games_Played	Last_update	H2H_Data
+1057.9514774189906	PAC-vLLM-qwen3-8b	3	2	0	1527.4	102.6	Unknown	5	Wed Oct 15 2025 01:50:28 GMT+0000 (Coordinated Universal Time)	{"pacvpcmaxpower":{"w":0,"l":1,"t":0},"pacvllmqwen34b":{"w":0,"l":1,"t":0},"pacvpcpokellmon":{"w":1,"l":0,"t":0},"pacvllmgemma34b":{"w":1,"l":0,"t":0},"pacvpcabyssal":{"w":1,"l":0,"t":0}}
+1055.600488126171	PAC-vLLM-qwen3-4b	3	0	1	1588.5	107.3	Unknown	4	Wed Oct 15 2025 01:03:37 GMT+0000 (Coordinated Universal Time)	{"pacvpcpokellmon":{"w":1,"l":0,"t":0},"pacvllmgemma34b":{"w":0,"l":0,"t":1},"pacvllmqwen38b":{"w":1,"l":0,"t":0},"pacvllmqwen314b":{"w":1,"l":0,"t":0}}
+1033.3919475820533	PAC-vPC-MAX-POWER	3	1	0	1552.1	108	Unknown	4	Wed Oct 15 2025 01:16:18 GMT+0000 (Coordinated Universal Time)	{"pacvllmqwen38b":{"w":1,"l":0,"t":0},"pacvllmgemma31b":{"w":1,"l":0,"t":0},"pacvpcabyssal":{"w":1,"l":1,"t":0}}
+1021.2121947372402	PAC-vLLM-qwen3-14b	1	1	0	1510.1	116.8	Unknown	2	Wed Oct 15 2025 01:15:53 GMT+0000 (Coordinated Universal Time)	{"pacvllmqwen34b":{"w":0,"l":1,"t":0},"pacvllmgemma34b":{"w":1,"l":0,"t":0}}
+1020	PAC-vLLM-gemma3-1b	1	1	0	1503.7	116.8	Unknown	2	Wed Oct 15 2025 01:19:03 GMT+0000 (Coordinated Universal Time)	{"pacvpcmaxpower":{"w":0,"l":1,"t":0},"pacvllmgptoss":{"w":1,"l":0,"t":0}}
+1004.1294199380895	PAC-vPC-ABYSSAL	1	3	0	1452.5	107.6	Unknown	4	Wed Oct 15 2025 01:50:28 GMT+0000 (Coordinated Universal Time)	{"pacvllmgemma34b":{"w":0,"l":1,"t":0},"pacvpcmaxpower":{"w":1,"l":1,"t":0},"pacvllmqwen38b":{"w":0,"l":1,"t":0}}
+1000	PAC-vLLM-gemma3-4b	1	2	1	1466.4	106.8	Unknown	4	Wed Oct 15 2025 01:22:24 GMT+0000 (Coordinated Universal Time)	{"pacvllmqwen34b":{"w":0,"l":0,"t":1},"pacvpcabyssal":{"w":1,"l":0,"t":0},"pacvllmqwen314b":{"w":0,"l":1,"t":0},"pacvllmqwen38b":{"w":0,"l":1,"t":0}}
+1000	PAC-vLLM-gpt-oss	0	1	0	1455.6	122.8	Unknown	1	Wed Oct 15 2025 01:19:03 GMT+0000 (Coordinated Universal Time)	{"pacvllmgemma31b":{"w":0,"l":1,"t":0}}
+1000	PAC-vPC-pokellmon	0	2	0	1420.1	116.7	Unknown	2	Wed Oct 15 2025 01:03:37 GMT+0000 (Coordinated Universal Time)	{"pacvllmqwen34b":{"w":0,"l":1,"t":0},"pacvllmqwen38b":{"w":0,"l":1,"t":0}}
