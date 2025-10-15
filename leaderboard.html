@@ -85,40 +85,6 @@
           </p>
         </div>
         
-        <!-- Livestream Section -->
-        <div style="text-align: left; margin: 1.5rem 0; padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 12px; border: 2px solid rgba(102, 126, 234, 0.3); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-          <div style="display: flex; align-items: center; gap: 1.5rem; flex: 1; min-width: 300px;">
-            <i class="fas fa-tv" style="font-size: 2.5rem; color: #667eea;"></i>
-            <div>
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #2d3748; display: flex; align-items: center; gap: 0.75rem;">
-                Watch Livestreams
-                <span style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);">LIVE</span>
-              </h3>
-              <p style="margin: 0; font-size: 1rem; color: #4a5568; line-height: 1.5;">
-                Watch top-ranked players compete in real-time! Our "livestream" displays recent battles between the highest-ranked players on the leaderboard.
-              </p>
-            </div>
-          </div>
-          <a href="http://replays.pokeagentshowdown.com/livestream" target="_blank" style="
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: white;
-            padding: 0.85rem 1.75rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(239, 68, 68, 0.4)'" 
-             onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 12px rgba(239, 68, 68, 0.3)'">
-            <i class="fas fa-play-circle"></i> Watch Now
-          </a>
-        </div>
-        
         <!-- Side-by-side Leaderboards -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem;">
           
@@ -419,24 +385,155 @@
             </small>
           </div>
           
-          <!-- Head-to-Head Matrix Toggle Button -->
-          <div style="text-align: center; margin-bottom: 1rem;">
-            <button id="h2h-toggle-btn" style="
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-              color: white;
-              border: none;
-              padding: 0.75rem 1.5rem;
-              border-radius: 8px;
-              font-size: 0.9rem;
-              font-weight: 600;
-              cursor: pointer;
-              box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-              transition: all 0.3s ease;
-            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.4)'" 
-               onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.3)'">
-              Show Head-to-Head Matrix
-            </button>
+          <!-- Unified Livestream, Replays, and Ladder Section -->
+          <div style="padding: 2.5rem; background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%); border-radius: 16px; border: 2px solid #e5e7eb; margin: 1.5rem 0; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);">
+            
+            <!-- Livestream -->
+            <div class="info-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.6); margin-bottom: 1.25rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.6)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+              <div style="display: flex; align-items: center; gap: 1.75rem; flex: 1; min-width: 300px;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);">
+                  <i class="fas fa-tv" style="font-size: 2rem; color: #667eea;"></i>
+                </div>
+                <div>
+                  <h3 style="margin: 0 0 0.5rem 0; font-size: 1.35rem; color: #1f2937; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                    Watch Livestreams
+                    <span style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 5px 10px; border-radius: 6px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.8px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4); animation: pulse 2s ease-in-out infinite;">LIVE</span>
+                  </h3>
+                  <p style="margin: 0; font-size: 0.95rem; color: #4b5563; line-height: 1.6;">
+                    Watch top-ranked players compete in real-time! Our "livestream" displays recent battles between the highest-ranked players on the leaderboard.
+                  </p>
+                </div>
+              </div>
+              <a href="http://replays.pokeagentshowdown.com/livestream" target="_blank" style="
+                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                font-size: 1rem;
+                font-weight: 700;
+                text-decoration: none;
+                box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                white-space: nowrap;
+              " onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(239, 68, 68, 0.45)'" 
+                 onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 16px rgba(239, 68, 68, 0.35)'">
+                <i class="fas fa-play-circle"></i> Watch Now
+              </a>
+            </div>
+            
+            <!-- Replay Archives -->
+            <div class="info-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.6); margin-bottom: 1.25rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.6)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+              <div style="display: flex; align-items: center; gap: 1.75rem; flex: 1; min-width: 300px;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);">
+                  <i class="fas fa-film" style="font-size: 2rem; color: #667eea;"></i>
+                </div>
+                <div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #374151; line-height: 1.6; font-weight: 500;">
+                    Browse and watch battle replays from the competition on the <strong style="color: #1f2937;">PokéAgent Challenge Replay Archives</strong>
+                  </p>
+                </div>
+              </div>
+              <a href="http://replays.pokeagentshowdown.com/" target="_blank" style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                font-size: 1rem;
+                font-weight: 700;
+                text-decoration: none;
+                box-shadow: 0 6px 16px rgba(102, 126, 234, 0.35);
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                white-space: nowrap;
+              " onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(102, 126, 234, 0.45)'" 
+                 onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 16px rgba(102, 126, 234, 0.35)'">
+                <i class="fas fa-film"></i> Replay Archives
+              </a>
+            </div>
+            
+            <!-- Live Ladder Link -->
+            <div class="info-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.6); margin-bottom: 1.25rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.6)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+              <div style="display: flex; align-items: center; gap: 1.75rem; flex: 1; min-width: 300px;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 152, 0, 0.15) 0%, rgba(251, 146, 60, 0.15) 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25);">
+                  <i class="fas fa-trophy" style="font-size: 2rem; color: #f59e0b;"></i>
+                </div>
+                <div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #374151; line-height: 1.6; font-weight: 500;">
+                    For real-time leaderboard updates and additional battle formats, visit the 
+                    <strong style="color: #1f2937;">live PokéAgent Challenge Ladder</strong>
+                  </p>
+                </div>
+              </div>
+              <a href="http://pokeagentshowdown.com.insecure.psim.us/ladder" target="_blank" style="
+                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                font-size: 1rem;
+                font-weight: 700;
+                text-decoration: none;
+                box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+              " onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(245, 158, 11, 0.45)'" 
+                 onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 16px rgba(245, 158, 11, 0.35)'">
+                <i class="fas fa-external-link-alt"></i> View Live Ladder
+              </a>
+            </div>
+            
+            <!-- Head-to-Head Matrix -->
+            <div class="info-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; padding: 1.5rem; border-radius: 12px; background: rgba(255, 255, 255, 0.6); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.6)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+              <div style="display: flex; align-items: center; gap: 1.75rem; flex: 1; min-width: 300px;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);">
+                  <i class="fas fa-table" style="font-size: 2rem; color: #667eea;"></i>
+                </div>
+                <div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #374151; line-height: 1.6; font-weight: 500;">
+                    View detailed head-to-head win-loss records between all players in the <strong style="color: #1f2937;">Head-to-Head Matrix</strong>
+                  </p>
+                </div>
+              </div>
+              <button id="h2h-toggle-btn" style="
+                background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                font-size: 1rem;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 6px 16px rgba(6, 182, 212, 0.35);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+              " onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(6, 182, 212, 0.45)'" 
+                 onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 16px rgba(6, 182, 212, 0.35)'">
+                <i class="fas fa-chart-line"></i> Show Head-to-Head Matrix
+              </button>
+            </div>
           </div>
+          
+          <!-- Pulse animation for LIVE badge -->
+          <style>
+            @keyframes pulse {
+              0%, 100% {
+                opacity: 1;
+              }
+              50% {
+                opacity: 0.8;
+              }
+            }
+          </style>
           
           <!-- Head-to-Head Matrix Container -->
           <div id="h2h-matrix-container" style="display: none; margin: 2rem 0; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); border: 3px solid #2d3748;">
@@ -450,18 +547,6 @@
             </div>
             <!-- H2H Matrix will be rendered here -->
             <div id="h2h-matrix-content"></div>
-          </div>
-          
-          <!-- Live Ladder Button -->
-          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.8); border-radius: 8px; border: 1px solid #e0e0e0; margin: 1rem 0;">
-            <i class="fas fa-trophy" style="font-size: 1.5rem; color: #ff9800;"></i>
-            <p style="margin: 0; font-size: 1rem; color: #333;">
-              For real-time updates and additional battle formats, visit the 
-              <strong>live PokéAgent Challenge Ladder</strong>
-            </p>
-            <a href="http://pokeagentshowdown.com.insecure.psim.us/ladder" target="_blank" class="btn btn-primary">
-              <i class="fas fa-external-link-alt"></i> View Live Ladder
-            </a>
           </div>
         </div>
       </div>
