@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-18T20:29:14.428863+00:00",
+  "last_updated": "2025-10-19T00:54:23.082581+00:00",
   "formats": {
     "gen1ou": [
       {
@@ -9,44 +9,44 @@
           "display": "Metamon-Wildcard",
           "is_starter_kit": true
         },
-        "elo": "1969",
-        "gxe": "79.73%",
-        "glicko": "1856",
-        "wins": "2275",
-        "losses": "825",
+        "elo": "1998",
+        "gxe": "80.24%",
+        "glicko": "1864",
+        "wins": "2378",
+        "losses": "862",
         "whr": {
-          "bt_strength": 3.8172970526360817,
-          "bt_std": 0.3789243965714106,
-          "whr_elo": 1829.2174313170735,
-          "whr_std": 33.59751700618226,
-          "whr_ci_lower": 1852.63418070517,
-          "whr_ci_upper": 1963.4500235812022,
+          "bt_strength": 3.879422965243961,
+          "bt_std": 0.2878504772831243,
+          "whr_elo": 1834.193248008574,
+          "whr_std": 17.120069447217556,
+          "whr_ci_lower": 1845.425764663858,
+          "whr_ci_upper": 1912.053378381529,
           "whr_rank": 1,
-          "games_played": 3086,
+          "games_played": 3225,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 2,
         "username": {
-          "original": "PAC-MM-Alakazam",
-          "display": "Metamon-Alakazam",
+          "original": "PAC-MM-Variety",
+          "display": "Metamon-Variety",
           "is_starter_kit": true
         },
-        "elo": "1921",
-        "gxe": "78.01%",
-        "glicko": "1829",
-        "wins": "2043",
-        "losses": "960",
+        "elo": "1954",
+        "gxe": "76.24%",
+        "glicko": "1803",
+        "wins": "2222",
+        "losses": "1263",
         "whr": {
-          "bt_strength": 3.2725745411949085,
-          "bt_std": 0.17642865973441188,
-          "whr_elo": 1802.470867519522,
-          "whr_std": 19.534327594078025,
-          "whr_ci_lower": 1805.9562269047449,
-          "whr_ci_upper": 1871.4032837825832,
-          "whr_rank": 2,
-          "games_played": 2985,
+          "bt_strength": 2.3289897759027554,
+          "bt_std": 0.4620726464604135,
+          "whr_elo": 1745.5534278610587,
+          "whr_std": 46.34086265707172,
+          "whr_ci_lower": 1750.6934129039873,
+          "whr_ci_upper": 1882.6246769030467,
+          "whr_rank": 5,
+          "games_played": 3473,
           "min_games_threshold": 250
         }
       },
@@ -57,44 +57,44 @@
           "display": "PA-Agent",
           "is_starter_kit": false
         },
-        "elo": "1895",
-        "gxe": "77.37%",
-        "glicko": "1819",
-        "wins": "1952",
-        "losses": "1017",
+        "elo": "1926",
+        "gxe": "77.52%",
+        "glicko": "1821",
+        "wins": "1972",
+        "losses": "1027",
         "whr": {
-          "bt_strength": 2.448265762369827,
-          "bt_std": 0.5873884682651941,
-          "whr_elo": 1752.0584722223591,
-          "whr_std": 51.71850291603338,
-          "whr_ci_lower": 1758.9357601937868,
-          "whr_ci_upper": 1938.0423749689232,
+          "bt_strength": 2.463924637600357,
+          "bt_std": 0.5039593475579338,
+          "whr_elo": 1755.3373631434526,
+          "whr_std": 49.46276900920181,
+          "whr_ci_lower": 1757.0669744613365,
+          "whr_ci_upper": 1891.8478863846233,
           "whr_rank": 4,
-          "games_played": 2954,
+          "games_played": 2983,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 4,
         "username": {
-          "original": "PAC-MM-Variety",
-          "display": "Metamon-Variety",
+          "original": "PAC-MM-Alakazam",
+          "display": "Metamon-Alakazam",
           "is_starter_kit": true
         },
-        "elo": "1881",
-        "gxe": "75.03%",
-        "glicko": "1786",
-        "wins": "2111",
-        "losses": "1215",
+        "elo": "1883",
+        "gxe": "77.51%",
+        "glicko": "1821",
+        "wins": "2132",
+        "losses": "1004",
         "whr": {
-          "bt_strength": 2.2520100007387667,
-          "bt_std": 0.28206672063684457,
-          "whr_elo": 1737.5431744418995,
-          "whr_std": 13.499124910395716,
-          "whr_ci_lower": 1763.0801123769568,
-          "whr_ci_upper": 1812.9926713381233,
-          "whr_rank": 5,
-          "games_played": 3314,
+          "bt_strength": 3.2815400760307933,
+          "bt_std": 0.3608962076986695,
+          "whr_elo": 1805.117480044562,
+          "whr_std": 33.31854073979988,
+          "whr_ci_lower": 1823.300301650655,
+          "whr_ci_upper": 1927.8311731161023,
+          "whr_rank": 2,
+          "games_played": 3115,
           "min_games_threshold": 250
         }
       },
@@ -105,20 +105,20 @@
           "display": "Metamon-AlakazamVar",
           "is_starter_kit": true
         },
-        "elo": "1872",
-        "gxe": "73.73%",
-        "glicko": "1768",
-        "wins": "2257",
-        "losses": "1164",
+        "elo": "1876",
+        "gxe": "73.45%",
+        "glicko": "1764",
+        "wins": "2359",
+        "losses": "1227",
         "whr": {
-          "bt_strength": 2.6268398284522747,
-          "bt_std": 0.1595519939700213,
-          "whr_elo": 1764.2884855171587,
-          "whr_std": 26.631891108947173,
-          "whr_ci_lower": 1795.3853809747868,
-          "whr_ci_upper": 1886.8366307211747,
+          "bt_strength": 2.6267116067943164,
+          "bt_std": 0.6202481376458898,
+          "whr_elo": 1766.4513523066007,
+          "whr_std": 28.524975226490234,
+          "whr_ci_lower": 1770.0546549167632,
+          "whr_ci_upper": 1859.9022646861274,
           "whr_rank": 3,
-          "games_played": 3412,
+          "games_played": 3573,
           "min_games_threshold": 250
         }
       },
@@ -129,25 +129,49 @@
           "display": "Metamon-Kadabra",
           "is_starter_kit": true
         },
-        "elo": "1844",
-        "gxe": "68.91%",
-        "glicko": "1706",
-        "wins": "1814",
-        "losses": "1199",
+        "elo": "1817",
+        "gxe": "68.79%",
+        "glicko": "1705",
+        "wins": "1893",
+        "losses": "1259",
         "whr": {
-          "bt_strength": 1.6821131131120053,
-          "bt_std": 0.15306425000896906,
-          "whr_elo": 1686.8571270916755,
-          "whr_std": 15.940106974161361,
-          "whr_ci_lower": 1691.1971360285552,
-          "whr_ci_upper": 1747.7181429546301,
-          "whr_rank": 7,
-          "games_played": 2997,
+          "bt_strength": 1.7238344323887138,
+          "bt_std": 0.21522482380964178,
+          "whr_elo": 1693.2846155305638,
+          "whr_std": 10.609809312313937,
+          "whr_ci_lower": 1683.9517112156886,
+          "whr_ci_upper": 1722.1344512243177,
+          "whr_rank": 6,
+          "games_played": 3135,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 7,
+        "username": {
+          "original": "PAC-MM-SynRLV2",
+          "display": "Metamon-SynRLV2",
+          "is_starter_kit": true
+        },
+        "elo": "1786",
+        "gxe": "65.76%",
+        "glicko": "1669",
+        "wins": "1828",
+        "losses": "1400",
+        "whr": {
+          "bt_strength": 1.391063976733312,
+          "bt_std": 0.175314068430783,
+          "whr_elo": 1656.0252367283638,
+          "whr_std": 37.63104179052605,
+          "whr_ci_lower": 1659.0640031086946,
+          "whr_ci_upper": 1780.423412944483,
+          "whr_rank": 9,
+          "games_played": 3204,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 8,
         "username": {
           "original": "PAC-4thLesson",
           "display": "4thLesson",
@@ -159,62 +183,38 @@
         "wins": "233",
         "losses": "143",
         "whr": {
-          "bt_strength": 1.6895008768480428,
-          "bt_std": 0.18345792584042192,
-          "whr_elo": 1687.6184171251296,
-          "whr_std": 18.07562755712319,
-          "whr_ci_lower": 1692.3154932003074,
-          "whr_ci_upper": 1752.520844056669,
-          "whr_rank": 6,
+          "bt_strength": 1.682089672845205,
+          "bt_std": 0.5024104747381704,
+          "whr_elo": 1689.0260528478384,
+          "whr_std": 59.06634715351467,
+          "whr_ci_lower": 1686.9245488412155,
+          "whr_ci_upper": 1876.1341630831703,
+          "whr_rank": 7,
           "games_played": 376,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 8,
-        "username": {
-          "original": "PAC-MM-SynRLV2",
-          "display": "Metamon-SynRLV2",
-          "is_starter_kit": true
-        },
-        "elo": "1741",
-        "gxe": "64.25%",
-        "glicko": "1652",
-        "wins": "1743",
-        "losses": "1336",
-        "whr": {
-          "bt_strength": 1.404057691446545,
-          "bt_std": 0.15478547523880534,
-          "whr_elo": 1655.4690296909102,
-          "whr_std": 11.049659441913455,
-          "whr_ci_lower": 1662.0002085664903,
-          "whr_ci_upper": 1704.661257181363,
-          "whr_rank": 9,
-          "games_played": 3061,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 9,
         "username": {
-          "original": "PAC-Exp-05",
-          "display": "Exp-05",
-          "is_starter_kit": false
+          "original": "PAC-MM-SynRLV1-SP",
+          "display": "Metamon-SynRLV1-SP",
+          "is_starter_kit": true
         },
-        "elo": "1719",
-        "gxe": "61.01%",
-        "glicko": "1616",
-        "wins": "301",
-        "losses": "198",
+        "elo": "1743",
+        "gxe": "60.92%",
+        "glicko": "1615",
+        "wins": "1935",
+        "losses": "1644",
         "whr": {
-          "bt_strength": 1.1145986698362995,
-          "bt_std": 0.14961447471412967,
-          "whr_elo": 1615.3624566946307,
-          "whr_std": 23.276173937701248,
-          "whr_ci_lower": 1627.4901972370412,
-          "whr_ci_upper": 1717.083016145862,
-          "whr_rank": 10,
-          "games_played": 493,
+          "bt_strength": 0.9860637127289227,
+          "bt_std": 0.1172754111629372,
+          "whr_elo": 1596.2483858551914,
+          "whr_std": 35.953456107754626,
+          "whr_ci_lower": 1606.5119764095205,
+          "whr_ci_upper": 1709.2677319256118,
+          "whr_rank": 11,
+          "games_played": 3564,
           "min_games_threshold": 250
         }
       },
@@ -234,101 +234,151 @@
       {
         "rank": 11,
         "username": {
-          "original": "PAC-MM-SynRLV1-SP",
-          "display": "Metamon-SynRLV1-SP",
-          "is_starter_kit": true
+          "original": "PAC-Exp-05",
+          "display": "Exp-05",
+          "is_starter_kit": false
         },
-        "elo": "1703",
-        "gxe": "59.45%",
-        "glicko": "1599",
-        "wins": "1846",
-        "losses": "1576",
+        "elo": "1689",
+        "gxe": "60.64%",
+        "glicko": "1612",
+        "wins": "328",
+        "losses": "225",
         "whr": {
-          "bt_strength": 1.010960020419003,
-          "bt_std": 0.07835367841707128,
-          "whr_elo": 1598.4086410230966,
-          "whr_std": 21.48333832462842,
-          "whr_ci_lower": 1599.912829065099,
-          "whr_ci_upper": 1676.0230988402016,
-          "whr_rank": 11,
-          "games_played": 3409,
+          "bt_strength": 1.0477826488485422,
+          "bt_std": 0.08590722897114658,
+          "whr_elo": 1606.7948759774652,
+          "whr_std": 26.427685061282606,
+          "whr_ci_lower": 1604.0953798318365,
+          "whr_ci_upper": 1687.8771891367535,
+          "whr_rank": 10,
+          "games_played": 546,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 12,
         "username": {
-          "original": "PAC-MM-SynRLV0",
-          "display": "Metamon-SynRLV0",
+          "original": "PAC-MM-Minikazam",
+          "display": "Metamon-Minikazam",
           "is_starter_kit": true
         },
-        "elo": "1695",
-        "gxe": "55.04%",
-        "glicko": "1552",
-        "wins": "1822",
-        "losses": "1648",
+        "elo": "1688",
+        "gxe": "54.38%",
+        "glicko": "1545",
+        "wins": "2019",
+        "losses": "1870",
         "whr": {
-          "bt_strength": 0.7901911435954843,
-          "bt_std": 0.07311841788402386,
-          "whr_elo": 1555.6079116542774,
-          "whr_std": 8.027988479470674,
-          "whr_ci_lower": 1543.0902981639906,
-          "whr_ci_upper": 1573.598327258525,
-          "whr_rank": 14,
-          "games_played": 3458,
+          "bt_strength": 0.7636618869983183,
+          "bt_std": 0.07406713725264612,
+          "whr_elo": 1551.8468415665252,
+          "whr_std": 11.182194565338625,
+          "whr_ci_lower": 1556.9031870061579,
+          "whr_ci_upper": 1598.4538607255488,
+          "whr_rank": 15,
+          "games_played": 3869,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 13,
         "username": {
-          "original": "PAC-MM-Abra",
-          "display": "Metamon-Abra",
+          "original": "PAC-MM-SynRLV1",
+          "display": "Metamon-SynRLV1",
           "is_starter_kit": true
         },
-        "elo": "1661",
-        "gxe": "53.90%",
-        "glicko": "1540",
-        "wins": "1783",
-        "losses": "1679",
+        "elo": "1657",
+        "gxe": "54.37%",
+        "glicko": "1545",
+        "wins": "1903",
+        "losses": "1743",
         "whr": {
-          "bt_strength": 0.6586646139955916,
-          "bt_std": 0.06630206812209027,
-          "whr_elo": 1523.980781358711,
-          "whr_std": 30.207244223488082,
-          "whr_ci_lower": 1518.4485570883223,
-          "whr_ci_upper": 1615.930677813123,
-          "whr_rank": 17,
-          "games_played": 3442,
+          "bt_strength": 0.7987613582640394,
+          "bt_std": 0.0672926221348192,
+          "whr_elo": 1559.6532137786241,
+          "whr_std": 11.67314523526779,
+          "whr_ci_lower": 1549.7276134461138,
+          "whr_ci_upper": 1590.9944197584816,
+          "whr_rank": 13,
+          "games_played": 3628,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 14,
         "username": {
-          "original": "PAC-MM-SynRLV1",
-          "display": "Metamon-SynRLV1",
+          "original": "PAC-MM-SynRLV0",
+          "display": "Metamon-SynRLV0",
           "is_starter_kit": true
         },
-        "elo": "1587",
-        "gxe": "51.28%",
-        "glicko": "1513",
-        "wins": "1815",
-        "losses": "1665",
+        "elo": "1646",
+        "gxe": "54.68%",
+        "glicko": "1548",
+        "wins": "1895",
+        "losses": "1718",
         "whr": {
-          "bt_strength": 0.8028650985121734,
-          "bt_std": 0.08017089939134953,
-          "whr_elo": 1558.3720801355782,
-          "whr_std": 10.769442896711102,
-          "whr_ci_lower": 1511.0390132703296,
-          "whr_ci_upper": 1553.8728511581107,
-          "whr_rank": 13,
-          "games_played": 3467,
+          "bt_strength": 0.7970154670659807,
+          "bt_std": 0.054993718609234625,
+          "whr_elo": 1559.2730948528113,
+          "whr_std": 13.940451070018575,
+          "whr_ci_lower": 1570.4535361352462,
+          "whr_ci_upper": 1621.357691161514,
+          "whr_rank": 14,
+          "games_played": 3592,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 15,
+        "username": {
+          "original": "PAC-FoulPlay",
+          "display": "FoulPlay",
+          "is_starter_kit": false
+        },
+        "elo": "1637",
+        "gxe": "60.91%",
+        "glicko": "1615",
+        "wins": "48",
+        "losses": "18"
+      },
+      {
+        "rank": 16,
+        "username": {
+          "original": "PAC-MetaHorns",
+          "display": "MetaHorns",
+          "is_starter_kit": false
+        },
+        "elo": "1636",
+        "gxe": "62.60%",
+        "glicko": "1634",
+        "wins": "48",
+        "losses": "14"
+      },
+      {
+        "rank": 17,
+        "username": {
+          "original": "PAC-MM-Abra",
+          "display": "Metamon-Abra",
+          "is_starter_kit": true
+        },
+        "elo": "1601",
+        "gxe": "52.14%",
+        "glicko": "1522",
+        "wins": "1856",
+        "losses": "1773",
+        "whr": {
+          "bt_strength": 0.6650436746561962,
+          "bt_std": 0.03804465963458309,
+          "whr_elo": 1527.8264619208173,
+          "whr_std": 18.824652389233407,
+          "whr_ci_lower": 1538.3278897640207,
+          "whr_ci_upper": 1598.7071495190391,
+          "whr_rank": 17,
+          "games_played": 3604,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 18,
         "username": {
           "original": "PAC-ED-Testing",
           "display": "ED-Testing",
@@ -340,43 +390,19 @@
         "wins": "180",
         "losses": "94",
         "whr": {
-          "bt_strength": 1.518137419987621,
-          "bt_std": 0.3569780759579463,
-          "whr_elo": 1669.039482584323,
-          "whr_std": 43.143605786166546,
-          "whr_ci_lower": 1701.760355492768,
-          "whr_ci_upper": 1868.4800095899186,
+          "bt_strength": 1.5098752959136303,
+          "bt_std": 0.18625999776079707,
+          "whr_elo": 1670.2628268102967,
+          "whr_std": 18.761118900354415,
+          "whr_ci_lower": 1579.8071044444798,
+          "whr_ci_upper": 1644.1341393494986,
           "whr_rank": 8,
           "games_played": 258,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 16,
-        "username": {
-          "original": "PAC-MM-Minikazam",
-          "display": "Metamon-Minikazam",
-          "is_starter_kit": true
-        },
-        "elo": "1570",
-        "gxe": "52.41%",
-        "glicko": "1525",
-        "wins": "1930",
-        "losses": "1792",
-        "whr": {
-          "bt_strength": 0.7840081534380058,
-          "bt_std": 0.05785061168776683,
-          "whr_elo": 1554.2432802150365,
-          "whr_std": 11.3484025297818,
-          "whr_ci_lower": 1544.6694816474094,
-          "whr_ci_upper": 1588.7605340406517,
-          "whr_rank": 15,
-          "games_played": 3707,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 17,
+        "rank": 19,
         "username": {
           "original": "PAC-SnTeam",
           "display": "SnTeam",
@@ -388,32 +414,19 @@
         "wins": "258",
         "losses": "240",
         "whr": {
-          "bt_strength": 0.6134026003417826,
-          "bt_std": 0.10119365301883722,
-          "whr_elo": 1511.6132936076715,
-          "whr_std": 21.522435058120685,
-          "whr_ci_lower": 1512.5263246266047,
-          "whr_ci_upper": 1592.817612271789,
+          "bt_strength": 0.6074746994842963,
+          "bt_std": 0.10598844028989594,
+          "whr_elo": 1512.09767299719,
+          "whr_std": 32.21614251225663,
+          "whr_ci_lower": 1428.3439806593951,
+          "whr_ci_upper": 1527.2193401646687,
           "whr_rank": 18,
           "games_played": 495,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 18,
-        "username": {
-          "original": "PAC-FoulPlay",
-          "display": "FoulPlay",
-          "is_starter_kit": false
-        },
-        "elo": "1537",
-        "gxe": "60.23%",
-        "glicko": "1608",
-        "wins": "30",
-        "losses": "7"
-      },
-      {
-        "rank": 19,
+        "rank": 20,
         "username": {
           "original": "PAC-GCOGS",
           "display": "GCOGS",
@@ -425,67 +438,67 @@
         "wins": "177",
         "losses": "123",
         "whr": {
-          "bt_strength": 0.6798075159557925,
-          "bt_std": 0.07632220974402631,
-          "whr_elo": 1529.469433255851,
-          "whr_std": 33.969509510621535,
-          "whr_ci_lower": 1543.1800374974782,
-          "whr_ci_upper": 1642.1285477035944,
+          "bt_strength": 0.6740358468346769,
+          "bt_std": 0.07782938165835922,
+          "whr_elo": 1530.1595926406403,
+          "whr_std": 9.511627786735936,
+          "whr_ci_lower": 1545.8538670743683,
+          "whr_ci_upper": 1581.8802070603292,
           "whr_rank": 16,
           "games_played": 297,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 20,
+        "rank": 21,
         "username": {
           "original": "PAC-MM-LargeRL",
           "display": "Metamon-LargeRL",
           "is_starter_kit": true
         },
-        "elo": "1527",
-        "gxe": "42.26%",
-        "glicko": "1418",
-        "wins": "1806",
-        "losses": "1873",
+        "elo": "1498",
+        "gxe": "42.41%",
+        "glicko": "1420",
+        "wins": "1901",
+        "losses": "1968",
         "whr": {
-          "bt_strength": 0.4515999678630453,
-          "bt_std": 0.05126268469533786,
-          "whr_elo": 1458.4166094604961,
-          "whr_std": 10.73031445756424,
-          "whr_ci_lower": 1425.2774870270734,
-          "whr_ci_upper": 1464.0210108724589,
+          "bt_strength": 0.44265360004419474,
+          "bt_std": 0.05950279382363705,
+          "whr_elo": 1457.1119953063321,
+          "whr_std": 16.575609708446102,
+          "whr_ci_lower": 1401.1998166288977,
+          "whr_ci_upper": 1463.941434836262,
           "whr_rank": 20,
-          "games_played": 3660,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 21,
-        "username": {
-          "original": "PAC-MM-SmallRLG9",
-          "display": "Metamon-SmallRLG9",
-          "is_starter_kit": true
-        },
-        "elo": "1521",
-        "gxe": "43.61%",
-        "glicko": "1433",
-        "wins": "1964",
-        "losses": "1998",
-        "whr": {
-          "bt_strength": 0.4864552477474129,
-          "bt_std": 0.06414634752631265,
-          "whr_elo": 1471.3322056435563,
-          "whr_std": 16.08301935285869,
-          "whr_ci_lower": 1418.4783324566079,
-          "whr_ci_upper": 1478.3768327174648,
-          "whr_rank": 19,
-          "games_played": 3943,
+          "games_played": 3843,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 22,
+        "username": {
+          "original": "PAC-MM-SmallRLG9",
+          "display": "Metamon-SmallRLG9",
+          "is_starter_kit": true
+        },
+        "elo": "1477",
+        "gxe": "42.45%",
+        "glicko": "1420",
+        "wins": "2049",
+        "losses": "2087",
+        "whr": {
+          "bt_strength": 0.47780575456022145,
+          "bt_std": 0.0639849669108683,
+          "whr_elo": 1470.3869454412443,
+          "whr_std": 15.963300087682798,
+          "whr_ci_lower": 1449.789477098937,
+          "whr_ci_upper": 1503.9556337135357,
+          "whr_rank": 19,
+          "games_played": 4109,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 23,
         "username": {
           "original": "PAC-Gradient",
           "display": "Gradient",
@@ -497,104 +510,104 @@
         "wins": "478",
         "losses": "318",
         "whr": {
-          "bt_strength": 0.938581308644105,
-          "bt_std": 0.23723525836786982,
-          "whr_elo": 1585.5038090075516,
-          "whr_std": 61.167694339382834,
-          "whr_ci_lower": 1557.074748906016,
-          "whr_ci_upper": 1735.8651279062756,
+          "bt_strength": 0.9330681033389291,
+          "bt_std": 0.11843057742276795,
+          "whr_elo": 1586.6517324347512,
+          "whr_std": 24.98923988451196,
+          "whr_ci_lower": 1604.0868448892634,
+          "whr_ci_upper": 1709.1673166698092,
           "whr_rank": 12,
           "games_played": 792,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 23,
-        "username": {
-          "original": "PAC-MM-SmallILFA",
-          "display": "Metamon-SmallILFA",
-          "is_starter_kit": true
-        },
-        "elo": "1427",
-        "gxe": "39.71%",
-        "glicko": "1391",
-        "wins": "1829",
-        "losses": "2031",
-        "whr": {
-          "bt_strength": 0.37780062907018225,
-          "bt_std": 0.048529981987071966,
-          "whr_elo": 1427.4201192109729,
-          "whr_std": 15.898323735803183,
-          "whr_ci_lower": 1369.1525293105694,
-          "whr_ci_upper": 1428.09123368078,
-          "whr_rank": 21,
-          "games_played": 3840,
-          "min_games_threshold": 250
-        }
-      },
-      {
         "rank": 24,
-        "username": {
-          "original": "PAC-Porygon2AI",
-          "display": "Porygon2AI",
-          "is_starter_kit": false
-        },
-        "elo": "1414",
-        "gxe": "40.72%",
-        "glicko": "1402",
-        "wins": "115",
-        "losses": "89"
-      },
-      {
-        "rank": 25,
         "username": {
           "original": "PAC-MM-SmallIL",
           "display": "Metamon-SmallIL",
           "is_starter_kit": true
         },
-        "elo": "1385",
-        "gxe": "33.67%",
-        "glicko": "1323",
-        "wins": "1944",
-        "losses": "2168",
+        "elo": "1425",
+        "gxe": "35.36%",
+        "glicko": "1343",
+        "wins": "2036",
+        "losses": "2266",
         "whr": {
-          "bt_strength": 0.28002885285758833,
-          "bt_std": 0.04991115328995302,
-          "whr_elo": 1375.3961610459166,
-          "whr_std": 43.90697826220742,
-          "whr_ci_lower": 1227.912462704449,
-          "whr_ci_upper": 1359.3753760142877,
+          "bt_strength": 0.27469547277777834,
+          "bt_std": 0.054947136277845934,
+          "whr_elo": 1374.2269958243924,
+          "whr_std": 59.986350231366295,
+          "whr_ci_lower": 1169.1265747538391,
+          "whr_ci_upper": 1360.9019774504916,
           "whr_rank": 22,
-          "games_played": 4080,
+          "games_played": 4263,
           "min_games_threshold": 250
         }
       },
       {
+        "rank": 25,
+        "username": {
+          "original": "PAC-Porygon2AI",
+          "display": "Porygon2AI",
+          "is_starter_kit": false
+        },
+        "elo": "1401",
+        "gxe": "40.29%",
+        "glicko": "1397",
+        "wins": "120",
+        "losses": "94"
+      },
+      {
         "rank": 26,
         "username": {
-          "original": "PAC-BH-Kaizo",
-          "display": "Heuristic-Kaizo",
+          "original": "PAC-MM-BaseRNN",
+          "display": "Metamon-BaseRNN",
           "is_starter_kit": true
         },
         "elo": "1360",
-        "gxe": "28.09%",
-        "glicko": "1255",
-        "wins": "2428",
-        "losses": "2890",
+        "gxe": "32.07%",
+        "glicko": "1304",
+        "wins": "2234",
+        "losses": "2432",
         "whr": {
-          "bt_strength": 0.17466004649792397,
-          "bt_std": 0.02133790763984268,
-          "whr_elo": 1293.3924770975707,
-          "whr_std": 17.902519687621993,
-          "whr_ci_lower": 1219.5107827268164,
-          "whr_ci_upper": 1279.7453853362863,
-          "whr_rank": 25,
-          "games_played": 5276,
+          "bt_strength": 0.2652095162138106,
+          "bt_std": 0.03996858055539241,
+          "whr_elo": 1368.122036378566,
+          "whr_std": 27.636556803569857,
+          "whr_ci_lower": 1254.3604865817988,
+          "whr_ci_upper": 1350.3566893024145,
+          "whr_rank": 23,
+          "games_played": 4625,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 27,
+        "username": {
+          "original": "PAC-MM-SmallILFA",
+          "display": "Metamon-SmallILFA",
+          "is_starter_kit": true
+        },
+        "elo": "1348",
+        "gxe": "36.24%",
+        "glicko": "1353",
+        "wins": "1921",
+        "losses": "2131",
+        "whr": {
+          "bt_strength": 0.3708063053042972,
+          "bt_std": 0.04256294904920746,
+          "whr_elo": 1426.3452392189006,
+          "whr_std": 10.497596349353884,
+          "whr_ci_lower": 1411.0025186941223,
+          "whr_ci_upper": 1446.1075667352948,
+          "whr_rank": 21,
+          "games_played": 4025,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 28,
         "username": {
           "original": "PAC-srsk-1729",
           "display": "srsk-1729",
@@ -607,31 +620,31 @@
         "losses": "14"
       },
       {
-        "rank": 28,
+        "rank": 29,
         "username": {
-          "original": "PAC-MM-BaseRNN",
-          "display": "Metamon-BaseRNN",
+          "original": "PAC-BH-Kaizo",
+          "display": "Heuristic-Kaizo",
           "is_starter_kit": true
         },
-        "elo": "1338",
-        "gxe": "32.01%",
-        "glicko": "1304",
-        "wins": "2133",
-        "losses": "2331",
+        "elo": "1326",
+        "gxe": "27.37%",
+        "glicko": "1246",
+        "wins": "2516",
+        "losses": "2982",
         "whr": {
-          "bt_strength": 0.26582464903502406,
-          "bt_std": 0.040043563316408806,
-          "whr_elo": 1366.353148183849,
-          "whr_std": 24.825400678083486,
-          "whr_ci_lower": 1285.429656040869,
-          "whr_ci_upper": 1359.111796335606,
-          "whr_rank": 23,
-          "games_played": 4428,
+          "bt_strength": 0.172256459796891,
+          "bt_std": 0.026025789375614998,
+          "whr_elo": 1293.1566020065231,
+          "whr_std": 27.247407801890866,
+          "whr_ci_lower": 1184.6104990739577,
+          "whr_ci_upper": 1285.228303736407,
+          "whr_rank": 25,
+          "games_played": 5451,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 29,
+        "rank": 30,
         "username": {
           "original": "PAC-hida",
           "display": "hida",
@@ -643,38 +656,14 @@
         "wins": "115",
         "losses": "152",
         "whr": {
-          "bt_strength": 0.22193772749625829,
-          "bt_std": 0.025165147701910077,
-          "whr_elo": 1335.007502448506,
-          "whr_std": 35.47900652621717,
-          "whr_ci_lower": 1124.7865480901182,
-          "whr_ci_upper": 1251.4968726888326,
+          "bt_strength": 0.21833714472441387,
+          "bt_std": 0.028277540446482657,
+          "whr_elo": 1334.3374456850877,
+          "whr_std": 15.479980276989968,
+          "whr_ci_lower": 1314.4003743708972,
+          "whr_ci_upper": 1388.0908466506696,
           "whr_rank": 24,
           "games_played": 262,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 30,
-        "username": {
-          "original": "PAC-BH-GymLeader",
-          "display": "Heuristic-GymLeader",
-          "is_starter_kit": true
-        },
-        "elo": "1270",
-        "gxe": "21.21%",
-        "glicko": "1158",
-        "wins": "1952",
-        "losses": "2788",
-        "whr": {
-          "bt_strength": 0.1156475422371306,
-          "bt_std": 0.014428255518337553,
-          "whr_elo": 1221.7696115208605,
-          "whr_std": 18.722300433489863,
-          "whr_ci_lower": 1141.0261518312875,
-          "whr_ci_upper": 1206.4261281939011,
-          "whr_rank": 29,
-          "games_played": 4694,
           "min_games_threshold": 250
         }
       },
@@ -685,129 +674,153 @@
           "display": "Heuristic-SmogSwitch",
           "is_starter_kit": true
         },
-        "elo": "1251",
-        "gxe": "20.26%",
-        "glicko": "1143",
-        "wins": "2294",
-        "losses": "3042",
+        "elo": "1234",
+        "gxe": "20.62%",
+        "glicko": "1149",
+        "wins": "2375",
+        "losses": "3143",
         "whr": {
-          "bt_strength": 0.13734787010861943,
-          "bt_std": 0.019285077834291512,
-          "whr_elo": 1251.6438201552019,
-          "whr_std": 31.361910114838448,
-          "whr_ci_lower": 1117.2532012398822,
-          "whr_ci_upper": 1218.611571572633,
+          "bt_strength": 0.13481933179376115,
+          "bt_std": 0.021934297980722873,
+          "whr_elo": 1250.5872631783213,
+          "whr_std": 35.88057929949444,
+          "whr_ci_lower": 1118.4389963058636,
+          "whr_ci_upper": 1223.8754966259146,
           "whr_rank": 26,
-          "games_played": 5281,
+          "games_played": 5460,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 32,
         "username": {
-          "original": "PAC-BH-PokeEnv",
-          "display": "Heuristic-PokeEnv",
+          "original": "PAC-BH-Grunt",
+          "display": "Heuristic-Grunt",
           "is_starter_kit": true
         },
-        "elo": "1222",
-        "gxe": "21.14%",
-        "glicko": "1157",
-        "wins": "2064",
-        "losses": "2813",
+        "elo": "1211",
+        "gxe": "20.97%",
+        "glicko": "1155",
+        "wins": "2321",
+        "losses": "3174",
         "whr": {
-          "bt_strength": 0.1324743557715613,
-          "bt_std": 0.02099827933493502,
-          "whr_elo": 1245.3677750010754,
-          "whr_std": 32.125240968093244,
-          "whr_ci_lower": 1140.2380743358208,
-          "whr_ci_upper": 1231.2974210105217,
-          "whr_rank": 27,
-          "games_played": 4836,
+          "bt_strength": 0.12384873245457809,
+          "bt_std": 0.018074053886989745,
+          "whr_elo": 1235.843021495353,
+          "whr_std": 29.406595893727125,
+          "whr_ci_lower": 1112.2075932053278,
+          "whr_ci_upper": 1213.061818151839,
+          "whr_rank": 28,
+          "games_played": 5444,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 33,
         "username": {
-          "original": "PAC-BH-Grunt",
-          "display": "Heuristic-Grunt",
-          "is_starter_kit": true
+          "original": "PAC-Puffer",
+          "display": "Puffer",
+          "is_starter_kit": false
         },
-        "elo": "1217",
-        "gxe": "20.48%",
-        "glicko": "1147",
-        "wins": "2224",
-        "losses": "3054",
+        "elo": "1170",
+        "gxe": "17.02%",
+        "glicko": "1088",
+        "wins": "208",
+        "losses": "366",
         "whr": {
-          "bt_strength": 0.1259062485714818,
-          "bt_std": 0.01886774167848551,
-          "whr_elo": 1236.5339621779112,
-          "whr_std": 32.77285305473009,
-          "whr_ci_lower": 1104.7870885248833,
-          "whr_ci_upper": 1216.245055827379,
-          "whr_rank": 28,
-          "games_played": 5232,
+          "bt_strength": 0.08412957458650301,
+          "bt_std": 0.014297197734500814,
+          "whr_elo": 1168.665872193143,
+          "whr_std": 39.57624393918848,
+          "whr_ci_lower": 1031.7596345680436,
+          "whr_ci_upper": 1150.359328327767,
+          "whr_rank": 30,
+          "games_played": 563,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 34,
         "username": {
-          "original": "PAC-Puffer",
-          "display": "Puffer",
-          "is_starter_kit": false
+          "original": "PAC-BH-PokeEnv",
+          "display": "Heuristic-PokeEnv",
+          "is_starter_kit": true
         },
-        "elo": "1173",
-        "gxe": "17.53%",
-        "glicko": "1097",
-        "wins": "109",
-        "losses": "193",
+        "elo": "1166",
+        "gxe": "20.39%",
+        "glicko": "1146",
+        "wins": "2157",
+        "losses": "2923",
         "whr": {
-          "bt_strength": 0.0896882329458003,
-          "bt_std": 0.014397729399003146,
-          "whr_elo": 1177.6092355410087,
-          "whr_std": 44.51054152465476,
-          "whr_ci_lower": 1006.5362227746622,
-          "whr_ci_upper": 1139.0697795794133,
-          "whr_rank": 30,
-          "games_played": 298,
+          "bt_strength": 0.12890149815256405,
+          "bt_std": 0.015478902659658466,
+          "whr_elo": 1242.7895810353714,
+          "whr_std": 17.550175410613598,
+          "whr_ci_lower": 1156.9361716262777,
+          "whr_ci_upper": 1221.0703428848872,
+          "whr_rank": 27,
+          "games_played": 5038,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 35,
         "username": {
+          "original": "PAC-BH-GymLeader",
+          "display": "Heuristic-GymLeader",
+          "is_starter_kit": true
+        },
+        "elo": "1150",
+        "gxe": "19.78%",
+        "glicko": "1136",
+        "wins": "2052",
+        "losses": "2918",
+        "whr": {
+          "bt_strength": 0.11140554275696019,
+          "bt_std": 0.01832256912025957,
+          "whr_elo": 1217.4491145808513,
+          "whr_std": 38.574636984709294,
+          "whr_ci_lower": 1071.374463380152,
+          "whr_ci_upper": 1189.8283580891325,
+          "whr_rank": 29,
+          "games_played": 4919,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 36,
+        "username": {
           "original": "PAC-VibePoking",
           "display": "VibePoking",
           "is_starter_kit": false
         },
-        "elo": "1093",
-        "gxe": "10.51%",
-        "glicko": "942",
-        "wins": "39",
-        "losses": "195"
+        "elo": "1072",
+        "gxe": "10.45%",
+        "glicko": "941",
+        "wins": "41",
+        "losses": "201"
       },
       {
-        "rank": 36,
+        "rank": 37,
         "username": {
           "original": "PAC-BH-G1Boss",
           "display": "Heuristic-G1Boss",
           "is_starter_kit": true
         },
-        "elo": "1039",
-        "gxe": "9.85%",
-        "glicko": "924",
-        "wins": "693",
-        "losses": "4041",
+        "elo": "1000",
+        "gxe": "9.46%",
+        "glicko": "912",
+        "wins": "722",
+        "losses": "4207",
         "whr": {
-          "bt_strength": 0.03675321827365499,
-          "bt_std": 0.0048267198259519814,
-          "whr_elo": 1022.633198050618,
-          "whr_std": 33.690588681330816,
-          "whr_ci_lower": 860.4458179441373,
-          "whr_ci_upper": 977.8170312981958,
+          "bt_strength": 0.03477122916108238,
+          "bt_std": 0.004834621166355903,
+          "whr_elo": 1015.1744123505871,
+          "whr_std": 25.38301863454185,
+          "whr_ci_lower": 905.3617359290258,
+          "whr_ci_upper": 993.972117337379,
           "whr_rank": 31,
-          "games_played": 4667,
+          "games_played": 4857,
           "min_games_threshold": 250
         }
       }
@@ -1143,12 +1156,12 @@
         "wins": "815",
         "losses": "579",
         "whr": {
-          "bt_strength": 2.059354949979551,
-          "bt_std": 0.11523807748638011,
-          "whr_elo": 1641.8871759415993,
-          "whr_std": 10.966994347773785,
-          "whr_ci_lower": 1675.4726476978274,
-          "whr_ci_upper": 1716.3059447463634,
+          "bt_strength": 2.0562914590991337,
+          "bt_std": 0.40303467333050896,
+          "whr_elo": 1641.4564649823988,
+          "whr_std": 34.87832809603109,
+          "whr_ci_lower": 1677.9123155503714,
+          "whr_ci_upper": 1804.1380521865938,
           "whr_rank": 1,
           "games_played": 1392,
           "min_games_threshold": 250
@@ -1156,30 +1169,6 @@
       },
       {
         "rank": 2,
-        "username": {
-          "original": "PAC-PC-gemma3-4b",
-          "display": "Pok\u00e9Champ-gemma3-4b",
-          "is_starter_kit": true
-        },
-        "elo": "1377",
-        "gxe": "56.29%",
-        "glicko": "1565",
-        "wins": "380",
-        "losses": "256",
-        "whr": {
-          "bt_strength": 1.4493943356897945,
-          "bt_std": 0.21436435438152454,
-          "whr_elo": 1580.8693166478702,
-          "whr_std": 26.864834295858476,
-          "whr_ci_lower": 1580.5407499793407,
-          "whr_ci_upper": 1670.600956569937,
-          "whr_rank": 5,
-          "games_played": 635,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 3,
         "username": {
           "original": "PAC-BH-Kaizo-9",
           "display": "Heuristic-Kaizo",
@@ -1191,19 +1180,19 @@
         "wins": "764",
         "losses": "630",
         "whr": {
-          "bt_strength": 1.6937953519527487,
-          "bt_std": 0.14879821064523985,
-          "whr_elo": 1607.9390674552963,
-          "whr_std": 13.532281917881598,
-          "whr_ci_lower": 1643.4975544057183,
-          "whr_ci_upper": 1691.1871766712773,
+          "bt_strength": 1.6897874096717682,
+          "bt_std": 0.2976193937571982,
+          "whr_elo": 1607.3554242909354,
+          "whr_std": 28.99360898522981,
+          "whr_ci_lower": 1623.0204879700793,
+          "whr_ci_upper": 1726.8436221552145,
           "whr_rank": 4,
           "games_played": 1393,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 4,
+        "rank": 3,
         "username": {
           "original": "PAC-BH-Grunt-9",
           "display": "Heuristic-Grunt",
@@ -1215,67 +1204,67 @@
         "wins": "846",
         "losses": "606",
         "whr": {
-          "bt_strength": 1.7570994489733975,
-          "bt_std": 0.18107553953005273,
-          "whr_elo": 1614.313229773156,
-          "whr_std": 14.204241408663071,
-          "whr_ci_lower": 1620.6973441703228,
-          "whr_ci_upper": 1673.7626582776343,
+          "bt_strength": 1.752509588961555,
+          "bt_std": 0.4060516940551733,
+          "whr_elo": 1613.6867574840214,
+          "whr_std": 41.417409941446536,
+          "whr_ci_lower": 1630.1032777590758,
+          "whr_ci_upper": 1752.3388482411094,
           "whr_rank": 3,
           "games_played": 1449,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 5,
-        "username": {
-          "original": "PAC-LLM-llama31-8b",
-          "display": "LLM-llama31-8b",
-          "is_starter_kit": false
-        },
-        "elo": "1341",
-        "gxe": "49.86%",
-        "glicko": "1498",
-        "wins": "413",
-        "losses": "375",
-        "whr": {
-          "bt_strength": 0.7969410282840302,
-          "bt_std": 0.15176480039017543,
-          "whr_elo": 1476.965167087935,
-          "whr_std": 46.282255150704835,
-          "whr_ci_lower": 1329.5099915907992,
-          "whr_ci_upper": 1490.5571544160318,
-          "whr_rank": 16,
-          "games_played": 788,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 6,
+        "rank": 4,
         "username": {
           "original": "PAC-PC-ABYSSAL",
           "display": "Pok\u00e9Champ-ABYSSAL",
           "is_starter_kit": true
         },
-        "elo": "1340",
-        "gxe": "56.03%",
-        "glicko": "1563",
-        "wins": "459",
-        "losses": "314",
+        "elo": "1360",
+        "gxe": "56.29%",
+        "glicko": "1565",
+        "wins": "475",
+        "losses": "323",
         "whr": {
-          "bt_strength": 1.2932707112398,
-          "bt_std": 0.426778266198974,
-          "whr_elo": 1561.0704696312905,
-          "whr_std": 46.76306491754774,
-          "whr_ci_lower": 1545.2624401859625,
-          "whr_ci_upper": 1717.7788214873299,
+          "bt_strength": 1.3183601019860214,
+          "bt_std": 0.11262962777850939,
+          "whr_elo": 1564.2362168542613,
+          "whr_std": 12.189895355724007,
+          "whr_ci_lower": 1553.9059289963996,
+          "whr_ci_upper": 1597.859705738214,
           "whr_rank": 7,
-          "games_played": 773,
+          "games_played": 798,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 7,
+        "rank": 5,
+        "username": {
+          "original": "PAC-PC-gemma3-4b",
+          "display": "Pok\u00e9Champ-gemma3-4b",
+          "is_starter_kit": true
+        },
+        "elo": "1348",
+        "gxe": "55.96%",
+        "glicko": "1562",
+        "wins": "387",
+        "losses": "263",
+        "whr": {
+          "bt_strength": 1.397906890329383,
+          "bt_std": 0.2471897289979411,
+          "whr_elo": 1574.4138945354484,
+          "whr_std": 28.12709625120159,
+          "whr_ci_lower": 1527.6650159226942,
+          "whr_ci_upper": 1615.1397388432247,
+          "whr_rank": 5,
+          "games_played": 649,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 6,
         "username": {
           "original": "PAC-BH-PokeEnv-9",
           "display": "Heuristic-PokeEnv",
@@ -1287,19 +1276,91 @@
         "wins": "815",
         "losses": "535",
         "whr": {
-          "bt_strength": 1.8800897899159903,
-          "bt_std": 0.17437192662474213,
-          "whr_elo": 1626.0661291242695,
-          "whr_std": 15.14596350932564,
-          "whr_ci_lower": 1671.443256142967,
-          "whr_ci_upper": 1724.4909897748983,
+          "bt_strength": 1.8745703964279796,
+          "bt_std": 0.5158884082083702,
+          "whr_elo": 1625.3832980319546,
+          "whr_std": 47.45361926029867,
+          "whr_ci_lower": 1625.3488158188266,
+          "whr_ci_upper": 1790.1173471637067,
           "whr_rank": 2,
           "games_played": 1341,
           "min_games_threshold": 250
         }
       },
       {
+        "rank": 7,
+        "username": {
+          "original": "PAC-LLM-llama31-8b",
+          "display": "LLM-llama31-8b",
+          "is_starter_kit": false
+        },
+        "elo": "1309",
+        "gxe": "49.90%",
+        "glicko": "1499",
+        "wins": "426",
+        "losses": "388",
+        "whr": {
+          "bt_strength": 0.7873684964441457,
+          "bt_std": 0.14442537101579248,
+          "whr_elo": 1474.6938099825388,
+          "whr_std": 45.28089532147462,
+          "whr_ci_lower": 1316.111317345274,
+          "whr_ci_upper": 1471.6164984273887,
+          "whr_rank": 16,
+          "games_played": 814,
+          "min_games_threshold": 250
+        }
+      },
+      {
         "rank": 8,
+        "username": {
+          "original": "PAC-LLM-gem25f",
+          "display": "LLM-gem25f",
+          "is_starter_kit": false
+        },
+        "elo": "1293",
+        "gxe": "52.34%",
+        "glicko": "1524",
+        "wins": "305",
+        "losses": "213",
+        "whr": {
+          "bt_strength": 1.2148405248350438,
+          "bt_std": 0.06465850013133867,
+          "whr_elo": 1550.0303046183035,
+          "whr_std": 13.283003013117838,
+          "whr_ci_lower": 1533.5260945164684,
+          "whr_ci_upper": 1579.328256467237,
+          "whr_rank": 8,
+          "games_played": 516,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 9,
+        "username": {
+          "original": "PAC-PC-DC",
+          "display": "Pok\u00e9Champ-DC",
+          "is_starter_kit": true
+        },
+        "elo": "1291",
+        "gxe": "52.13%",
+        "glicko": "1522",
+        "wins": "419",
+        "losses": "377",
+        "whr": {
+          "bt_strength": 1.0046727001195692,
+          "bt_std": 0.10302087391747171,
+          "whr_elo": 1517.0324368686681,
+          "whr_std": 14.993191710313798,
+          "whr_ci_lower": 1468.2448812394207,
+          "whr_ci_upper": 1523.4324759650187,
+          "whr_rank": 9,
+          "games_played": 796,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 10,
         "username": {
           "original": "PAC-BH-GymLeader-9",
           "display": "Heuristic-GymLeader",
@@ -1311,283 +1372,211 @@
         "wins": "695",
         "losses": "681",
         "whr": {
-          "bt_strength": 1.324927634615388,
-          "bt_std": 0.12164625977696236,
-          "whr_elo": 1565.271556137989,
-          "whr_std": 19.96552048464016,
-          "whr_ci_lower": 1541.1267070054375,
-          "whr_ci_upper": 1605.84537820679,
+          "bt_strength": 1.3218307297530159,
+          "bt_std": 0.219671441993459,
+          "whr_elo": 1564.6929339485018,
+          "whr_std": 31.39190145186691,
+          "whr_ci_lower": 1593.355298338856,
+          "whr_ci_upper": 1705.959176457464,
           "whr_rank": 6,
           "games_played": 1372,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 9,
-        "username": {
-          "original": "PAC-PC-DC",
-          "display": "Pok\u00e9Champ-DC",
-          "is_starter_kit": true
-        },
-        "elo": "1276",
-        "gxe": "51.89%",
-        "glicko": "1519",
-        "wins": "405",
-        "losses": "367",
-        "whr": {
-          "bt_strength": 1.0214800517535807,
-          "bt_std": 0.07852206371927274,
-          "whr_elo": 1520.0866486781488,
-          "whr_std": 12.718804407225255,
-          "whr_ci_lower": 1490.341499034019,
-          "whr_ci_upper": 1546.1279574378161,
-          "whr_rank": 9,
-          "games_played": 772,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 10,
+        "rank": 11,
         "username": {
           "original": "PAC-LLM-gem25fl",
           "display": "LLM-gem25fl",
           "is_starter_kit": false
         },
-        "elo": "1257",
-        "gxe": "48.05%",
-        "glicko": "1479",
-        "wins": "258",
-        "losses": "255",
+        "elo": "1282",
+        "gxe": "48.84%",
+        "glicko": "1487",
+        "wins": "274",
+        "losses": "265",
         "whr": {
-          "bt_strength": 0.8389638375452615,
-          "bt_std": 0.11241310365864333,
-          "whr_elo": 1485.8919893633495,
-          "whr_std": 29.955622965679147,
-          "whr_ci_lower": 1385.3815632023545,
-          "whr_ci_upper": 1476.4953484879788,
+          "bt_strength": 0.8245296792255681,
+          "bt_std": 0.1303611639217798,
+          "whr_elo": 1482.7051134542485,
+          "whr_std": 35.23024672158127,
+          "whr_ci_lower": 1481.3519455142307,
+          "whr_ci_upper": 1588.6331016107972,
           "whr_rank": 14,
-          "games_played": 513,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 11,
-        "username": {
-          "original": "PAC-PC-gemma3-1b",
-          "display": "Pok\u00e9Champ-gemma3-1b",
-          "is_starter_kit": true
-        },
-        "elo": "1243",
-        "gxe": "47.93%",
-        "glicko": "1478",
-        "wins": "422",
-        "losses": "357",
-        "whr": {
-          "bt_strength": 0.9473292678453843,
-          "bt_std": 0.09475431667225875,
-          "whr_elo": 1506.9950747879534,
-          "whr_std": 24.752215541897137,
-          "whr_ci_lower": 1450.156648908489,
-          "whr_ci_upper": 1539.703806530102,
-          "whr_rank": 10,
-          "games_played": 778,
+          "games_played": 539,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 12,
         "username": {
-          "original": "PAC-LLM-gemma3-12b",
-          "display": "LLM-gemma3-12b",
-          "is_starter_kit": false
+          "original": "PAC-PC-gemma3-1b",
+          "display": "Pok\u00e9Champ-gemma3-1b",
+          "is_starter_kit": true
         },
-        "elo": "1214",
-        "gxe": "48.94%",
-        "glicko": "1489",
-        "wins": "415",
-        "losses": "374",
+        "elo": "1262",
+        "gxe": "48.44%",
+        "glicko": "1483",
+        "wins": "435",
+        "losses": "366",
         "whr": {
-          "bt_strength": 0.8835220447042481,
-          "bt_std": 0.0564648859676861,
-          "whr_elo": 1494.8816487651804,
-          "whr_std": 10.224492843436009,
-          "whr_ci_lower": 1477.2378933708023,
-          "whr_ci_upper": 1514.8494227762747,
-          "whr_rank": 12,
-          "games_played": 789,
+          "bt_strength": 0.9482579232839462,
+          "bt_std": 0.1107606798442181,
+          "whr_elo": 1506.993188394654,
+          "whr_std": 20.92240286452236,
+          "whr_ci_lower": 1406.9802704035083,
+          "whr_ci_upper": 1489.931103479216,
+          "whr_rank": 10,
+          "games_played": 800,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 13,
         "username": {
-          "original": "PAC-LLM-gem25f",
-          "display": "LLM-gem25f",
+          "original": "PAC-LLM-gemma3-12b",
+          "display": "LLM-gemma3-12b",
           "is_starter_kit": false
         },
-        "elo": "1204",
-        "gxe": "51.33%",
-        "glicko": "1513",
-        "wins": "288",
-        "losses": "206",
+        "elo": "1235",
+        "gxe": "48.99%",
+        "glicko": "1489",
+        "wins": "429",
+        "losses": "386",
         "whr": {
-          "bt_strength": 1.1209570221350014,
-          "bt_std": 0.09049369611618617,
-          "whr_elo": 1536.230277519743,
-          "whr_std": 17.458999155935814,
-          "whr_ci_lower": 1531.4036053475616,
-          "whr_ci_upper": 1587.2889445467865,
-          "whr_rank": 8,
-          "games_played": 492,
+          "bt_strength": 0.8715074964151559,
+          "bt_std": 0.13418575549947787,
+          "whr_elo": 1492.3310471656125,
+          "whr_std": 29.163011635114447,
+          "whr_ci_lower": 1399.247774343251,
+          "whr_ci_upper": 1490.3878291580816,
+          "whr_rank": 12,
+          "games_played": 815,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 14,
         "username": {
-          "original": "PAC-PC-MAX-POWER",
-          "display": "Pok\u00e9Champ-MAX-POWER",
-          "is_starter_kit": true
+          "original": "PAC-LLM-qwen3-14b",
+          "display": "LLM-qwen3-14b",
+          "is_starter_kit": false
         },
-        "elo": "1201",
-        "gxe": "40.17%",
-        "glicko": "1396",
-        "wins": "294",
-        "losses": "462",
+        "elo": "1202",
+        "gxe": "47.21%",
+        "glicko": "1471",
+        "wins": "403",
+        "losses": "351",
         "whr": {
-          "bt_strength": 0.5014703694063626,
-          "bt_std": 0.05016993780236267,
-          "whr_elo": 1396.4928034605086,
-          "whr_std": 20.74382581001689,
-          "whr_ci_lower": 1307.4684599555824,
-          "whr_ci_upper": 1386.28926990861,
-          "whr_rank": 24,
-          "games_played": 756,
+          "bt_strength": 0.8988358569231678,
+          "bt_std": 0.08774136634712366,
+          "whr_elo": 1497.6947520146982,
+          "whr_std": 27.12567394452027,
+          "whr_ci_lower": 1476.715393930497,
+          "whr_ci_upper": 1572.374780549967,
+          "whr_rank": 11,
+          "games_played": 754,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 15,
         "username": {
-          "original": "PAC-LLM-gpt-oss",
-          "display": "LLM-gpt-oss",
-          "is_starter_kit": false
+          "original": "PAC-PC-MAX-POWER",
+          "display": "Pok\u00e9Champ-MAX-POWER",
+          "is_starter_kit": true
         },
-        "elo": "1186",
-        "gxe": "46.55%",
-        "glicko": "1464",
-        "wins": "389",
-        "losses": "353",
+        "elo": "1196",
+        "gxe": "40.56%",
+        "glicko": "1400",
+        "wins": "306",
+        "losses": "476",
         "whr": {
-          "bt_strength": 0.8748385780547574,
-          "bt_std": 0.04406169663741177,
-          "whr_elo": 1493.165863159846,
-          "whr_std": 7.932727025222184,
-          "whr_ci_lower": 1470.2598068806835,
-          "whr_ci_upper": 1499.466700123685,
-          "whr_rank": 13,
-          "games_played": 740,
+          "bt_strength": 0.5232123563864207,
+          "bt_std": 0.05353170811927687,
+          "whr_elo": 1403.6937930804581,
+          "whr_std": 14.776248003296322,
+          "whr_ci_lower": 1401.4589150072413,
+          "whr_ci_upper": 1455.2811741662408,
+          "whr_rank": 23,
+          "games_played": 782,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 16,
         "username": {
-          "original": "PAC-PC-pokellmon",
-          "display": "Pok\u00e9Champ-pokellmon",
-          "is_starter_kit": true
+          "original": "PAC-LLM-gpt-oss",
+          "display": "LLM-gpt-oss",
+          "is_starter_kit": false
         },
-        "elo": "1183",
-        "gxe": "42.58%",
-        "glicko": "1422",
-        "wins": "319",
-        "losses": "452",
+        "elo": "1188",
+        "gxe": "46.66%",
+        "glicko": "1465",
+        "wins": "401",
+        "losses": "364",
         "whr": {
-          "bt_strength": 0.5141568739217217,
-          "bt_std": 0.04221059685679245,
-          "whr_elo": 1400.8329513104727,
-          "whr_std": 14.63534838213304,
-          "whr_ci_lower": 1389.2976132961132,
-          "whr_ci_upper": 1445.0198364124537,
-          "whr_rank": 23,
-          "games_played": 771,
+          "bt_strength": 0.8706733818186464,
+          "bt_std": 0.11131198448241028,
+          "whr_elo": 1492.1647032922551,
+          "whr_std": 20.272549638246197,
+          "whr_ci_lower": 1416.8688689444207,
+          "whr_ci_upper": 1489.1071704764972,
+          "whr_rank": 13,
+          "games_played": 763,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 17,
         "username": {
-          "original": "PAC-LLM-qwen3-8b",
-          "display": "LLM-qwen3-8b",
+          "original": "PAC-LLM-gemma3-4b",
+          "display": "LLM-gemma3-4b",
           "is_starter_kit": false
         },
-        "elo": "1168",
-        "gxe": "42.00%",
-        "glicko": "1416",
-        "wins": "329",
-        "losses": "399",
+        "elo": "1173",
+        "gxe": "42.59%",
+        "glicko": "1422",
+        "wins": "354",
+        "losses": "449",
         "whr": {
-          "bt_strength": 0.6371155715887978,
-          "bt_std": 0.05313582669626269,
-          "whr_elo": 1438.0819806316085,
-          "whr_std": 16.61185408488227,
-          "whr_ci_lower": 1432.272109985808,
-          "whr_ci_upper": 1501.1697337223804,
-          "whr_rank": 20,
-          "games_played": 728,
+          "bt_strength": 0.6130640189974984,
+          "bt_std": 0.06182745665542601,
+          "whr_elo": 1431.2249274934256,
+          "whr_std": 17.050627390582882,
+          "whr_ci_lower": 1366.5916160771772,
+          "whr_ci_upper": 1427.245752310048,
+          "whr_rank": 21,
+          "games_played": 803,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 18,
         "username": {
-          "original": "PAC-LLM-qwen3-14b",
-          "display": "LLM-qwen3-14b",
-          "is_starter_kit": false
+          "original": "PAC-PC-pokellmon",
+          "display": "Pok\u00e9Champ-pokellmon",
+          "is_starter_kit": true
         },
-        "elo": "1148",
-        "gxe": "46.82%",
-        "glicko": "1466",
-        "wins": "389",
-        "losses": "342",
+        "elo": "1154",
+        "gxe": "42.30%",
+        "glicko": "1419",
+        "wins": "329",
+        "losses": "465",
         "whr": {
-          "bt_strength": 0.8882779468732429,
-          "bt_std": 0.14303489535901848,
-          "whr_elo": 1495.8142447868017,
-          "whr_std": 38.94247616326634,
-          "whr_ci_lower": 1374.764629634712,
-          "whr_ci_upper": 1495.127184516989,
-          "whr_rank": 11,
-          "games_played": 731,
+          "bt_strength": 0.51342848424379,
+          "bt_std": 0.03357135925432568,
+          "whr_elo": 1400.4145799232335,
+          "whr_std": 23.11443104330425,
+          "whr_ci_lower": 1372.578492921988,
+          "whr_ci_upper": 1442.8877383076162,
+          "whr_rank": 24,
+          "games_played": 794,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 19,
-        "username": {
-          "original": "PAC-LLM-qwen3-4b",
-          "display": "LLM-qwen3-4b",
-          "is_starter_kit": false
-        },
-        "elo": "1148",
-        "gxe": "41.78%",
-        "glicko": "1413",
-        "wins": "329",
-        "losses": "394",
-        "whr": {
-          "bt_strength": 0.6463447538487047,
-          "bt_std": 0.034710179712593346,
-          "whr_elo": 1440.580384009605,
-          "whr_std": 10.973891259522238,
-          "whr_ci_lower": 1388.5150708968927,
-          "whr_ci_upper": 1425.0709996293779,
-          "whr_rank": 19,
-          "games_played": 723,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 20,
         "username": {
           "original": "PAC-PCL",
           "display": "PCL",
@@ -1600,55 +1589,55 @@
         "losses": "13"
       },
       {
-        "rank": 21,
+        "rank": 20,
         "username": {
-          "original": "PAC-LLM-gemma3-4b",
-          "display": "LLM-gemma3-4b",
+          "original": "PAC-LLM-qwen3-4b",
+          "display": "LLM-qwen3-4b",
           "is_starter_kit": false
         },
-        "elo": "1141",
-        "gxe": "42.03%",
-        "glicko": "1416",
-        "wins": "340",
-        "losses": "437",
+        "elo": "1139",
+        "gxe": "41.50%",
+        "glicko": "1410",
+        "wins": "339",
+        "losses": "407",
         "whr": {
-          "bt_strength": 0.590817554633645,
-          "bt_std": 0.08062962950042027,
-          "whr_elo": 1424.9760490648976,
-          "whr_std": 34.65791640697237,
-          "whr_ci_lower": 1332.944843240689,
-          "whr_ci_upper": 1445.8779013508597,
-          "whr_rank": 22,
-          "games_played": 777,
+          "bt_strength": 0.6284254852907303,
+          "bt_std": 0.03840481021988618,
+          "whr_elo": 1435.5241119941625,
+          "whr_std": 19.391867770193656,
+          "whr_ci_lower": 1396.883060405283,
+          "whr_ci_upper": 1473.0517935268158,
+          "whr_rank": 20,
+          "games_played": 746,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 21,
+        "username": {
+          "original": "PAC-LLM-qwen3-8b",
+          "display": "LLM-qwen3-8b",
+          "is_starter_kit": false
+        },
+        "elo": "1125",
+        "gxe": "41.52%",
+        "glicko": "1411",
+        "wins": "338",
+        "losses": "413",
+        "whr": {
+          "bt_strength": 0.6380841332376029,
+          "bt_std": 0.10126468921374089,
+          "whr_elo": 1438.1737745104292,
+          "whr_std": 24.446336851468658,
+          "whr_ci_lower": 1375.8750956291415,
+          "whr_ci_upper": 1463.6419537335862,
+          "whr_rank": 19,
+          "games_played": 751,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 22,
-        "username": {
-          "original": "PAC-PC-qwen3-4b",
-          "display": "Pok\u00e9Champ-qwen3-4b",
-          "is_starter_kit": true
-        },
-        "elo": "1132",
-        "gxe": "40.63%",
-        "glicko": "1401",
-        "wins": "334",
-        "losses": "390",
-        "whr": {
-          "bt_strength": 0.7366598014291325,
-          "bt_std": 0.13438876976897585,
-          "whr_elo": 1463.301481397744,
-          "whr_std": 33.836717802697834,
-          "whr_ci_lower": 1441.1210518039784,
-          "whr_ci_upper": 1547.4848062300935,
-          "whr_rank": 17,
-          "games_played": 723,
-          "min_games_threshold": 250
-        }
-      },
-      {
-        "rank": 23,
         "username": {
           "original": "PAC-BH-G1Boss-9",
           "display": "Heuristic-G1Boss",
@@ -1660,86 +1649,110 @@
         "wins": "325",
         "losses": "984",
         "whr": {
-          "bt_strength": 0.6041009636815706,
-          "bt_std": 0.05950574992782124,
-          "whr_elo": 1428.8385041643191,
-          "whr_std": 17.455766381506,
-          "whr_ci_lower": 1377.6433800700183,
-          "whr_ci_upper": 1446.9427525240628,
-          "whr_rank": 21,
+          "bt_strength": 0.6030606246695472,
+          "bt_std": 0.11353772151471067,
+          "whr_elo": 1428.3669856098186,
+          "whr_std": 21.9888502537657,
+          "whr_ci_lower": 1426.8146658883916,
+          "whr_ci_upper": 1503.9295985985284,
+          "whr_rank": 22,
           "games_played": 1306,
           "min_games_threshold": 250
         }
       },
       {
-        "rank": 24,
+        "rank": 23,
         "username": {
           "original": "PAC-PC-llama31-8b",
           "display": "Pok\u00e9Champ-llama31-8b",
           "is_starter_kit": true
         },
         "elo": "1108",
-        "gxe": "44.29%",
-        "glicko": "1440",
-        "wins": "377",
-        "losses": "377",
+        "gxe": "43.54%",
+        "glicko": "1432",
+        "wins": "387",
+        "losses": "391",
         "whr": {
-          "bt_strength": 0.7994481227699437,
-          "bt_std": 0.11330515007546921,
-          "whr_elo": 1477.5108075767987,
-          "whr_std": 28.859821216677837,
-          "whr_ci_lower": 1395.4842210592058,
-          "whr_ci_upper": 1491.8203277279729,
+          "bt_strength": 0.7942647958815785,
+          "bt_std": 0.11114620568894594,
+          "whr_elo": 1476.2087218327813,
+          "whr_std": 39.9128273203899,
+          "whr_ci_lower": 1295.248733867022,
+          "whr_ci_upper": 1437.113975291133,
           "whr_rank": 15,
-          "games_played": 752,
+          "games_played": 776,
+          "min_games_threshold": 250
+        }
+      },
+      {
+        "rank": 24,
+        "username": {
+          "original": "PAC-PC-qwen3-4b",
+          "display": "Pok\u00e9Champ-qwen3-4b",
+          "is_starter_kit": true
+        },
+        "elo": "1054",
+        "gxe": "39.84%",
+        "glicko": "1392",
+        "wins": "339",
+        "losses": "403",
+        "whr": {
+          "bt_strength": 0.7471699561608098,
+          "bt_std": 0.08216777588527784,
+          "whr_elo": 1465.590356523954,
+          "whr_std": 20.633568365067664,
+          "whr_ci_lower": 1358.4536968150342,
+          "whr_ci_upper": 1439.4570871051606,
+          "whr_rank": 17,
+          "games_played": 741,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 25,
         "username": {
-          "original": "PAC-PC-qwen3-8b",
-          "display": "Pok\u00e9Champ-qwen3-8b",
-          "is_starter_kit": true
+          "original": "PAC-LLM-gemma3-1b",
+          "display": "LLM-gemma3-1b",
+          "is_starter_kit": false
         },
-        "elo": "1084",
-        "gxe": "42.08%",
-        "glicko": "1416",
-        "wins": "344",
-        "losses": "382",
+        "elo": "1052",
+        "gxe": "34.52%",
+        "glicko": "1333",
+        "wins": "278",
+        "losses": "523",
         "whr": {
-          "bt_strength": 0.7360140339527014,
-          "bt_std": 0.10609409471351873,
-          "whr_elo": 1463.149130883818,
-          "whr_std": 33.706228377379,
-          "whr_ci_lower": 1342.158129446006,
-          "whr_ci_upper": 1461.3854237363864,
-          "whr_rank": 18,
-          "games_played": 725,
+          "bt_strength": 0.4158276623099117,
+          "bt_std": 0.0850465870263925,
+          "whr_elo": 1363.787947016104,
+          "whr_std": 39.49686173940225,
+          "whr_ci_lower": 1263.7674828969539,
+          "whr_ci_upper": 1380.4236453638491,
+          "whr_rank": 25,
+          "games_played": 800,
           "min_games_threshold": 250
         }
       },
       {
         "rank": 26,
         "username": {
-          "original": "PAC-LLM-gemma3-1b",
-          "display": "LLM-gemma3-1b",
-          "is_starter_kit": false
+          "original": "PAC-PC-qwen3-8b",
+          "display": "Pok\u00e9Champ-qwen3-8b",
+          "is_starter_kit": true
         },
-        "elo": "1046",
-        "gxe": "34.91%",
-        "glicko": "1338",
-        "wins": "272",
-        "losses": "508",
+        "elo": "1049",
+        "gxe": "41.10%",
+        "glicko": "1406",
+        "wins": "351",
+        "losses": "396",
         "whr": {
-          "bt_strength": 0.40362995520524264,
-          "bt_std": 0.02878693168965638,
-          "whr_elo": 1358.7880486397992,
-          "whr_std": 12.303996326998304,
-          "whr_ci_lower": 1324.0805728932603,
-          "whr_ci_upper": 1367.1532951996614,
-          "whr_rank": 25,
-          "games_played": 779,
+          "bt_strength": 0.6915198475280132,
+          "bt_std": 0.10792102910446333,
+          "whr_elo": 1452.1444560971322,
+          "whr_std": 26.30844226093181,
+          "whr_ci_lower": 1368.1970480042032,
+          "whr_ci_upper": 1466.2526422889957,
+          "whr_rank": 18,
+          "games_played": 746,
           "min_games_threshold": 250
         }
       }
@@ -1748,7 +1761,7 @@
   "source": "tsv_files",
   "metadata": {
     "whr_min_games": 250,
-    "whr_updated": "2025-10-18T20:29:14.428863+00:00",
+    "whr_updated": "2025-10-19T00:54:23.082581+00:00",
     "whr_note": "Whole History Rating (WHR) computed using Bradley-Terry model with bootstrap. Requires 250+ games."
   }
 }
