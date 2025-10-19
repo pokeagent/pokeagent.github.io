@@ -231,26 +231,25 @@
         
         <div class="mt-3">
           <h4>Final Ranking Criteria</h4>
-          <p>Final rankings are determined by <strong>Adjusted Performance</strong>, which accounts for both your agent's raw performance and the complexity of its external scaffolding:</p>
+          <p>Final rankings are determined by <strong>raw performance metrics only</strong> (number of actions and time). Based on community feedback, we have simplified the main ranking to focus purely on objective performance measures.</p>
 
-          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid var(--secondary-color);">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Courier New', monospace; text-align: center;">
-              <strong>Adjusted Performance = Raw Performance × λ(Scaffolding)</strong>
-            </p>
-            <p style="font-size: 0.95rem; color: #666; margin: 0;">
-              where <strong>λ(Scaffolding)</strong> is a penalty factor (≤1) based on the external support your agent uses
-            </p>
-          </div>
-
-          <h5 style="margin-top: 1.5rem;">Raw Performance Components</h5>
+          <h5 style="margin-top: 1.5rem;">Primary Ranking Components</h5>
           <ul>
             <li><strong>Milestone Completion:</strong> Percentage of game milestones accomplished (e.g., gym badges, story progression)</li>
             <li><strong>Completion Efficiency:</strong> Time and action count to achieve milestones</li>
             <li><strong>Reproducibility:</strong> Clear documentation and verifiable results</li>
           </ul>
 
-          <h5 style="margin-top: 1.5rem;">Scaffolding Penalty Components</h5>
-          <p>The scaffolding penalty λ evaluates your agent's support structure across five dimensions:</p>
+          <div style="background: #f0f8ff; padding: 1rem; border-radius: 6px; border-left: 4px solid #4CAF50; margin: 1.5rem 0;">
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+              <strong><i class="fas fa-lightbulb"></i> Novel Methods Welcome:</strong>
+              While we provide a starter kit with an LLM-scaffolded approach, we encourage submissions using a wide variety of methods including tool-augmented systems, reinforcement learning, purely text-based reasoning, hybrid architectures, and other innovative techniques.
+              The competition is designed to be open to diverse methodologies—whether you're building a complex multi-agent system or a streamlined end-to-end model, your approach is welcome!
+            </p>
+          </div>
+
+          <h5 style="margin-top: 1.5rem;">Methodology Documentation for Judges' Choice Awards</h5>
+          <p>While scaffolding complexity does not affect the main rankings, teams must still document their methodology across five dimensions for consideration of separate Judges' Choice and innovation awards:</p>
           <ul>
             <li><strong>State Information (S):</strong> What information your agent receives (raw pixels vs. parsed game state vs. privileged information)</li>
             <li><strong>Tools (T):</strong> External tools available during gameplay (web search, calculators, planning utilities, etc.)</li>
@@ -259,15 +258,14 @@
             <li><strong>Fine-tuning (Φ):</strong> Specialized training on Pokémon data (domain-specific datasets, game-specific RL, etc.)</li>
           </ul>
 
-          <p style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
-            <strong><i class="fas fa-info-circle"></i> Important:</strong> Agents with more external support receive larger penalties.
-            Pure end-to-end learned systems with minimal scaffolding are favored in rankings, all else being equal.
-            This encourages development of generalizable AI capabilities rather than task-specific engineering.
+          <p style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 6px; border-left: 4px solid #2196F3;">
+            <strong><i class="fas fa-trophy"></i> Judges' Choice Awards:</strong> Separate awards will recognize innovative approaches, including those with minimal scaffolding (limit amount of prompts to the LLM), creative tool use, and novel architectural designs.
+            These awards encourage diverse methodologies while keeping the main competition ranking simple and objective.
           </p>
 
           <p style="margin-top: 1rem;">
-            Teams must document their scaffolding components in detail during submission.
-            The organizing committee will review and assign scaffolding penalty factors based on the submitted information.
+            Teams must document their scaffolding components in detail during submission for eligibility for Judges' Choice awards.
+            The organizing committee will review submissions for these special recognitions.
           </p>
         </div>
       </div>
@@ -342,7 +340,6 @@
               <li><strong>1st Place:</strong> $1,500 + 700 GCP</li>
               <li><strong>2nd Place:</strong> $1,000 + 300 GCP</li>
               <li><strong>3rd-4th Place:</strong> $500</li>
-              <li><strong>5th-8th Place:</strong> $250</li>
             </ul>
           </div>
           <div style="background: #e8f4f8; padding: 1.5rem; border-radius: 8px; border: 1px solid #b8daff;">
@@ -350,7 +347,7 @@
               <i class="fas fa-star"></i> Judge's Choice Award
             </h3>
             <p>
-              Senior organizers will award at least <strong>two projects</strong> with 
+              Senior organizers will award at least <strong>four non-placing projects</strong> with 
               <strong>$400</strong> or <strong>500 GCP</strong> to help continue their work after the 
               competition ends.
             </p>
