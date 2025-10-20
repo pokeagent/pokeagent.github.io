@@ -18,6 +18,8 @@ class BattlingLeaderboard {
     this.elements = {
       gen1Table: document.getElementById('gen1ou-leaderboard'),
       gen9Table: document.getElementById('gen9ou-leaderboard'),
+      gen1ProgressBar: document.getElementById('gen1ou-progress-bar'),
+      gen9ProgressBar: document.getElementById('gen9ou-progress-bar'),
       sortSelect: document.getElementById('sort-select'),
       hideBaselinesCheckbox: document.getElementById('hide-baselines'),
       showLLMCheckbox: document.getElementById('show-llm-only'),
@@ -356,27 +358,23 @@ class BattlingLeaderboard {
     });
     
     return `
-      <tr class="progress-bar-row">
-        <td colspan="6" style="padding: 0;">
-          <div class="qualifying-progress-container">
-            <div class="progress-label">
-              <span><i class="fas fa-trophy" style="color: #667eea; margin-right: 0.5rem;"></i>Qualifying Window</span>
-              <span class="status">
-                <span class="progress-status-icon ${statusClass}"></span>
-                <span>${statusText}</span>
-              </span>
-            </div>
-            <div class="progress-bar-track">
-              <div class="progress-bar-fill ${statusClass}" style="width: ${percentage}%"></div>
-              <div class="progress-bar-percentage">${percentage}%</div>
-            </div>
-            <div class="progress-dates">
-              <span class="date"><i class="fas fa-play-circle"></i> ${startFormatted}</span>
-              <span class="date">${endFormatted} <i class="fas fa-flag-checkered"></i></span>
-            </div>
-          </div>
-        </td>
-      </tr>
+      <div class="qualifying-progress-container">
+        <div class="progress-label">
+          <span><i class="fas fa-trophy" style="color: #667eea; margin-right: 0.5rem;"></i>Qualifying Window</span>
+          <span class="status">
+            <span class="progress-status-icon ${statusClass}"></span>
+            <span>${statusText}</span>
+          </span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill ${statusClass}" style="width: ${percentage}%"></div>
+          <div class="progress-bar-percentage">${percentage}%</div>
+        </div>
+        <div class="progress-dates">
+          <span class="date"><i class="fas fa-play-circle"></i> ${startFormatted}</span>
+          <span class="date">${endFormatted} <i class="fas fa-flag-checkered"></i></span>
+        </div>
+      </div>
     `;
   }
 
@@ -425,13 +423,19 @@ class BattlingLeaderboard {
     // Compute QUAL badges
     const qualPlayers = this.computeQualBadges(players);
     
-    // Render progress bar + table
+    // Render progress bar separately
     const progressBarHTML = this.renderProgressBar(format);
+    const progressBarElement = format === 'gen1ou' ? this.elements.gen1ProgressBar : this.elements.gen9ProgressBar;
+    if (progressBarElement) {
+      progressBarElement.innerHTML = progressBarHTML;
+    }
+    
+    // Render table
     const playersHTML = players.map((player, index) => 
       this.renderPlayerRow(player, index + 1, qualPlayers)
     ).join('');
     
-    tableElement.innerHTML = progressBarHTML + playersHTML;
+    tableElement.innerHTML = playersHTML;
   }
 
   showInactiveOverlay(tableElement, format, startDatetime) {
