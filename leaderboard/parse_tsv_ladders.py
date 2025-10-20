@@ -111,40 +111,29 @@ def parse_tsv_file(filename):
                 gxe = row.get("GXE", "").strip()
                 rating_deviation = row.get("Rating_Deviation", "").strip()
 
-                # Clean up the data
+                # Clean up the data - handle missing/invalid values
                 try:
                     elo_float = float(elo)
                     elo = str(int(elo_float))
                 except (ValueError, TypeError):
-                    elo = ""
+                    elo = "-"
 
                 try:
                     glicko_float = float(glicko)
                     glicko = str(int(glicko_float))
                 except (ValueError, TypeError):
-                    glicko = ""
-
-                # Check Rating Deviation constraint (must be <= 80 to appear on leaderboard)
-                try:
-                    deviation_float = float(rating_deviation)
-                    if deviation_float > 80:
-                        print(
-                            f"⚠️  Skipping {username} (Rating Deviation: {deviation_float} > 80)"
-                        )
-                        continue
-                except (ValueError, TypeError):
-                    print(
-                        f"⚠️  Skipping {username} (Invalid Rating Deviation: {rating_deviation})"
-                    )
-                    continue
+                    glicko = "-"
 
                 # Format GXE as percentage if needed
-                if gxe and not gxe.endswith("%"):
-                    try:
-                        gxe_float = float(gxe)
-                        gxe = f"{gxe_float:.2f}%"
-                    except (ValueError, TypeError):
-                        pass
+                if gxe and gxe not in ["-", ""]:
+                    if not gxe.endswith("%"):
+                        try:
+                            gxe_float = float(gxe)
+                            gxe = f"{gxe_float:.2f}%"
+                        except (ValueError, TypeError):
+                            gxe = "-"
+                else:
+                    gxe = "-"
 
                 player_data = {
                     "rank": rank,
@@ -152,8 +141,8 @@ def parse_tsv_file(filename):
                     "elo": elo,
                     "gxe": gxe,
                     "glicko": glicko,
-                    "wins": wins,
-                    "losses": losses,
+                    "wins": wins if wins else "0",
+                    "losses": losses if losses else "0",
                 }
 
                 players.append(player_data)

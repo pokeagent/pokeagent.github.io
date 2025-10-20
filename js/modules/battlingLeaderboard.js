@@ -380,9 +380,14 @@ class BattlingLeaderboard {
       qualBadge = `<span style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); color: white; padding: 1px 4px; border-radius: 3px; font-size: 0.6rem; font-weight: 600; margin-left: 4px; vertical-align: middle; display: inline-block; white-space: nowrap;">QUAL</span>`;
     }
     
-    const formattedGxe = player.gxe && player.gxe !== '-' ? 
-      parseFloat(player.gxe.toString().replace('%', '')).toFixed(1) + '%' : 
-      '-';
+    // Format GXE - handle missing values and map < 5% to "-"
+    let formattedGxe = '-';
+    if (player.gxe && player.gxe !== '-' && player.gxe !== 'Unknown') {
+      const gxeValue = parseFloat(player.gxe.toString().replace('%', ''));
+      if (!isNaN(gxeValue) && gxeValue >= 5) {
+        formattedGxe = gxeValue.toFixed(1) + '%';
+      }
+    }
     
     const wlRatio = `${player.wins || '0'}/${player.losses || '0'}`;
     
@@ -394,11 +399,14 @@ class BattlingLeaderboard {
       hrDisplay = `<span title="HR: ${hrElo} ± ${hrStd} (95% CI: ${parseFloat(player.whr.whr_ci_lower).toFixed(0)}-${parseFloat(player.whr.whr_ci_upper).toFixed(0)})">${hrElo}<span style="font-size: 0.7rem; color: #718096;">±${hrStd}</span></span>`;
     }
     
+    // Format ELO - handle missing/unknown values
+    const formattedElo = (player.elo && player.elo !== 'Unknown' && player.elo !== '-') ? player.elo : '-';
+    
     return `<tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#f8fafc'" onmouseout="this.style.backgroundColor='white'">
       <td style="padding: 8px; font-weight: 600; color: #2d3748; font-size: 0.9rem;">${rank}</td>
       <td style="padding: 8px; font-weight: 500; white-space: nowrap; font-size: 0.9rem;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}${qualBadge}</td>
       <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${hrDisplay}</td>
-      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${player.elo || '-'}</td>
+      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${formattedElo}</td>
       <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${formattedGxe}</td>
       <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${wlRatio}</td>
     </tr>`;
