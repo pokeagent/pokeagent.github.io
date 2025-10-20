@@ -3,6 +3,8 @@
  * Creates an interactive matrix showing win/loss records between players
  */
 
+import { API_CONFIG, usernameToH2HKey } from '../config.js';
+
 class HeadToHeadMatrix {
   constructor() {
     this.data = {};
@@ -12,6 +14,7 @@ class HeadToHeadMatrix {
     this.minGames = 10; // Minimum games for non-grey squares
     this.maxDeviation = 80; // Maximum Glicko-1 deviation (matches main leaderboard)
     this.debugCount = 0; // For debugging H2H lookups
+    this.usingLiveData = false; // Track which data source we're using
   }
 
   /**
@@ -192,7 +195,80 @@ class HeadToHeadMatrix {
   /**
    * Load and process TSV data for head-to-head analysis
    */
+  /**
+   * Load H2H data from live API or TSV fallback
+   */
   async loadData(format = 'gen1ou') {
+    this.currentFormat = format;
+    
+    // Try live API first if enabled
+    if (API_CONFIG.USE_LIVE_DATA) {
+      try {
+        await this.loadLiveH2HData(format);
+        return;
+      } catch (error) {
+        console.warn(`[H2H] Failed to load live data for ${format}, falling back to TSV:`, error);
+        // Fall through to TSV parsing
+      }
+    }
+    
+    // Fallback to TSV parsing
+    await this.loadTSVData(format);
+  }
+
+  /**
+   * Fetch H2H data from live API
+   */
+  async loadLiveH2HData(format) {
+    const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.H2H}/${format}`;
+    console.log(`[H2H] Fetching ${format} from live API:`, url);
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.TIMEOUT_MS);
+    
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`API responded with status ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      
+      // Map API response to internal format
+      this.filteredPlayers = data.players.map(p => ({
+        Username: p.username,
+        DisplayName: p.display_name,
+        Elo: p.elo,
+        Glicko: p.glicko,
+        Rating_Deviation: p.rating_deviation,
+        H2H_Data: p.h2h_data,
+        IsOrgBaseline: p.is_org_baseline
+      }));
+      
+      this.usingLiveData = true;
+      console.log(`[H2H] ✓ Live data loaded: ${data.total_players} players for ${format}`);
+      
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        throw new Error('API request timed out');
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Fetch and parse TSV (fallback)
+   */
+  async loadTSVData(format) {
+    console.log(`[H2H] Loading TSV fallback for ${format}`);
     try {
       const response = await fetch(`leaderboard/showdown_tsvs/${format}.tsv?t=${Date.now()}`);
       if (!response.ok) throw new Error(`Failed to load ${format} TSV`);
@@ -240,16 +316,32 @@ class HeadToHeadMatrix {
       
       // Sort by ELO
       this.filteredPlayers = players.sort((a, b) => b.Elo - a.Elo);
+      this.usingLiveData = false;
+      console.log(`[H2H] ✓ Loaded ${this.filteredPlayers.length} players from TSV`);
       
     } catch (error) {
-      console.error(`Error loading ${format} TSV:`, error);
+      console.error(`[H2H] Error loading ${format} TSV:`, error);
       this.filteredPlayers = [];
     }
   }
 
 
   /**
-   * Convert username to display format (like the main leaderboard)
+   * Get display name for player
+   * @param {Object} player - Player object with Username and optional DisplayName
+   * @returns {string} Formatted display name
+   */
+  getDisplayName(player) {
+    // If using API data, DisplayName is already provided
+    if (this.usingLiveData && player.DisplayName) {
+      return player.DisplayName;
+    }
+    // Otherwise use existing logic
+    return this.usernameToDisplay(player.Username);
+  }
+
+  /**
+   * Convert username to display format (fallback for TSV data)
    */
   usernameToDisplay(username) {
     // Convert based on the JSON display name patterns
@@ -454,8 +546,8 @@ class HeadToHeadMatrix {
     // Add column headers (opponent names, rotated) - show all, but sized so only some are visible
     columnsToShow.forEach((player, index) => {
       // Use the same display format as the main leaderboard
-      const displayName = this.usernameToDisplay(player.Username);
-      const isBaseline = this.isOrganizerBaseline(player.Username);
+      const displayName = this.getDisplayName(player);
+      const isBaseline = this.usingLiveData ? player.IsOrgBaseline : this.isOrganizerBaseline(player.Username);
       const orgBadgeVertical = isBaseline ? `<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2px 1px; border-radius: 2px; font-size: ${Math.max(0.4, sizing.fontSize * 0.45)}rem; font-weight: 600; margin: 2px 0; writing-mode: vertical-rl; text-orientation: mixed; letter-spacing: 0.05em;">ORG</div>` : '';
       
       html += `
@@ -490,8 +582,8 @@ class HeadToHeadMatrix {
     // Add matrix rows
     players.forEach((rowPlayer, rowIndex) => {
       // Use the same display format as the main leaderboard
-      const displayName = this.usernameToDisplay(rowPlayer.Username);
-      const isBaseline = this.isOrganizerBaseline(rowPlayer.Username);
+      const displayName = this.getDisplayName(rowPlayer);
+      const isBaseline = this.usingLiveData ? rowPlayer.IsOrgBaseline : this.isOrganizerBaseline(rowPlayer.Username);
       const orgBadge = isBaseline ? this.getOrgBadge(sizing.fontSize) : '';
       
       html += `
@@ -577,7 +669,7 @@ class HeadToHeadMatrix {
                height: ${effectiveCellSize}px;
                cursor: pointer;
                color: ${textColor};
-                      " title="${this.usernameToDisplay(rowPlayer.Username)} vs ${this.usernameToDisplay(colPlayer.Username)}: ${record.wins}W-${record.losses}L-${record.ties}T (${record.total} games, ${(winPercentage * 100).toFixed(1)}% win rate)">
+                      " title="${this.getDisplayName(rowPlayer)} vs ${this.getDisplayName(colPlayer)}: ${record.wins}W-${record.losses}L-${record.ties}T (${record.total} games, ${(winPercentage * 100).toFixed(1)}% win rate)">
                 <span style="display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%;">${displayText}</span>
               </td>
             `;

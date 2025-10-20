@@ -4,6 +4,7 @@
  */
 
 import HeadToHeadMatrix from './headToHeadMatrix.js';
+import { API_CONFIG } from '../config.js';
 
 class BattlingLeaderboard {
   constructor() {
@@ -13,6 +14,7 @@ class BattlingLeaderboard {
     this.showLLMOnly = false;
     this.h2hMatrix = new HeadToHeadMatrix();
     this.showH2HMatrix = false;
+    this.usingLiveData = false; // Track which data source we're using
     this.elements = {
       gen1Table: document.getElementById('gen1ou-leaderboard'),
       gen9Table: document.getElementById('gen9ou-leaderboard'),
@@ -36,14 +38,76 @@ class BattlingLeaderboard {
     this.render();
   }
 
+  /**
+   * Load leaderboard data from live API or static JSON fallback
+   */
   async loadData() {
+    // Try live API first if enabled
+    if (API_CONFIG.USE_LIVE_DATA) {
+      try {
+        await this.loadLiveData();
+        return;
+      } catch (error) {
+        console.warn('[Leaderboard] Failed to load live data, falling back to static JSON:', error);
+        // Fall through to static JSON
+      }
+    }
+    
+    // Fallback to static JSON
+    await this.loadStaticData();
+  }
+
+  /**
+   * Fetch data from live API
+   */
+  async loadLiveData() {
+    const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.LEADERBOARD}`;
+    console.log('[Leaderboard] Fetching live data from:', url);
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.TIMEOUT_MS);
+    
     try {
-      const response = await fetch(`leaderboard/track1_qualifying.json?t=${Date.now()}`);
-      if (!response.ok) throw new Error('Failed to load Track 1 leaderboard');
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`API responded with status ${response.status}: ${response.statusText}`);
+      }
+      
       this.data = await response.json();
+      this.usingLiveData = true;
+      console.log('[Leaderboard] ✓ Successfully loaded live data');
+      
     } catch (error) {
-      console.error('Error loading Track 1 leaderboard:', error);
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        throw new Error('API request timed out');
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Fetch data from static JSON (fallback)
+   */
+  async loadStaticData() {
+    console.log('[Leaderboard] Loading static JSON fallback');
+    try {
+      const response = await fetch(`${API_CONFIG.FALLBACK.LEADERBOARD_JSON}?t=${Date.now()}`);
+      if (!response.ok) throw new Error('Failed to load static leaderboard data');
+      this.data = await response.json();
+      this.usingLiveData = false;
+      console.log('[Leaderboard] ✓ Loaded static JSON');
+    } catch (error) {
+      console.error('[Leaderboard] Error loading static data:', error);
       this.showError();
+      throw error;
     }
   }
 
