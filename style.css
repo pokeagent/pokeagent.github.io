@@ -1916,3 +1916,128 @@ p, .showdown-content p {
     word-break: break-word;
     white-space: normal;
 }
+/* ========================================
+   Progress Bar Styles
+   ======================================== */
+
+.progress-bar-row {
+  background: transparent !important;
+}
+
+.progress-bar-row:hover {
+  background: transparent !important;
+}
+
+.qualifying-progress-container {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-bottom: 2px solid #cbd5e0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.progress-label .status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-status-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #48bb78;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.progress-status-icon.completed {
+  background: #4299e1;
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.progress-bar-track {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 100%;
+  border-radius: 12px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.progress-bar-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+.progress-bar-fill.completed {
+  background: linear-gradient(90deg, #4299e1 0%, #48bb78 50%, #38b2ac 100%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-bar-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.progress-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.progress-dates .date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

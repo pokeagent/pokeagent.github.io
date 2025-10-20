@@ -300,18 +300,106 @@ class BattlingLeaderboard {
     return qualMap;
   }
 
+  /**
+   * Calculate qualifying window progress percentage
+   */
+  calculateProgress(formatKey) {
+    if (!this.data.qualifying_status || !this.data.qualifying_status[formatKey]) {
+      return null;
+    }
+    
+    const status = this.data.qualifying_status[formatKey];
+    const now = new Date();
+    // status.start_date and status.end_date are like "2025-10-13 00:01"
+    const start = new Date(status.start_date + ':00-05:00'); // CT timezone, add seconds
+    const end = new Date(status.end_date + ':00-05:00');
+    
+    const totalDuration = end - start;
+    const elapsed = now - start;
+    const percentage = Math.max(0, Math.min(100, (elapsed / totalDuration) * 100));
+    
+    return {
+      percentage: percentage,
+      isActive: status.active,
+      isCompleted: !status.active && now > end,
+      startDate: start,
+      endDate: end,
+      daysRemaining: Math.ceil((end - now) / (1000 * 60 * 60 * 24)),
+      daysTotal: Math.ceil(totalDuration / (1000 * 60 * 60 * 24))
+    };
+  }
+  
+  /**
+   * Render progress bar HTML
+   */
+  renderProgressBar(formatKey) {
+    const progress = this.calculateProgress(formatKey);
+    if (!progress) return '';
+    
+    const percentage = Math.round(progress.percentage);
+    const statusClass = progress.isCompleted ? 'completed' : '';
+    const statusText = progress.isCompleted ? 
+      'Qualifier Completed' : 
+      progress.isActive ? 
+        `Live Qualifying - ${progress.daysRemaining} day${progress.daysRemaining !== 1 ? 's' : ''} remaining` :
+        'Qualifier Not Started';
+    
+    const startFormatted = progress.startDate.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      timeZone: 'America/Chicago'
+    });
+    const endFormatted = progress.endDate.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      timeZone: 'America/Chicago'
+    });
+    
+    return `
+      <tr class="progress-bar-row">
+        <td colspan="6" style="padding: 0;">
+          <div class="qualifying-progress-container">
+            <div class="progress-label">
+              <span><i class="fas fa-trophy" style="color: #667eea; margin-right: 0.5rem;"></i>Qualifying Window</span>
+              <span class="status">
+                <span class="progress-status-icon ${statusClass}"></span>
+                <span>${statusText}</span>
+              </span>
+            </div>
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill ${statusClass}" style="width: ${percentage}%"></div>
+              <div class="progress-bar-percentage">${percentage}%</div>
+            </div>
+            <div class="progress-dates">
+              <span class="date"><i class="fas fa-play-circle"></i> ${startFormatted}</span>
+              <span class="date">${endFormatted} <i class="fas fa-flag-checkered"></i></span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    `;
+  }
+
   renderFormatLeaderboard(format, tableElement) {
     if (!tableElement) {
       return;
     }
 
-    // Check if this format is inactive
+    // Check if this format hasn't started yet (show placeholder)
     if (this.data.qualifying_status) {
       const status = this.data.qualifying_status[format];
       if (status && !status.active) {
-        // Format is inactive - show blur overlay
-        this.showInactiveOverlay(tableElement, format, status.start_date);
-        return;
+        // Check if it's before start date (hasn't started) or after end date (completed)
+        const now = new Date();
+        // Parse datetime strings as Central Time (UTC-5)
+        const start = new Date(status.start_date + ':00-05:00');
+        
+        // Only show "Begins" overlay if qualifier hasn't started yet
+        if (now < start) {
+          this.showInactiveOverlay(tableElement, format, status.start_date);
+          return;
+        }
+        // If after start date, it's completed - show the final standings (fall through)
       }
     }
 
@@ -337,18 +425,24 @@ class BattlingLeaderboard {
     // Compute QUAL badges
     const qualPlayers = this.computeQualBadges(players);
     
-    // Render table
-    tableElement.innerHTML = players.map((player, index) => 
+    // Render progress bar + table
+    const progressBarHTML = this.renderProgressBar(format);
+    const playersHTML = players.map((player, index) => 
       this.renderPlayerRow(player, index + 1, qualPlayers)
     ).join('');
+    
+    tableElement.innerHTML = progressBarHTML + playersHTML;
   }
 
-  showInactiveOverlay(tableElement, format, startDate) {
+  showInactiveOverlay(tableElement, format, startDatetime) {
     const formatName = format === 'gen1ou' ? 'Gen 1 OU' : 'Gen 9 OU';
-    const dateFormatted = new Date(startDate).toLocaleDateString('en-US', {
+    // startDatetime is like "2025-10-13 00:01"
+    const date = new Date(startDatetime + ':00-05:00'); // Add seconds and CT timezone
+    const dateFormatted = date.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
-      year: 'numeric'
+      year: 'numeric',
+      timeZone: 'America/Chicago'
     });
     
     tableElement.innerHTML = `
