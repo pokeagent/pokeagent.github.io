@@ -20,7 +20,10 @@ class BattlingLeaderboard {
       hideBaselinesCheckbox: document.getElementById('hide-baselines'),
       showLLMCheckbox: document.getElementById('show-llm-only'),
       baselineExplanation: document.getElementById('baseline-explanation'),
-      lastUpdated: document.getElementById('last-updated'),
+      gen1ouLastUpdated: document.getElementById('gen1ou-last-updated'),
+      gen9ouLastUpdated: document.getElementById('gen9ou-last-updated'),
+      gen1ouHRMinGames: document.getElementById('gen1ou-hr-min-games'),
+      gen9ouHRMinGames: document.getElementById('gen9ou-hr-min-games'),
       h2hContainer: document.getElementById('h2h-matrix-container'),
       h2hToggleBtn: document.getElementById('h2h-toggle-btn')
     };
@@ -101,22 +104,9 @@ class BattlingLeaderboard {
     this.renderFormatLeaderboard('gen1ou', this.elements.gen1Table);
     this.renderFormatLeaderboard('gen9ou', this.elements.gen9Table);
     
-    if (this.data.last_updated && this.elements.lastUpdated) {
-      const lastUpdated = new Date(this.data.last_updated).toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        year: 'numeric',
-        month: 'numeric', 
-        day: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      });
-      this.elements.lastUpdated.textContent = `Last updated: ${lastUpdated} CT`;
-    }
-
-    // Update HR minimum games display
-    this.updateHRMinGamesDisplay();
+    // Update per-format timestamps and HR info
+    this.updateFormatInfo('gen1ou');
+    this.updateFormatInfo('gen9ou');
 
     // Update H2H matrix visibility
     if (this.elements.h2hContainer) {
@@ -124,40 +114,62 @@ class BattlingLeaderboard {
     }
   }
 
-  extractHRMinGames() {
-    // Extract HR min_games_threshold from the data
-    // Check all players across all formats and verify they all have the same value
-    const minGamesValues = new Set();
+  extractHRMinGames(format) {
+    // Extract HR min_games_threshold from the data for a specific format
+    const players = this.data.formats?.[format] || [];
     
-    for (const formatName in this.data.formats) {
-      const players = this.data.formats[formatName];
-      for (const player of players) {
-        if (player.whr && player.whr.min_games_threshold !== undefined) {
-          minGamesValues.add(player.whr.min_games_threshold);
-        }
+    for (const player of players) {
+      if (player.whr && player.whr.min_games_threshold !== undefined) {
+        return player.whr.min_games_threshold;
       }
     }
     
-    // If all values are the same (set size = 1), return that value
-    if (minGamesValues.size === 1) {
-      return Array.from(minGamesValues)[0];
-    } else if (minGamesValues.size > 1) {
-      console.warn('Inconsistent HR min_games_threshold values found:', Array.from(minGamesValues));
-      return null;
-    }
-    
-    // No HR data found
     return null;
   }
 
-  updateHRMinGamesDisplay() {
-    // Update the HR min games display element (now inline with Glicko text)
-    const hrMinGamesElement = document.getElementById('hr-min-games-display');
+  updateFormatInfo(format) {
+    const formatKey = format === 'gen1ou' ? 'gen1ou' : 'gen9ou';
+    const lastUpdatedElement = this.elements[`${formatKey}LastUpdated`];
+    const hrMinGamesElement = this.elements[`${formatKey}HRMinGames`];
     
+    // Update last updated timestamp
+    if (lastUpdatedElement) {
+      let timestamp;
+      
+      // Check for per-format timestamp first, then fall back to global
+      if (this.data.format_timestamps && this.data.format_timestamps[format]) {
+        timestamp = this.data.format_timestamps[format];
+      } else if (this.data.last_updated) {
+        timestamp = this.data.last_updated;
+      }
+      
+      // Hardcoded fallback for gen1ou until we have per-format timestamps in the data
+      if (format === 'gen1ou' && !this.data.format_timestamps?.[format]) {
+        // Backfill: gen1ou was last updated 10/19/2025, 11:00:53 PM CT
+        // Convert to ISO format: CT is UTC-5, so 11:00:53 PM CT = 4:00:53 AM UTC next day
+        timestamp = '2025-10-20T04:00:53+00:00';
+      }
+      
+      if (timestamp) {
+        const lastUpdated = new Date(timestamp).toLocaleString('en-US', {
+          timeZone: 'America/Chicago',
+          year: 'numeric',
+          month: 'numeric', 
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+        lastUpdatedElement.textContent = `Last updated: ${lastUpdated} CT`;
+      }
+    }
+    
+    // Update HR min games requirement
     if (hrMinGamesElement) {
-      const minGames = this.extractHRMinGames();
+      const minGames = this.extractHRMinGames(format);
       if (minGames !== null) {
-        hrMinGamesElement.textContent = `HR requires ${minGames}+ games.`;
+        hrMinGamesElement.textContent = `HR requires ${minGames}+ games`;
       } else {
         hrMinGamesElement.textContent = '';
       }
@@ -383,23 +395,23 @@ class BattlingLeaderboard {
     }
     
     return `<tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#f8fafc'" onmouseout="this.style.backgroundColor='white'">
-      <td style="padding: 10px; font-weight: 600; color: #2d3748;">${rank}</td>
-      <td style="padding: 10px; font-weight: 500; white-space: nowrap;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}${qualBadge}</td>
-      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${hrDisplay}</td>
-      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${player.elo || '-'}</td>
-      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${formattedGxe}</td>
-      <td style="padding: 10px; text-align: center; font-weight: 500; color: #2d3748;">${wlRatio}</td>
+      <td style="padding: 8px; font-weight: 600; color: #2d3748; font-size: 0.9rem;">${rank}</td>
+      <td style="padding: 8px; font-weight: 500; white-space: nowrap; font-size: 0.9rem;"><span style="display: inline-block; vertical-align: middle;">${username.display}</span>${baselineBadge}${qualBadge}</td>
+      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${hrDisplay}</td>
+      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${player.elo || '-'}</td>
+      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${formattedGxe}</td>
+      <td style="padding: 8px; text-align: center; font-weight: 500; color: #2d3748; font-size: 0.9rem;">${wlRatio}</td>
     </tr>`;
   }
 
   getNoDataRow() {
     return `<tr style="border-bottom: 1px solid #e2e8f0;">
-      <td style="padding: 10px; color: #718096;">-</td>
-      <td style="padding: 10px; color: #718096;">No data available</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+      <td style="padding: 8px; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; color: #718096; font-size: 0.9rem;">No data available</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
     </tr>`;
   }
 
@@ -430,12 +442,12 @@ class BattlingLeaderboard {
 
   showError() {
     const errorRow = `<tr style="border-bottom: 1px solid #e2e8f0;">
-      <td style="padding: 10px; color: #718096;">-</td>
-      <td style="padding: 10px; color: #718096;">Error loading data</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
-      <td style="padding: 10px; text-align: center; color: #718096;">-</td>
+      <td style="padding: 8px; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; color: #718096; font-size: 0.9rem;">Error loading data</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
+      <td style="padding: 8px; text-align: center; color: #718096; font-size: 0.9rem;">-</td>
     </tr>`;
     
     if (this.elements.gen1Table) this.elements.gen1Table.innerHTML = errorRow;

@@ -1,5 +1,9 @@
 {
   "last_updated": "2025-10-20T19:29:56.872522+00:00",
+  "format_timestamps": {
+    "gen1ou": "2025-10-20T04:00:53+00:00",
+    "gen9ou": "2025-10-20T19:29:56.872522+00:00"
+  },
   "qualifying_status": {
     "gen1ou": {
       "active": true,
