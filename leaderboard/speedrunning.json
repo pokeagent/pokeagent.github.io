@@ -4,7 +4,7 @@
     "team": "Human",
     "completion_percent": 96.2,
     "runtime": "00:01:10",
-    "last_updated": "2025-10-24T20:18:57.857Z",
+    "last_updated": "2025-10-24T22:36:42.769Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00:37",
@@ -301,7 +301,7 @@
     "team": "Ed",
     "completion_percent": 15.4,
     "runtime": "00:11:39",
-    "last_updated": "2025-10-24T20:18:38.730Z",
+    "last_updated": "2025-10-24T22:36:21.204Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": null,
@@ -343,7 +343,7 @@
   },
   {
     "rank": 7,
-    "team": "Reindert Pelsma",
+    "team": "Team Epoch",
     "completion_percent": 15.4,
     "runtime": "11:49:37",
     "last_updated": "2025-10-24T12:23:01.607Z",
@@ -388,51 +388,6 @@
   },
   {
     "rank": 8,
-    "team": "Hi, could you please rename Reindert Pelsma to Team Epoch (https://teamepoch.ai/ )? I filled in the form too quickly and accidentally put my own name. Everything else is exactly the same. Thank you so much in advance! ",
-    "completion_percent": 15.4,
-    "runtime": "11:49:37",
-    "last_updated": "2025-10-24T20:18:30.671Z",
-    "video": " https://youtu.be/SJ0NhnKP9qo ",
-    "milestone_splits": {
-      "GAME_RUNNING": null,
-      "PLAYER_NAME_SET": null,
-      "INTRO_CUTSCENE_COMPLETE": null,
-      "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": null,
-      "PLAYER_BEDROOM": null,
-      "RIVAL_HOUSE": null,
-      "RIVAL_BEDROOM": null,
-      "ROUTE_101": null,
-      "STARTER_CHOSEN": null,
-      "BIRCH_LAB_VISITED": null,
-      "OLDALE_TOWN": null,
-      "ROUTE_103": null,
-      "RECEIVED_POKEDEX": null,
-      "ROUTE_102": null,
-      "PETALBURG_CITY": null,
-      "DAD_FIRST_MEETING": null,
-      "GYM_EXPLANATION": null,
-      "ROUTE_104_SOUTH": null,
-      "PETALBURG_WOODS": null,
-      "TEAM_AQUA_GRUNT_DEFEATED": null,
-      "ROUTE_104_NORTH": null,
-      "RUSTBORO_CITY": null,
-      "RUSTBORO_GYM_ENTERED": null,
-      "ROXANNE_DEFEATED": null,
-      "FIRST_GYM_COMPLETE": null
-    },
-    "phase_splits": {
-      "Phase_2_Tutorial_Starting_Town": {
-        "completed": 1,
-        "total": 5,
-        "duration": "-",
-        "endTime": "-"
-      }
-    },
-    "submission_count": 1
-  },
-  {
-    "rank": 9,
     "team": "Hamburg Pok?Runners",
     "completion_percent": 12,
     "runtime": "00:04:26",
