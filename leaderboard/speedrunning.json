@@ -4,7 +4,7 @@
     "team": "Human",
     "completion_percent": 96.2,
     "runtime": "00:01:10",
-    "last_updated": "2025-10-26T20:53:32.578Z",
+    "last_updated": "2025-10-26T21:25:11.232Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00:37",
@@ -197,10 +197,10 @@
   {
     "rank": 4,
     "team": "Evelord",
-    "completion_percent": 26.9,
+    "completion_percent": 30.8,
     "runtime": "00:06:50",
-    "last_updated": "2025-10-26T20:53:04.495Z",
-    "video": "https://youtu.be/A98Jet5GxHM",
+    "last_updated": "2025-10-26T21:24:50.872Z",
+    "video": "https://youtu.be/wIL1hxmsCEk",
     "milestone_splits": {
       "GAME_RUNNING": "00:01:34",
       "PLAYER_NAME_SET": "00:06:56",
@@ -208,8 +208,8 @@
       "LITTLEROOT_TOWN": "0:00",
       "PLAYER_HOUSE_ENTERED": "00:01:28",
       "PLAYER_BEDROOM": "00:12:36",
-      "RIVAL_HOUSE": "00:06:50",
-      "RIVAL_BEDROOM": null,
+      "RIVAL_HOUSE": "00:00:40",
+      "RIVAL_BEDROOM": "00:27:36",
       "ROUTE_101": null,
       "STARTER_CHOSEN": null,
       "BIRCH_LAB_VISITED": null,
@@ -243,7 +243,7 @@
         "endTime": "12:36"
       }
     },
-    "submission_count": 4
+    "submission_count": 5
   },
   {
     "rank": 5,
@@ -301,7 +301,7 @@
     "team": "Ed",
     "completion_percent": 15.4,
     "runtime": "00:11:39",
-    "last_updated": "2025-10-26T20:53:09.581Z",
+    "last_updated": "2025-10-26T21:24:55.230Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": null,
