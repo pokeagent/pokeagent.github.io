@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeurIPS 2025 Workshop Schedule - PokéAgent Challenge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .schedule-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0 3rem;
+            margin-top: 80px;
+        }
+
+        .schedule-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-hero .event-details {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            opacity: 0.95;
+        }
+
+        .schedule-section {
+            padding: 3rem 0;
+        }
+
+        .schedule-item {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .schedule-time {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .schedule-title {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .schedule-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .speaker-card {
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .speaker-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            display: block;
+            border: 4px solid var(--primary-color);
+        }
+
+        .speaker-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .speaker-affiliation {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .speaker-role {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #324b80;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .panel-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .panel-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-hero h1 {
+                font-size: 2rem;
+            }
+
+            .schedule-title {
+                font-size: 1.4rem;
+            }
+
+            .speakers-grid,
+            .panel-members {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">PokéAgent Challenge</a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="track1.html">Track 1</a></li>
+                <li><a href="track2.html">Track 2</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="hackathon.html">Hackathon</a></li>
+                <li><a href="neurips-schedule.html" class="active">NeurIPS Schedule</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="schedule-hero">
+        <div class="container text-center">
+            <h1>NeurIPS 2025 Workshop</h1>
+            <div class="event-details">
+                <p><i class="fas fa-calendar"></i> December 7th, 2025</p>
+                <p><i class="fas fa-clock"></i> 8:00 AM – 10:45 AM PST</p>
+                <p><i class="fas fa-link"></i> <a href="https://neurips.cc/virtual/2025/competition/127733" target="_blank" style="color: white; text-decoration: underline;">NeurIPS Virtual Event Page</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2 class="text-center mb-2">Workshop Schedule</h2>
+
+            <div class="schedule-item">
+                <span class="schedule-time">8:00 – 8:30 AM</span>
+                <h3 class="schedule-title">The PokeAgent Challenge: Competitive and Long Context Learning at Scale</h3>
+                <p class="schedule-description">
+                    <strong>Seth Karten</strong> (Princeton University)<br>
+                    Opening presentation introducing the PokeAgent Challenge, its scientific relevance, and key research frontiers in game AI.
+                </p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="schedule-time">8:30 – 9:00 AM</span>
+                <h3 class="schedule-title">Invited Talk 1: Game Theory and Imperfect Information</h3>
+                <p class="schedule-description">
+                    <strong>Aaron Traylor</strong> (Unaffiliated, currently at Microsoft)<br>
+                    A deep dive into strategic decision-making under imperfect information, drawing from game theory principles and their applications in AI systems.
+                </p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="schedule-time">9:00 – 9:30 AM</span>
+                <h3 class="schedule-title">Winner Awards + Lightning Presentations</h3>
+                <p class="schedule-description">
+                    <strong>Top Teams</strong> (5 minutes each)<br>
+                    Celebration and recognition of winning teams with brief presentations showcasing their innovative approaches and solutions.
+                </p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="schedule-time">9:30 – 10:00 AM</span>
+                <h3 class="schedule-title">Invited Talk 2: Gemini Game Effort and Kaggle Game Arena</h3>
+                <p class="schedule-description">
+                    <strong>Minmin Chen</strong> (Google DeepMind)<br>
+                    Exploring Google DeepMind's game AI initiatives, including the Gemini project and Kaggle's Game Arena platform.
+                </p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="schedule-time">10:00 – 10:30 AM</span>
+                <h3 class="schedule-title">Panel Discussion: Research Frontiers in Game AI</h3>
+                <p class="schedule-description">
+                    <strong>Moderators:</strong> Jake Grigsby (UT Austin) & Seth Karten (Princeton)<br>
+                    <strong>Panelists:</strong> Stephanie Milani (NYU / Johns Hopkins), Fei Fang (CMU), Chi Jin (Princeton), Minmin Chen (Google DeepMind), Aaron Traylor (Unaffiliated, currently at Microsoft)<br>
+                    An engaging discussion on the future of game AI research, emerging challenges, and opportunities for advancing decision-making systems.
+                </p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="schedule-time">10:30 – 10:45 AM</span>
+                <h3 class="schedule-title">Closing Remarks</h3>
+                <p class="schedule-description">
+                    <strong>Chi Jin</strong> (Princeton University)<br>
+                    Final thoughts and reflections on the competition, with a look ahead to future directions in AI research.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invited Speakers Section -->
+    <section class="schedule-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-2">Invited Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="media/headshots/aaron_traylor.jpeg" alt="Aaron Traylor" class="speaker-photo">
+                    <h4 class="speaker-name">Aaron Traylor</h4>
+                    <p class="speaker-affiliation">Unaffiliated, currently at Microsoft</p>
+                    <span class="speaker-role">Invited Speaker</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/minmin_chen.jpeg" alt="Minmin Chen" class="speaker-photo">
+                    <h4 class="speaker-name">Minmin Chen</h4>
+                    <p class="speaker-affiliation">Google DeepMind</p>
+                    <span class="speaker-role">Invited Speaker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel Discussion Moderators Section -->
+    <section class="panel-section">
+        <div class="container">
+            <h2 class="text-center mb-2">Panel Discussion Moderators</h2>
+            <div class="panel-members">
+                <div class="speaker-card">
+                    <img src="media/headshots/jg.jpg" alt="Jake Grigsby" class="speaker-photo">
+                    <h4 class="speaker-name">Jake Grigsby</h4>
+                    <p class="speaker-affiliation">UT Austin</p>
+                    <span class="speaker-role">Moderator</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/sk.jpg" alt="Seth Karten" class="speaker-photo">
+                    <h4 class="speaker-name">Seth Karten</h4>
+                    <p class="speaker-affiliation">Princeton University</p>
+                    <span class="speaker-role">Moderator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel Discussion Panelists Section -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2 class="text-center mb-2">Panelists</h2>
+            <div class="panel-members">
+                <div class="speaker-card">
+                    <img src="media/headshots/sm.png" alt="Stephanie Milani" class="speaker-photo">
+                    <h4 class="speaker-name">Stephanie Milani</h4>
+                    <p class="speaker-affiliation">NYU / Johns Hopkins</p>
+                    <span class="speaker-role">Panelist</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/ff.png" alt="Fei Fang" class="speaker-photo">
+                    <h4 class="speaker-name">Fei Fang</h4>
+                    <p class="speaker-affiliation">CMU</p>
+                    <span class="speaker-role">Panelist</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/cj.jpg" alt="Chi Jin" class="speaker-photo">
+                    <h4 class="speaker-name">Chi Jin</h4>
+                    <p class="speaker-affiliation">Princeton University</p>
+                    <span class="speaker-role">Panelist</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/minmin_chen.jpeg" alt="Minmin Chen" class="speaker-photo">
+                    <h4 class="speaker-name">Minmin Chen</h4>
+                    <p class="speaker-affiliation">Google DeepMind</p>
+                    <span class="speaker-role">Panelist</span>
+                </div>
+                <div class="speaker-card">
+                    <img src="media/headshots/aaron_traylor.jpeg" alt="Aaron Traylor" class="speaker-photo">
+                    <h4 class="speaker-name">Aaron Traylor</h4>
+                    <p class="speaker-affiliation">Unaffiliated, currently at Microsoft</p>
+                    <span class="speaker-role">Panelist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>PokéAgent Challenge</h3>
+                    <p>A NeurIPS 2025 competition advancing AI decision-making through the complex environments of Pokémon battles and gameplay.</p>
+                    <div class="social-links mt-1">
+                        <a href="https://x.com/intent/post?text=Excited%20to%20join%20the%20%23PokeAgent%20Challenge%20at%20%23NeurIPS2025!%20%F0%9F%8E%AE%E2%9A%A1%20Advancing%20AI%20decision-making%20through%20Pok%C3%A9mon%20battles%20and%20speedruns.%20Learn%20more%3A%20https%3A%2F%2Fpokeagent.github.io" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://discord.gg/E2DuX5FWF7"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@PokeAgentChallenge" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="track1.html">Track 1</a></li>
+                        <li><a href="track2.html">Track 2</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="hackathon.html">Hackathon</a></li>
+                        <li><a href="neurips-schedule.html">NeurIPS Schedule</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>For questions or support, please contact:</p>
+                    <p>Email: pokeagentchallenge@gmail.com</p>
+                    <p>Join our Discord community for direct assistance and discussions.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PokéAgent Challenge. All rights reserved. NeurIPS 2025 Competition Track.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
