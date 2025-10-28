@@ -4,31 +4,31 @@
     "team": "Human",
     "completion_percent": 96.2,
     "runtime": "00:01:10",
-    "last_updated": "2025-10-27T17:42:41.249Z",
+    "last_updated": "2025-10-28T17:30:00.389Z",
     "video": null,
     "milestone_splits": {
-      "GAME_RUNNING": "00:00:37",
-      "PLAYER_NAME_SET": "00:00:54",
-      "INTRO_CUTSCENE_COMPLETE": "00:00:08",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:00:07",
+      "INTRO_CUTSCENE_COMPLETE": "00:00:07",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:00:34",
-      "PLAYER_BEDROOM": "00:01:20",
-      "RIVAL_HOUSE": "00:01:34",
-      "RIVAL_BEDROOM": "00:01:04",
-      "ROUTE_101": "00:01:23",
-      "STARTER_CHOSEN": "00:02:15",
-      "BIRCH_LAB_VISITED": "00:01:20",
-      "OLDALE_TOWN": "00:01:59",
-      "ROUTE_103": "00:05:31",
-      "RECEIVED_POKEDEX": "00:02:58",
-      "ROUTE_102": "00:04:32",
-      "PETALBURG_CITY": null,
-      "DAD_FIRST_MEETING": null,
-      "GYM_EXPLANATION": null,
-      "ROUTE_104_SOUTH": null,
-      "PETALBURG_WOODS": null,
-      "TEAM_AQUA_GRUNT_DEFEATED": null,
-      "ROUTE_104_NORTH": null,
+      "PLAYER_HOUSE_ENTERED": "00:00:26",
+      "PLAYER_BEDROOM": "00:00:37",
+      "RIVAL_HOUSE": "00:01:26",
+      "RIVAL_BEDROOM": "00:00:07",
+      "ROUTE_101": "00:01:04",
+      "STARTER_CHOSEN": "00:01:30",
+      "BIRCH_LAB_VISITED": "00:00:04",
+      "OLDALE_TOWN": "00:01:21",
+      "ROUTE_103": "00:02:03",
+      "RECEIVED_POKEDEX": "00:00:04",
+      "ROUTE_102": "00:02:59",
+      "PETALBURG_CITY": "00:08:47",
+      "DAD_FIRST_MEETING": "00:30:14",
+      "GYM_EXPLANATION": "00:30:14",
+      "ROUTE_104_SOUTH": "00:30:14",
+      "PETALBURG_WOODS": "00:30:14",
+      "TEAM_AQUA_GRUNT_DEFEATED": "00:30:14",
+      "ROUTE_104_NORTH": "00:30:14",
       "RUSTBORO_CITY": "00:30:14",
       "RUSTBORO_GYM_ENTERED": null,
       "ROXANNE_DEFEATED": "00:11:14",
@@ -38,8 +38,8 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "00:33",
-        "endTime": "01:10"
+        "duration": "01:04",
+        "endTime": "01:04"
       },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 5,
@@ -50,23 +50,23 @@
       "Phase_3_Professor_Birch_Starter": {
         "completed": 3,
         "total": 3,
-        "duration": "01:26",
-        "endTime": "02:49"
+        "duration": "01:13",
+        "endTime": "02:17"
       },
       "Phase_4_Rival": {
         "completed": 3,
         "total": 3,
-        "duration": "04:24",
-        "endTime": "06:23"
+        "duration": "04:16",
+        "endTime": "05:37"
       },
       "Phase_5_Route_102_Petalburg": {
-        "completed": 1,
+        "completed": 4,
         "total": 4,
-        "duration": "-",
-        "endTime": "04:32"
+        "duration": "30:14",
+        "endTime": "30:14"
       },
       "Phase_6_Road_to_Rustboro_City": {
-        "completed": 1,
+        "completed": 5,
         "total": 5,
         "duration": "-",
         "endTime": "30:14"
@@ -88,19 +88,19 @@
     "last_updated": "2025-10-27T07:54:09.267Z",
     "video": "https://www.youtube.com/watch?v=KPAk-r9127o",
     "milestone_splits": {
-      "GAME_RUNNING": "00:02:00",
-      "PLAYER_NAME_SET": "00:04:29",
-      "INTRO_CUTSCENE_COMPLETE": "00:04:52",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:02:02",
+      "INTRO_CUTSCENE_COMPLETE": "00:04:36",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:07:44",
-      "PLAYER_BEDROOM": "00:17:01",
-      "RIVAL_HOUSE": "00:18:42",
-      "RIVAL_BEDROOM": "00:23:13",
+      "PLAYER_HOUSE_ENTERED": "00:05:40",
+      "PLAYER_BEDROOM": "00:07:50",
+      "RIVAL_HOUSE": "00:17:07",
+      "RIVAL_BEDROOM": "00:18:48",
       "ROUTE_101": null,
-      "STARTER_CHOSEN": "01:03:59",
-      "BIRCH_LAB_VISITED": "00:27:31",
-      "OLDALE_TOWN": "01:26:04",
-      "ROUTE_103": "01:32:08",
+      "STARTER_CHOSEN": "00:27:38",
+      "BIRCH_LAB_VISITED": "00:23:20",
+      "OLDALE_TOWN": "01:04:06",
+      "ROUTE_103": "01:26:10",
       "RECEIVED_POKEDEX": null,
       "ROUTE_102": null,
       "PETALBURG_CITY": null,
@@ -119,26 +119,26 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "11:55",
-        "endTime": "13:55"
+        "duration": "12:05",
+        "endTime": "12:05"
       },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 5,
         "total": 5,
-        "duration": "03:08:15",
-        "endTime": "03:08:15"
+        "duration": "01:40:33",
+        "endTime": "01:40:33"
       },
       "Phase_3_Professor_Birch_Starter": {
         "completed": 2,
         "total": 3,
-        "duration": "04:16:47",
-        "endTime": "05:54:03"
+        "duration": "02:02:29",
+        "endTime": "03:08:16"
       },
       "Phase_4_Rival": {
         "completed": 2,
         "total": 3,
-        "duration": "06:04",
-        "endTime": "01:32:08"
+        "duration": "22:04",
+        "endTime": "01:26:10"
       }
     },
     "submission_count": 2
@@ -151,17 +151,17 @@
     "last_updated": "2025-10-27T17:41:37.473Z",
     "video": "https://youtu.be/ExfuXyFQJ8k",
     "milestone_splits": {
-      "GAME_RUNNING": "00:01:34",
-      "PLAYER_NAME_SET": "00:06:56",
-      "INTRO_CUTSCENE_COMPLETE": "00:00:20",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:01:35",
+      "INTRO_CUTSCENE_COMPLETE": "00:07:00",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:01:28",
-      "PLAYER_BEDROOM": "00:12:36",
-      "RIVAL_HOUSE": "00:00:40",
-      "RIVAL_BEDROOM": "00:01:36",
-      "ROUTE_101": "00:03:37",
-      "STARTER_CHOSEN": "00:05:06",
-      "BIRCH_LAB_VISITED": "00:37:54",
+      "PLAYER_HOUSE_ENTERED": "00:00:53",
+      "PLAYER_BEDROOM": "00:01:32",
+      "RIVAL_HOUSE": "00:00:16",
+      "RIVAL_BEDROOM": "00:00:15",
+      "ROUTE_101": "00:01:42",
+      "STARTER_CHOSEN": "00:03:42",
+      "BIRCH_LAB_VISITED": "00:05:10",
       "OLDALE_TOWN": null,
       "ROUTE_103": null,
       "RECEIVED_POKEDEX": null,
@@ -182,20 +182,20 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "08:10",
-        "endTime": "09:44"
+        "duration": "07:00",
+        "endTime": "07:00"
       },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 3,
         "total": 5,
-        "duration": "12:36",
-        "endTime": "12:36"
+        "duration": "01:32",
+        "endTime": "01:32"
       },
       "Phase_3_Professor_Birch_Starter": {
         "completed": 3,
         "total": 3,
-        "duration": "34:17",
-        "endTime": "37:54"
+        "duration": "03:28",
+        "endTime": "05:10"
       }
     },
     "submission_count": 6
@@ -208,16 +208,16 @@
     "last_updated": "2025-09-23T21:07:57.766Z",
     "video": "https://www.youtube.com/@PokeAgentChallenge",
     "milestone_splits": {
-      "GAME_RUNNING": "00:01:47",
-      "PLAYER_NAME_SET": "00:44:24",
-      "INTRO_CUTSCENE_COMPLETE": "00:00:21",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:01:47",
+      "INTRO_CUTSCENE_COMPLETE": "00:44:27",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:03:59",
-      "PLAYER_BEDROOM": "01:30:01",
-      "RIVAL_HOUSE": "02:09:24",
-      "RIVAL_BEDROOM": "03:01:23",
-      "ROUTE_101": "00:02:56",
-      "STARTER_CHOSEN": "00:05:51",
+      "PLAYER_HOUSE_ENTERED": "00:01:51",
+      "PLAYER_BEDROOM": "00:04:00",
+      "RIVAL_HOUSE": "02:06:30",
+      "RIVAL_BEDROOM": "02:09:25",
+      "ROUTE_101": "03:01:34",
+      "STARTER_CHOSEN": "00:03:02",
       "BIRCH_LAB_VISITED": "03:23:52",
       "OLDALE_TOWN": null,
       "ROUTE_103": null,
@@ -239,19 +239,19 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "45:10",
-        "endTime": "46:57"
+        "duration": "44:27",
+        "endTime": "44:27"
       },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 5,
         "total": 5,
-        "duration": "03:01:23",
-        "endTime": "03:01:23"
+        "duration": "02:09:25",
+        "endTime": "02:09:25"
       },
       "Phase_3_Professor_Birch_Starter": {
         "completed": 3,
         "total": 3,
-        "duration": "03:20:56",
+        "duration": "03:20:50",
         "endTime": "03:23:52"
       }
     },
@@ -265,11 +265,11 @@
     "last_updated": "2025-10-22T10:06:52.867Z",
     "video": "https://youtu.be/sU1CPWxeOLk",
     "milestone_splits": {
-      "GAME_RUNNING": "00:03:41",
-      "PLAYER_NAME_SET": "00:06:14",
-      "INTRO_CUTSCENE_COMPLETE": "00:07:40",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:03:42",
+      "INTRO_CUTSCENE_COMPLETE": "00:06:15",
       "LITTLEROOT_TOWN": "0:00",
-      "PLAYER_HOUSE_ENTERED": "00:09:36",
+      "PLAYER_HOUSE_ENTERED": "00:08:52",
       "PLAYER_BEDROOM": null,
       "RIVAL_HOUSE": null,
       "RIVAL_BEDROOM": null,
@@ -296,14 +296,14 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "03:59",
-        "endTime": "07:40"
+        "duration": "06:15",
+        "endTime": "06:15"
       },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 2,
         "total": 5,
-        "duration": "09:36",
-        "endTime": "09:36"
+        "duration": "08:52",
+        "endTime": "08:52"
       }
     },
     "submission_count": 1
@@ -313,12 +313,12 @@
     "team": "Ed",
     "completion_percent": 15.4,
     "runtime": "00:11:39",
-    "last_updated": "2025-10-27T17:41:42.608Z",
+    "last_updated": "2025-10-28T17:29:39.835Z",
     "video": null,
     "milestone_splits": {
-      "GAME_RUNNING": null,
-      "PLAYER_NAME_SET": null,
-      "INTRO_CUTSCENE_COMPLETE": null,
+      "GAME_RUNNING": "00:01:46",
+      "PLAYER_NAME_SET": "00:01:46",
+      "INTRO_CUTSCENE_COMPLETE": "00:01:46",
       "LITTLEROOT_TOWN": "0:00",
       "PLAYER_HOUSE_ENTERED": null,
       "PLAYER_BEDROOM": null,
@@ -344,6 +344,12 @@
       "FIRST_GYM_COMPLETE": null
     },
     "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "-",
+        "endTime": "01:46"
+      },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 1,
         "total": 5,
@@ -361,9 +367,9 @@
     "last_updated": "2025-10-24T12:23:01.607Z",
     "video": " https://youtu.be/SJ0NhnKP9qo ",
     "milestone_splits": {
-      "GAME_RUNNING": null,
-      "PLAYER_NAME_SET": null,
-      "INTRO_CUTSCENE_COMPLETE": null,
+      "GAME_RUNNING": "00:06:13",
+      "PLAYER_NAME_SET": "00:06:13",
+      "INTRO_CUTSCENE_COMPLETE": "00:06:13",
       "LITTLEROOT_TOWN": "0:00",
       "PLAYER_HOUSE_ENTERED": null,
       "PLAYER_BEDROOM": null,
@@ -389,6 +395,12 @@
       "FIRST_GYM_COMPLETE": null
     },
     "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "-",
+        "endTime": "06:13"
+      },
       "Phase_2_Tutorial_Starting_Town": {
         "completed": 1,
         "total": 5,
@@ -406,9 +418,9 @@
     "last_updated": "2025-09-23T18:45:56.525Z",
     "video": "https://youtu.be/YaS2ZMcGR8c",
     "milestone_splits": {
-      "GAME_RUNNING": "00:01:44",
-      "PLAYER_NAME_SET": "00:03:15",
-      "INTRO_CUTSCENE_COMPLETE": "00:04:26",
+      "GAME_RUNNING": "00:00:00",
+      "PLAYER_NAME_SET": "00:01:49",
+      "INTRO_CUTSCENE_COMPLETE": "00:03:29",
       "LITTLEROOT_TOWN": null,
       "PLAYER_HOUSE_ENTERED": null,
       "PLAYER_BEDROOM": null,
@@ -437,8 +449,8 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "02:42",
-        "endTime": "04:26"
+        "duration": "03:29",
+        "endTime": "03:29"
       }
     },
     "submission_count": 2
