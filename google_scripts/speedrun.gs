@@ -246,7 +246,8 @@ function updateLeaderboardAndPush() {
   const token = PropertiesService.getScriptProperties().getProperty("GITHUB_TOKEN");
 
   const leaderboard = generateLeaderboardJSON();  // <-- from prior message
-  const content = Utilities.base64EncodeWebSafe(leaderboard);
+  // GitHub API expects standard base64 encoding (not web-safe)
+  const content = Utilities.base64Encode(leaderboard);
 
   const path = "leaderboard/speedrunning.json";
   const sha = getFileSha(repo, path, branch, token); // get previous SHA for commit
@@ -351,17 +352,27 @@ function getGoogleDriveFileContent(url) {
 }
 
 function parseSubmissionLog(logContent) {
+  /*
+   * Parse a submission log file and extract milestone splits.
+   *
+   * IMPORTANT FIX: This function now handles cases where the MILESTONE field is not updating
+   * but the MAP field has advanced. It infers milestones from the MAP field using location
+   * mappings and ensures milestones are completed in the correct order.
+   *
+   * For example, if MILESTONE=LITTLEROOT_TOWN but MAP=LITTLEROOT TOWN BRENDANS HOUSE 1F,
+   * we infer that PLAYER_HOUSE_ENTERED has been reached.
+   */
   Logger.log(`parseSubmissionLog: Processing ${logContent.length} characters`);
   const lines = logContent.split('\n');
   Logger.log(`Found ${lines.length} lines in log file`);
-  
+
   let model = '';
   let startTime = '';
   let runtime = '';
   let completionPercent = 0;
   let milestoneSplits = {};
   let phaseSplits = {};
-  
+
   // Define phase milestones for tracking - exact names from MILESTONES.md
   const PHASE_DEFINITIONS = {
     'Phase_1_Game_Initialization': ['GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE'],
@@ -372,6 +383,89 @@ function parseSubmissionLog(logContent) {
     'Phase_6_Road_to_Rustboro_City': ['ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY'],
     'Phase_7_First_Gym_Challenge': ['RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE']
   };
+
+  // Location to milestone mappings (must be completed in order)
+  const LOCATION_TO_MILESTONE = {
+    'MOVING_VAN': 'INTRO_CUTSCENE_COMPLETE',
+    'LITTLEROOT': 'LITTLEROOT_TOWN',
+    'BRENDANS_HOUSE_1F': 'PLAYER_HOUSE_ENTERED',
+    'BRENDANS_HOUSE_2F': 'PLAYER_BEDROOM',
+    'MAYS_HOUSE_1F': 'RIVAL_HOUSE',
+    'MAYS_HOUSE_2F': 'RIVAL_BEDROOM',
+    'ROUTE_101': 'ROUTE_101',
+    'ROUTE101': 'ROUTE_101',
+    'BIRCHS_LAB': 'BIRCH_LAB_VISITED',
+    'PROFESSOR_BIRCHS_LAB': 'BIRCH_LAB_VISITED',
+    'OLDALE': 'OLDALE_TOWN',
+    'ROUTE_103': 'ROUTE_103',
+    'ROUTE103': 'ROUTE_103',
+    'ROUTE_102': 'ROUTE_102',
+    'ROUTE102': 'ROUTE_102',
+    'PETALBURG_CITY_GYM': 'DAD_FIRST_MEETING',
+    'PETALBURG_GYM': 'DAD_FIRST_MEETING',
+    'PETALBURG': 'PETALBURG_CITY',
+    'ROUTE_104': 'ROUTE_104_SOUTH',
+    'ROUTE104': 'ROUTE_104_SOUTH',
+    'PETALBURG_WOODS': 'PETALBURG_WOODS',
+    'RUSTBORO_GYM': 'RUSTBORO_GYM_ENTERED',
+    'RUSTBORO_CITY_GYM': 'RUSTBORO_GYM_ENTERED',
+    'RUSTBORO': 'RUSTBORO_CITY'
+  };
+
+  // Ordered list of milestones for progression tracking
+  const MILESTONE_ORDER = [
+    'GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE',
+    'LITTLEROOT_TOWN', 'PLAYER_HOUSE_ENTERED', 'PLAYER_BEDROOM', 'RIVAL_HOUSE', 'RIVAL_BEDROOM',
+    'ROUTE_101', 'STARTER_CHOSEN', 'BIRCH_LAB_VISITED',
+    'OLDALE_TOWN', 'ROUTE_103', 'RECEIVED_POKEDEX',
+    'ROUTE_102', 'PETALBURG_CITY', 'DAD_FIRST_MEETING', 'GYM_EXPLANATION',
+    'ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY',
+    'RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE'
+  ];
+
+  // Helper function to get milestone index
+  function getMilestoneIndex(milestone) {
+    const index = MILESTONE_ORDER.indexOf(milestone);
+    return index >= 0 ? index : -1;
+  }
+
+  // Helper function to infer milestone from MAP field
+  function inferMilestoneFromMap(mapValue) {
+    if (!mapValue) return null;
+
+    // Normalize: uppercase and replace spaces with underscores for matching
+    const upperMap = mapValue.toUpperCase().replace(/\s+/g, '_');
+
+    // Check each location pattern in order of specificity (most specific first)
+    // This prevents "LITTLEROOT" from matching before "BRENDANS_HOUSE_1F" in "LITTLEROOT TOWN BRENDANS HOUSE 1F"
+    const orderedLocations = [
+      'BRENDANS_HOUSE_2F', 'BRENDANS_HOUSE_1F',
+      'MAYS_HOUSE_2F', 'MAYS_HOUSE_1F',
+      'PROFESSOR_BIRCHS_LAB', 'BIRCHS_LAB',
+      'PETALBURG_CITY_GYM', 'PETALBURG_GYM',
+      'RUSTBORO_CITY_GYM', 'RUSTBORO_GYM',
+      'PETALBURG_WOODS',
+      'ROUTE_101', 'ROUTE101',
+      'ROUTE_102', 'ROUTE102',
+      'ROUTE_103', 'ROUTE103',
+      'ROUTE_104', 'ROUTE104',
+      'MOVING_VAN',
+      'OLDALE',
+      'PETALBURG',
+      'RUSTBORO',
+      'LITTLEROOT'
+    ];
+
+    for (const locationKey of orderedLocations) {
+      if (upperMap.includes(locationKey)) {
+        return LOCATION_TO_MILESTONE[locationKey];
+      }
+    }
+    return null;
+  }
+
+  // Track the highest milestone reached
+  let highestMilestoneIndex = -1;
   
   // Find the header line first (looking for Format: line)
   let headerLine = null;
@@ -420,87 +514,139 @@ function parseSubmissionLog(logContent) {
     // Skip header lines and process data lines
     if (line.includes('STEP=') && line.includes('MILESTONE=') && line.includes('RUNTIME=') && headerLine) {
       Logger.log(`Processing data line ${i}: ${line.substring(0, 150)}...`);
-      
+
       const headers = headerLine.split('|').map(h => h.trim());
       const parts = line.split('|').map(p => p.trim());
-      
-      // Extract milestone
+
+      // Extract milestone, map, and runtime
       const milestoneIndex = headers.findIndex(h => h === 'MILESTONE');
+      const mapIndex = headers.findIndex(h => h === 'MAP');
       const runtimeIndex = headers.findIndex(h => h === 'RUNTIME');
-      
-      if (milestoneIndex >= 0 && runtimeIndex >= 0 && 
+
+      if (milestoneIndex >= 0 && runtimeIndex >= 0 &&
           milestoneIndex < parts.length && runtimeIndex < parts.length) {
-        
+
         const milestoneCell = parts[milestoneIndex];
         const runtimeCell = parts[runtimeIndex];
-        
+        const mapCell = mapIndex >= 0 && mapIndex < parts.length ? parts[mapIndex] : null;
+
         // Extract milestone name from MILESTONE=VALUE format
         const milestoneMatch = milestoneCell.match(/MILESTONE=([^\s]+)/);
         const runtimeMatch = runtimeCell.match(/RUNTIME=([^\s]+)/);
-        
-        if (milestoneMatch && runtimeMatch) {
-          const milestone = milestoneMatch[1].trim();
-          const runtimeValue = runtimeMatch[1].trim();
-          
-          Logger.log(`Found milestone: ${milestone}, runtime: ${runtimeValue}`);
-          
-          // Special handling for LITTLEROOT_TOWN - it should be 0:00 since the game starts there
-          if (milestone === 'LITTLEROOT_TOWN') {
-            milestoneSplits[milestone] = '0:00';
-            Logger.log(`Set LITTLEROOT_TOWN split to 0:00 (starting location)`);
-          } else {
-            // Store the runtime for this milestone (use latest occurrence)
-            milestoneSplits[milestone] = runtimeValue;
+
+        // Extract MAP value (capture everything after MAP=, including spaces)
+        let mapValue = null;
+        if (mapCell) {
+          const mapMatch = mapCell.match(/MAP=(.+)/);
+          if (mapMatch) {
+            mapValue = mapMatch[1].trim();
           }
-          
+        }
+
+        if (milestoneMatch && runtimeMatch) {
+          let milestone = milestoneMatch[1].trim();
+          const runtimeValue = runtimeMatch[1].trim();
+
+          // Try to infer milestone from MAP if available
+          const inferredMilestone = inferMilestoneFromMap(mapValue);
+
+          // Track milestones to record
+          const milestonesToRecord = [];
+
+          // If we have a valid milestone from the MILESTONE field, add it
+          if (milestone !== 'NONE') {
+            const milestoneIdx = getMilestoneIndex(milestone);
+            if (milestoneIdx >= 0) {
+              milestonesToRecord.push(milestone);
+            }
+          }
+
+          // If we inferred a milestone from MAP, check if it should be recorded
+          if (inferredMilestone) {
+            const inferredIndex = getMilestoneIndex(inferredMilestone);
+
+            // Record inferred milestone if it's more advanced than what we've seen
+            if (inferredIndex > highestMilestoneIndex) {
+              // Fill in any gaps in milestone progression
+              // For example, if we jump from LITTLEROOT_TOWN to PLAYER_BEDROOM,
+              // we should also record PLAYER_HOUSE_ENTERED
+              for (let idx = highestMilestoneIndex + 1; idx <= inferredIndex; idx++) {
+                const gapMilestone = MILESTONE_ORDER[idx];
+                if (gapMilestone && !milestonesToRecord.includes(gapMilestone)) {
+                  milestonesToRecord.push(gapMilestone);
+                  Logger.log(`Inferring gap milestone ${gapMilestone} from MAP progression`);
+                }
+              }
+            }
+          }
+
           // Map milestones to approximate completion percentages (26 total milestones from MILESTONES.md)
           const milestoneProgress = {
               // Phase 1: Game Initialization (3 milestones)
               'GAME_RUNNING': 3.8,
               'PLAYER_NAME_SET': 7.7,
               'INTRO_CUTSCENE_COMPLETE': 11.5,
-              
+
               // Phase 2: Tutorial & Starting Town (5 milestones)
               'LITTLEROOT_TOWN': 15.4,
               'PLAYER_HOUSE_ENTERED': 19.2,
               'PLAYER_BEDROOM': 23.1,
               'RIVAL_HOUSE': 26.9,
               'RIVAL_BEDROOM': 30.8,
-              
+
               // Phase 3: Professor Birch & Starter (3 milestones)
               'ROUTE_101': 34.6,
               'STARTER_CHOSEN': 38.5,
               'BIRCH_LAB_VISITED': 42.3,
-              
+
               // Phase 4: Rival (3 milestones)
               'OLDALE_TOWN': 46.2,
               'ROUTE_103': 50.0,
               'RECEIVED_POKEDEX': 53.8,
-              
+
               // Phase 5: Route 102 & Petalburg (4 milestones)
               'ROUTE_102': 57.7,
               'PETALBURG_CITY': 61.5,
               'DAD_FIRST_MEETING': 65.4,
               'GYM_EXPLANATION': 69.2,
-              
+
               // Phase 6: Road to Rustboro City (5 milestones)
               'ROUTE_104_SOUTH': 73.1,
               'PETALBURG_WOODS': 76.9,
               'TEAM_AQUA_GRUNT_DEFEATED': 80.8,
               'ROUTE_104_NORTH': 84.6,
               'RUSTBORO_CITY': 88.5,
-              
+
               // Phase 7: First Gym Challenge (3 milestones)
               'RUSTBORO_GYM_ENTERED': 92.3,
               'ROXANNE_DEFEATED': 96.2,
               'FIRST_GYM_COMPLETE': 100.0
           };
-          
-          const progress = milestoneProgress[milestone] || 0;
-          if (progress > completionPercent) {
-            completionPercent = progress;
-            Logger.log(`Updated completion to ${progress}% based on milestone ${milestone}`);
-          }
+
+          // Record all collected milestones and update completion
+          milestonesToRecord.forEach(ms => {
+            if (ms === 'LITTLEROOT_TOWN') {
+              milestoneSplits[ms] = '0:00';
+              Logger.log(`Set LITTLEROOT_TOWN split to 0:00 (starting location)`);
+            } else if (!milestoneSplits[ms]) {
+              // Only record if we haven't already recorded this milestone
+              milestoneSplits[ms] = runtimeValue;
+              Logger.log(`Recorded milestone: ${ms}, runtime: ${runtimeValue}${inferredMilestone === ms ? ' (inferred from MAP)' : ''}`);
+            }
+
+            // Update highest milestone index
+            const msIdx = getMilestoneIndex(ms);
+            if (msIdx > highestMilestoneIndex) {
+              highestMilestoneIndex = msIdx;
+            }
+
+            // Update completion percentage
+            const progress = milestoneProgress[ms] || 0;
+            if (progress > completionPercent) {
+              completionPercent = progress;
+              Logger.log(`Updated completion to ${progress}% based on milestone ${ms}`);
+            }
+          });
         }
       }
     }
