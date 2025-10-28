@@ -9,7 +9,7 @@ import { API_CONFIG } from '../config.js';
 class BattlingLeaderboard {
   constructor() {
     this.data = {};
-    this.currentSortBy = 'elo';
+    this.currentSortBy = 'whr';
     this.hideBaselines = true;
     this.showLLMOnly = false;
     this.h2hMatrix = new HeadToHeadMatrix();
