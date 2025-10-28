@@ -11,6 +11,8 @@ class SpeedrunningLeaderboard {
     this.organizerTeams = ['Avg Human', 'PokeAgent'];
     // Teams that use duration (split times) instead of endTime (cumulative)
     this.splitTimeTeams = ['Avg Human'];
+    // Hide baselines by default
+    this.hideBaselines = true;
     
     this.phaseNames = {
       'Phase_1_Game_Initialization': 'Milestone 1: Game Start',
@@ -129,7 +131,7 @@ class SpeedrunningLeaderboard {
 
   changeViewMode() {
     this.currentViewMode = this.elements.viewModeSelect.value;
-    
+
     if (this.currentViewMode === 'milestones') {
       this.elements.milestoneSelect.style.display = 'inline-block';
       this.elements.milestoneLabel.style.display = 'inline-block';
@@ -139,7 +141,12 @@ class SpeedrunningLeaderboard {
       this.elements.milestoneLabel.style.display = 'none';
       this.elements.viewDescription.innerHTML = '<strong>Overall Progress View:</strong> Shows completion percentage and total runtime summed across completed milestones. Teams with multiple submissions show their best combined milestone times.';
     }
-    
+
+    this.render();
+  }
+
+  toggleBaselines() {
+    this.hideBaselines = !this.hideBaselines;
     this.render();
   }
 
@@ -201,7 +208,13 @@ class SpeedrunningLeaderboard {
   }
 
   processOverallData() {
-    return this.data.map(entry => {
+    // Filter data based on hideBaselines setting
+    let filteredData = this.data;
+    if (this.hideBaselines) {
+      filteredData = this.data.filter(entry => !this.organizerTeams.includes(entry.team));
+    }
+
+    return filteredData.map(entry => {
       let totalDurationMs = 0;
       let phasesCompleted = 0;
       let totalPhases = 7;
@@ -308,8 +321,14 @@ class SpeedrunningLeaderboard {
   processMilestoneData(filterMilestone) {
     const phaseOrder = Object.keys(this.phaseNames);
     const processedData = [];
-    
-    this.data.forEach(entry => {
+
+    // Filter data based on hideBaselines setting
+    let filteredData = this.data;
+    if (this.hideBaselines) {
+      filteredData = this.data.filter(entry => !this.organizerTeams.includes(entry.team));
+    }
+
+    filteredData.forEach(entry => {
       if (!entry.phase_splits || Object.keys(entry.phase_splits).length === 0) return;
       
       if (filterMilestone === 'all') {
