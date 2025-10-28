@@ -45,23 +45,34 @@ function generateLeaderboardJSON() {
     });
   });
   
-  // Process each team's submissions to find best times and combine splits
+  // Define phases for split-based combining
+  const PHASE_DEFINITIONS = {
+    'Phase_1_Game_Initialization': ['GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE'],
+    'Phase_2_Tutorial_Starting_Town': ['LITTLEROOT_TOWN', 'PLAYER_HOUSE_ENTERED', 'PLAYER_BEDROOM', 'RIVAL_HOUSE', 'RIVAL_BEDROOM'],
+    'Phase_3_Professor_Birch_Starter': ['ROUTE_101', 'STARTER_CHOSEN', 'BIRCH_LAB_VISITED'],
+    'Phase_4_Rival': ['OLDALE_TOWN', 'ROUTE_103', 'RECEIVED_POKEDEX'],
+    'Phase_5_Route_102_Petalburg': ['ROUTE_102', 'PETALBURG_CITY', 'DAD_FIRST_MEETING', 'GYM_EXPLANATION'],
+    'Phase_6_Road_to_Rustboro_City': ['ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY'],
+    'Phase_7_First_Gym_Challenge': ['RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE']
+  };
+
+  // Process each team's submissions to find best splits
   const leaderboard = Object.values(teamSubmissions)
     .map(teamData => {
-      let bestRuntimeStr = null;
-      let bestCompletion = 0;
-      let combinedMilestoneSplits = {};
-      let combinedPhaseSplits = {};
       let latestVideo = null;
       let latestTimestamp = null;
-      
+
+      // Store parsed data for each submission
+      const parsedSubmissions = [];
+
       // Process all submissions for this team
       teamData.submissions.forEach(submission => {
         const row = submission.row;
         let runtimeStr = row[runtimeCol];
         let completion = row[pctCol] ? parseFloat(row[pctCol]) : 0;
         let milestoneSplits = {};
-        
+        let phaseSplits = {};
+
         // Update latest video and timestamp
         if (row[videoCol] && (row[videoCol].includes('youtube.com') || row[videoCol].includes('youtu.be'))) {
           if (!latestTimestamp || submission.timestamp > latestTimestamp) {
@@ -69,91 +80,134 @@ function generateLeaderboardJSON() {
             latestTimestamp = submission.timestamp;
           }
         }
-        
+
         if (row[logFileCol]) {
-        try {
-          let logContent = '';
-          const fileUrl = row[logFileCol].toString().trim();
-          Logger.log(`Processing log file for ${row[teamCol]}: ${fileUrl}`);
-          
-          if (fileUrl.includes('drive.google.com') || fileUrl.includes('docs.google.com')) {
-            Logger.log(`Fetching from Google Drive...`);
-            logContent = getGoogleDriveFileContent(fileUrl);
-          } else {
-            Logger.log(`Fetching from URL...`);
-            logContent = UrlFetchApp.fetch(fileUrl).getContentText();
-          }
-          
-          Logger.log(`Log content length: ${logContent.length} characters`);
-          const logData = parseSubmissionLog(logContent);
-          Logger.log(`Parsed log data: runtime="${logData.runtime}", completion=${logData.completionPercent}%`);
-          
-          if (logData.runtime && !runtimeStr) {
-            Logger.log(`Using runtime from log: ${logData.runtime}`);
-            runtimeStr = logData.runtime;
-          }
-          
-          if (logData.completionPercent > 0 && (!completion || logData.completionPercent > completion)) {
-            Logger.log(`Using completion from log: ${logData.completionPercent}%`);
-            completion = logData.completionPercent;
-          }
-          
-          if (logData.milestoneSplits) {
-            milestoneSplits = logData.milestoneSplits;
-            Logger.log(`Found ${Object.keys(milestoneSplits).length} milestone splits`);
-          }
-          
-          if (logData.phaseSplits) {
-            // Combine phase splits - keep the best completion for each phase
-            Object.entries(logData.phaseSplits).forEach(([phaseName, phaseData]) => {
-              if (!combinedPhaseSplits[phaseName] || 
-                  phaseData.completed > combinedPhaseSplits[phaseName].completed) {
-                combinedPhaseSplits[phaseName] = phaseData;
-              }
-            });
-          }
-        } catch (e) {
+          try {
+            let logContent = '';
+            const fileUrl = row[logFileCol].toString().trim();
+            Logger.log(`Processing log file for ${row[teamCol]}: ${fileUrl}`);
+
+            if (fileUrl.includes('drive.google.com') || fileUrl.includes('docs.google.com')) {
+              Logger.log(`Fetching from Google Drive...`);
+              logContent = getGoogleDriveFileContent(fileUrl);
+            } else {
+              Logger.log(`Fetching from URL...`);
+              logContent = UrlFetchApp.fetch(fileUrl).getContentText();
+            }
+
+            Logger.log(`Log content length: ${logContent.length} characters`);
+            const logData = parseSubmissionLog(logContent);
+            Logger.log(`Parsed log data: runtime="${logData.runtime}", completion=${logData.completionPercent}%`);
+
+            if (logData.runtime && !runtimeStr) {
+              runtimeStr = logData.runtime;
+            }
+
+            if (logData.completionPercent > 0 && (!completion || logData.completionPercent > completion)) {
+              completion = logData.completionPercent;
+            }
+
+            if (logData.milestoneSplits) {
+              milestoneSplits = logData.milestoneSplits;
+            }
+
+            if (logData.phaseSplits) {
+              phaseSplits = logData.phaseSplits;
+            }
+          } catch (e) {
             Logger.log(`Error parsing log file for ${row[teamCol]}: ${e}`);
           }
         }
-        
-        // Update best runtime for this team
-        if (runtimeStr) {
-          const runtimeMs = parseRuntime(runtimeStr);
-          if (runtimeMs > 0 && runtimeMs < teamData.bestRuntimeMs) {
-            teamData.bestRuntimeMs = runtimeMs;
-            bestRuntimeStr = runtimeStr;
-          }
-        }
-        
-        // Update best completion for this team
-        if (completion > bestCompletion) {
-          bestCompletion = completion;
-        }
-        
-        // Combine milestone splits - keep the fastest time for each milestone
-        Object.entries(milestoneSplits).forEach(([milestone, time]) => {
-          if (!combinedMilestoneSplits[milestone]) {
-            combinedMilestoneSplits[milestone] = time;
-          } else {
-            // Compare times and keep the faster one
-            const existingMs = parseRuntime(combinedMilestoneSplits[milestone]);
-            const newMs = parseRuntime(time);
-            if (newMs > 0 && newMs < existingMs) {
-              combinedMilestoneSplits[milestone] = time;
-              Logger.log(`Updated ${milestone} split for ${teamData.team}: ${time} (was ${combinedMilestoneSplits[milestone]})`);}
-          }
+
+        parsedSubmissions.push({
+          runtimeStr: runtimeStr,
+          completion: completion,
+          milestoneSplits: milestoneSplits,
+          phaseSplits: phaseSplits
         });
       });
-      
-      Logger.log(`Team ${teamData.team}: ${teamData.submissions.length} submissions, best runtime=${bestRuntimeStr}, best completion=${bestCompletion}%`);
-      Logger.log(`Combined splits: ${Object.keys(combinedMilestoneSplits).length} milestones`);
-      
+
+      // Now combine using best split per phase
+      let combinedMilestoneSplits = {};
+      let combinedPhaseSplits = {};
+      let bestCompletion = 0;
+      let bestRuntimeStr = null;
+      let bestRuntimeMs = Infinity;
+
+      // For each phase, find the submission that completed it fastest
+      Object.entries(PHASE_DEFINITIONS).forEach(([phaseName, phaseMilestones]) => {
+        let bestPhaseSubmission = null;
+        let bestPhaseCompletionTime = Infinity;
+        let bestPhaseProgress = 0;
+
+        // Find the last milestone in this phase
+        const lastMilestone = phaseMilestones[phaseMilestones.length - 1];
+
+        parsedSubmissions.forEach(subm => {
+          // Count how many milestones from this phase were completed
+          const completedCount = phaseMilestones.filter(m => subm.milestoneSplits[m]).length;
+
+          if (completedCount > 0) {
+            // Get the completion time (time at the last milestone reached in this phase)
+            let phaseCompletionTime = Infinity;
+            for (let i = phaseMilestones.length - 1; i >= 0; i--) {
+              if (subm.milestoneSplits[phaseMilestones[i]]) {
+                phaseCompletionTime = parseRuntime(subm.milestoneSplits[phaseMilestones[i]]);
+                break;
+              }
+            }
+
+            // Pick this submission if it progressed further, or same progress but faster
+            if (completedCount > bestPhaseProgress ||
+                (completedCount === bestPhaseProgress && phaseCompletionTime < bestPhaseCompletionTime)) {
+              bestPhaseSubmission = subm;
+              bestPhaseCompletionTime = phaseCompletionTime;
+              bestPhaseProgress = completedCount;
+            }
+          }
+        });
+
+        // Use milestones from the best submission for this phase
+        if (bestPhaseSubmission) {
+          phaseMilestones.forEach(milestone => {
+            if (bestPhaseSubmission.milestoneSplits[milestone]) {
+              combinedMilestoneSplits[milestone] = bestPhaseSubmission.milestoneSplits[milestone];
+            }
+          });
+
+          if (bestPhaseSubmission.phaseSplits[phaseName]) {
+            combinedPhaseSplits[phaseName] = bestPhaseSubmission.phaseSplits[phaseName];
+          }
+        }
+      });
+
+      // Calculate completion and runtime based on COMBINED milestones
+      const totalMilestones = Object.values(PHASE_DEFINITIONS).flat().length;
+      const completedMilestones = Object.keys(combinedMilestoneSplits).filter(m =>
+        Object.values(PHASE_DEFINITIONS).flat().includes(m)
+      ).length;
+      const calculatedCompletion = Math.round((completedMilestones / totalMilestones) * 100);
+
+      // Find the furthest runtime reached in combined splits
+      let furthestRuntimeMs = 0;
+      let furthestRuntimeStr = null;
+      Object.values(combinedMilestoneSplits).forEach(timeStr => {
+        const timeMs = parseRuntime(timeStr);
+        if (timeMs > furthestRuntimeMs) {
+          furthestRuntimeMs = timeMs;
+          furthestRuntimeStr = timeStr;
+        }
+      });
+
+      Logger.log(`Team ${teamData.team}: ${teamData.submissions.length} submissions`);
+      Logger.log(`  Combined: ${completedMilestones}/${totalMilestones} milestones (${calculatedCompletion}%)`);
+      Logger.log(`  Furthest time: ${furthestRuntimeStr}`);
+
       return {
         team: teamData.team,
-        runtimeStr: bestRuntimeStr,
-        runtimeMs: teamData.bestRuntimeMs < Infinity ? teamData.bestRuntimeMs : 0,
-        completion: bestCompletion,
+        runtimeStr: furthestRuntimeStr,
+        runtimeMs: furthestRuntimeMs,
+        completion: calculatedCompletion,
         video: latestVideo,
         timestamp: latestTimestamp ? latestTimestamp.toISOString() : new Date().toISOString(),
         milestoneSplits: combinedMilestoneSplits,
@@ -429,6 +483,16 @@ function parseSubmissionLog(logContent) {
     return index >= 0 ? index : -1;
   }
 
+  // Helper function to get which phase a milestone belongs to
+  function getMilestonePhase(milestone) {
+    for (const [phaseName, milestones] of Object.entries(PHASE_DEFINITIONS)) {
+      if (milestones.includes(milestone)) {
+        return phaseName;
+      }
+    }
+    return null;
+  }
+
   // Helper function to infer milestone from MAP field
   function inferMilestoneFromMap(mapValue) {
     if (!mapValue) return null;
@@ -564,17 +628,22 @@ function parseSubmissionLog(logContent) {
           // If we inferred a milestone from MAP, check if it should be recorded
           if (inferredMilestone) {
             const inferredIndex = getMilestoneIndex(inferredMilestone);
+            const inferredPhase = getMilestonePhase(inferredMilestone);
 
             // Record inferred milestone if it's more advanced than what we've seen
             if (inferredIndex > highestMilestoneIndex) {
-              // Fill in any gaps in milestone progression
-              // For example, if we jump from LITTLEROOT_TOWN to PLAYER_BEDROOM,
+              // Fill in gaps ONLY within the same phase/split
+              // For example, if we jump from LITTLEROOT_TOWN to PLAYER_BEDROOM (same phase),
               // we should also record PLAYER_HOUSE_ENTERED
+              // But if we jump to a different phase, DON'T fill in previous phase milestones
               for (let idx = highestMilestoneIndex + 1; idx <= inferredIndex; idx++) {
                 const gapMilestone = MILESTONE_ORDER[idx];
-                if (gapMilestone && !milestonesToRecord.includes(gapMilestone)) {
+                const gapPhase = getMilestonePhase(gapMilestone);
+
+                // Only fill gap if it's in the same phase as the inferred milestone
+                if (gapMilestone && gapPhase === inferredPhase && !milestonesToRecord.includes(gapMilestone)) {
                   milestonesToRecord.push(gapMilestone);
-                  Logger.log(`Inferring gap milestone ${gapMilestone} from MAP progression`);
+                  Logger.log(`Inferring gap milestone ${gapMilestone} from MAP progression (within ${gapPhase})`);
                 }
               }
             }
