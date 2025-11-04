@@ -4,7 +4,7 @@
     "team": "Human",
     "completion_percent": 92,
     "runtime": "48:58",
-    "last_updated": "2025-11-04T18:44:22.623Z",
+    "last_updated": "2025-11-04T18:59:10.636Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "-",
@@ -268,7 +268,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:51:28",
-    "last_updated": "2025-11-04T18:45:06.366Z",
+    "last_updated": "2025-11-04T18:59:40.442Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "-",
@@ -319,7 +319,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "30:40",
-    "last_updated": "2025-11-04T18:45:09.982Z",
+    "last_updated": "2025-11-04T18:59:42.642Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "-",
@@ -370,7 +370,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "59:05",
-    "last_updated": "2025-11-04T18:45:08.293Z",
+    "last_updated": "2025-11-04T18:59:41.501Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "-",
@@ -418,6 +418,57 @@
   },
   {
     "rank": 8,
+    "team": "nlhm",
+    "completion_percent": 23,
+    "runtime": "01:02:52",
+    "last_updated": "2025-11-04T18:58:46.750Z",
+    "video": "https://youtu.be/PEajeTM9_mc?si=sNCQPgbvbWEtInn",
+    "milestone_splits": {
+      "GAME_RUNNING": "00:01",
+      "PLAYER_NAME_SET": "06:44",
+      "INTRO_CUTSCENE_COMPLETE": "19:30",
+      "LITTLEROOT_TOWN": "0:00",
+      "PLAYER_HOUSE_ENTERED": "37:32",
+      "PLAYER_BEDROOM": "01:02:52",
+      "RIVAL_HOUSE": null,
+      "RIVAL_BEDROOM": null,
+      "ROUTE_101": null,
+      "STARTER_CHOSEN": null,
+      "BIRCH_LAB_VISITED": null,
+      "OLDALE_TOWN": null,
+      "ROUTE_103": null,
+      "RECEIVED_POKEDEX": null,
+      "ROUTE_102": null,
+      "PETALBURG_CITY": null,
+      "DAD_FIRST_MEETING": null,
+      "GYM_EXPLANATION": null,
+      "ROUTE_104_SOUTH": null,
+      "PETALBURG_WOODS": null,
+      "TEAM_AQUA_GRUNT_DEFEATED": null,
+      "ROUTE_104_NORTH": null,
+      "RUSTBORO_CITY": null,
+      "RUSTBORO_GYM_ENTERED": null,
+      "ROXANNE_DEFEATED": null,
+      "FIRST_GYM_COMPLETE": null
+    },
+    "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "12:45",
+        "endTime": "12:46"
+      },
+      "Phase_2_Tutorial_Starting_Town": {
+        "completed": 3,
+        "total": 5,
+        "duration": "25:20",
+        "endTime": "25:20"
+      }
+    },
+    "submission_count": 3
+  },
+  {
+    "rank": 9,
     "team": "Team Epoch",
     "completion_percent": 23,
     "runtime": "01:08:24",
@@ -468,7 +519,7 @@
     "submission_count": 1
   },
   {
-    "rank": 9,
+    "rank": 10,
     "team": "Porygonal",
     "completion_percent": 19,
     "runtime": "18:49",
@@ -519,7 +570,7 @@
     "submission_count": 1
   },
   {
-    "rank": 10,
+    "rank": 11,
     "team": "Hamburg Pok?Runners",
     "completion_percent": 12,
     "runtime": "05:18",
@@ -564,11 +615,11 @@
     "submission_count": 2
   },
   {
-    "rank": 11,
+    "rank": 12,
     "team": "Ed",
     "completion_percent": 8,
     "runtime": "01:46",
-    "last_updated": "2025-11-04T18:44:00.646Z",
+    "last_updated": "2025-11-04T18:58:52.567Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": null,
