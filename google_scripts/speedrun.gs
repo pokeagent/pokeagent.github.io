@@ -13,20 +13,30 @@ function generateLeaderboardJSON() {
   const videoCol = headers.indexOf("YouTube Video Link (full run)");
   const tsCol = headers.indexOf("Timestamp");
 
+  // Team display name mapping
+  const TEAM_DISPLAY_NAMES = {
+    'human': 'Avg Human',
+    'pokeagent': 'PokeAgent'
+  };
+
+  function getDisplayName(teamName) {
+    return TEAM_DISPLAY_NAMES[teamName.toLowerCase()] || teamName;
+  }
+
   // Group rows by team name first to combine multiple submissions
   const teamSubmissions = {};
-  
+
   rows.forEach((row, index) => {
     const teamName = row[teamCol];
     if (!teamName) return;
-    
+
     const hasLog = !!row[logFileCol];
     const hasVideo = !!row[videoCol];
-    
+
     // Initialize team entry if not exists
     if (!teamSubmissions[teamName]) {
       teamSubmissions[teamName] = {
-        team: teamName,
+        team: getDisplayName(teamName),
         submissions: [],
         bestRuntime: null,
         bestRuntimeMs: Infinity,
@@ -120,6 +130,7 @@ function generateLeaderboardJSON() {
         }
 
         parsedSubmissions.push({
+          submissionId: submission.index, // Track which submission this is
           runtimeStr: runtimeStr,
           completion: completion,
           milestoneSplits: milestoneSplits,
@@ -127,9 +138,10 @@ function generateLeaderboardJSON() {
         });
       });
 
-      // Now combine using best split per phase
+      // Now combine using best split per phase, tracking which submission was used
       let combinedMilestoneSplits = {};
       let combinedPhaseSplits = {};
+      let phaseSourceSubmissions = {}; // Track which submission was used for each phase
       let bestCompletion = 0;
       let bestRuntimeStr = null;
       let bestRuntimeMs = Infinity;
@@ -169,14 +181,155 @@ function generateLeaderboardJSON() {
 
         // Use milestones from the best submission for this phase
         if (bestPhaseSubmission) {
+          phaseSourceSubmissions[phaseName] = bestPhaseSubmission.submissionId; // Track source
           phaseMilestones.forEach(milestone => {
             if (bestPhaseSubmission.milestoneSplits[milestone]) {
               combinedMilestoneSplits[milestone] = bestPhaseSubmission.milestoneSplits[milestone];
             }
           });
 
-          if (bestPhaseSubmission.phaseSplits[phaseName]) {
-            combinedPhaseSplits[phaseName] = bestPhaseSubmission.phaseSplits[phaseName];
+          // Phase splits will be calculated after cumulative times are computed
+        }
+      });
+
+      // Fill in missing milestones between completed ones
+      Logger.log(`\n=== Filling missing milestones ===`);
+      const MILESTONE_ORDER_LIST = Object.values(PHASE_DEFINITIONS).flat();
+
+      for (let i = 0; i < MILESTONE_ORDER_LIST.length; i++) {
+        const currentMilestone = MILESTONE_ORDER_LIST[i];
+
+        // If this milestone is missing, check if there's a later milestone
+        if (!combinedMilestoneSplits[currentMilestone]) {
+          // Find the next completed milestone
+          for (let j = i + 1; j < MILESTONE_ORDER_LIST.length; j++) {
+            const laterMilestone = MILESTONE_ORDER_LIST[j];
+            if (combinedMilestoneSplits[laterMilestone]) {
+              // Found a later completed milestone - fill in the gap
+              combinedMilestoneSplits[currentMilestone] = combinedMilestoneSplits[laterMilestone];
+              Logger.log(`Filled ${currentMilestone} with time from ${laterMilestone}: ${combinedMilestoneSplits[laterMilestone]}`);
+              break;
+            }
+          }
+        }
+      }
+
+      // Calculate cumulative times by adding delta between consecutive milestones
+      Logger.log(`\n=== Calculating cumulative times from milestone deltas ===`);
+      let cumulativeTimeMs = 0;
+      let previousMilestoneSubmissionId = null;
+      let previousMilestoneTimeInFile = 0;
+
+      // Track actual time added per phase for phase splits
+      const phaseActualDurations = {};
+      for (const phaseName in PHASE_DEFINITIONS) {
+        phaseActualDurations[phaseName] = 0;
+      }
+
+      // Process each milestone in sequence (MILESTONE_ORDER_LIST already defined above)
+      MILESTONE_ORDER_LIST.forEach((milestone, index) => {
+        if (!combinedMilestoneSplits[milestone]) return;
+
+        const originalTimeMs = parseRuntime(combinedMilestoneSplits[milestone]);
+
+        // Special case: GAME_RUNNING is always 00:00
+        if (milestone === 'GAME_RUNNING') {
+          combinedMilestoneSplits[milestone] = '00:00';
+          Logger.log(`${milestone}: 00:00 (starting point)`);
+          return;
+        }
+
+        // Find which phase and submission this milestone belongs to
+        let currentMilestoneSubmissionId = null;
+        let currentPhaseName = null;
+        for (const phaseName in PHASE_DEFINITIONS) {
+          const phaseMilestones = PHASE_DEFINITIONS[phaseName];
+          if (phaseMilestones.indexOf(milestone) >= 0) {
+            currentMilestoneSubmissionId = phaseSourceSubmissions[phaseName];
+            currentPhaseName = phaseName;
+            break;
+          }
+        }
+
+        // Special case: LITTLEROOT_TOWN marks phase transition
+        if (milestone === 'LITTLEROOT_TOWN') {
+          combinedMilestoneSplits[milestone] = formatMsToTime(cumulativeTimeMs);
+          Logger.log(`${milestone}: ${formatMsToTime(cumulativeTimeMs)} (phase transition)`);
+          previousMilestoneSubmissionId = currentMilestoneSubmissionId;
+          previousMilestoneTimeInFile = originalTimeMs;
+          return;
+        }
+
+        // Check if we're continuing from the same submission or switching
+        const sameSubmission = (previousMilestoneSubmissionId === currentMilestoneSubmissionId);
+
+        if (sameSubmission && index > 0) {
+          // Same submission: add the delta from previous milestone
+          const deltaMs = originalTimeMs - previousMilestoneTimeInFile;
+
+          // Only add positive deltas (milestones can be out of order due to gap filling or inference)
+          if (deltaMs >= 0) {
+            // Delta is 0 or positive - this is normal progression
+            if (deltaMs > 0) {
+              cumulativeTimeMs += deltaMs;
+              if (currentPhaseName) phaseActualDurations[currentPhaseName] += deltaMs;
+              Logger.log(`${milestone}: ${combinedMilestoneSplits[milestone]} → ${formatMsToTime(cumulativeTimeMs)} (same submission, +${formatMsToTime(deltaMs)})`);
+            } else {
+              // Delta is exactly 0 - same time as previous milestone
+              Logger.log(`${milestone}: ${combinedMilestoneSplits[milestone]} → ${formatMsToTime(cumulativeTimeMs)} (same submission, same time as previous)`);
+            }
+            // Update tracking for both zero and positive deltas
+            previousMilestoneTimeInFile = originalTimeMs;
+          } else {
+            // Milestone appeared earlier than previous - use current cumulative time
+            // Don't update previousMilestoneTimeInFile to maintain the correct reference point
+            Logger.log(`${milestone}: ${combinedMilestoneSplits[milestone]} → ${formatMsToTime(cumulativeTimeMs)} (same submission, out of order, delta=${formatMsToTime(deltaMs)})`);
+          }
+        } else {
+          // Different submission: this is a fresh start, add the full time
+          cumulativeTimeMs += originalTimeMs;
+          if (currentPhaseName) phaseActualDurations[currentPhaseName] += originalTimeMs;
+          Logger.log(`${milestone}: ${combinedMilestoneSplits[milestone]} → ${formatMsToTime(cumulativeTimeMs)} (new submission, +${formatMsToTime(originalTimeMs)})`);
+          previousMilestoneTimeInFile = originalTimeMs;
+        }
+
+        // Update the milestone to its cumulative time
+        combinedMilestoneSplits[milestone] = formatMsToTime(cumulativeTimeMs);
+
+        // Track submission for next iteration
+        previousMilestoneSubmissionId = currentMilestoneSubmissionId;
+      });
+
+      Logger.log(`\nFinal cumulative time: ${formatMsToTime(cumulativeTimeMs)}`);
+
+      // Calculate phase splits using actual durations
+      Logger.log(`\n=== Calculating phase splits ===`);
+      Object.entries(PHASE_DEFINITIONS).forEach(([phaseName, phaseMilestones]) => {
+        const completedCount = phaseMilestones.filter(m => combinedMilestoneSplits[m]).length;
+
+        if (completedCount > 0) {
+          // Find the end time for this phase (max cumulative time among completed milestones)
+          let phaseEndTime = null;
+
+          phaseMilestones.forEach(milestone => {
+            if (combinedMilestoneSplits[milestone]) {
+              const timeMs = parseRuntime(combinedMilestoneSplits[milestone]);
+              if (phaseEndTime === null || timeMs > phaseEndTime) {
+                phaseEndTime = timeMs;
+              }
+            }
+          });
+
+          if (phaseEndTime !== null) {
+            // Use the actual duration tracked during cumulative calculation
+            const phaseDurationMs = phaseActualDurations[phaseName] || 0;
+            combinedPhaseSplits[phaseName] = {
+              completed: completedCount,
+              total: phaseMilestones.length,
+              duration: formatMsToTime(phaseDurationMs),
+              endTime: formatMsToTime(phaseEndTime)
+            };
+            Logger.log(`${phaseName}: ${completedCount}/${phaseMilestones.length} milestones, duration=${formatMsToTime(phaseDurationMs)}, endTime=${formatMsToTime(phaseEndTime)}`);
           }
         }
       });
@@ -359,12 +512,15 @@ function parseRuntime(str) {
 }
 
 function formatMsToTime(ms) {
-  if (!ms || ms <= 0) return '-';
+  // Return '-' for null, undefined, or negative values
+  if (ms == null || ms < 0) return '-';
+
+  // Handle 0 and positive values
   const totalSeconds = Math.floor(ms / 1000);
   const hours = Math.floor(totalSeconds / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
-  
+
   if (hours > 0) {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   } else {
@@ -438,7 +594,6 @@ function parseSubmissionLog(logContent) {
     'Phase_7_First_Gym_Challenge': ['RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE']
   };
 
-  // Location to milestone mappings (must be completed in order)
   const LOCATION_TO_MILESTONE = {
     'MOVING_VAN': 'INTRO_CUTSCENE_COMPLETE',
     'LITTLEROOT': 'LITTLEROOT_TOWN',
@@ -466,34 +621,6 @@ function parseSubmissionLog(logContent) {
     'RUSTBORO': 'RUSTBORO_CITY'
   };
 
-  // Ordered list of milestones for progression tracking
-  const MILESTONE_ORDER = [
-    'GAME_RUNNING', 'PLAYER_NAME_SET', 'INTRO_CUTSCENE_COMPLETE',
-    'LITTLEROOT_TOWN', 'PLAYER_HOUSE_ENTERED', 'PLAYER_BEDROOM', 'RIVAL_HOUSE', 'RIVAL_BEDROOM',
-    'ROUTE_101', 'STARTER_CHOSEN', 'BIRCH_LAB_VISITED',
-    'OLDALE_TOWN', 'ROUTE_103', 'RECEIVED_POKEDEX',
-    'ROUTE_102', 'PETALBURG_CITY', 'DAD_FIRST_MEETING', 'GYM_EXPLANATION',
-    'ROUTE_104_SOUTH', 'PETALBURG_WOODS', 'TEAM_AQUA_GRUNT_DEFEATED', 'ROUTE_104_NORTH', 'RUSTBORO_CITY',
-    'RUSTBORO_GYM_ENTERED', 'ROXANNE_DEFEATED', 'FIRST_GYM_COMPLETE'
-  ];
-
-  // Helper function to get milestone index
-  function getMilestoneIndex(milestone) {
-    const index = MILESTONE_ORDER.indexOf(milestone);
-    return index >= 0 ? index : -1;
-  }
-
-  // Helper function to get which phase a milestone belongs to
-  function getMilestonePhase(milestone) {
-    for (const [phaseName, milestones] of Object.entries(PHASE_DEFINITIONS)) {
-      if (milestones.includes(milestone)) {
-        return phaseName;
-      }
-    }
-    return null;
-  }
-
-  // Helper function to infer milestone from MAP field
   function inferMilestoneFromMap(mapValue) {
     if (!mapValue) return null;
 
@@ -501,7 +628,6 @@ function parseSubmissionLog(logContent) {
     const upperMap = mapValue.toUpperCase().replace(/\s+/g, '_');
 
     // Check each location pattern in order of specificity (most specific first)
-    // This prevents "LITTLEROOT" from matching before "BRENDANS_HOUSE_1F" in "LITTLEROOT TOWN BRENDANS HOUSE 1F"
     const orderedLocations = [
       'BRENDANS_HOUSE_2F', 'BRENDANS_HOUSE_1F',
       'MAYS_HOUSE_2F', 'MAYS_HOUSE_1F',
@@ -520,7 +646,8 @@ function parseSubmissionLog(logContent) {
       'LITTLEROOT'
     ];
 
-    for (const locationKey of orderedLocations) {
+    for (let i = 0; i < orderedLocations.length; i++) {
+      const locationKey = orderedLocations[i];
       if (upperMap.includes(locationKey)) {
         return LOCATION_TO_MILESTONE[locationKey];
       }
@@ -528,9 +655,6 @@ function parseSubmissionLog(logContent) {
     return null;
   }
 
-  // Track the highest milestone reached
-  let highestMilestoneIndex = -1;
-  
   // Find the header line first (looking for Format: line)
   let headerLine = null;
   let headerIndex = -1;
@@ -546,9 +670,38 @@ function parseSubmissionLog(logContent) {
   if (!headerLine) {
     Logger.log('No Format header line found with RUNTIME and MILESTONE columns');
   }
-  
+
+  // Detect runtime resets (multiple runs in one log file)
+  // If we detect a reset, we should only use milestones from the FIRST complete run
+  let firstResetLineIndex = -1;
+  let previousRuntimeMs = 0;
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+    if (line.includes('RUNTIME=')) {
+      const rtMatch = line.match(/RUNTIME=([^\s]+)/);
+      if (rtMatch) {
+        const currentRuntimeMs = parseRuntime(rtMatch[1]);
+        // If current runtime is significantly less than previous (went backwards), it's a reset
+        if (previousRuntimeMs > 0 && currentRuntimeMs < previousRuntimeMs - 60000) { // More than 1 minute backwards
+          Logger.log(`  Detected runtime reset at line ${i + 1}: ${formatMsToTime(previousRuntimeMs)} -> ${formatMsToTime(currentRuntimeMs)}`);
+          if (firstResetLineIndex === -1) {
+            firstResetLineIndex = i;
+          }
+        }
+        previousRuntimeMs = currentRuntimeMs;
+      }
+    }
+  }
+
+  // If we found a reset, only parse lines BEFORE the first reset (use the first complete run)
+  const linesToParse = firstResetLineIndex >= 0 ? lines.slice(0, firstResetLineIndex) : lines;
+  if (firstResetLineIndex >= 0) {
+    Logger.log(`  Using only lines before first reset (${linesToParse.length} lines, stopping at line ${firstResetLineIndex})`);
+  }
+
+  for (let i = 0; i < linesToParse.length; i++) {
+    const line = linesToParse[i];
     
     if (line.includes('Model:')) {
       Logger.log(`Found model line at ${i}: ${line.substring(0, 100)}`);
@@ -577,15 +730,13 @@ function parseSubmissionLog(logContent) {
     
     // Skip header lines and process data lines
     if (line.includes('STEP=') && line.includes('MILESTONE=') && line.includes('RUNTIME=') && headerLine) {
-      Logger.log(`Processing data line ${i}: ${line.substring(0, 150)}...`);
-
       const headers = headerLine.split('|').map(h => h.trim());
       const parts = line.split('|').map(p => p.trim());
 
       // Extract milestone, map, and runtime
       const milestoneIndex = headers.findIndex(h => h === 'MILESTONE');
-      const mapIndex = headers.findIndex(h => h === 'MAP');
       const runtimeIndex = headers.findIndex(h => h === 'RUNTIME');
+      const mapIndex = headers.findIndex(h => h === 'MAP');
 
       if (milestoneIndex >= 0 && runtimeIndex >= 0 &&
           milestoneIndex < parts.length && runtimeIndex < parts.length) {
@@ -608,114 +759,22 @@ function parseSubmissionLog(logContent) {
         }
 
         if (milestoneMatch && runtimeMatch) {
-          let milestone = milestoneMatch[1].trim();
+          const milestone = milestoneMatch[1].trim();
           const runtimeValue = runtimeMatch[1].trim();
 
-          // Try to infer milestone from MAP if available
-          const inferredMilestone = inferMilestoneFromMap(mapValue);
-
-          // Track milestones to record
-          const milestonesToRecord = [];
-
-          // If we have a valid milestone from the MILESTONE field, add it
-          if (milestone !== 'NONE') {
-            const milestoneIdx = getMilestoneIndex(milestone);
-            if (milestoneIdx >= 0) {
-              milestonesToRecord.push(milestone);
-            }
+          // Only record first occurrence of each milestone from MILESTONE field
+          if (milestone !== 'NONE' && !milestoneSplits[milestone]) {
+            milestoneSplits[milestone] = runtimeValue;
           }
 
-          // If we inferred a milestone from MAP, check if it should be recorded
-          if (inferredMilestone) {
-            const inferredIndex = getMilestoneIndex(inferredMilestone);
-            const inferredPhase = getMilestonePhase(inferredMilestone);
-
-            // Record inferred milestone if it's more advanced than what we've seen
-            if (inferredIndex > highestMilestoneIndex) {
-              // Fill in gaps ONLY within the same phase/split
-              // For example, if we jump from LITTLEROOT_TOWN to PLAYER_BEDROOM (same phase),
-              // we should also record PLAYER_HOUSE_ENTERED
-              // But if we jump to a different phase, DON'T fill in previous phase milestones
-              for (let idx = highestMilestoneIndex + 1; idx <= inferredIndex; idx++) {
-                const gapMilestone = MILESTONE_ORDER[idx];
-                const gapPhase = getMilestonePhase(gapMilestone);
-
-                // Only fill gap if it's in the same phase as the inferred milestone
-                if (gapMilestone && gapPhase === inferredPhase && !milestonesToRecord.includes(gapMilestone)) {
-                  milestonesToRecord.push(gapMilestone);
-                  Logger.log(`Inferring gap milestone ${gapMilestone} from MAP progression (within ${gapPhase})`);
-                }
-              }
+          // Try to infer milestone from MAP field ONLY if the MILESTONE field is NONE
+          // This prevents location inference from overriding explicit milestone markers
+          if (milestone === 'NONE') {
+            const inferredMilestone = inferMilestoneFromMap(mapValue);
+            if (inferredMilestone && !milestoneSplits[inferredMilestone]) {
+              milestoneSplits[inferredMilestone] = runtimeValue;
             }
           }
-
-          // Map milestones to approximate completion percentages (26 total milestones from MILESTONES.md)
-          const milestoneProgress = {
-              // Phase 1: Game Initialization (3 milestones)
-              'GAME_RUNNING': 3.8,
-              'PLAYER_NAME_SET': 7.7,
-              'INTRO_CUTSCENE_COMPLETE': 11.5,
-
-              // Phase 2: Tutorial & Starting Town (5 milestones)
-              'LITTLEROOT_TOWN': 15.4,
-              'PLAYER_HOUSE_ENTERED': 19.2,
-              'PLAYER_BEDROOM': 23.1,
-              'RIVAL_HOUSE': 26.9,
-              'RIVAL_BEDROOM': 30.8,
-
-              // Phase 3: Professor Birch & Starter (3 milestones)
-              'ROUTE_101': 34.6,
-              'STARTER_CHOSEN': 38.5,
-              'BIRCH_LAB_VISITED': 42.3,
-
-              // Phase 4: Rival (3 milestones)
-              'OLDALE_TOWN': 46.2,
-              'ROUTE_103': 50.0,
-              'RECEIVED_POKEDEX': 53.8,
-
-              // Phase 5: Route 102 & Petalburg (4 milestones)
-              'ROUTE_102': 57.7,
-              'PETALBURG_CITY': 61.5,
-              'DAD_FIRST_MEETING': 65.4,
-              'GYM_EXPLANATION': 69.2,
-
-              // Phase 6: Road to Rustboro City (5 milestones)
-              'ROUTE_104_SOUTH': 73.1,
-              'PETALBURG_WOODS': 76.9,
-              'TEAM_AQUA_GRUNT_DEFEATED': 80.8,
-              'ROUTE_104_NORTH': 84.6,
-              'RUSTBORO_CITY': 88.5,
-
-              // Phase 7: First Gym Challenge (3 milestones)
-              'RUSTBORO_GYM_ENTERED': 92.3,
-              'ROXANNE_DEFEATED': 96.2,
-              'FIRST_GYM_COMPLETE': 100.0
-          };
-
-          // Record all collected milestones and update completion
-          milestonesToRecord.forEach(ms => {
-            if (ms === 'LITTLEROOT_TOWN') {
-              milestoneSplits[ms] = '0:00';
-              Logger.log(`Set LITTLEROOT_TOWN split to 0:00 (starting location)`);
-            } else if (!milestoneSplits[ms]) {
-              // Only record if we haven't already recorded this milestone
-              milestoneSplits[ms] = runtimeValue;
-              Logger.log(`Recorded milestone: ${ms}, runtime: ${runtimeValue}${inferredMilestone === ms ? ' (inferred from MAP)' : ''}`);
-            }
-
-            // Update highest milestone index
-            const msIdx = getMilestoneIndex(ms);
-            if (msIdx > highestMilestoneIndex) {
-              highestMilestoneIndex = msIdx;
-            }
-
-            // Update completion percentage
-            const progress = milestoneProgress[ms] || 0;
-            if (progress > completionPercent) {
-              completionPercent = progress;
-              Logger.log(`Updated completion to ${progress}% based on milestone ${ms}`);
-            }
-          });
         }
       }
     }
