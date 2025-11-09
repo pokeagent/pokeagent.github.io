@@ -4,7 +4,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-06T23:30:11.097Z",
+    "last_updated": "2025-11-09T02:15:42.381Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -83,10 +83,10 @@
   {
     "rank": 2,
     "team": "Evelord",
-    "completion_percent": 69,
-    "runtime": "01:11:25",
-    "last_updated": "2025-11-06T23:29:50.507Z",
-    "video": "https://youtu.be/rBD7mr7WP3g",
+    "completion_percent": 73,
+    "runtime": "01:12:36",
+    "last_updated": "2025-11-09T02:15:22.876Z",
+    "video": "https://youtu.be/cHy8VOsz3J8",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
       "PLAYER_NAME_SET": "01:35",
@@ -106,7 +106,7 @@
       "PETALBURG_CITY": "01:10:57",
       "DAD_FIRST_MEETING": "01:11:25",
       "GYM_EXPLANATION": "01:11:25",
-      "ROUTE_104_SOUTH": null,
+      "ROUTE_104_SOUTH": "01:12:36",
       "PETALBURG_WOODS": null,
       "TEAM_AQUA_GRUNT_DEFEATED": null,
       "ROUTE_104_NORTH": null,
@@ -145,9 +145,15 @@
         "total": 4,
         "duration": "39:13",
         "endTime": "01:11:25"
+      },
+      "Phase_6_Road_to_Rustboro_City": {
+        "completed": 1,
+        "total": 5,
+        "duration": "01:11",
+        "endTime": "01:12:36"
       }
     },
-    "submission_count": 8
+    "submission_count": 9
   },
   {
     "rank": 3,
@@ -274,7 +280,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-06T23:30:32.199Z",
+    "last_updated": "2025-11-09T02:16:02.130Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -325,7 +331,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-06T23:30:34.049Z",
+    "last_updated": "2025-11-09T02:16:03.979Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -376,7 +382,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-06T23:30:33.150Z",
+    "last_updated": "2025-11-09T02:16:03.036Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -529,7 +535,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-06T23:29:54.557Z",
+    "last_updated": "2025-11-09T02:15:26.588Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
