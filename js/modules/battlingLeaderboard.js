@@ -184,11 +184,11 @@ class BattlingLeaderboard {
     // Extract HR min_games_threshold from the data for a specific format
     const players = this.data.formats?.[format] || [];
     
-    for (const player of players) {
-      if (player.whr && player.whr.min_games_threshold !== undefined) {
+      for (const player of players) {
+        if (player.whr && player.whr.min_games_threshold !== undefined) {
         return player.whr.min_games_threshold;
+        }
       }
-    }
     
     return null;
   }
@@ -394,8 +394,8 @@ class BattlingLeaderboard {
         
         // Only show "Begins" overlay if qualifier hasn't started yet
         if (now < start) {
-          this.showInactiveOverlay(tableElement, format, status.start_date);
-          return;
+        this.showInactiveOverlay(tableElement, format, status.start_date);
+        return;
         }
         // If after start date, it's completed - show the final standings (fall through)
       }

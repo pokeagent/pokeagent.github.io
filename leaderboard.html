@@ -86,6 +86,9 @@
           </p>
         </div>
         
+        <!-- Qualifying Window Header -->
+        <h4 style="text-align: center; margin: 2rem 0 1rem 0; font-size: 1.4rem; color: #2d3748;">Qualifying Window</h4>
+        
         <!-- Side-by-side Leaderboards -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem;">
           
@@ -213,11 +216,423 @@
           
         </div>
         
+        <!-- Tournament Brackets Section -->
+        <h4 style="text-align: center; margin: 2rem 0 1rem 0; font-size: 1.4rem; color: #2d3748;">Tournament Brackets</h4>
+        
+        <!-- Gen1OU Tournament Bracket -->
+        <div style="margin-bottom: 1.5rem; background: white; border: 3px solid #2d3748; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); overflow: hidden;">
+          <button onclick="toggleBracket('gen1ou')" style="
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+            <span style="flex: 1; text-align: center;">Gen 1 OU Tournament - Best of 99</span>
+            <i id="gen1ou-chevron" class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </button>
+          <div id="gen1ou-bracket" style="display: none; padding: 0.6rem 1.5rem; background: #f8fafc;">
+            
+            <!-- Round Headers -->
+            <div style="display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; gap: 0; margin-bottom: 0.4rem;">
+              <h5 style="text-align: center; color: #667eea; font-size: 1.15rem; margin: 0; font-weight: 700;">Quarterfinals</h5>
+              <div></div>
+              <h5 style="text-align: center; color: #667eea; font-size: 1.15rem; margin: 0; font-weight: 700;">Semifinals</h5>
+              <div></div>
+              <h5 style="text-align: center; color: #667eea; font-size: 1.15rem; margin: 0; font-weight: 700;">Finals</h5>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; gap: 0; align-items: center;">
+              
+              <!-- Quarterfinals -->
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                
+                <!-- Match 1 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 1</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">PA-Agent</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">FoulPlay</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">12</span>
+                  </div>
+                </div>
+                
+                <!-- Match 2 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 2</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">ED-Testing</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">MetaHorns</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">28</span>
+                  </div>
+                </div>
+                
+                <!-- Match 3 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 3</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">4thLesson</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">GCOGS</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">11</span>
+                  </div>
+                </div>
+                
+                <!-- Match 4 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 4</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">srsk-1729</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">Exp-05</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">29</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Connector Lines QF to SF -->
+              <div style="display: flex; flex-direction: column; position: relative; justify-content: space-evenly;">
+                <!-- Top bracket connector (Match 1 & 2 to Match 5) -->
+                <div style="height: 50%; position: relative; display: flex; align-items: center;">
+                  <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                    <!-- Horizontal line from Match 1 -->
+                    <line x1="0" y1="25%" x2="40" y2="25%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line from Match 2 -->
+                    <line x1="0" y1="75%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Vertical line connecting Match 1 and Match 2 -->
+                    <line x1="40" y1="25%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line to Match 5 -->
+                    <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                  </svg>
+                </div>
+                <!-- Bottom bracket connector (Match 3 & 4 to Match 6) -->
+                <div style="height: 50%; position: relative; display: flex; align-items: center;">
+                  <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                    <!-- Horizontal line from Match 3 -->
+                    <line x1="0" y1="25%" x2="40" y2="25%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line from Match 4 -->
+                    <line x1="0" y1="75%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Vertical line connecting Match 3 and Match 4 -->
+                    <line x1="40" y1="25%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line to Match 6 -->
+                    <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Semifinals -->
+              <div style="display: flex; flex-direction: column; justify-content: center; gap: 3rem;">
+                
+                <!-- Match 5 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 5</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px; margin-bottom: 0.2rem;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">ED-Testing</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">13</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">PA-Agent</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                </div>
+                
+                <!-- Match 6 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 6</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px; margin-bottom: 0.2rem;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">srsk-1729</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">20</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">4thLesson</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Connector Lines SF to Finals -->
+              <div style="display: flex; flex-direction: column; position: relative; justify-content: center; align-items: center;">
+                <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                  <!-- Horizontal line from Match 5 -->
+                  <line x1="0" y1="33%" x2="40" y2="33%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Horizontal line from Match 6 -->
+                  <line x1="0" y1="67%" x2="40" y2="67%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Vertical line connecting Match 5 and Match 6 -->
+                  <line x1="40" y1="33%" x2="40" y2="67%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Horizontal line to Finals -->
+                  <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                </svg>
+              </div>
+              
+              <!-- Finals -->
+              <div style="display: flex; align-items: center; justify-content: center;">
+                
+                <!-- Match 7 -->
+                <div style="background: white; border: 2px solid #667eea; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.12); min-height: 95px; width: 100%; max-width: 300px;">
+                  <div style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 7</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">🏆 PA-Agent</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">4thLesson</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">28</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gen9OU Tournament Bracket -->
+        <div style="margin-bottom: 1.5rem; background: white; border: 3px solid #2d3748; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); overflow: hidden;">
+          <button onclick="toggleBracket('gen9ou')" style="
+            width: 100%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+            <span style="flex: 1; text-align: center;">Gen 9 OU Tournament - Best of 99</span>
+            <i id="gen9ou-chevron" class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </button>
+          <div id="gen9ou-bracket" style="display: none; padding: 0.6rem 1.5rem; background: #f8fafc;">
+            
+            <!-- Round Headers -->
+            <div style="display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; gap: 0; margin-bottom: 0.4rem;">
+              <h5 style="text-align: center; color: #f5576c; font-size: 1.15rem; margin: 0; font-weight: 700;">Quarterfinals</h5>
+              <div></div>
+              <h5 style="text-align: center; color: #f5576c; font-size: 1.15rem; margin: 0; font-weight: 700;">Semifinals</h5>
+              <div></div>
+              <h5 style="text-align: center; color: #f5576c; font-size: 1.15rem; margin: 0; font-weight: 700;">Finals</h5>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; gap: 0; align-items: center;">
+              
+              <!-- Quarterfinals -->
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                
+                <!-- Match 1 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 1</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">FoulPlay</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">Porygon2AI</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">12</span>
+                  </div>
+                </div>
+                
+                <!-- Match 2 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 2</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px; margin-bottom: 0.2rem;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">piploop</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">37</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">PA-Agent</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                </div>
+                
+                <!-- Match 3 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 3</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">ED-Testing</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">srsk-1729</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">20</span>
+                  </div>
+                </div>
+                
+                <!-- Match 4 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 4</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">Q</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">MetaHorns</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">16</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Connector Lines QF to SF -->
+              <div style="display: flex; flex-direction: column; position: relative; justify-content: space-evenly;">
+                <!-- Top bracket connector (Match 1 & 2 to Match 5) -->
+                <div style="height: 50%; position: relative; display: flex; align-items: center;">
+                  <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                    <!-- Horizontal line from Match 1 -->
+                    <line x1="0" y1="25%" x2="40" y2="25%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line from Match 2 -->
+                    <line x1="0" y1="75%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Vertical line connecting Match 1 and Match 2 -->
+                    <line x1="40" y1="25%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line to Match 5 -->
+                    <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                  </svg>
+                </div>
+                <!-- Bottom bracket connector (Match 3 & 4 to Match 6) -->
+                <div style="height: 50%; position: relative; display: flex; align-items: center;">
+                  <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                    <!-- Horizontal line from Match 3 -->
+                    <line x1="0" y1="25%" x2="40" y2="25%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line from Match 4 -->
+                    <line x1="0" y1="75%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Vertical line connecting Match 3 and Match 4 -->
+                    <line x1="40" y1="25%" x2="40" y2="75%" stroke="#cbd5e0" stroke-width="2"/>
+                    <!-- Horizontal line to Match 6 -->
+                    <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Semifinals -->
+              <div style="display: flex; flex-direction: column; justify-content: center; gap: 3rem;">
+                
+                <!-- Match 5 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 5</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">FoulPlay</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">PA-Agent</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">39</span>
+                  </div>
+                </div>
+                
+                <!-- Match 6 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 6</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">Q</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">ED-Testing</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">22</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Connector Lines SF to Finals -->
+              <div style="display: flex; flex-direction: column; position: relative; justify-content: center; align-items: center;">
+                <svg width="80" height="100%" style="position: absolute; left: 0; top: 0;">
+                  <!-- Horizontal line from Match 5 -->
+                  <line x1="0" y1="33%" x2="40" y2="33%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Horizontal line from Match 6 -->
+                  <line x1="0" y1="67%" x2="40" y2="67%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Vertical line connecting Match 5 and Match 6 -->
+                  <line x1="40" y1="33%" x2="40" y2="67%" stroke="#cbd5e0" stroke-width="2"/>
+                  <!-- Horizontal line to Finals -->
+                  <line x1="40" y1="50%" x2="80" y2="50%" stroke="#cbd5e0" stroke-width="2"/>
+                </svg>
+              </div>
+              
+              <!-- Finals -->
+              <div style="display: flex; align-items: center; justify-content: center;">
+                
+                <!-- Match 7 -->
+                <div style="background: white; border: 2px solid #f5576c; border-radius: 6px; padding: 0.45rem; box-shadow: 0 2px 6px rgba(245, 87, 108, 0.12); min-height: 95px; width: 100%; max-width: 300px;">
+                  <div style="font-size: 0.75rem; color: #f5576c; font-weight: 600; margin-bottom: 0.3rem; text-align: center;">Match 7</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #fef2f2; border-radius: 4px; margin-bottom: 0.2rem;">
+                    <span style="color: #000000; font-size: 1.1rem; font-weight: 600;">Q</span>
+                    <span style="color: #6b7280; font-size: 1.5rem; font-weight: 700; min-width: 45px; text-align: right;">14</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.55rem; background: #d1fae5; border-radius: 4px; margin-bottom: 0.2rem; border-left: 3px solid #059669; box-shadow: 0 0 8px rgba(5, 150, 105, 0.3);">
+                    <span style="font-weight: 700; color: #000000; font-size: 1.15rem;">🏆 FoulPlay</span>
+                    <span style="font-weight: 800; color: #059669; font-size: 1.7rem; min-width: 45px; text-align: right;">50</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
         <!-- Mobile responsive: stack on small screens -->
         <style>
           @media (max-width: 768px) {
             div[style*="grid-template-columns: 1fr 1fr"] {
               grid-template-columns: 1fr !important;
+            }
+            
+            /* Tournament bracket mobile responsiveness - horizontal scroll */
+            #gen1ou-bracket,
+            #gen9ou-bracket {
+              padding: 0.5rem !important;
+              overflow-x: auto !important;
+              overflow-y: hidden !important;
+              -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Wrap content in container with fixed width */
+            #gen1ou-bracket > div,
+            #gen9ou-bracket > div {
+              width: 850px;
+            }
+            
+            /* Scale down everything on mobile */
+            #gen1ou-bracket h5,
+            #gen9ou-bracket h5 {
+              font-size: 0.85rem !important;
+            }
+            
+            #gen1ou-bracket div[style*="min-height"],
+            #gen9ou-bracket div[style*="min-height"] {
+              min-height: 75px !important;
+            }
+            
+            /* Smaller fonts in match boxes */
+            #gen1ou-bracket span,
+            #gen9ou-bracket span {
+              font-size: 0.85em !important;
+            }
+            
+            /* Reduce gaps on mobile */
+            #gen1ou-bracket > div > div > div[style*="gap: 1rem"],
+            #gen9ou-bracket > div > div > div[style*="gap: 1rem"] {
+              gap: 0.6rem !important;
+            }
+            
+            #gen1ou-bracket > div > div > div[style*="gap: 3rem"],
+            #gen9ou-bracket > div > div > div[style*="gap: 3rem"] {
+              gap: 2rem !important;
             }
           }
           
@@ -237,6 +652,29 @@
           }
           
           div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+          }
+          
+          /* Horizontal scrollbar styling for brackets on mobile */
+          #gen1ou-bracket::-webkit-scrollbar,
+          #gen9ou-bracket::-webkit-scrollbar {
+            height: 8px;
+          }
+          
+          #gen1ou-bracket::-webkit-scrollbar-track,
+          #gen9ou-bracket::-webkit-scrollbar-track {
+            background: #f7fafc;
+            border-radius: 4px;
+          }
+          
+          #gen1ou-bracket::-webkit-scrollbar-thumb,
+          #gen9ou-bracket::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 4px;
+          }
+          
+          #gen1ou-bracket::-webkit-scrollbar-thumb:hover,
+          #gen9ou-bracket::-webkit-scrollbar-thumb:hover {
             background: #a0aec0;
           }
         </style>
@@ -900,6 +1338,20 @@
     // Module references will be set by the main app
     window.battlingLeaderboard = null;
     window.speedrunningLeaderboard = null;
+    
+    // Toggle bracket dropdowns
+    window.toggleBracket = function(format) {
+      const bracket = document.getElementById(`${format}-bracket`);
+      const chevron = document.getElementById(`${format}-chevron`);
+      
+      if (bracket.style.display === 'none') {
+        bracket.style.display = 'block';
+        chevron.style.transform = 'rotate(180deg)';
+      } else {
+        bracket.style.display = 'none';
+        chevron.style.transform = 'rotate(0deg)';
+      }
+    };
   </script>
 </body>
 </html>
