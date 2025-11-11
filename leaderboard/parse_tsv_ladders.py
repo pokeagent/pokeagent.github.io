@@ -127,10 +127,10 @@ def parse_tsv_file(filename):
                 # Format GXE as percentage if needed
                 if gxe and gxe not in ["-", ""]:
                     if not gxe.endswith("%"):
-                        try:
-                            gxe_float = float(gxe)
-                            gxe = f"{gxe_float:.2f}%"
-                        except (ValueError, TypeError):
+                    try:
+                        gxe_float = float(gxe)
+                        gxe = f"{gxe_float:.2f}%"
+                    except (ValueError, TypeError):
                             gxe = "-"
                 else:
                     gxe = "-"
