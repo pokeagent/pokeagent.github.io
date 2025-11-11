@@ -10,7 +10,8 @@ export const API_CONFIG = {
   
   // Toggle between live API and static JSON
   // Set to false to use only static files (fallback mode)
-  USE_LIVE_DATA: true,
+  // FROZEN: Qualifying window ended, using captured data from Nov 11, 2025
+  USE_LIVE_DATA: false,
   
   // API endpoints
   ENDPOINTS: {

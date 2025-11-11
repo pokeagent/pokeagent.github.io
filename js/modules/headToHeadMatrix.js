@@ -196,7 +196,7 @@ class HeadToHeadMatrix {
    * Load and process TSV data for head-to-head analysis
    */
   /**
-   * Load H2H data from live API or TSV fallback
+   * Load H2H data from live API or frozen JSON
    */
   async loadData(format = 'gen1ou') {
     this.currentFormat = format;
@@ -207,13 +207,13 @@ class HeadToHeadMatrix {
         await this.loadLiveH2HData(format);
         return;
       } catch (error) {
-        console.warn(`[H2H] Failed to load live data for ${format}, falling back to TSV:`, error);
-        // Fall through to TSV parsing
+        console.warn(`[H2H] Failed to load live data for ${format}, falling back to frozen JSON:`, error);
+        // Fall through to frozen JSON
       }
     }
     
-    // Fallback to TSV parsing
-    await this.loadTSVData(format);
+    // Load frozen JSON data
+    await this.loadFrozenH2HData(format);
   }
 
   /**
@@ -260,6 +260,38 @@ class HeadToHeadMatrix {
       if (error.name === 'AbortError') {
         throw new Error('API request timed out');
       }
+      throw error;
+    }
+  }
+
+  /**
+   * Load frozen H2H data from JSON file
+   */
+  async loadFrozenH2HData(format) {
+    console.log(`[H2H] Loading frozen JSON data for ${format}`);
+    try {
+      const response = await fetch(`leaderboard/h2h_${format}.json?t=${Date.now()}`);
+      if (!response.ok) throw new Error(`Failed to load frozen H2H data for ${format}`);
+      
+      const data = await response.json();
+      
+      // Map JSON response to internal format (same as API format)
+      this.filteredPlayers = data.players.map(p => ({
+        Username: p.username,
+        DisplayName: p.display_name,
+        Elo: p.elo,
+        Glicko: p.glicko,
+        Rating_Deviation: p.rating_deviation,
+        H2H_Data: p.h2h_data,
+        IsOrgBaseline: p.is_org_baseline || false
+      }));
+      
+      this.usingLiveData = false;
+      console.log(`[H2H] ✓ Frozen data loaded: ${this.filteredPlayers.length} players for ${format}`);
+      
+    } catch (error) {
+      console.error(`[H2H] Error loading frozen H2H data for ${format}:`, error);
+      this.filteredPlayers = [];
       throw error;
     }
   }
