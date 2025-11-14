@@ -166,7 +166,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-14T17:14:42.894Z",
+    "last_updated": "2025-11-14T18:05:31.147Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -397,8 +397,8 @@
     "team": "anthonys",
     "completion_percent": 54,
     "runtime": "46:25",
-    "last_updated": "2025-11-13T02:58:29.526Z",
-    "video": "https://youtu.be/d7mB5v5bF3M",
+    "last_updated": "2025-11-14T18:05:08.951Z",
+    "video": "https://www.youtube.com/watch?v=usfBtCG01eQ",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
       "PLAYER_NAME_SET": "01:14",
@@ -453,7 +453,7 @@
         "endTime": "46:25"
       }
     },
-    "submission_count": 2
+    "submission_count": 3
   },
   {
     "rank": 7,
@@ -517,7 +517,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-14T17:15:13.985Z",
+    "last_updated": "2025-11-14T18:06:02.600Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -568,7 +568,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-14T17:15:16.498Z",
+    "last_updated": "2025-11-14T18:06:04.575Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -670,7 +670,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-14T17:15:14.957Z",
+    "last_updated": "2025-11-14T18:06:03.566Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -772,7 +772,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-14T17:14:28.254Z",
+    "last_updated": "2025-11-14T18:05:14.259Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
