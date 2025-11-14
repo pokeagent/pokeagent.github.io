@@ -84,7 +84,7 @@
     "rank": 2,
     "team": "Evelord",
     "completion_percent": 100,
-    "runtime": "01:59:29",
+    "runtime": "01:40:01",
     "last_updated": "2025-11-11T16:11:59.294Z",
     "video": "https://youtu.be/2DZUtMSgK30",
     "milestone_splits": {
@@ -102,18 +102,18 @@
       "OLDALE_TOWN": "36:42",
       "ROUTE_103": "38:25",
       "RECEIVED_POKEDEX": "01:02:13",
-      "ROUTE_102": "01:21:41",
-      "PETALBURG_CITY": "01:40:58",
-      "DAD_FIRST_MEETING": "01:41:26",
-      "GYM_EXPLANATION": "01:41:26",
-      "ROUTE_104_SOUTH": "01:41:34",
-      "PETALBURG_WOODS": "01:42:48",
-      "TEAM_AQUA_GRUNT_DEFEATED": "01:42:48",
-      "ROUTE_104_NORTH": "01:42:48",
-      "RUSTBORO_CITY": "01:42:48",
-      "RUSTBORO_GYM_ENTERED": "01:42:55",
-      "ROXANNE_DEFEATED": "01:57:30",
-      "FIRST_GYM_COMPLETE": "01:59:29"
+      "ROUTE_102": "01:02:13",
+      "PETALBURG_CITY": "01:21:30",
+      "DAD_FIRST_MEETING": "01:21:58",
+      "GYM_EXPLANATION": "01:21:58",
+      "ROUTE_104_SOUTH": "01:22:06",
+      "PETALBURG_WOODS": "01:23:20",
+      "TEAM_AQUA_GRUNT_DEFEATED": "01:23:20",
+      "ROUTE_104_NORTH": "01:23:20",
+      "RUSTBORO_CITY": "01:23:20",
+      "RUSTBORO_GYM_ENTERED": "01:23:27",
+      "ROXANNE_DEFEATED": "01:38:02",
+      "FIRST_GYM_COMPLETE": "01:40:01"
     },
     "phase_splits": {
       "Phase_1_Game_Initialization": {
@@ -143,30 +143,30 @@
       "Phase_5_Route_102_Petalburg": {
         "completed": 4,
         "total": 4,
-        "duration": "39:13",
-        "endTime": "01:41:26"
+        "duration": "19:45",
+        "endTime": "01:21:58"
       },
       "Phase_6_Road_to_Rustboro_City": {
         "completed": 5,
         "total": 5,
         "duration": "01:22",
-        "endTime": "01:42:48"
+        "endTime": "01:23:20"
       },
       "Phase_7_First_Gym_Challenge": {
         "completed": 3,
         "total": 3,
         "duration": "16:41",
-        "endTime": "01:59:29"
+        "endTime": "01:40:01"
       }
     },
-    "submission_count": 17
+    "submission_count": 18
   },
   {
     "rank": 3,
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-14T19:43:11.218Z",
+    "last_updated": "2025-11-14T19:44:24.155Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -454,7 +454,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-14T19:43:43.192Z",
+    "last_updated": "2025-11-14T19:44:58.184Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -505,7 +505,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-14T19:43:45.132Z",
+    "last_updated": "2025-11-14T19:45:00.553Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -607,7 +607,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-14T19:43:44.234Z",
+    "last_updated": "2025-11-14T19:44:59.271Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -709,7 +709,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-14T19:42:56.969Z",
+    "last_updated": "2025-11-14T19:44:13.563Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
