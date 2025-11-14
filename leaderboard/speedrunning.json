@@ -1,6 +1,87 @@
 [
   {
     "rank": 1,
+    "team": "Hamburg PokeRunners",
+    "completion_percent": 100,
+    "runtime": "01:14:43",
+    "last_updated": "2025-11-14T12:01:24.960Z",
+    "video": "https://www.youtube.com/watch?v=yEt73QHvZuI&list=PL_nNLjnmYJnkSzabcJvYmgcSXdNBS1vq-",
+    "milestone_splits": {
+      "GAME_RUNNING": "00:00",
+      "PLAYER_NAME_SET": "01:23",
+      "INTRO_CUTSCENE_COMPLETE": "02:06",
+      "LITTLEROOT_TOWN": "02:06",
+      "PLAYER_HOUSE_ENTERED": "02:15",
+      "PLAYER_BEDROOM": "02:30",
+      "RIVAL_HOUSE": "04:07",
+      "RIVAL_BEDROOM": "04:46",
+      "ROUTE_101": "07:02",
+      "STARTER_CHOSEN": "07:02",
+      "BIRCH_LAB_VISITED": "14:18",
+      "OLDALE_TOWN": "18:45",
+      "ROUTE_103": "20:29",
+      "RECEIVED_POKEDEX": "28:52",
+      "ROUTE_102": "36:32",
+      "PETALBURG_CITY": "49:06",
+      "DAD_FIRST_MEETING": "49:52",
+      "GYM_EXPLANATION": "53:10",
+      "ROUTE_104_SOUTH": "54:13",
+      "PETALBURG_WOODS": "55:11",
+      "TEAM_AQUA_GRUNT_DEFEATED": "01:01:52",
+      "ROUTE_104_NORTH": "01:02:52",
+      "RUSTBORO_CITY": "01:07:51",
+      "RUSTBORO_GYM_ENTERED": "01:09:37",
+      "ROXANNE_DEFEATED": "01:13:57",
+      "FIRST_GYM_COMPLETE": "01:14:43"
+    },
+    "phase_splits": {
+      "Phase_1_Game_Initialization": {
+        "completed": 3,
+        "total": 3,
+        "duration": "02:06",
+        "endTime": "02:06"
+      },
+      "Phase_2_Tutorial_Starting_Town": {
+        "completed": 5,
+        "total": 5,
+        "duration": "02:40",
+        "endTime": "04:46"
+      },
+      "Phase_3_Professor_Birch_Starter": {
+        "completed": 3,
+        "total": 3,
+        "duration": "09:32",
+        "endTime": "14:18"
+      },
+      "Phase_4_Rival": {
+        "completed": 3,
+        "total": 3,
+        "duration": "14:34",
+        "endTime": "28:52"
+      },
+      "Phase_5_Route_102_Petalburg": {
+        "completed": 4,
+        "total": 4,
+        "duration": "24:18",
+        "endTime": "53:10"
+      },
+      "Phase_6_Road_to_Rustboro_City": {
+        "completed": 5,
+        "total": 5,
+        "duration": "14:41",
+        "endTime": "01:07:51"
+      },
+      "Phase_7_First_Gym_Challenge": {
+        "completed": 3,
+        "total": 3,
+        "duration": "06:52",
+        "endTime": "01:14:43"
+      }
+    },
+    "submission_count": 1
+  },
+  {
+    "rank": 2,
     "team": "Evelord",
     "completion_percent": 100,
     "runtime": "01:29:28",
@@ -81,92 +162,11 @@
     "submission_count": 13
   },
   {
-    "rank": 2,
-    "team": "Hamburg PokeRunners",
-    "completion_percent": 100,
-    "runtime": "02:08:54",
-    "last_updated": "2025-11-14T12:01:24.960Z",
-    "video": "https://www.youtube.com/watch?v=yEt73QHvZuI&list=PL_nNLjnmYJnkSzabcJvYmgcSXdNBS1vq-",
-    "milestone_splits": {
-      "GAME_RUNNING": "00:00",
-      "PLAYER_NAME_SET": "01:23",
-      "INTRO_CUTSCENE_COMPLETE": "02:06",
-      "LITTLEROOT_TOWN": "02:06",
-      "PLAYER_HOUSE_ENTERED": "02:15",
-      "PLAYER_BEDROOM": "02:30",
-      "RIVAL_HOUSE": "04:07",
-      "RIVAL_BEDROOM": "04:46",
-      "ROUTE_101": "54:08",
-      "STARTER_CHOSEN": "54:08",
-      "BIRCH_LAB_VISITED": "54:08",
-      "OLDALE_TOWN": "54:08",
-      "ROUTE_103": "54:08",
-      "RECEIVED_POKEDEX": "54:08",
-      "ROUTE_102": "01:30:43",
-      "PETALBURG_CITY": "01:43:17",
-      "DAD_FIRST_MEETING": "01:44:03",
-      "GYM_EXPLANATION": "01:47:21",
-      "ROUTE_104_SOUTH": "01:48:24",
-      "PETALBURG_WOODS": "01:49:22",
-      "TEAM_AQUA_GRUNT_DEFEATED": "01:56:03",
-      "ROUTE_104_NORTH": "01:57:03",
-      "RUSTBORO_CITY": "02:02:02",
-      "RUSTBORO_GYM_ENTERED": "02:03:48",
-      "ROXANNE_DEFEATED": "02:08:08",
-      "FIRST_GYM_COMPLETE": "02:08:54"
-    },
-    "phase_splits": {
-      "Phase_1_Game_Initialization": {
-        "completed": 3,
-        "total": 3,
-        "duration": "02:06",
-        "endTime": "02:06"
-      },
-      "Phase_2_Tutorial_Starting_Town": {
-        "completed": 5,
-        "total": 5,
-        "duration": "02:40",
-        "endTime": "04:46"
-      },
-      "Phase_3_Professor_Birch_Starter": {
-        "completed": 3,
-        "total": 3,
-        "duration": "49:22",
-        "endTime": "54:08"
-      },
-      "Phase_4_Rival": {
-        "completed": 3,
-        "total": 3,
-        "duration": "00:00",
-        "endTime": "54:08"
-      },
-      "Phase_5_Route_102_Petalburg": {
-        "completed": 4,
-        "total": 4,
-        "duration": "53:13",
-        "endTime": "01:47:21"
-      },
-      "Phase_6_Road_to_Rustboro_City": {
-        "completed": 5,
-        "total": 5,
-        "duration": "14:41",
-        "endTime": "02:02:02"
-      },
-      "Phase_7_First_Gym_Challenge": {
-        "completed": 3,
-        "total": 3,
-        "duration": "06:52",
-        "endTime": "02:08:54"
-      }
-    },
-    "submission_count": 5
-  },
-  {
     "rank": 3,
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-14T16:57:09.316Z",
+    "last_updated": "2025-11-14T17:14:42.894Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -517,7 +517,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-14T16:57:42.244Z",
+    "last_updated": "2025-11-14T17:15:13.985Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -568,7 +568,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-14T16:57:44.552Z",
+    "last_updated": "2025-11-14T17:15:16.498Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -670,7 +670,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-14T16:57:43.326Z",
+    "last_updated": "2025-11-14T17:15:14.957Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -772,7 +772,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-14T16:56:44.556Z",
+    "last_updated": "2025-11-14T17:14:28.254Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
