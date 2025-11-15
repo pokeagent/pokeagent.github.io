@@ -85,7 +85,7 @@
     "team": "Evelord",
     "completion_percent": 100,
     "runtime": "01:48:50",
-    "last_updated": "2025-11-15T19:16:03.085Z",
+    "last_updated": "2025-11-15T19:48:10.837Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -247,7 +247,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-15T19:15:20.281Z",
+    "last_updated": "2025-11-15T19:47:28.996Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -551,10 +551,10 @@
   {
     "rank": 8,
     "team": "Deepest",
-    "completion_percent": 54,
-    "runtime": "01:45:30",
-    "last_updated": "2025-11-15T18:33:20.256Z",
-    "video": "https://youtu.be/sl0bTwfrO6c",
+    "completion_percent": 62,
+    "runtime": "02:41:16",
+    "last_updated": "2025-11-15T19:47:13.244Z",
+    "video": "https://youtu.be/-8S5IoimB6w",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
       "PLAYER_NAME_SET": "05:10",
@@ -570,8 +570,8 @@
       "OLDALE_TOWN": "47:26",
       "ROUTE_103": "59:04",
       "RECEIVED_POKEDEX": "01:45:30",
-      "ROUTE_102": null,
-      "PETALBURG_CITY": null,
+      "ROUTE_102": "02:03:30",
+      "PETALBURG_CITY": "02:41:16",
       "DAD_FIRST_MEETING": null,
       "GYM_EXPLANATION": null,
       "ROUTE_104_SOUTH": null,
@@ -607,9 +607,15 @@
         "total": 3,
         "duration": "58:52",
         "endTime": "01:45:30"
+      },
+      "Phase_5_Route_102_Petalburg": {
+        "completed": 2,
+        "total": 4,
+        "duration": "55:46",
+        "endTime": "02:41:16"
       }
     },
-    "submission_count": 2
+    "submission_count": 3
   },
   {
     "rank": 9,
@@ -724,7 +730,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-15T19:15:35.045Z",
+    "last_updated": "2025-11-15T19:47:41.463Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -775,7 +781,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-15T19:15:37.719Z",
+    "last_updated": "2025-11-15T19:47:43.321Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -877,7 +883,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-15T19:15:36.219Z",
+    "last_updated": "2025-11-15T19:47:42.356Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -1030,7 +1036,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-15T19:15:05.608Z",
+    "last_updated": "2025-11-15T19:47:16.844Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
