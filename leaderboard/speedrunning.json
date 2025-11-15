@@ -85,7 +85,7 @@
     "team": "Evelord",
     "completion_percent": 100,
     "runtime": "01:48:50",
-    "last_updated": "2025-11-15T05:41:55.395Z",
+    "last_updated": "2025-11-15T06:09:17.551Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -247,7 +247,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-15T05:41:16.766Z",
+    "last_updated": "2025-11-15T06:08:40.277Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -610,7 +610,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-15T05:41:30.994Z",
+    "last_updated": "2025-11-15T06:08:53.417Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -661,7 +661,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-15T05:41:32.870Z",
+    "last_updated": "2025-11-15T06:08:55.492Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -763,7 +763,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-15T05:41:31.894Z",
+    "last_updated": "2025-11-15T06:08:54.389Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -916,7 +916,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-15T05:41:02.962Z",
+    "last_updated": "2025-11-15T06:08:26.356Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -1062,13 +1062,13 @@
     "rank": 18,
     "team": "IcedNoIce",
     "completion_percent": 12,
-    "runtime": "06:48",
-    "last_updated": "2025-11-14T07:01:44.287Z",
+    "runtime": "05:16",
+    "last_updated": "2025-11-15T06:08:22.371Z",
     "video": "https://youtu.be/OAEK8xsMicU",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
-      "PLAYER_NAME_SET": "03:58",
-      "INTRO_CUTSCENE_COMPLETE": "06:48",
+      "PLAYER_NAME_SET": "01:35",
+      "INTRO_CUTSCENE_COMPLETE": "05:16",
       "LITTLEROOT_TOWN": null,
       "PLAYER_HOUSE_ENTERED": null,
       "PLAYER_BEDROOM": null,
@@ -1097,11 +1097,11 @@
       "Phase_1_Game_Initialization": {
         "completed": 3,
         "total": 3,
-        "duration": "06:48",
-        "endTime": "06:48"
+        "duration": "05:16",
+        "endTime": "05:16"
       }
     },
-    "submission_count": 2
+    "submission_count": 3
   },
   {
     "rank": 19,
