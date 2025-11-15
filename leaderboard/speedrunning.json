@@ -85,7 +85,7 @@
     "team": "Evelord",
     "completion_percent": 100,
     "runtime": "01:48:50",
-    "last_updated": "2025-11-15T15:59:59.772Z",
+    "last_updated": "2025-11-15T18:34:23.986Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -247,7 +247,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-15T15:59:14.698Z",
+    "last_updated": "2025-11-15T18:33:40.666Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -551,10 +551,10 @@
   {
     "rank": 8,
     "team": "Deepest",
-    "completion_percent": 42,
-    "runtime": "46:38",
-    "last_updated": "2025-11-15T15:58:56.206Z",
-    "video": "https://youtu.be/GnPTOv_W-fI",
+    "completion_percent": 54,
+    "runtime": "01:45:30",
+    "last_updated": "2025-11-15T18:33:20.256Z",
+    "video": "https://youtu.be/sl0bTwfrO6c",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
       "PLAYER_NAME_SET": "05:10",
@@ -567,9 +567,9 @@
       "ROUTE_101": "37:37",
       "STARTER_CHOSEN": "41:41",
       "BIRCH_LAB_VISITED": "46:38",
-      "OLDALE_TOWN": null,
-      "ROUTE_103": null,
-      "RECEIVED_POKEDEX": null,
+      "OLDALE_TOWN": "47:26",
+      "ROUTE_103": "59:04",
+      "RECEIVED_POKEDEX": "01:45:30",
       "ROUTE_102": null,
       "PETALBURG_CITY": null,
       "DAD_FIRST_MEETING": null,
@@ -601,9 +601,15 @@
         "total": 3,
         "duration": "21:28",
         "endTime": "46:38"
+      },
+      "Phase_4_Rival": {
+        "completed": 3,
+        "total": 3,
+        "duration": "58:52",
+        "endTime": "01:45:30"
       }
     },
-    "submission_count": 1
+    "submission_count": 2
   },
   {
     "rank": 9,
@@ -667,7 +673,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-15T15:59:29.499Z",
+    "last_updated": "2025-11-15T18:33:55.577Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -718,7 +724,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-15T15:59:31.879Z",
+    "last_updated": "2025-11-15T18:33:57.815Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -820,7 +826,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-15T15:59:30.517Z",
+    "last_updated": "2025-11-15T18:33:56.531Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -973,7 +979,7 @@
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-15T15:58:59.966Z",
+    "last_updated": "2025-11-15T18:33:25.095Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
