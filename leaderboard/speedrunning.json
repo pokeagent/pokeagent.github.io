@@ -85,7 +85,7 @@
     "team": "Evelord",
     "completion_percent": 100,
     "runtime": "01:48:50",
-    "last_updated": "2025-11-15T03:14:46.996Z",
+    "last_updated": "2025-11-15T04:23:43.732Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -166,7 +166,7 @@
     "team": "Avg Human",
     "completion_percent": 96,
     "runtime": "01:22:05",
-    "last_updated": "2025-11-15T03:14:04.224Z",
+    "last_updated": "2025-11-15T04:23:08.224Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -529,7 +529,7 @@
     "team": "Darkrai",
     "completion_percent": 31,
     "runtime": "01:06:33",
-    "last_updated": "2025-11-15T03:14:19.048Z",
+    "last_updated": "2025-11-15T04:23:21.230Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -580,7 +580,7 @@
     "team": "ProfessorOak",
     "completion_percent": 27,
     "runtime": "23:55",
-    "last_updated": "2025-11-15T03:14:21.320Z",
+    "last_updated": "2025-11-15T04:23:23.176Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -682,7 +682,7 @@
     "team": "Bug Catcher",
     "completion_percent": 23,
     "runtime": "19:47",
-    "last_updated": "2025-11-15T03:14:20.139Z",
+    "last_updated": "2025-11-15T04:23:22.216Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
@@ -784,8 +784,8 @@
     "team": "abgoro",
     "completion_percent": 19,
     "runtime": "11:44",
-    "last_updated": "2025-11-15T03:13:41.620Z",
-    "video": "https://youtu.be/IEP4jjuTuyg",
+    "last_updated": "2025-11-15T04:22:49.234Z",
+    "video": "https://youtu.be/kyM8RWcsWIk",
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
       "PLAYER_NAME_SET": "05:21",
@@ -828,14 +828,14 @@
         "endTime": "11:44"
       }
     },
-    "submission_count": 1
+    "submission_count": 2
   },
   {
     "rank": 14,
     "team": "Ed",
     "completion_percent": 15,
     "runtime": "01:46",
-    "last_updated": "2025-11-15T03:13:47.635Z",
+    "last_updated": "2025-11-15T04:22:54.572Z",
     "video": null,
     "milestone_splits": {
       "GAME_RUNNING": "00:00",
