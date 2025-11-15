@@ -8,7 +8,7 @@ class SpeedrunningLeaderboard {
     this.data = [];
     this.currentViewMode = 'overall';
     // Teams that should show ORG badge
-    this.organizerTeams = ['Avg Human', 'PokeAgent'];
+    this.organizerTeams = ['Avg Human', 'PokeAgent', 'PokeAgentV2'];
     // Teams that use duration (split times) instead of endTime (cumulative)
     this.splitTimeTeams = ['Avg Human'];
     // Hide baselines by default
