@@ -740,8 +740,8 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); border: 
       } else {
         // Competition ended
         document.getElementById('phase-title').textContent = "🎉 Competition Complete";
-        document.querySelector('.countdown-timer').innerHTML = '<div style="color: white; font-size: 1.5rem;">Thank you for participating!</div>';
-        document.getElementById('phase-message').textContent = "See you at NeurIPS 2025!";
+        document.querySelector('.countdown-timer').innerHTML = '<div style="color: white; font-size: 1.8rem; font-weight: 600;">Thank you for participating!</div>';
+        document.getElementById('phase-message').innerHTML = 'See you at NeurIPS 2025! <a href="neurips-schedule.html" style="color: inherit; text-decoration: underline;">View schedule</a>';
         document.querySelectorAll('.phase-indicator').forEach(el => {
           el.classList.add('completed');
         });
