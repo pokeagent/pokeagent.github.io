@@ -421,7 +421,7 @@
 
     // Countdown Timer
     function updateCountdown() {
-      const endDate = new Date('November 15, 2025 23:59:59 EDT').getTime();
+      const endDate = new Date('2025-11-15T23:59:59-04:00').getTime(); // EDT (UTC-4)
       const now = new Date().getTime();
       const timeLeft = endDate - now;
 
